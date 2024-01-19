@@ -21,8 +21,8 @@ public class ChessBoard {
      * @param piece    the piece to add
      */
     public void addPiece(ChessPosition position, ChessPiece piece) {
-        int row = position.getRow();
-        int column = position.getColumn();
+        int row = position.getRow()-1;
+        int column = position.getColumn()-1;
 
         // Check if the row index is within the valid range
         if (row < 0 || row >= squares.length) {
@@ -45,7 +45,7 @@ public class ChessBoard {
      * position
      */
     public ChessPiece getPiece(ChessPosition position) {
-        return squares[position.getRow()][position.getColumn()];
+        return squares[position.getRow()-1][position.getColumn()-1];
     }
 
     /**
@@ -53,7 +53,6 @@ public class ChessBoard {
      * (How the game of chess normally starts)
      */
     public void resetBoard() {
-
-        throw new RuntimeException("Not implemented");
+        squares = new ChessPiece[8][8];
     }
 }
