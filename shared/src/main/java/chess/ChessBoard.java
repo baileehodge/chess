@@ -8,6 +8,8 @@ package chess;
  */
 public class ChessBoard {
 
+    private ChessPiece[][] squares = new ChessPiece[8][8];
+
     public ChessBoard() {
         
     }
@@ -19,7 +21,20 @@ public class ChessBoard {
      * @param piece    the piece to add
      */
     public void addPiece(ChessPosition position, ChessPiece piece) {
-        throw new RuntimeException("Not implemented");
+        int row = position.getRow();
+        int column = position.getColumn();
+
+        // Check if the row index is within the valid range
+        if (row < 0 || row >= squares.length) {
+            throw new IllegalArgumentException("Invalid row index");
+        }
+
+        // Check if the column index is within the valid range
+        if (column < 0 || column >= squares[row].length) {
+            throw new IllegalArgumentException("Invalid column index");
+        }
+
+        squares[row][column] = piece;
     }
 
     /**
@@ -30,7 +45,7 @@ public class ChessBoard {
      * position
      */
     public ChessPiece getPiece(ChessPosition position) {
-        throw new RuntimeException("Not implemented");
+        return squares[position.getRow()][position.getColumn()];
     }
 
     /**
@@ -38,6 +53,7 @@ public class ChessBoard {
      * (How the game of chess normally starts)
      */
     public void resetBoard() {
+
         throw new RuntimeException("Not implemented");
     }
 }
