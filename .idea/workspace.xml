@@ -4,17 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="1.18.24 EOD">
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="“And I feel God in this Chili’s tonight.”">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessMove.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessPiece.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessPiece.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessPosition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/PieceMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/PieceMovesCalc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/BishopMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/BishopMovesCalc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/KingMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/KingMovesCalc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/KnightMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/KnightMovesCalc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/PawnMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/PawnMovesCalc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/QueenMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/QueenMovesCalc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/RookMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/RookMovesCalc.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -230,7 +226,7 @@
       <updated>1702312869025</updated>
       <workItem from="1705624600282" duration="219000" />
       <workItem from="1705624832324" duration="12553000" />
-      <workItem from="1705687067089" duration="3966000" />
+      <workItem from="1705687067089" duration="10461000" />
     </task>
     <task id="LOCAL-00001" summary="fix(tests) removed extra credit tests">
       <option name="closed" value="true" />
@@ -296,7 +292,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705639858436</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="“And I feel God in this Chili’s tonight.”">
+      <option name="closed" value="true" />
+      <created>1705691511861</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1705691511861</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -309,7 +313,8 @@
     <MESSAGE value="Implemented just enough to get rid of the &quot;not implemented&quot; errors" />
     <MESSAGE value="Fixed the &quot;index out of range&quot; issue" />
     <MESSAGE value="1.18.24 EOD" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.18.24 EOD" />
+    <MESSAGE value="“And I feel God in this Chili’s tonight.”" />
+    <option name="LAST_COMMIT_MESSAGE" value="“And I feel God in this Chili’s tonight.”" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/chess$BishopMoveTests_bishopMoveUntilEdge.ic" NAME="BishopMoveTests.bishopMoveUntilEdge Coverage Results" MODIFIED="1705624942104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
