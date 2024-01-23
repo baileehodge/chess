@@ -11,6 +11,7 @@ import static chess.ChessPiece.PieceType.*;
 public class PawnMovesCalc {
     static Collection<ChessMove> acceptableMoves = new ArrayList<>();
     public static Collection<ChessMove> getMoves(ChessBoard board, ChessPosition myPosition) {
+        acceptableMoves = new ArrayList<>();
         int row = myPosition.getRow();
         int col = myPosition.getColumn();
         ChessPiece.PieceType promo = null;
@@ -24,18 +25,24 @@ public class PawnMovesCalc {
             endPosition = new ChessPosition(row + 1, col);
             target = board.getPiece(endPosition);
             if (target == null) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
-                if (endPosition.getRow() == 8) {
+                if (endPosition.getRow() != 8) {
+                    acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                }
+                else {
                     addPromo(myPosition, endPosition);
                 }
 
                 // Check two steps forward (only for pawns on the starting square)
-                endPosition = new ChessPosition(row + 2, col);
-                target = board.getPiece(endPosition);
-                if (row == 2 && target == null) {
-                    acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
-                    if (endPosition.getRow() == 8) {
-                        addPromo(myPosition, endPosition);
+                if (row == 2) {
+                    endPosition = new ChessPosition(row + 2, col);
+                    target = board.getPiece(endPosition);
+                    if (target == null) {
+                        if (endPosition.getRow() != 8) {
+                            acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                        }
+                        else {
+                            addPromo(myPosition, endPosition);
+                        }
                     }
                 }
             }
@@ -43,8 +50,10 @@ public class PawnMovesCalc {
             endPosition = new ChessPosition(row + 1, col - 1);
             target = board.getPiece(endPosition);
             if (target != null && target.getTeamColor() != mainCharacter.getTeamColor()) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
-                if (endPosition.getRow() == 8) {
+                if (endPosition.getRow() != 8) {
+                    acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                }
+                else {
                     addPromo(myPosition, endPosition);
                 }
             }
@@ -53,8 +62,10 @@ public class PawnMovesCalc {
             endPosition = new ChessPosition(row + 1, col + 1);
             target = board.getPiece(endPosition);
             if (target != null && target.getTeamColor() != mainCharacter.getTeamColor()) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
-                if (endPosition.getRow() == 8) {
+                if (endPosition.getRow() != 8) {
+                    acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                }
+                else {
                     addPromo(myPosition, endPosition);
                 }
             }
@@ -64,8 +75,10 @@ public class PawnMovesCalc {
             endPosition = new ChessPosition(row - 1, col);
             target = board.getPiece(endPosition);
             if (target == null) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
-                if (endPosition.getRow() == 1) {
+                if (endPosition.getRow() != 1) {
+                    acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                }
+                else {
                     addPromo(myPosition, endPosition);
                 }
 
@@ -74,8 +87,10 @@ public class PawnMovesCalc {
                     endPosition = new ChessPosition(row - 2, col);
                     target = board.getPiece(endPosition);
                     if (target == null) {
-                        acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
-                        if (endPosition.getRow() == 1) {
+                        if (endPosition.getRow() != 1) {
+                            acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                        }
+                        else {
                             addPromo(myPosition, endPosition);
                         }
                     }
@@ -85,8 +100,10 @@ public class PawnMovesCalc {
             endPosition = new ChessPosition(row - 1, col + 1);
             target = board.getPiece(endPosition);
             if (target != null && target.getTeamColor() != mainCharacter.getTeamColor()) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
-                if (endPosition.getRow() == 1) {
+                if (endPosition.getRow() != 1) {
+                    acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                }
+                else {
                     addPromo(myPosition, endPosition);
                 }
             }
@@ -95,8 +112,10 @@ public class PawnMovesCalc {
             endPosition = new ChessPosition(row - 1, col - 1);
             target = board.getPiece(endPosition);
             if (target != null && target.getTeamColor() != mainCharacter.getTeamColor()) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
-                if (endPosition.getRow() == 8) {
+                if (endPosition.getRow() != 1) {
+                    acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                }
+                else {
                     addPromo(myPosition, endPosition);
                 }
             }
