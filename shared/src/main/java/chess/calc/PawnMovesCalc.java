@@ -14,7 +14,6 @@ public class PawnMovesCalc {
         acceptableMoves = new ArrayList<>();
         int row = myPosition.getRow();
         int col = myPosition.getColumn();
-        ChessPiece.PieceType promo = null;
         //change this if we're in row 7
         ChessPosition endPosition;
         ChessPiece target;
@@ -26,7 +25,7 @@ public class PawnMovesCalc {
             target = board.getPiece(endPosition);
             if (target == null) {
                 if (endPosition.getRow() != 8) {
-                    acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                    acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
                 }
                 else {
                     addPromo(myPosition, endPosition);
@@ -38,7 +37,7 @@ public class PawnMovesCalc {
                     target = board.getPiece(endPosition);
                     if (target == null) {
                         if (endPosition.getRow() != 8) {
-                            acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                            acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
                         }
                         else {
                             addPromo(myPosition, endPosition);
@@ -51,7 +50,7 @@ public class PawnMovesCalc {
             target = board.getPiece(endPosition);
             if (target != null && target.getTeamColor() != mainCharacter.getTeamColor()) {
                 if (endPosition.getRow() != 8) {
-                    acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                    acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
                 }
                 else {
                     addPromo(myPosition, endPosition);
@@ -63,7 +62,7 @@ public class PawnMovesCalc {
             target = board.getPiece(endPosition);
             if (target != null && target.getTeamColor() != mainCharacter.getTeamColor()) {
                 if (endPosition.getRow() != 8) {
-                    acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                    acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
                 }
                 else {
                     addPromo(myPosition, endPosition);
@@ -76,7 +75,7 @@ public class PawnMovesCalc {
             target = board.getPiece(endPosition);
             if (target == null) {
                 if (endPosition.getRow() != 1) {
-                    acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                    acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
                 }
                 else {
                     addPromo(myPosition, endPosition);
@@ -88,7 +87,7 @@ public class PawnMovesCalc {
                     target = board.getPiece(endPosition);
                     if (target == null) {
                         if (endPosition.getRow() != 1) {
-                            acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                            acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
                         }
                         else {
                             addPromo(myPosition, endPosition);
@@ -101,7 +100,7 @@ public class PawnMovesCalc {
             target = board.getPiece(endPosition);
             if (target != null && target.getTeamColor() != mainCharacter.getTeamColor()) {
                 if (endPosition.getRow() != 1) {
-                    acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                    acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
                 }
                 else {
                     addPromo(myPosition, endPosition);
@@ -113,7 +112,7 @@ public class PawnMovesCalc {
             target = board.getPiece(endPosition);
             if (target != null && target.getTeamColor() != mainCharacter.getTeamColor()) {
                 if (endPosition.getRow() != 1) {
-                    acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                    acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
                 }
                 else {
                     addPromo(myPosition, endPosition);

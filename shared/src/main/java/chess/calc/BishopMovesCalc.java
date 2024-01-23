@@ -10,7 +10,6 @@ public class BishopMovesCalc {
     public static Collection<ChessMove> getMoves(ChessBoard board, ChessPosition myPosition) {
         int row = myPosition.getRow();
         int col = myPosition.getColumn();
-        ChessPiece.PieceType promo = null;
         boolean collision = false;
         Collection<ChessMove> acceptableMoves = new ArrayList<>();
         ChessPosition endPosition;
@@ -26,11 +25,11 @@ public class BishopMovesCalc {
             if (target != null) {
                 collision = true;
                 if (target.getTeamColor() != mainCharacter.getTeamColor()) {
-                    acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                    acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
                 }
             }
             if (!collision) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
             }
             row++;
             col++;
@@ -51,11 +50,11 @@ public class BishopMovesCalc {
             if (target != null) {
                 collision = true;
                 if (target.getTeamColor() != mainCharacter.getTeamColor()) {
-                    acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                    acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
                 }
             }
             if (!collision) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
             }
             row++;
             col--;
@@ -76,11 +75,11 @@ public class BishopMovesCalc {
             if (target != null) {
                 collision = true;
                 if (target.getTeamColor() != mainCharacter.getTeamColor()) {
-                    acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                    acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
                 }
             }
             if (!collision) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
             }
             row--;
             col++;
@@ -101,11 +100,11 @@ public class BishopMovesCalc {
             if (target != null) {
                 collision = true;
                 if (target.getTeamColor() != mainCharacter.getTeamColor()) {
-                    acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                    acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
                 }
             }
             if (!collision) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
             }
             row--;
             col--;

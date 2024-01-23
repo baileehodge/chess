@@ -1,5 +1,9 @@
 package chess;
 
+import static chess.ChessGame.TeamColor.BLACK;
+import static chess.ChessGame.TeamColor.WHITE;
+import static chess.ChessPiece.PieceType.*;
+
 /**
  * A chessboard that can hold and rearrange chess pieces.
  * <p>
@@ -53,6 +57,77 @@ public class ChessBoard {
      * (How the game of chess normally starts)
      */
     public void resetBoard() {
-        squares = new ChessPiece[8][8];
+        ChessPosition position;
+        ChessPiece piece;
+
+        // add white pawns
+        for (int i = 1; i <= 8; i++) {
+            position = new ChessPosition(2, i);
+            piece = new ChessPiece(WHITE, PAWN);
+            addPiece(position, piece);
+        }
+
+        // add black pawns
+        for (int i = 1; i <= 8; i++) {
+            position = new ChessPosition(7, i);
+            piece = new ChessPiece(BLACK, PAWN);
+            addPiece(position, piece);
+        }
+
+        // add rooks
+        piece = new ChessPiece(WHITE, ROOK);
+        addPiece(new ChessPosition(1,1), piece);
+        addPiece(new ChessPosition(1,8), piece);
+        piece = new ChessPiece(BLACK, ROOK);
+        addPiece(new ChessPosition(8,1), piece);
+        addPiece(new ChessPosition(8,8), piece);
+
+        // add knights
+        piece = new ChessPiece(WHITE, KNIGHT);
+        addPiece(new ChessPosition(1,2), piece);
+        addPiece(new ChessPosition(1,7), piece);
+        piece = new ChessPiece(BLACK, KNIGHT);
+        addPiece(new ChessPosition(8,2), piece);
+        addPiece(new ChessPosition(8,7), piece);
+
+        // add bishops
+        piece = new ChessPiece(WHITE, BISHOP);
+        addPiece(new ChessPosition(1,3), piece);
+        addPiece(new ChessPosition(1,6), piece);
+        piece = new ChessPiece(BLACK, BISHOP);
+        addPiece(new ChessPosition(8,3), piece);
+        addPiece(new ChessPosition(8,6), piece);
+
+        // add kings
+        piece = new ChessPiece(WHITE, KING);
+        addPiece(new ChessPosition(1,5), piece);
+        piece = new ChessPiece(BLACK, KING);
+        addPiece(new ChessPosition(8,5), piece);
+
+        // add Queens
+        piece = new ChessPiece(WHITE, QUEEN);
+        addPiece(new ChessPosition(1,4), piece);
+        piece = new ChessPiece(BLACK, QUEEN);
+        addPiece(new ChessPosition(8,4), piece);
+
+
     }
+    @Override
+    public String toString() {
+        StringBuilder sb = new StringBuilder();
+        for (int row = 0; row < squares.length; row++) {
+            for (int column = 0; column < squares[row].length; column++) {
+                ChessPiece piece = squares[row][column];
+                if (piece != null) {
+                    sb.append(piece.toString());
+                } else {
+                    sb.append("-");
+                }
+                sb.append(" ");
+            }
+            sb.append("\n");
+        }
+        return sb.toString();
+    }
+
 }

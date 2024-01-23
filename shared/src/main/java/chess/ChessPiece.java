@@ -56,4 +56,9 @@ public class ChessPiece {
         /* redirects to the other pieceMoves function */
         return PieceMovesCalc.pieceMoves(board, myPosition);
     }
+
+    @Override
+    public String toString() {
+        return "{" + pieceColor + " " + type + '}';
+    }
 }

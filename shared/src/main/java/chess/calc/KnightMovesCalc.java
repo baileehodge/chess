@@ -11,7 +11,6 @@ public class KnightMovesCalc {
     public static Collection<ChessMove> getMoves(ChessBoard board, ChessPosition myPosition) {
         int row = myPosition.getRow();
         int col = myPosition.getColumn();
-        ChessPiece.PieceType promo = null;
         Collection<ChessMove> acceptableMoves = new ArrayList<>();
         ChessPosition endPosition;
         ChessPiece target;
@@ -22,14 +21,14 @@ public class KnightMovesCalc {
             endPosition = new ChessPosition(row + 2, col + 1);
             target = board.getPiece(endPosition);
             if (target == null || target.getTeamColor() != mainCharacter.getTeamColor()) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
             }
         }
         if (row <= 7 && col <= 6) {
             endPosition = new ChessPosition(row + 1, col + 2);
             target = board.getPiece(endPosition);
             if (target == null || target.getTeamColor() != mainCharacter.getTeamColor()) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
             }
         }
 
@@ -38,14 +37,14 @@ public class KnightMovesCalc {
             endPosition = new ChessPosition(row + 2, col - 1);
             target = board.getPiece(endPosition);
             if (target == null || target.getTeamColor() != mainCharacter.getTeamColor()) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
             }
         }
         if (row <= 7 && col >= 3) {
             endPosition = new ChessPosition(row + 1, col - 2);
             target = board.getPiece(endPosition);
             if (target == null || target.getTeamColor() != mainCharacter.getTeamColor()) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
             }
         }
 
@@ -54,14 +53,14 @@ public class KnightMovesCalc {
             endPosition = new ChessPosition(row - 2, col + 1);
             target = board.getPiece(endPosition);
             if (target == null || target.getTeamColor() != mainCharacter.getTeamColor()) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
             }
         }
         if (row >= 2 && col <= 6) {
             endPosition = new ChessPosition(row - 1, col + 2);
             target = board.getPiece(endPosition);
             if (target == null || target.getTeamColor() != mainCharacter.getTeamColor()) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
             }
         }
 
@@ -70,14 +69,14 @@ public class KnightMovesCalc {
             endPosition = new ChessPosition(row - 2, col - 1);
             target = board.getPiece(endPosition);
             if (target == null || target.getTeamColor() != mainCharacter.getTeamColor()) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
             }
         }
         if (row >= 2 && col >= 3) {
             endPosition = new ChessPosition(row - 1, col - 2);
             target = board.getPiece(endPosition);
             if (target == null || target.getTeamColor() != mainCharacter.getTeamColor()) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
             }
         }
 
