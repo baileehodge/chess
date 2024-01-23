@@ -4,13 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="“And I feel God in this Chili’s tonight.”">
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessMove.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessMove.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessPosition.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessPosition.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/PieceMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/PieceMovesCalc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/BishopMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/BishopMovesCalc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/KingMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/KingMovesCalc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/KnightMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/KnightMovesCalc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/PawnMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/PawnMovesCalc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/QueenMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/QueenMovesCalc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/RookMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/RookMovesCalc.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -26,6 +31,20 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;baileehodge&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="9ad7b74d-5ef6-408e-99fb-2a35af35bb23" />
+        <option name="url" value="https://github.com/baileehodge/chess.git" />
+      </UrlAndAccount>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -46,19 +65,23 @@
     "JUnit.BishopMoveTests.bishopBlocked.executor": "Debug",
     "JUnit.BishopMoveTests.bishopCaptureEnemy.executor": "Debug",
     "JUnit.BishopMoveTests.bishopMoveUntilEdge.executor": "Debug",
-    "JUnit.BishopMoveTests.executor": "Debug",
+    "JUnit.BishopMoveTests.executor": "Run",
     "JUnit.ChessBoardTests.defaultGameBoard.executor": "Debug",
+    "JUnit.ChessBoardTests.executor": "Debug",
     "JUnit.ChessBoardTests.getAddPiece.executor": "Debug",
     "JUnit.ChessMoveTests.equalsTest.executor": "Debug",
     "JUnit.ChessMoveTests.executor": "Debug",
     "JUnit.ChessMoveTests.hashSetTest.executor": "Debug",
     "JUnit.ChessMoveTests.hashTest.executor": "Debug",
     "JUnit.ChessPositionTests.equalsTest.executor": "Debug",
+    "JUnit.ChessPositionTests.executor": "Debug",
     "JUnit.ChessPositionTests.hashSetTest.executor": "Debug",
     "JUnit.ChessPositionTests.hashTest.executor": "Debug",
+    "JUnit.KingMoveTests.executor": "Run",
     "JUnit.KingMoveTests.kingBlocked.executor": "Debug",
     "JUnit.KingMoveTests.kingCaptureEnemy.executor": "Debug",
     "JUnit.KingMoveTests.kingMoveUntilEdge.executor": "Debug",
+    "JUnit.KnightMoveTests.executor": "Run",
     "JUnit.KnightMoveTests.knightBlocked.executor": "Debug",
     "JUnit.KnightMoveTests.knightCaptureEnemy.executor": "Debug",
     "JUnit.KnightMoveTests.knightCornerOfBoardBottomLeft.executor": "Debug",
@@ -71,19 +94,20 @@
     "JUnit.KnightMoveTests.knightEdgeOfBoardTop.executor": "Debug",
     "JUnit.KnightMoveTests.knightMiddleOfBoardBlack.executor": "Debug",
     "JUnit.KnightMoveTests.knightMiddleOfBoardWhite.executor": "Debug",
-    "JUnit.PawnMoveTests.edgePromotionBlack.executor": "Debug",
+    "JUnit.PawnMoveTests.edgePromotionBlack.executor": "Run",
+    "JUnit.PawnMoveTests.executor": "Debug",
     "JUnit.PawnMoveTests.pawnAdvanceBlockedBlack.executor": "Debug",
     "JUnit.PawnMoveTests.pawnAdvanceBlockedDoubleMoveBlack.executor": "Debug",
     "JUnit.PawnMoveTests.pawnAdvanceBlockedDoubleMoveWhite.executor": "Debug",
     "JUnit.PawnMoveTests.pawnAdvanceBlockedWhite.executor": "Debug",
-    "JUnit.PawnMoveTests.pawnCaptureBlack.executor": "Debug",
-    "JUnit.PawnMoveTests.pawnCaptureWhite.executor": "Debug",
-    "JUnit.PawnMoveTests.pawnInitialMoveBlack.executor": "Debug",
-    "JUnit.PawnMoveTests.pawnInitialMoveWhite.executor": "Debug",
-    "JUnit.PawnMoveTests.pawnMiddleOfBoardBlack.executor": "Debug",
-    "JUnit.PawnMoveTests.pawnMiddleOfBoardWhite.executor": "Debug",
-    "JUnit.PawnMoveTests.pawnPromotionCapture.executor": "Debug",
-    "JUnit.PawnMoveTests.pawnPromotionWhite.executor": "Debug",
+    "JUnit.PawnMoveTests.pawnCaptureBlack.executor": "Run",
+    "JUnit.PawnMoveTests.pawnCaptureWhite.executor": "Run",
+    "JUnit.PawnMoveTests.pawnInitialMoveBlack.executor": "Run",
+    "JUnit.PawnMoveTests.pawnInitialMoveWhite.executor": "Run",
+    "JUnit.PawnMoveTests.pawnMiddleOfBoardBlack.executor": "Run",
+    "JUnit.PawnMoveTests.pawnMiddleOfBoardWhite.executor": "Run",
+    "JUnit.PawnMoveTests.pawnPromotionCapture.executor": "Run",
+    "JUnit.PawnMoveTests.pawnPromotionWhite.executor": "Run",
     "JUnit.QueenMoveTests.queenBlocked.executor": "Debug",
     "JUnit.QueenMoveTests.queenCaptureEnemy.executor": "Debug",
     "JUnit.QueenMoveTests.queenMoveUntilEdge.executor": "Debug",
@@ -118,8 +142,8 @@
       <recent name="chess" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.BishopMoveTests.bishopMoveUntilEdge">
-    <configuration name="BishopMoveTests.bishopBlocked" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.PawnMoveTests.pawnInitialMoveWhite">
+    <configuration name="PawnMoveTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shared" />
       <extension name="coverage">
         <pattern>
@@ -128,71 +152,71 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="passoffTests.chessTests.chessPieceTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.chessPieceTests.BishopMoveTests" />
-      <option name="METHOD_NAME" value="bishopBlocked" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="BishopMoveTests.bishopMoveUntilEdge" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="shared" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="passoffTests.chessTests.chessPieceTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.chessTests.chessPieceTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.chessPieceTests.BishopMoveTests" />
-      <option name="METHOD_NAME" value="bishopMoveUntilEdge" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ChessMoveTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="shared" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="passoffTests.chessTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.chessTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.ChessMoveTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.chessPieceTests.PawnMoveTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChessMoveTests.equalsTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PawnMoveTests.pawnCaptureBlack" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shared" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="passoffTests.chessTests.*" />
+          <option name="PATTERN" value="passoffTests.chessTests.chessPieceTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.chessTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.ChessMoveTests" />
-      <option name="METHOD_NAME" value="equalsTest" />
+      <option name="PACKAGE_NAME" value="passoffTests.chessTests.chessPieceTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.chessPieceTests.PawnMoveTests" />
+      <option name="METHOD_NAME" value="pawnCaptureBlack" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChessMoveTests.hashTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="PawnMoveTests.pawnInitialMoveWhite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shared" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="passoffTests.chessTests.*" />
+          <option name="PATTERN" value="passoffTests.chessTests.chessPieceTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.chessTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.ChessMoveTests" />
-      <option name="METHOD_NAME" value="hashTest" />
+      <option name="PACKAGE_NAME" value="passoffTests.chessTests.chessPieceTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.chessPieceTests.PawnMoveTests" />
+      <option name="METHOD_NAME" value="pawnInitialMoveWhite" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PawnMoveTests.pawnMiddleOfBoardBlack" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shared" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="passoffTests.chessTests.chessPieceTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="passoffTests.chessTests.chessPieceTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.chessPieceTests.PawnMoveTests" />
+      <option name="METHOD_NAME" value="pawnMiddleOfBoardBlack" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PawnMoveTests.pawnMiddleOfBoardWhite" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shared" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="passoffTests.chessTests.chessPieceTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="passoffTests.chessTests.chessPieceTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.chessPieceTests.PawnMoveTests" />
+      <option name="METHOD_NAME" value="pawnMiddleOfBoardWhite" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -200,11 +224,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.BishopMoveTests.bishopMoveUntilEdge" />
-        <item itemvalue="JUnit.ChessMoveTests.hashTest" />
-        <item itemvalue="JUnit.ChessMoveTests.equalsTest" />
-        <item itemvalue="JUnit.ChessMoveTests" />
-        <item itemvalue="JUnit.BishopMoveTests.bishopBlocked" />
+        <item itemvalue="JUnit.PawnMoveTests.pawnInitialMoveWhite" />
+        <item itemvalue="JUnit.PawnMoveTests.pawnMiddleOfBoardBlack" />
+        <item itemvalue="JUnit.PawnMoveTests.pawnMiddleOfBoardWhite" />
+        <item itemvalue="JUnit.PawnMoveTests" />
+        <item itemvalue="JUnit.PawnMoveTests.pawnCaptureBlack" />
       </list>
     </recent_temporary>
   </component>
@@ -226,7 +250,9 @@
       <updated>1702312869025</updated>
       <workItem from="1705624600282" duration="219000" />
       <workItem from="1705624832324" duration="12553000" />
-      <workItem from="1705687067089" duration="10461000" />
+      <workItem from="1705687067089" duration="10560000" />
+      <workItem from="1705768969210" duration="12484000" />
+      <workItem from="1705940496615" duration="16732000" />
     </task>
     <task id="LOCAL-00001" summary="fix(tests) removed extra credit tests">
       <option name="closed" value="true" />
@@ -300,7 +326,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705691511861</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="Friday EOD&#10;-Add print statements to find the source of the empty array&#10;-get it to return the correct moves&#10;-find a boyfriend">
+      <option name="closed" value="true" />
+      <created>1705733155478</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1705733155478</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -314,7 +348,8 @@
     <MESSAGE value="Fixed the &quot;index out of range&quot; issue" />
     <MESSAGE value="1.18.24 EOD" />
     <MESSAGE value="“And I feel God in this Chili’s tonight.”" />
-    <option name="LAST_COMMIT_MESSAGE" value="“And I feel God in this Chili’s tonight.”" />
+    <MESSAGE value="Friday EOD&#10;-Add print statements to find the source of the empty array&#10;-get it to return the correct moves&#10;-find a boyfriend" />
+    <option name="LAST_COMMIT_MESSAGE" value="Friday EOD&#10;-Add print statements to find the source of the empty array&#10;-get it to return the correct moves&#10;-find a boyfriend" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/chess$BishopMoveTests_bishopMoveUntilEdge.ic" NAME="BishopMoveTests.bishopMoveUntilEdge Coverage Results" MODIFIED="1705624942104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

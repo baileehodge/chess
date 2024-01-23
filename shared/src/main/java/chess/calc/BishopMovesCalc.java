@@ -15,24 +15,28 @@ public class BishopMovesCalc {
         Collection<ChessMove> acceptableMoves = new ArrayList<>();
         ChessPosition endPosition;
         ChessPiece target;
-        ChessPiece mainCharacter = ChessBoard.getPiece(myPosition);
+        ChessPiece mainCharacter = board.getPiece(myPosition);
 
         // Go back and put duplicate code into functions
 
         //Check up & to the right
         while (col <= 8 && col >= 1 && row <= 8 && row >= 1 && !collision) {
-            row++;
-            col++;
             endPosition = new ChessPosition(row,col);
-            target = ChessBoard.getPiece(myPosition);
+            target = board.getPiece(endPosition);
             if (target != null) {
                 collision = true;
                 if (target.getTeamColor() != mainCharacter.getTeamColor()) {
                     acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
                 }
             }
-            if (!collision)
-                acceptableMoves.add(new ChessMove(myPosition,endPosition,promo));
+            if (!collision) {
+                acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+            }
+            row++;
+            col++;
+            if (target == mainCharacter) {
+                collision = false;
+            }
         }
 
         // reset
@@ -42,18 +46,22 @@ public class BishopMovesCalc {
 
         // check up & to the left
         while (col <= 8 && col >= 1 && row <= 8 && row >= 1 && !collision) {
-            row++;
-            col--;
             endPosition = new ChessPosition(row,col);
-            target = ChessBoard.getPiece(myPosition);
+            target = board.getPiece(endPosition);
             if (target != null) {
                 collision = true;
                 if (target.getTeamColor() != mainCharacter.getTeamColor()) {
                     acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
                 }
             }
-            if (!collision)
-                acceptableMoves.add(new ChessMove(myPosition,endPosition,promo));
+            if (!collision) {
+                acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+            }
+            row++;
+            col--;
+            if (target == mainCharacter) {
+                collision = false;
+            }
         }
 
         // reset
@@ -63,18 +71,22 @@ public class BishopMovesCalc {
 
         //check down & to the right
         while (col <= 8 && col >= 1 && row <= 8 && row >= 1 && !collision) {
-            row--;
-            col++;
             endPosition = new ChessPosition(row,col);
-            target = ChessBoard.getPiece(myPosition);
+            target = board.getPiece(endPosition);
             if (target != null) {
                 collision = true;
                 if (target.getTeamColor() != mainCharacter.getTeamColor()) {
                     acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
                 }
             }
-            if (!collision)
-                acceptableMoves.add(new ChessMove(myPosition,endPosition,promo));
+            if (!collision) {
+                acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+            }
+            row--;
+            col++;
+            if (target == mainCharacter) {
+                collision = false;
+            }
         }
 
         // reset
@@ -84,18 +96,22 @@ public class BishopMovesCalc {
 
         // check down and to the left
         while (col <= 8 && col >= 1 && row <= 8 && row >= 1 && !collision) {
-            row--;
-            col--;
             endPosition = new ChessPosition(row,col);
-            target = ChessBoard.getPiece(myPosition);
+            target = board.getPiece(endPosition);
             if (target != null) {
                 collision = true;
                 if (target.getTeamColor() != mainCharacter.getTeamColor()) {
                     acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
                 }
             }
-            if (!collision)
-                acceptableMoves.add(new ChessMove(myPosition,endPosition,promo));
+            if (!collision) {
+                acceptableMoves.add(new ChessMove(myPosition, endPosition, promo));
+            }
+            row--;
+            col--;
+            if (target == mainCharacter) {
+                collision = false;
+            }
         }
 
         // reset
