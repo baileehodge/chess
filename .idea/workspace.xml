@@ -4,7 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Passing everything except reset board, even though the reset board test Expected and Actual are identical." />
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="It works! Praise the Lord. [Had to override the hashCode in a couple of places.]">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/BishopMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/BishopMovesCalc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/KingMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/KingMovesCalc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/KnightMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/KnightMovesCalc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/PawnMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/PawnMovesCalc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/QueenMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/QueenMovesCalc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/RookMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/RookMovesCalc.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -236,6 +244,11 @@
       <workItem from="1705768969210" duration="12484000" />
       <workItem from="1705940496615" duration="16732000" />
       <workItem from="1705991859580" duration="5126000" />
+      <workItem from="1705998070464" duration="749000" />
+      <workItem from="1706240239296" duration="1617000" />
+      <workItem from="1706243054081" duration="135000" />
+      <workItem from="1706243689639" duration="4636000" />
+      <workItem from="1706334929277" duration="1603000" />
     </task>
     <task id="LOCAL-00001" summary="fix(tests) removed extra credit tests">
       <option name="closed" value="true" />
@@ -341,7 +354,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705998036069</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="It works! Praise the Lord. [Had to override the hashCode in a couple of places.]">
+      <option name="closed" value="true" />
+      <created>1705998281148</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1705998281148</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -359,33 +380,8 @@
     <MESSAGE value="Bishop, Knight, and King pass the tests. Pawn in progress" />
     <MESSAGE value="Pawn tests pass" />
     <MESSAGE value="Passing everything except reset board, even though the reset board test Expected and Actual are identical." />
-    <option name="LAST_COMMIT_MESSAGE" value="Passing everything except reset board, even though the reset board test Expected and Actual are identical." />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java</url>
-          <line>63</line>
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java</url>
-          <line>70</line>
-          <option name="timeStamp" value="3" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java</url>
-          <line>78</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java</url>
-          <line>79</line>
-          <option name="timeStamp" value="5" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="It works! Praise the Lord. [Had to override the hashCode in a couple of places.]" />
+    <option name="LAST_COMMIT_MESSAGE" value="It works! Praise the Lord. [Had to override the hashCode in a couple of places.]" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/chess$BishopMoveTests_bishopMoveUntilEdge.ic" NAME="BishopMoveTests.bishopMoveUntilEdge Coverage Results" MODIFIED="1705624942104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

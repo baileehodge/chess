@@ -4,121 +4,89 @@ import chess.ChessBoard;
 import chess.ChessMove;
 import chess.ChessPiece;
 import chess.ChessPosition;
-import java.util.*;
+
+import java.util.ArrayList;
+import java.util.Collection;
 
 public class BishopMovesCalc {
-    public static Collection<ChessMove> getMoves(ChessBoard board, ChessPosition myPosition) {
+    static Collection<ChessMove> moves = new ArrayList<>();
+    static ChessBoard board = new ChessBoard();
+    static boolean collision = false;
+
+    public static Collection<ChessMove> getMoves(ChessBoard chessBoard, ChessPosition myPosition) {
+        board = chessBoard;
+        calcMoves(board, myPosition);
+
+        return moves;
+    }
+    public static void calcMoves(ChessBoard board, ChessPosition myPosition) {
+        moves = new ArrayList<>();
+
+        // row col of the protagonist
         int row = myPosition.getRow();
         int col = myPosition.getColumn();
-        boolean collision = false;
-        Collection<ChessMove> acceptableMoves = new ArrayList<>();
-        ChessPosition endPosition;
-        ChessPiece target;
-        ChessPiece mainCharacter = board.getPiece(myPosition);
 
-        // Go back and put duplicate code into functions
+        // row col of the target
+        int i;
+        int j;
 
-        //Check up & to the right
-        while (col <= 8 && col >= 1 && row <= 8 && row >= 1 && !collision) {
-            endPosition = new ChessPosition(row,col);
-            target = board.getPiece(endPosition);
-            if (target != null) {
-                collision = true;
-                if (target.getTeamColor() != mainCharacter.getTeamColor()) {
-                    acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
-                }
-            }
-            if (!collision) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
-            }
-            row++;
-            col++;
-            if (target == mainCharacter) {
-                collision = false;
-            }
+        // check up & to the right
+        i = row + 1;
+        j = col + 1;
+        while (!collision && i >= 1 && i <= 8 && j >= 1 && j <= 8) {
+            examine(myPosition, new ChessPosition(i,j));
+            i++;
+            j++;
         }
-
-        // reset
-        row = myPosition.getRow();
-        col = myPosition.getColumn();
         collision = false;
 
         // check up & to the left
-        while (col <= 8 && col >= 1 && row <= 8 && row >= 1 && !collision) {
-            endPosition = new ChessPosition(row,col);
-            target = board.getPiece(endPosition);
-            if (target != null) {
-                collision = true;
-                if (target.getTeamColor() != mainCharacter.getTeamColor()) {
-                    acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
-                }
-            }
-            if (!collision) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
-            }
-            row++;
-            col--;
-            if (target == mainCharacter) {
-                collision = false;
-            }
+        i = row + 1;
+        j = col - 1;
+        while (!collision && i >= 1 && i <= 8 && j >= 1 && j <= 8) {
+            examine(myPosition, new ChessPosition(i,j));
+            i++;
+            j--;
         }
-
-        // reset
-        row = myPosition.getRow();
-        col = myPosition.getColumn();
         collision = false;
 
-        //check down & to the right
-        while (col <= 8 && col >= 1 && row <= 8 && row >= 1 && !collision) {
-            endPosition = new ChessPosition(row,col);
-            target = board.getPiece(endPosition);
-            if (target != null) {
-                collision = true;
-                if (target.getTeamColor() != mainCharacter.getTeamColor()) {
-                    acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
-                }
-            }
-            if (!collision) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
-            }
-            row--;
-            col++;
-            if (target == mainCharacter) {
-                collision = false;
-            }
+        // check down & to the right
+        i = row - 1;
+        j = col + 1;
+        while (!collision && i >= 1 && i <= 8 && j >= 1 && j <= 8) {
+            examine(myPosition, new ChessPosition(i,j));
+            i--;
+            j++;
         }
-
-        // reset
-        row = myPosition.getRow();
-        col = myPosition.getColumn();
         collision = false;
 
-        // check down and to the left
-        while (col <= 8 && col >= 1 && row <= 8 && row >= 1 && !collision) {
-            endPosition = new ChessPosition(row,col);
-            target = board.getPiece(endPosition);
-            if (target != null) {
-                collision = true;
-                if (target.getTeamColor() != mainCharacter.getTeamColor()) {
-                    acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
-                }
-            }
-            if (!collision) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
-            }
-            row--;
-            col--;
-            if (target == mainCharacter) {
-                collision = false;
-            }
+        // check down & to the left
+        i = row - 1;
+        j = col - 1;
+        while (!collision && i >= 1 && i <= 8 && j >= 1 && j <= 8) {
+            examine(myPosition, new ChessPosition(i,j));
+            i--;
+            j--;
         }
-
-        // reset
-        row = myPosition.getRow();
-        col = myPosition.getColumn();
         collision = false;
 
-        return acceptableMoves;
+
+    }
+
+    public static void examine(ChessPosition start, ChessPosition end) {
+        ChessPiece protagonist = board.getPiece(start);
+        ChessPiece target = board.getPiece(end);
+
+        if (target == null) {
+            moves.add(new ChessMove(start, end, null));
+        }
+        else if (target.getTeamColor() != protagonist.getTeamColor()) {
+            moves.add(new ChessMove(start, end, null));
+            collision = true;
+        }
+        else {
+            collision = true;
+        }
 
     }
 }

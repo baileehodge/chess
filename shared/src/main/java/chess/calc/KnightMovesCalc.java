@@ -4,82 +4,90 @@ import chess.ChessBoard;
 import chess.ChessMove;
 import chess.ChessPiece;
 import chess.ChessPosition;
+
 import java.util.ArrayList;
 import java.util.Collection;
 
 public class KnightMovesCalc {
-    public static Collection<ChessMove> getMoves(ChessBoard board, ChessPosition myPosition) {
+    static Collection<ChessMove> moves = new ArrayList<>();
+    static ChessBoard board = new ChessBoard();
+
+    public static Collection<ChessMove> getMoves(ChessBoard chessBoard, ChessPosition myPosition) {
+        board = chessBoard;
+        calcMoves(board, myPosition);
+
+        return moves;
+    }
+    public static void calcMoves(ChessBoard board, ChessPosition myPosition) {
+        moves = new ArrayList<>();
+
+        // row col of the protagonist
         int row = myPosition.getRow();
         int col = myPosition.getColumn();
-        Collection<ChessMove> acceptableMoves = new ArrayList<>();
-        ChessPosition endPosition;
-        ChessPiece target;
-        ChessPiece mainCharacter = board.getPiece(myPosition);
 
-        // Check up & to the right
-        if (row <= 6 && col <= 7) {
-            endPosition = new ChessPosition(row + 2, col + 1);
-            target = board.getPiece(endPosition);
-            if (target == null || target.getTeamColor() != mainCharacter.getTeamColor()) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
-            }
+        // row col of the target
+        int i;
+        int j;
+
+        // check up & to the right
+        i = row + 2;
+        j = col + 1;
+        if (i >= 1 && i <= 8 && j >= 1 && j <= 8) {
+            examine(myPosition, new ChessPosition(i,j));
         }
-        if (row <= 7 && col <= 6) {
-            endPosition = new ChessPosition(row + 1, col + 2);
-            target = board.getPiece(endPosition);
-            if (target == null || target.getTeamColor() != mainCharacter.getTeamColor()) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
-            }
+        i = row + 1;
+        j = col + 2;
+        if (i >= 1 && i <= 8 && j >= 1 && j <= 8) {
+            examine(myPosition, new ChessPosition(i,j));
         }
 
-        // Check up & to the left
-        if (row <= 6 && col >= 2) {
-            endPosition = new ChessPosition(row + 2, col - 1);
-            target = board.getPiece(endPosition);
-            if (target == null || target.getTeamColor() != mainCharacter.getTeamColor()) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
-            }
+        // check up & to the left
+        i = row + 2;
+        j = col - 1;
+        if (i >= 1 && i <= 8 && j >= 1 && j <= 8) {
+            examine(myPosition, new ChessPosition(i,j));
         }
-        if (row <= 7 && col >= 3) {
-            endPosition = new ChessPosition(row + 1, col - 2);
-            target = board.getPiece(endPosition);
-            if (target == null || target.getTeamColor() != mainCharacter.getTeamColor()) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
-            }
+        i = row + 1;
+        j = col - 2;
+        if (i >= 1 && i <= 8 && j >= 1 && j <= 8) {
+            examine(myPosition, new ChessPosition(i,j));
         }
 
-        // Check down & to the right
-        if (row >= 3 && col <= 7) {
-            endPosition = new ChessPosition(row - 2, col + 1);
-            target = board.getPiece(endPosition);
-            if (target == null || target.getTeamColor() != mainCharacter.getTeamColor()) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
-            }
+        // check down & to the right
+        i = row - 2;
+        j = col + 1;
+        if (i >= 1 && i <= 8 && j >= 1 && j <= 8) {
+            examine(myPosition, new ChessPosition(i,j));
         }
-        if (row >= 2 && col <= 6) {
-            endPosition = new ChessPosition(row - 1, col + 2);
-            target = board.getPiece(endPosition);
-            if (target == null || target.getTeamColor() != mainCharacter.getTeamColor()) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
-            }
+        i = row - 1;
+        j = col + 2;
+        if (i >= 1 && i <= 8 && j >= 1 && j <= 8) {
+            examine(myPosition, new ChessPosition(i,j));
         }
 
-        // Check down & to the left
-        if (row >= 3 && col >= 2) {
-            endPosition = new ChessPosition(row - 2, col - 1);
-            target = board.getPiece(endPosition);
-            if (target == null || target.getTeamColor() != mainCharacter.getTeamColor()) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
-            }
+        // check down & to the left
+        i = row - 2;
+        j = col - 1;
+        if (i >= 1 && i <= 8 && j >= 1 && j <= 8) {
+            examine(myPosition, new ChessPosition(i,j));
         }
-        if (row >= 2 && col >= 3) {
-            endPosition = new ChessPosition(row - 1, col - 2);
-            target = board.getPiece(endPosition);
-            if (target == null || target.getTeamColor() != mainCharacter.getTeamColor()) {
-                acceptableMoves.add(new ChessMove(myPosition, endPosition, null));
-            }
+        // check down & to the left
+        i = row - 1;
+        j = col - 2;
+        if (i >= 1 && i <= 8 && j >= 1 && j <= 8) {
+            examine(myPosition, new ChessPosition(i,j));
         }
+    }
 
-        return acceptableMoves;
+    public static void examine(ChessPosition start, ChessPosition end) {
+        ChessPiece protagonist = board.getPiece(start);
+        ChessPiece target = board.getPiece(end);
+
+        if (target == null) {
+            moves.add(new ChessMove(start, end, null));
+        }
+        else if (target.getTeamColor() != protagonist.getTeamColor()) {
+            moves.add(new ChessMove(start, end, null));
+        }
     }
 }
