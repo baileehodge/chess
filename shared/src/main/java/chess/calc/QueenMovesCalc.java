@@ -19,6 +19,7 @@ public class QueenMovesCalc {
 
         return moves;
     }
+
     public static void calcMoves(ChessBoard board, ChessPosition myPosition) {
         moves = new ArrayList<>();
 
@@ -36,7 +37,7 @@ public class QueenMovesCalc {
         i = row + 1;
         j = col + 1;
         while (!collision && i >= 1 && i <= 8 && j >= 1 && j <= 8) {
-            examine(myPosition, new ChessPosition(i,j));
+            examine(myPosition, new ChessPosition(i, j));
             i++;
             j++;
         }
@@ -46,7 +47,7 @@ public class QueenMovesCalc {
         i = row + 1;
         j = col - 1;
         while (!collision && i >= 1 && i <= 8 && j >= 1 && j <= 8) {
-            examine(myPosition, new ChessPosition(i,j));
+            examine(myPosition, new ChessPosition(i, j));
             i++;
             j--;
         }
@@ -56,7 +57,7 @@ public class QueenMovesCalc {
         i = row - 1;
         j = col + 1;
         while (!collision && i >= 1 && i <= 8 && j >= 1 && j <= 8) {
-            examine(myPosition, new ChessPosition(i,j));
+            examine(myPosition, new ChessPosition(i, j));
             i--;
             j++;
         }
@@ -66,7 +67,7 @@ public class QueenMovesCalc {
         i = row - 1;
         j = col - 1;
         while (!collision && i >= 1 && i <= 8 && j >= 1 && j <= 8) {
-            examine(myPosition, new ChessPosition(i,j));
+            examine(myPosition, new ChessPosition(i, j));
             i--;
             j--;
         }
@@ -80,7 +81,7 @@ public class QueenMovesCalc {
         i = row + 1;
         j = col;
         while (!collision && i >= 1 && i <= 8 && j >= 1 && j <= 8) {
-            examine(myPosition, new ChessPosition(i,j));
+            examine(myPosition, new ChessPosition(i, j));
             i++;
         }
         collision = false;
@@ -89,7 +90,7 @@ public class QueenMovesCalc {
         i = row;
         j = col - 1;
         while (!collision && i >= 1 && i <= 8 && j >= 1 && j <= 8) {
-            examine(myPosition, new ChessPosition(i,j));
+            examine(myPosition, new ChessPosition(i, j));
             j--;
         }
         collision = false;
@@ -98,7 +99,7 @@ public class QueenMovesCalc {
         i = row - 1;
         j = col;
         while (!collision && i >= 1 && i <= 8 && j >= 1 && j <= 8) {
-            examine(myPosition, new ChessPosition(i,j));
+            examine(myPosition, new ChessPosition(i, j));
             i--;
         }
         collision = false;
@@ -107,11 +108,10 @@ public class QueenMovesCalc {
         i = row;
         j = col + 1;
         while (!collision && i >= 1 && i <= 8 && j >= 1 && j <= 8) {
-            examine(myPosition, new ChessPosition(i,j));
+            examine(myPosition, new ChessPosition(i, j));
             j++;
         }
         collision = false;
-
 
 
     }
@@ -122,12 +122,10 @@ public class QueenMovesCalc {
 
         if (target == null) {
             moves.add(new ChessMove(start, end, null));
-        }
-        else if (target.getTeamColor() != protagonist.getTeamColor()) {
+        } else if (target.getTeamColor() != protagonist.getTeamColor()) {
             moves.add(new ChessMove(start, end, null));
             collision = true;
-        }
-        else {
+        } else {
             collision = true;
         }
 

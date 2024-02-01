@@ -17,7 +17,7 @@ public class ChessBoard {
     private ChessPiece[][] squares = new ChessPiece[8][8];
 
     public ChessBoard() {
-        
+
     }
 
     /**
@@ -27,8 +27,8 @@ public class ChessBoard {
      * @param piece    the piece to add
      */
     public void addPiece(ChessPosition position, ChessPiece piece) {
-        int row = position.getRow()-1;
-        int column = position.getColumn()-1;
+        int row = position.getRow() - 1;
+        int column = position.getColumn() - 1;
 
         // Check if the row index is within the valid range
         if (row < 0 || row >= squares.length) {
@@ -51,7 +51,7 @@ public class ChessBoard {
      * position
      */
     public ChessPiece getPiece(ChessPosition position) {
-        return squares[position.getRow()-1][position.getColumn()-1];
+        return squares[position.getRow() - 1][position.getColumn() - 1];
     }
 
     /**
@@ -78,42 +78,43 @@ public class ChessBoard {
 
         // add rooks
         piece = new ChessPiece(WHITE, ROOK);
-        addPiece(new ChessPosition(1,1), piece);
-        addPiece(new ChessPosition(1,8), piece);
+        addPiece(new ChessPosition(1, 1), piece);
+        addPiece(new ChessPosition(1, 8), piece);
         piece = new ChessPiece(BLACK, ROOK);
-        addPiece(new ChessPosition(8,1), piece);
-        addPiece(new ChessPosition(8,8), piece);
+        addPiece(new ChessPosition(8, 1), piece);
+        addPiece(new ChessPosition(8, 8), piece);
 
         // add knights
         piece = new ChessPiece(WHITE, KNIGHT);
-        addPiece(new ChessPosition(1,2), piece);
-        addPiece(new ChessPosition(1,7), piece);
+        addPiece(new ChessPosition(1, 2), piece);
+        addPiece(new ChessPosition(1, 7), piece);
         piece = new ChessPiece(BLACK, KNIGHT);
-        addPiece(new ChessPosition(8,2), piece);
-        addPiece(new ChessPosition(8,7), piece);
+        addPiece(new ChessPosition(8, 2), piece);
+        addPiece(new ChessPosition(8, 7), piece);
 
         // add bishops
         piece = new ChessPiece(WHITE, BISHOP);
-        addPiece(new ChessPosition(1,3), piece);
-        addPiece(new ChessPosition(1,6), piece);
+        addPiece(new ChessPosition(1, 3), piece);
+        addPiece(new ChessPosition(1, 6), piece);
         piece = new ChessPiece(BLACK, BISHOP);
-        addPiece(new ChessPosition(8,3), piece);
-        addPiece(new ChessPosition(8,6), piece);
+        addPiece(new ChessPosition(8, 3), piece);
+        addPiece(new ChessPosition(8, 6), piece);
 
         // add kings
         piece = new ChessPiece(WHITE, KING);
-        addPiece(new ChessPosition(1,5), piece);
+        addPiece(new ChessPosition(1, 5), piece);
         piece = new ChessPiece(BLACK, KING);
-        addPiece(new ChessPosition(8,5), piece);
+        addPiece(new ChessPosition(8, 5), piece);
 
         // add Queens
         piece = new ChessPiece(WHITE, QUEEN);
-        addPiece(new ChessPosition(1,4), piece);
+        addPiece(new ChessPosition(1, 4), piece);
         piece = new ChessPiece(BLACK, QUEEN);
-        addPiece(new ChessPosition(8,4), piece);
+        addPiece(new ChessPosition(8, 4), piece);
 
 
     }
+
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();

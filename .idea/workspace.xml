@@ -1,15 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="AnalysisUIOptions">
+    <option name="ANALYZE_INJECTED_CODE" value="false" />
+  </component>
   <component name="AutoImportSettings">
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="It works! Praise the Lord. [Had to override the hashCode in a couple of places.]">
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Switched out some of the code for calculating the piece moves with the code I wrote prepping for the programming exam since it was more concise. Tests still pass.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/BishopMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/BishopMovesCalc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/KingMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/KingMovesCalc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/KnightMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/KnightMovesCalc.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/PawnMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/PawnMovesCalc.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/QueenMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/QueenMovesCalc.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/calc/RookMovesCalc.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/calc/RookMovesCalc.java" afterDir="false" />
     </list>
@@ -44,6 +44,9 @@
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 6
@@ -130,6 +133,8 @@
     &quot;project.structure.last.edited&quot;: &quot;Project&quot;,
     &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
@@ -142,7 +147,7 @@
       <recent name="chess" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.java in shared">
+  <component name="RunManager" selected="JUnit.ChessGameTests">
     <configuration name="ChessBoardTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shared" />
       <extension name="coverage">
@@ -174,6 +179,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ChessGameTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shared" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="passoffTests.chessTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="passoffTests.chessTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.ChessGameTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="QueenMoveTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shared" />
       <extension name="coverage">
@@ -189,21 +209,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="RookMoveTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="shared" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="passoffTests.chessTests.chessPieceTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.chessTests.chessPieceTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.chessPieceTests.RookMoveTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="java in shared" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shared" />
       <option name="TEST_OBJECT" value="directory" />
@@ -214,17 +219,18 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ChessGameTests" />
         <item itemvalue="JUnit.java in shared" />
         <item itemvalue="JUnit.ChessBoardTests.defaultGameBoard" />
         <item itemvalue="JUnit.ChessBoardTests" />
         <item itemvalue="JUnit.QueenMoveTests" />
-        <item itemvalue="JUnit.RookMoveTests" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
+        <option value="jdk-21.0.1-corretto-21.0.1-4caba194b151-0837d75e" />
         <option value="jdk-21.0.1-corretto-21.0.1-f644763e9732-eed86825" />
         <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
       </set>
@@ -248,7 +254,11 @@
       <workItem from="1706240239296" duration="1617000" />
       <workItem from="1706243054081" duration="135000" />
       <workItem from="1706243689639" duration="4636000" />
-      <workItem from="1706334929277" duration="1603000" />
+      <workItem from="1706334929277" duration="1704000" />
+      <workItem from="1706735074943" duration="534000" />
+      <workItem from="1706735629605" duration="86000" />
+      <workItem from="1706735796475" duration="587000" />
+      <workItem from="1706761705904" duration="15000" />
     </task>
     <task id="LOCAL-00001" summary="fix(tests) removed extra credit tests">
       <option name="closed" value="true" />
@@ -362,7 +372,15 @@
       <option name="project" value="LOCAL" />
       <updated>1705998281148</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="Switched out some of the code for calculating the piece moves with the code I wrote prepping for the programming exam since it was more concise. Tests still pass.">
+      <option name="closed" value="true" />
+      <created>1706336674864</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1706336674864</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -381,7 +399,8 @@
     <MESSAGE value="Pawn tests pass" />
     <MESSAGE value="Passing everything except reset board, even though the reset board test Expected and Actual are identical." />
     <MESSAGE value="It works! Praise the Lord. [Had to override the hashCode in a couple of places.]" />
-    <option name="LAST_COMMIT_MESSAGE" value="It works! Praise the Lord. [Had to override the hashCode in a couple of places.]" />
+    <MESSAGE value="Switched out some of the code for calculating the piece moves with the code I wrote prepping for the programming exam since it was more concise. Tests still pass." />
+    <option name="LAST_COMMIT_MESSAGE" value="Switched out some of the code for calculating the piece moves with the code I wrote prepping for the programming exam since it was more concise. Tests still pass." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/chess$BishopMoveTests_bishopMoveUntilEdge.ic" NAME="BishopMoveTests.bishopMoveUntilEdge Coverage Results" MODIFIED="1705624942104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
