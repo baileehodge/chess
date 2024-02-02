@@ -7,10 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="validMoves method complete">
-      <change afterPath="$PROJECT_DIR$/shared/src/main/java/chess/Simulation.java" afterDir="false" />
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="- created simulation class&#10;- took notes on its implementation&#10;- &quot;Alexa, play Young Folks by Peter Bjorn and John.&quot;">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessGame.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/Simulation.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -263,7 +262,7 @@
       <workItem from="1706761731093" duration="1474000" />
       <workItem from="1706763220323" duration="1000" />
       <workItem from="1706887021697" duration="1254000" />
-      <workItem from="1706888873075" duration="6157000" />
+      <workItem from="1706888873075" duration="7780000" />
     </task>
     <task id="LOCAL-00001" summary="fix(tests) removed extra credit tests">
       <option name="closed" value="true" />
@@ -409,7 +408,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706890328505</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="- created simulation class&#10;- took notes on its implementation&#10;- &quot;Alexa, play Young Folks by Peter Bjorn and John.&quot;">
+      <option name="closed" value="true" />
+      <created>1706899416958</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1706899416958</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -433,7 +440,8 @@
     <MESSAGE value="Added ChessGame tests.&#10;Played with formatting.&#10;Cried, but only a little." />
     <MESSAGE value="Basic setup" />
     <MESSAGE value="validMoves method complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="validMoves method complete" />
+    <MESSAGE value="- created simulation class&#10;- took notes on its implementation&#10;- &quot;Alexa, play Young Folks by Peter Bjorn and John.&quot;" />
+    <option name="LAST_COMMIT_MESSAGE" value="- created simulation class&#10;- took notes on its implementation&#10;- &quot;Alexa, play Young Folks by Peter Bjorn and John.&quot;" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/chess$BishopMoveTests_bishopMoveUntilEdge.ic" NAME="BishopMoveTests.bishopMoveUntilEdge Coverage Results" MODIFIED="1705624942104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
