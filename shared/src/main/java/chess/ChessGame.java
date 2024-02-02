@@ -81,9 +81,10 @@ public class ChessGame {
         }
         // see if move leaves the team's king in danger
         if (!Simulation.simulateMoves(board, move)) {
-            throw new InvalidMoveException("Puts king in check");
+            throw new InvalidMoveException("Puts own king in check");
         }
 
+        // if it puts the other king in check, update blackCheck or whiteCheck
 
         // since none of those went off, make the move
 
