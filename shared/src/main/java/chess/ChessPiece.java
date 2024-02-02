@@ -53,7 +53,7 @@ public class ChessPiece {
      *
      * @return Collection of valid moves
      */
-    public Collection<ChessMove> pieceMoves(ChessBoard board, ChessPosition myPosition) {
+    public static Collection<ChessMove> pieceMoves(ChessBoard board, ChessPosition myPosition) {
         /* redirects to the other pieceMoves function */
         return PieceMovesCalc.pieceMoves(board, myPosition);
     }

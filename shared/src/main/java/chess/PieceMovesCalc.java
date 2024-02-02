@@ -35,8 +35,8 @@ public class PieceMovesCalc<board, position> {
         else if (type == ChessPiece.PieceType.PAWN) {
             return PawnMovesCalc.getMoves(board, myPosition);
         }
-
-
-        return BishopMovesCalc.getMoves(board, myPosition);
+        else {
+            return null;
+        }
     }
 }
