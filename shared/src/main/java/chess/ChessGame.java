@@ -70,7 +70,24 @@ public class ChessGame {
      * @throws InvalidMoveException if move is invalid
      */
     public void makeMove(ChessMove move) throws InvalidMoveException {
-        throw new RuntimeException("Not implemented");
+        // see if move is in validMoves
+        Collection<ChessMove> moves = validMoves(move.getStartPosition());
+        if (!moves.contains(move)) {
+            throw new InvalidMoveException("Piece cannot move there");
+        }
+        // see if it's actually the team's turn
+        if (board.getPiece(move.getStartPosition()).getTeamColor() != turn) {
+            throw new InvalidMoveException("It's not your turn");
+        }
+        // see if move leaves the team's king in danger
+        if (!Simulation.simulateMoves(board, move)) {
+            throw new InvalidMoveException("Puts king in check");
+        }
+
+
+        // since none of those went off, make the move
+
+        throw new InvalidMoveException("Make move not implemented");
     }
 
     /**
