@@ -11,7 +11,7 @@ public class Simulation {
 
     public static boolean simulateMoves(ChessBoard board, ChessMove move) {
         ChessBoard simBoard = new ChessBoard();
-        simBoard = board;
+        simBoard = new ChessBoard(board);
         ChessPosition kingPosition = null;
         ChessPiece tempPiece;
         ChessPosition tempPosition;
@@ -42,14 +42,16 @@ public class Simulation {
         // keep going while the answer is true
         // if we get a false, return false
         // if it all passes through true, return true
-        while (result) {
-            for (int i = 1; i <= 8; i++) {
-                for (int j = 1; j <= 8; j++) {
-                    tempPosition = new ChessPosition(i, j);
-                    tempPiece = simBoard.getPiece(tempPosition);
-                    if (tempPiece != null) {
-                        if (tempPiece.getTeamColor() != teamColor) {
-                            result = simulateMove(simBoard, tempPosition, kingPosition);
+
+        for (int i = 1; i <= 8; i++) {
+            for (int j = 1; j <= 8; j++) {
+                tempPosition = new ChessPosition(i, j);
+                tempPiece = simBoard.getPiece(tempPosition);
+                if (tempPiece != null) {
+                    if (tempPiece.getTeamColor() != teamColor) {
+                        result = simulateMove(simBoard, tempPosition, kingPosition);
+                        if (!result) {
+                            return result;
                         }
                     }
                 }
@@ -63,25 +65,20 @@ public class Simulation {
         Collection<ChessMove> moves = new ArrayList<>();
 
         moves = PieceMovesCalc.pieceMoves(simBoard, enemyPosition);
-        boolean result = true;
 
-        while (result) {
-            assert moves != null;
-            for (ChessMove move : moves) {
-                if (move.getEndPosition() == kingPosition) {
-                    result = false;
-                    break;
-                }
+
+        assert moves != null;
+        for (ChessMove move : moves) {
+            if (move.getEndPosition() == kingPosition) {
+                return false;
             }
         }
-
+        return true;
         // iterate through the end positions
         // see if any of them are equal to the kingPosition
         // if they are, result = false
         // if we get through true, return true
         // while (status == true) {} probably
-
-        return result;
     }
 
 }

@@ -19,6 +19,19 @@ public class ChessBoard {
     public ChessBoard() {
 
     }
+    public ChessBoard(ChessBoard original) {
+        ChessBoard evilTwin = new ChessBoard();
+        for (int i = 1; i <= 8; i++) {
+            for (int j = 1; j <= 8; j++) {
+                ChessPiece originalPiece = original.getPiece(new ChessPosition(i,j));
+                if (originalPiece != null) {
+                    ChessPiece copyPiece = new ChessPiece(originalPiece.getTeamColor(), originalPiece.getPieceType());
+                    evilTwin.addPiece(new ChessPosition(i, j), copyPiece);
+                }
+            }
+        }
+    }
+
 
     /**
      * Adds a chess piece to the chessboard
@@ -145,4 +158,7 @@ public class ChessBoard {
     public int hashCode() {
         return Arrays.deepHashCode(squares);
     }
+
 }
+
+

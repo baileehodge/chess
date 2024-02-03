@@ -38,6 +38,15 @@ public class ChessGame {
     public void setTeamTurn(TeamColor team) {
         turn = team;
     }
+    public void switchTeamTurn() {
+
+        if (turn == TeamColor.WHITE) {
+            turn = TeamColor.BLACK;
+        }
+        else if (turn == TeamColor.BLACK) {
+            turn = TeamColor.WHITE;
+        }
+    }
 
     /**
      * Enum identifying the 2 possible teams in a chess game
@@ -72,23 +81,28 @@ public class ChessGame {
     public void makeMove(ChessMove move) throws InvalidMoveException {
         // see if move is in validMoves
         Collection<ChessMove> moves = validMoves(move.getStartPosition());
+
         if (!moves.contains(move)) {
             throw new InvalidMoveException("Piece cannot move there");
         }
         // see if it's actually the team's turn
-        if (board.getPiece(move.getStartPosition()).getTeamColor() != turn) {
+        else if (board.getPiece(move.getStartPosition()).getTeamColor() != turn) {
             throw new InvalidMoveException("It's not your turn");
         }
         // see if move leaves the team's king in danger
-        if (!Simulation.simulateMoves(board, move)) {
+        else if (!Simulation.simulateMoves(board, move)) {
             throw new InvalidMoveException("Puts own king in check");
+        }
+        // since none of those went off, make the move
+        else {
+            board.addPiece(move.getEndPosition(), board.getPiece(move.getStartPosition()));
+            board.addPiece(move.getStartPosition(), null);
+
+            switchTeamTurn();
         }
 
         // if it puts the other king in check, update blackCheck or whiteCheck
 
-        // since none of those went off, make the move
-
-        throw new InvalidMoveException("Make move not implemented");
     }
 
     /**
