@@ -23,10 +23,18 @@ public class Simulation {
         simBoard.addPiece(move.getEndPosition(), simBoard.getPiece(move.getStartPosition()));
         simBoard.addPiece(move.getStartPosition(), null);
 
+        return kingSafe(simBoard, teamColor);
+    }
+
+    static boolean kingSafe(ChessBoard board, ChessGame.TeamColor teamColor) {
+        ChessPosition tempPosition;
+        ChessPiece tempPiece;
+        ChessPosition kingPosition = null;
+        boolean result;
         // find the position of the home team king
         for (int i = 1; i <= 8; i++) {
             for (int j = 1; j <= 8; j++) {
-                tempPiece = simBoard.getPiece(new ChessPosition(i,j));
+                tempPiece = board.getPiece(new ChessPosition(i,j));
                 if (tempPiece != null) {
                     if (tempPiece.getPieceType() == KING && tempPiece.getTeamColor() == teamColor) {
                         kingPosition = new ChessPosition(i,j);
@@ -39,32 +47,31 @@ public class Simulation {
 
         // iterate through every enemy piece on simBoard
         // call simulateMove on each
-        // keep going while the answer is true
         // if we get a false, return false
         // if it all passes through true, return true
 
         for (int i = 1; i <= 8; i++) {
             for (int j = 1; j <= 8; j++) {
                 tempPosition = new ChessPosition(i, j);
-                tempPiece = simBoard.getPiece(tempPosition);
+                tempPiece = board.getPiece(tempPosition);
                 if (tempPiece != null) {
                     if (tempPiece.getTeamColor() != teamColor) {
-                        result = simulateMove(simBoard, tempPosition, kingPosition);
+                        result = simulateMove(board, tempPosition, kingPosition);
                         if (!result) {
-                            return result;
+                            return false;
                         }
                     }
                 }
             }
         }
 
-        return result;
+        return true;
     }
 
-    private static boolean simulateMove(ChessBoard simBoard, ChessPosition enemyPosition, ChessPosition kingPosition) {
+    private static boolean simulateMove(ChessBoard board, ChessPosition enemyPosition, ChessPosition kingPosition) {
         Collection<ChessMove> moves = new ArrayList<>();
 
-        moves = PieceMovesCalc.pieceMoves(simBoard, enemyPosition);
+        moves = PieceMovesCalc.pieceMoves(board, enemyPosition);
 
 
         assert moves != null;
@@ -74,11 +81,6 @@ public class Simulation {
             }
         }
         return true;
-        // iterate through the end positions
-        // see if any of them are equal to the kingPosition
-        // if they are, result = false
-        // if we get through true, return true
-        // while (status == true) {} probably
     }
 
 }

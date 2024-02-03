@@ -3,6 +3,8 @@ package chess;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import static chess.Simulation.kingSafe;
+
 /**
  * For a class that can manage a chess game, making moves on a board
  * <p>
@@ -12,10 +14,9 @@ import java.util.Collection;
 public class ChessGame {
     static ChessBoard board;
     static TeamColor turn;
-    static boolean blackCheck = false;
+
     static boolean blackCheckmate = false;
     static boolean blackStale = false;
-    static boolean whiteCheck = false;
     static boolean whiteCheckmate = false;
     static boolean whiteStale = false;
 
@@ -112,17 +113,8 @@ public class ChessGame {
      * @return True if the specified team is in check
      */
     public boolean isInCheck(TeamColor teamColor) {
+        return !kingSafe(board, teamColor);
 
-        if (teamColor == TeamColor.BLACK) {
-            return blackCheck;
-        }
-
-        else if (teamColor == TeamColor.WHITE) {
-            return whiteCheck;
-        }
-        else {
-            throw new RuntimeException("No Team Color");
-        }
     }
 
     /**

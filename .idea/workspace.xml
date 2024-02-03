@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Updated ChessGameTests.java to new file">
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Passes makeValidMoves test.&#10;&#10;Alexa, play Tik Tok by Ke$ha.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessGame.java" afterDir="false" />
@@ -74,7 +74,7 @@
     "JUnit.ChessGameTests.makeValidMoves.executor": "Run",
     "JUnit.ChessGameTests.promotionMoves.executor": "Run",
     "JUnit.ChessMoveTests.equalsTest.executor": "Debug",
-    "JUnit.ChessMoveTests.executor": "Debug",
+    "JUnit.ChessMoveTests.executor": "Run",
     "JUnit.ChessMoveTests.hashSetTest.executor": "Debug",
     "JUnit.ChessMoveTests.hashTest.executor": "Debug",
     "JUnit.ChessPositionTests.equalsTest.executor": "Debug",
@@ -152,7 +152,22 @@
       <recent name="chess" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ChessGameTests">
+  <component name="RunManager" selected="JUnit.ChessGameTests.invalidMoves">
+    <configuration name="ChessBoardTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shared" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="passoffTests.chessTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="passoffTests.chessTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.ChessBoardTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="ChessGameTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shared" />
       <extension name="coverage">
@@ -200,7 +215,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChessGameTests.promotionMoves" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ChessMoveTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shared" />
       <extension name="coverage">
         <pattern>
@@ -209,28 +224,19 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="passoffTests.chessTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.ChessGameTests" />
-      <option name="METHOD_NAME" value="promotionMoves(chess.ChessPiece$PieceType)" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="java in shared" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="shared" />
-      <option name="TEST_OBJECT" value="directory" />
-      <dir value="$PROJECT_DIR$/shared/src/test/java" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.ChessMoveTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ChessGameTests" />
-        <item itemvalue="JUnit.ChessGameTests.makeValidMoves" />
         <item itemvalue="JUnit.ChessGameTests.invalidMoves" />
-        <item itemvalue="JUnit.ChessGameTests.promotionMoves" />
-        <item itemvalue="JUnit.java in shared" />
+        <item itemvalue="JUnit.ChessGameTests.makeValidMoves" />
+        <item itemvalue="JUnit.ChessBoardTests" />
+        <item itemvalue="JUnit.ChessMoveTests" />
+        <item itemvalue="JUnit.ChessGameTests" />
       </list>
     </recent_temporary>
   </component>
@@ -270,7 +276,7 @@
       <workItem from="1706763220323" duration="1000" />
       <workItem from="1706887021697" duration="1254000" />
       <workItem from="1706888873075" duration="9592000" />
-      <workItem from="1706918898131" duration="7572000" />
+      <workItem from="1706918898131" duration="11080000" />
     </task>
     <task id="LOCAL-00001" summary="fix(tests) removed extra credit tests">
       <option name="closed" value="true" />
@@ -448,7 +454,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706919435926</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="Passes makeValidMoves test.&#10;&#10;Alexa, play Tik Tok by Ke$ha.">
+      <option name="closed" value="true" />
+      <created>1706931304442</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1706931304442</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -476,18 +490,8 @@
     <MESSAGE value="SimulateMoves function written. Not tested; waiting on simulateMove function." />
     <MESSAGE value="simulateMove function written." />
     <MESSAGE value="Updated ChessGameTests.java to new file" />
-    <option name="LAST_COMMIT_MESSAGE" value="Updated ChessGameTests.java to new file" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/shared/src/main/java/chess/ChessGame.java</url>
-          <line>88</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="Passes makeValidMoves test.&#10;&#10;Alexa, play Tik Tok by Ke$ha." />
+    <option name="LAST_COMMIT_MESSAGE" value="Passes makeValidMoves test.&#10;&#10;Alexa, play Tik Tok by Ke$ha." />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/chess$BishopMoveTests_bishopMoveUntilEdge.ic" NAME="BishopMoveTests.bishopMoveUntilEdge Coverage Results" MODIFIED="1705624942104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

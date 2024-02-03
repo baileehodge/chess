@@ -64,7 +64,14 @@ public class ChessBoard {
      * position
      */
     public ChessPiece getPiece(ChessPosition position) {
-        return squares[position.getRow() - 1][position.getColumn() - 1];
+        int row = position.getRow();
+        int col = position.getColumn();
+        if (row <= 0 || col <= 0 || row > 8 || col > 8) {
+            return null;
+        }
+        else {
+            return squares[position.getRow() - 1][position.getColumn() - 1];
+        }
     }
 
     /**
