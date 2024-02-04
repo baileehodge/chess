@@ -32,13 +32,14 @@ public class Simulation {
         ChessPosition kingPosition = null;
         boolean result;
         // find the position of the home team king
+        outerLoop:
         for (int i = 1; i <= 8; i++) {
             for (int j = 1; j <= 8; j++) {
                 tempPiece = board.getPiece(new ChessPosition(i,j));
                 if (tempPiece != null) {
                     if (tempPiece.getPieceType() == KING && tempPiece.getTeamColor() == teamColor) {
                         kingPosition = new ChessPosition(i,j);
-                        break;
+                        break outerLoop;
                     }
                 }
             }
@@ -76,7 +77,7 @@ public class Simulation {
 
         assert moves != null;
         for (ChessMove move : moves) {
-            if (move.getEndPosition() == kingPosition) {
+            if (move.getEndPosition().equals(kingPosition)) {
                 return false;
             }
         }

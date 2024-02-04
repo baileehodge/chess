@@ -7,9 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Passes makeValidMoves test.&#10;&#10;Alexa, play Tik Tok by Ke$ha.">
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="2.2.24 EOD.&#10;isInCheck doesn't work.&#10;&#10;Alexa, play 'ourselves' by Coeur.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessGame.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/Simulation.java" afterDir="false" />
     </list>
@@ -69,8 +68,11 @@
     "JUnit.ChessBoardTests.defaultGameBoard.executor": "Run",
     "JUnit.ChessBoardTests.executor": "Run",
     "JUnit.ChessBoardTests.getAddPiece.executor": "Debug",
+    "JUnit.ChessGameTests$ValidMoveTests.executor": "Run",
+    "JUnit.ChessGameTests$ValidMoveTests.forcedMove.executor": "Run",
+    "JUnit.ChessGameTests$ValidMoveTests.rookPinnedToKing.executor": "Run",
     "JUnit.ChessGameTests.executor": "Run",
-    "JUnit.ChessGameTests.invalidMoves.executor": "Run",
+    "JUnit.ChessGameTests.invalidMoves.executor": "Debug",
     "JUnit.ChessGameTests.makeValidMoves.executor": "Run",
     "JUnit.ChessGameTests.promotionMoves.executor": "Run",
     "JUnit.ChessMoveTests.equalsTest.executor": "Debug",
@@ -152,8 +154,8 @@
       <recent name="chess" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ChessGameTests.invalidMoves">
-    <configuration name="ChessBoardTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ChessGameTests$ValidMoveTests.forcedMove">
+    <configuration name="ChessGameTests$ValidMoveTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shared" />
       <extension name="coverage">
         <pattern>
@@ -161,9 +163,41 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.chessTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.ChessBoardTests" />
+      <option name="PACKAGE_NAME" value="passoffTests.chessTests.ChessGameTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.ChessGameTests$ValidMoveTests" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChessGameTests$ValidMoveTests.forcedMove" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shared" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="passoffTests.chessTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="passoffTests.chessTests.ChessGameTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.ChessGameTests$ValidMoveTests" />
+      <option name="METHOD_NAME" value="forcedMove" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ChessGameTests$ValidMoveTests.rookPinnedToKing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="shared" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="passoffTests.chessTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="passoffTests.chessTests.ChessGameTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.ChessGameTests$ValidMoveTests" />
+      <option name="METHOD_NAME" value="rookPinnedToKing" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -199,43 +233,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ChessGameTests.makeValidMoves" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="shared" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="passoffTests.chessTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.chessTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.ChessGameTests" />
-      <option name="METHOD_NAME" value="makeValidMoves" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ChessMoveTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="shared" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="passoffTests.chessTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.chessTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.ChessMoveTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ChessGameTests$ValidMoveTests.forcedMove" />
+        <item itemvalue="JUnit.ChessGameTests$ValidMoveTests.rookPinnedToKing" />
+        <item itemvalue="JUnit.ChessGameTests$ValidMoveTests" />
         <item itemvalue="JUnit.ChessGameTests.invalidMoves" />
-        <item itemvalue="JUnit.ChessGameTests.makeValidMoves" />
-        <item itemvalue="JUnit.ChessBoardTests" />
-        <item itemvalue="JUnit.ChessMoveTests" />
         <item itemvalue="JUnit.ChessGameTests" />
       </list>
     </recent_temporary>
@@ -276,7 +279,8 @@
       <workItem from="1706763220323" duration="1000" />
       <workItem from="1706887021697" duration="1254000" />
       <workItem from="1706888873075" duration="9592000" />
-      <workItem from="1706918898131" duration="11080000" />
+      <workItem from="1706918898131" duration="13168000" />
+      <workItem from="1706989137712" duration="5538000" />
     </task>
     <task id="LOCAL-00001" summary="fix(tests) removed extra credit tests">
       <option name="closed" value="true" />
@@ -462,7 +466,15 @@
       <option name="project" value="LOCAL" />
       <updated>1706931304442</updated>
     </task>
-    <option name="localTasksCounter" value="24" />
+    <task id="LOCAL-00024" summary="2.2.24 EOD.&#10;isInCheck doesn't work.&#10;&#10;Alexa, play 'ourselves' by Coeur.">
+      <option name="closed" value="true" />
+      <created>1706935907229</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1706935907229</updated>
+    </task>
+    <option name="localTasksCounter" value="25" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -491,7 +503,24 @@
     <MESSAGE value="simulateMove function written." />
     <MESSAGE value="Updated ChessGameTests.java to new file" />
     <MESSAGE value="Passes makeValidMoves test.&#10;&#10;Alexa, play Tik Tok by Ke$ha." />
-    <option name="LAST_COMMIT_MESSAGE" value="Passes makeValidMoves test.&#10;&#10;Alexa, play Tik Tok by Ke$ha." />
+    <MESSAGE value="2.2.24 EOD.&#10;isInCheck doesn't work.&#10;&#10;Alexa, play 'ourselves' by Coeur." />
+    <option name="LAST_COMMIT_MESSAGE" value="2.2.24 EOD.&#10;isInCheck doesn't work.&#10;&#10;Alexa, play 'ourselves' by Coeur." />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/shared/src/test/java/passoffTests/chessTests/ChessGameTests.java</url>
+          <line>299</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/shared/src/main/java/chess/Simulation.java</url>
+          <line>59</line>
+          <option name="timeStamp" value="30" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/chess$BishopMoveTests_bishopMoveUntilEdge.ic" NAME="BishopMoveTests.bishopMoveUntilEdge Coverage Results" MODIFIED="1705624942104" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

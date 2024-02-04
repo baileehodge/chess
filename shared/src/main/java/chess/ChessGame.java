@@ -69,8 +69,14 @@ public class ChessGame {
             return null;
         }
         else {
-            return ChessPiece.pieceMoves(board, startPosition);
+            Collection<ChessMove> moves = ChessPiece.pieceMoves(board, startPosition);
+            // remove if it's not your turn
+            moves.removeIf(move -> board.getPiece(move.getStartPosition()).getTeamColor() != turn);
+            // remove if it puts your own king in danger
+            moves.removeIf(move -> !Simulation.simulateMoves(board, move));
+            return moves;
         }
+        // TODO: go through and delete moves if they do bad things
     }
 
     /**
