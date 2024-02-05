@@ -20,13 +20,13 @@ public class ChessBoard {
 
     }
     public ChessBoard(ChessBoard original) {
-        ChessBoard evilTwin = new ChessBoard();
+        squares = new ChessPiece[8][8];
         for (int i = 1; i <= 8; i++) {
             for (int j = 1; j <= 8; j++) {
                 ChessPiece originalPiece = original.getPiece(new ChessPosition(i,j));
                 if (originalPiece != null) {
                     ChessPiece copyPiece = new ChessPiece(originalPiece.getTeamColor(), originalPiece.getPieceType());
-                    evilTwin.addPiece(new ChessPosition(i, j), copyPiece);
+                    addPiece(new ChessPosition(i,j), copyPiece);
                 }
             }
         }
@@ -138,9 +138,8 @@ public class ChessBoard {
     @Override
     public String toString() {
         StringBuilder sb = new StringBuilder();
-        for (int row = 0; row < squares.length; row++) {
-            for (int column = 0; column < squares[row].length; column++) {
-                ChessPiece piece = squares[row][column];
+        for (ChessPiece[] square : squares) {
+            for (ChessPiece piece : square) {
                 if (piece != null) {
                     sb.append(piece.toString());
                 } else {

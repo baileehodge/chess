@@ -14,10 +14,7 @@ import static chess.Simulation.kingSafe;
 public class ChessGame {
     static ChessBoard board;
     static TeamColor turn;
-
-    static boolean blackCheckmate = false;
     static boolean blackStale = false;
-    static boolean whiteCheckmate = false;
     static boolean whiteStale = false;
 
     public ChessGame() {
@@ -70,13 +67,10 @@ public class ChessGame {
         }
         else {
             Collection<ChessMove> moves = ChessPiece.pieceMoves(board, startPosition);
-            // remove if it's not your turn
-            moves.removeIf(move -> board.getPiece(move.getStartPosition()).getTeamColor() != turn);
             // remove if it puts your own king in danger
             moves.removeIf(move -> !Simulation.simulateMoves(board, move));
             return moves;
         }
-        // TODO: go through and delete moves if they do bad things
     }
 
     /**
@@ -130,17 +124,11 @@ public class ChessGame {
      * @return True if the specified team is in checkmate
      */
     public boolean isInCheckmate(TeamColor teamColor) {
-        if (teamColor == TeamColor.BLACK) {
-            return blackCheckmate;
-        }
+        // if the size of valid moves is 0 and it's that team's turn
 
-        else if (teamColor == TeamColor.WHITE) {
-            return whiteCheckmate;
-        }
-        else {
-            throw new RuntimeException("No Team Color");
-        }
+        return true;
     }
+
 
     /**
      * Determines if the given team is in stalemate, which here is defined as having
