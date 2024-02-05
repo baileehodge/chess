@@ -3,6 +3,8 @@ package chess;
 import java.util.ArrayList;
 import java.util.Collection;
 
+import static chess.ChessGame.TeamColor.BLACK;
+import static chess.ChessGame.TeamColor.WHITE;
 import static chess.Simulation.kingSafe;
 
 /**
@@ -38,11 +40,11 @@ public class ChessGame {
     }
     public void switchTeamTurn() {
 
-        if (turn == TeamColor.WHITE) {
+        if (turn == WHITE) {
             turn = TeamColor.BLACK;
         }
         else if (turn == TeamColor.BLACK) {
-            turn = TeamColor.WHITE;
+            turn = WHITE;
         }
     }
 
@@ -95,15 +97,19 @@ public class ChessGame {
             throw new InvalidMoveException("Puts own king in check");
         }
         // since none of those went off, make the move
+        else if (move.getPromotionPiece() != null){
+            ChessPiece.PieceType type = move.getPromotionPiece();
+            board.addPiece(move.getEndPosition(), new ChessPiece(turn,type));
+            board.addPiece(move.getStartPosition(), null);
+
+            switchTeamTurn();
+        }
         else {
             board.addPiece(move.getEndPosition(), board.getPiece(move.getStartPosition()));
             board.addPiece(move.getStartPosition(), null);
 
             switchTeamTurn();
         }
-
-        // if it puts the other king in check, update blackCheck or whiteCheck
-
     }
 
     /**
@@ -124,9 +130,12 @@ public class ChessGame {
      * @return True if the specified team is in checkmate
      */
     public boolean isInCheckmate(TeamColor teamColor) {
-        // if the size of valid moves is 0 and it's that team's turn
+        // it's their turn
+        // their king is in check
+        // they cannot make a valid move
 
-        return true;
+        return teamColor == turn && isInCheck(teamColor) && isInStalemate(teamColor);
+
     }
 
 
@@ -138,16 +147,27 @@ public class ChessGame {
      * @return True if the specified team is in stalemate, otherwise false
      */
     public boolean isInStalemate(TeamColor teamColor) {
-        if (teamColor == TeamColor.BLACK) {
-            return blackStale;
+        ChessPosition tempPosition;
+        ChessPiece tempPiece;
+
+        // go through the whole board
+        for (int i = 1; i <= 8; i++) {
+            for (int j = 1; j <= 8; j++) {
+                tempPosition = new ChessPosition(i, j);
+                tempPiece = board.getPiece(tempPosition);
+                // if you find a piece of that team
+                if (tempPiece != null && tempPiece.getTeamColor() == teamColor) {
+                    // call validMoves on each piece of that color
+                    // if any of the calls returns one or more valid move, return false
+                    if (!validMoves(tempPosition).isEmpty()) {
+                        return false;
+                    }
+                }
+            }
         }
 
-        else if (teamColor == TeamColor.WHITE) {
-            return whiteStale;
-        }
-        else {
-            throw new RuntimeException("No Team Color");
-        }
+        return true;
+
     }
 
     /**
