@@ -1,11 +1,11 @@
 package chess;
 
-import java.util.ArrayList;
 import java.util.Collection;
 
-import static chess.ChessGame.TeamColor.BLACK;
 import static chess.ChessGame.TeamColor.WHITE;
 import static chess.Simulation.kingSafe;
+
+
 
 /**
  * For a class that can manage a chess game, making moves on a board
