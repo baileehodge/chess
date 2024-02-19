@@ -7,10 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="take 2">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="updated webpage design">
       <change beforePath="$PROJECT_DIR$/server/src/main/resources/web/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/web/index.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/web/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/web/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -284,7 +282,7 @@
       <workItem from="1707157071917" duration="11138000" />
       <workItem from="1707945660216" duration="250000" />
       <workItem from="1707945991557" duration="1929000" />
-      <workItem from="1708356432492" duration="6882000" />
+      <workItem from="1708356432492" duration="7300000" />
     </task>
     <task id="LOCAL-00001" summary="fix(tests) removed extra credit tests">
       <option name="closed" value="true" />
@@ -526,7 +524,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708366966571</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="updated webpage design">
+      <option name="closed" value="true" />
+      <created>1708386387967</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1708386387967</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -534,7 +540,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Implemented just enough to get rid of the &quot;not implemented&quot; errors" />
     <MESSAGE value="Fixed the &quot;index out of range&quot; issue" />
     <MESSAGE value="1.18.24 EOD" />
     <MESSAGE value="“And I feel God in this Chili’s tonight.”" />
@@ -559,7 +564,8 @@
     <MESSAGE value="Minor cleanup in prep for phase 3" />
     <MESSAGE value="Alexa, play &quot;Sweet Child o' Mine&quot; by Guns N Roses.&#10;-cleaned imports&#10;-phase 3 starter code&#10;-added code libraries" />
     <MESSAGE value="take 2" />
-    <option name="LAST_COMMIT_MESSAGE" value="take 2" />
+    <MESSAGE value="updated webpage design" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated webpage design" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

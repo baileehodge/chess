@@ -4,20 +4,20 @@
   --color-3: rgba(42, 157, 143, 0.5);
 
    /* light mode */
-  /*--white: #ffffff;*/
-  /*--dark-gray: #212121;*/
-  /*--light-gray: #4d4d4d;*/
+  /*--bg: #ffffff;*/
+  /*--neutral-1: #212121;*/
+  /*--neutral-2: #4d4d4d;*/
 
   /* dark mode */
-  --white: #171717;
-  --dark-gray: #ffffff;
-  --light-gray: #999999;
+  --bg: #171717;
+  --neutral-1: #ffffff;
+  --neutral-2: #999999;
 }
 
 html {
   font-family: Tahoma, sans-serif;
-  background: var(--white);
-  color: var(--dark-gray);
+  background: var(--bg);
+  color: var(--neutral-1);
 }
 body {
   max-width: 80em;
@@ -35,7 +35,7 @@ td {
 }
 .endpoint {
   background: var(--color-2);
-  color: var(--light-gray);
+  color: var(--neutral-2);
   text-decoration: none;
   font-weight: 600;
   padding: 0 1em;
@@ -44,12 +44,12 @@ td {
 }
 .endpoint:hover {
   background: var(--color-3);
-  color: var(--white);
+  color: var(--bg);
 }
 .method {
 font-size:smaller;
 padding-bottom:.5em;
-  color: var(--dark-gray);
+  color: var(--neutral-1);
 }
 .description {
   font-weight: 800;
@@ -57,7 +57,7 @@ padding-bottom:.5em;
   padding: 0 0 0.25em 0;
 }
 label {
-  color: var(--dark-gray);
+  color: var(--neutral-1);
 }
 input,
 textarea {
@@ -81,10 +81,10 @@ textarea {
   margin: 1em;
 }
 button {
-  background-color: var(--dark-gray);
+  background-color: var(--neutral-1);
   border-radius: 5px;
   border-style: none;
-  color: var(--white);
+  color: var(--bg);
   cursor: pointer;
   font-size: 16px;
   height: 30px;
@@ -95,10 +95,10 @@ button:hover {
   opacity: 0.8;
 }
 button:active {
-  background-color: var(--light-gray);
+  background-color: var(--neutral-2);
 }
 #response {
-  color: var(--dark-gray);
+  color: var(--neutral-1);
 }
 code {
   background-color: var(--color-1);
