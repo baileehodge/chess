@@ -1,6 +1,5 @@
-import chess.*;
-
-import static spark.Spark.*;
+import chess.ChessGame;
+import chess.ChessPiece;
 
 
 public class Main {

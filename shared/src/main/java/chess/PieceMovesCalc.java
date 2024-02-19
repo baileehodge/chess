@@ -1,14 +1,7 @@
 package chess;
 
-import chess.ChessBoard;
-import chess.ChessMove;
-import chess.ChessPosition;
-import chess.calc.BishopMovesCalc;
-import chess.calc.KingMovesCalc;
 import chess.calc.*;
 
-
-import java.util.ArrayList;
 import java.util.Collection;
 
 public class PieceMovesCalc<board, position> {

@@ -1,7 +1,10 @@
 package passoffTests.chessTests;
 
-import chess.*;
-import org.junit.jupiter.api.*;
+import chess.ChessPosition;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Test;
 import passoffTests.TestFactory;
 
 import java.util.HashSet;
