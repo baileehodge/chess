@@ -7,8 +7,24 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="updated webpage design">
-      <change beforePath="$PROJECT_DIR$/server/src/main/resources/web/index.css" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/resources/web/index.css" afterDir="false" />
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="updated webpage design -- pt ii">
+      <change afterPath="$PROJECT_DIR$/chess_diagram.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/Database.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/GameDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryAuthDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryGameDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryUserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/UserDAO.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/service/AuthService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/service/ClearService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/service/GameService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/test/java/server/ServerTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/src/main/java/model/AuthData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/src/main/java/model/GameData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/src/main/java/model/UserData.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,6 +34,7 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
@@ -122,6 +139,7 @@
     "JUnit.RookMoveTests.rookBlocked.executor": "Debug",
     "JUnit.RookMoveTests.rookCaptureEnemy.executor": "Debug",
     "JUnit.RookMoveTests.rookMoveUntilEdge.executor": "Debug",
+    "JUnit.StandardAPITests.executor": "Run",
     "JUnit.chessPieceTests in shared.executor": "Run",
     "JUnit.java in shared.executor": "Run",
     "Notification.DisplayName-DoNotAsk-External System Auto-Link Notification Group": "External system build scripts found",
@@ -132,6 +150,8 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "extract.method.default.visibility": "private",
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
@@ -154,27 +174,17 @@
       <recent name="$PROJECT_DIR$/server/lib" />
       <recent name="$PROJECT_DIR$/shared/src/test/java/passoffTests/chessTests" />
     </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="chess" />
     </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="server" />
+    </key>
   </component>
-  <component name="RunManager" selected="JUnit.chessPieceTests in shared">
-    <configuration name="ChessGameTests$ValidMoveTests.moveIntoCheck" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="shared" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="passoffTests.chessTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.chessTests.ChessGameTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.chessTests.ChessGameTests$ValidMoveTests" />
-      <option name="METHOD_NAME" value="moveIntoCheck" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.StandardAPITests">
     <configuration name="ChessGameTests$ValidMoveTests.rookPinnedToKing" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shared" />
       <extension name="coverage">
@@ -222,6 +232,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="StandardAPITests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="passoffTests.serverTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.StandardAPITests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="chessPieceTests in shared" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="shared" />
       <option name="TEST_OBJECT" value="directory" />
@@ -232,11 +257,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.StandardAPITests" />
         <item itemvalue="JUnit.chessPieceTests in shared" />
         <item itemvalue="JUnit.ChessGameTests" />
         <item itemvalue="JUnit.ChessGameTests.promotionMoves" />
         <item itemvalue="JUnit.ChessGameTests$ValidMoveTests.rookPinnedToKing" />
-        <item itemvalue="JUnit.ChessGameTests$ValidMoveTests.moveIntoCheck" />
       </list>
     </recent_temporary>
   </component>
@@ -282,7 +307,8 @@
       <workItem from="1707157071917" duration="11138000" />
       <workItem from="1707945660216" duration="250000" />
       <workItem from="1707945991557" duration="1929000" />
-      <workItem from="1708356432492" duration="7300000" />
+      <workItem from="1708356432492" duration="7654000" />
+      <workItem from="1708462796165" duration="7277000" />
     </task>
     <task id="LOCAL-00001" summary="fix(tests) removed extra credit tests">
       <option name="closed" value="true" />
@@ -532,7 +558,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708386387967</updated>
     </task>
-    <option name="localTasksCounter" value="32" />
+    <task id="LOCAL-00032" summary="updated webpage design -- pt ii">
+      <option name="closed" value="true" />
+      <created>1708386685241</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1708386685241</updated>
+    </task>
+    <option name="localTasksCounter" value="33" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -540,7 +574,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Fixed the &quot;index out of range&quot; issue" />
     <MESSAGE value="1.18.24 EOD" />
     <MESSAGE value="“And I feel God in this Chili’s tonight.”" />
     <MESSAGE value="Friday EOD&#10;-Add print statements to find the source of the empty array&#10;-get it to return the correct moves&#10;-find a boyfriend" />
@@ -565,7 +598,8 @@
     <MESSAGE value="Alexa, play &quot;Sweet Child o' Mine&quot; by Guns N Roses.&#10;-cleaned imports&#10;-phase 3 starter code&#10;-added code libraries" />
     <MESSAGE value="take 2" />
     <MESSAGE value="updated webpage design" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated webpage design" />
+    <MESSAGE value="updated webpage design -- pt ii" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated webpage design -- pt ii" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
