@@ -1,19 +1,34 @@
 package service;
 
+import dataAccess.AuthDAO;
+import dataAccess.DataAccessException;
 import model.*;
 
 public class AuthService {
 
-    public AuthData register(UserData user) {
-        return null;
+    private final AuthDAO dataAccess;
+
+    public AuthService(AuthDAO dataAccess) {
+        this.dataAccess = dataAccess;
     }
 
-    public AuthData login(UserData user) {
-        return null;
+    public AuthData createAuth(UserData user) throws DataAccessException {
+        return dataAccess.createAuth();
     }
 
-    public void logout(UserData user) {
+    public AuthData deleteAuth(UserData user) throws DataAccessException {
+
+        return dataAccess.deleteAuth();
+    }
+
+    public AuthData getAuth(UserData user) throws DataAccessException {
+        return dataAccess.getAuth();
     }
 
 
 }
+
+
+// createAuth
+// deleteAuth
+// getAuth

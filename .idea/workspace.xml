@@ -7,24 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="updated webpage design -- pt ii">
-      <change afterPath="$PROJECT_DIR$/chess_diagram.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/Database.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/GameDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryAuthDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryGameDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryUserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/UserDAO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/service/AuthService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/service/ClearService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/service/GameService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/test/java/server/ServerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/java/model/AuthData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/java/model/GameData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/shared/src/main/java/model/UserData.java" afterDir="false" />
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Alexa, play 'In the End' by Linkin Park">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/GameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/GameDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryAuthDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryAuthDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryGameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryGameDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryUserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/service/GameService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,102 +62,102 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Downloaded.Files.Path.Enabled": "false",
-    "JUnit.BishopMoveTests.bishopBlocked.executor": "Debug",
-    "JUnit.BishopMoveTests.bishopCaptureEnemy.executor": "Debug",
-    "JUnit.BishopMoveTests.bishopMoveUntilEdge.executor": "Debug",
-    "JUnit.BishopMoveTests.executor": "Run",
-    "JUnit.ChessBoardTests.defaultGameBoard.executor": "Run",
-    "JUnit.ChessBoardTests.executor": "Run",
-    "JUnit.ChessBoardTests.getAddPiece.executor": "Debug",
-    "JUnit.ChessGameTests$ValidMoveTests.executor": "Run",
-    "JUnit.ChessGameTests$ValidMoveTests.forcedMove.executor": "Run",
-    "JUnit.ChessGameTests$ValidMoveTests.moveIntoCheck.executor": "Run",
-    "JUnit.ChessGameTests$ValidMoveTests.rookPinnedToKing.executor": "Run",
-    "JUnit.ChessGameTests.executor": "Run",
-    "JUnit.ChessGameTests.invalidMoves.executor": "Run",
-    "JUnit.ChessGameTests.makeValidMoves.executor": "Run",
-    "JUnit.ChessGameTests.promotionMoves.executor": "Run",
-    "JUnit.ChessMoveTests.equalsTest.executor": "Debug",
-    "JUnit.ChessMoveTests.executor": "Run",
-    "JUnit.ChessMoveTests.hashSetTest.executor": "Debug",
-    "JUnit.ChessMoveTests.hashTest.executor": "Debug",
-    "JUnit.ChessPositionTests.equalsTest.executor": "Debug",
-    "JUnit.ChessPositionTests.executor": "Debug",
-    "JUnit.ChessPositionTests.hashSetTest.executor": "Debug",
-    "JUnit.ChessPositionTests.hashTest.executor": "Debug",
-    "JUnit.KingMoveTests.executor": "Run",
-    "JUnit.KingMoveTests.kingBlocked.executor": "Debug",
-    "JUnit.KingMoveTests.kingCaptureEnemy.executor": "Debug",
-    "JUnit.KingMoveTests.kingMoveUntilEdge.executor": "Debug",
-    "JUnit.KnightMoveTests.executor": "Run",
-    "JUnit.KnightMoveTests.knightBlocked.executor": "Debug",
-    "JUnit.KnightMoveTests.knightCaptureEnemy.executor": "Debug",
-    "JUnit.KnightMoveTests.knightCornerOfBoardBottomLeft.executor": "Debug",
-    "JUnit.KnightMoveTests.knightCornerOfBoardBottomRight.executor": "Debug",
-    "JUnit.KnightMoveTests.knightCornerOfBoardTopLeft.executor": "Debug",
-    "JUnit.KnightMoveTests.knightCornerOfBoardTopRight.executor": "Debug",
-    "JUnit.KnightMoveTests.knightEdgeOfBoardBottom.executor": "Debug",
-    "JUnit.KnightMoveTests.knightEdgeOfBoardLeft.executor": "Debug",
-    "JUnit.KnightMoveTests.knightEdgeOfBoardRight.executor": "Debug",
-    "JUnit.KnightMoveTests.knightEdgeOfBoardTop.executor": "Debug",
-    "JUnit.KnightMoveTests.knightMiddleOfBoardBlack.executor": "Debug",
-    "JUnit.KnightMoveTests.knightMiddleOfBoardWhite.executor": "Debug",
-    "JUnit.PawnMoveTests.edgePromotionBlack.executor": "Run",
-    "JUnit.PawnMoveTests.executor": "Run",
-    "JUnit.PawnMoveTests.pawnAdvanceBlockedBlack.executor": "Debug",
-    "JUnit.PawnMoveTests.pawnAdvanceBlockedDoubleMoveBlack.executor": "Debug",
-    "JUnit.PawnMoveTests.pawnAdvanceBlockedDoubleMoveWhite.executor": "Debug",
-    "JUnit.PawnMoveTests.pawnAdvanceBlockedWhite.executor": "Debug",
-    "JUnit.PawnMoveTests.pawnCaptureBlack.executor": "Run",
-    "JUnit.PawnMoveTests.pawnCaptureWhite.executor": "Run",
-    "JUnit.PawnMoveTests.pawnInitialMoveBlack.executor": "Run",
-    "JUnit.PawnMoveTests.pawnInitialMoveWhite.executor": "Run",
-    "JUnit.PawnMoveTests.pawnMiddleOfBoardBlack.executor": "Run",
-    "JUnit.PawnMoveTests.pawnMiddleOfBoardWhite.executor": "Run",
-    "JUnit.PawnMoveTests.pawnPromotionCapture.executor": "Run",
-    "JUnit.PawnMoveTests.pawnPromotionWhite.executor": "Run",
-    "JUnit.QueenMoveTests.executor": "Run",
-    "JUnit.QueenMoveTests.queenBlocked.executor": "Debug",
-    "JUnit.QueenMoveTests.queenCaptureEnemy.executor": "Debug",
-    "JUnit.QueenMoveTests.queenMoveUntilEdge.executor": "Debug",
-    "JUnit.RookMoveTests.executor": "Run",
-    "JUnit.RookMoveTests.rookBlocked.executor": "Debug",
-    "JUnit.RookMoveTests.rookCaptureEnemy.executor": "Debug",
-    "JUnit.RookMoveTests.rookMoveUntilEdge.executor": "Debug",
-    "JUnit.StandardAPITests.executor": "Run",
-    "JUnit.chessPieceTests in shared.executor": "Run",
-    "JUnit.java in shared.executor": "Run",
-    "Notification.DisplayName-DoNotAsk-External System Auto-Link Notification Group": "External system build scripts found",
-    "Notification.DoNotAsk-External System Auto-Link Notification Group": "true",
-    "Repository.Attach.Annotations": "false",
-    "Repository.Attach.JavaDocs": "false",
-    "Repository.Attach.Sources": "false",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
-    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
-    "extract.method.default.visibility": "private",
-    "git-widget-placeholder": "main",
-    "ignore.virus.scanning.warn.message": "true",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/baile/Schoolwork/Winter2024/CS240/chess",
-    "node.js.detected.package.eslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Libraries",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
+    &quot;JUnit.BishopMoveTests.bishopBlocked.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.BishopMoveTests.bishopCaptureEnemy.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.BishopMoveTests.bishopMoveUntilEdge.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.BishopMoveTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessBoardTests.defaultGameBoard.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessBoardTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessBoardTests.getAddPiece.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.ChessGameTests$ValidMoveTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessGameTests$ValidMoveTests.forcedMove.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessGameTests$ValidMoveTests.moveIntoCheck.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessGameTests$ValidMoveTests.rookPinnedToKing.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessGameTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessGameTests.invalidMoves.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessGameTests.makeValidMoves.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessGameTests.promotionMoves.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessMoveTests.equalsTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.ChessMoveTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.ChessMoveTests.hashSetTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.ChessMoveTests.hashTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.ChessPositionTests.equalsTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.ChessPositionTests.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.ChessPositionTests.hashSetTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.ChessPositionTests.hashTest.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.KingMoveTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.KingMoveTests.kingBlocked.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.KingMoveTests.kingCaptureEnemy.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.KingMoveTests.kingMoveUntilEdge.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.KnightMoveTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.KnightMoveTests.knightBlocked.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.KnightMoveTests.knightCaptureEnemy.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.KnightMoveTests.knightCornerOfBoardBottomLeft.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.KnightMoveTests.knightCornerOfBoardBottomRight.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.KnightMoveTests.knightCornerOfBoardTopLeft.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.KnightMoveTests.knightCornerOfBoardTopRight.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.KnightMoveTests.knightEdgeOfBoardBottom.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.KnightMoveTests.knightEdgeOfBoardLeft.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.KnightMoveTests.knightEdgeOfBoardRight.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.KnightMoveTests.knightEdgeOfBoardTop.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.KnightMoveTests.knightMiddleOfBoardBlack.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.KnightMoveTests.knightMiddleOfBoardWhite.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.PawnMoveTests.edgePromotionBlack.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PawnMoveTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PawnMoveTests.pawnAdvanceBlockedBlack.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.PawnMoveTests.pawnAdvanceBlockedDoubleMoveBlack.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.PawnMoveTests.pawnAdvanceBlockedDoubleMoveWhite.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.PawnMoveTests.pawnAdvanceBlockedWhite.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.PawnMoveTests.pawnCaptureBlack.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PawnMoveTests.pawnCaptureWhite.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PawnMoveTests.pawnInitialMoveBlack.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PawnMoveTests.pawnInitialMoveWhite.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PawnMoveTests.pawnMiddleOfBoardBlack.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PawnMoveTests.pawnMiddleOfBoardWhite.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PawnMoveTests.pawnPromotionCapture.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.PawnMoveTests.pawnPromotionWhite.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.QueenMoveTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.QueenMoveTests.queenBlocked.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.QueenMoveTests.queenCaptureEnemy.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.QueenMoveTests.queenMoveUntilEdge.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.RookMoveTests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.RookMoveTests.rookBlocked.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.RookMoveTests.rookCaptureEnemy.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.RookMoveTests.rookMoveUntilEdge.executor&quot;: &quot;Debug&quot;,
+    &quot;JUnit.StandardAPITests.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.chessPieceTests in shared.executor&quot;: &quot;Run&quot;,
+    &quot;JUnit.java in shared.executor&quot;: &quot;Run&quot;,
+    &quot;Notification.DisplayName-DoNotAsk-External System Auto-Link Notification Group&quot;: &quot;External system build scripts found&quot;,
+    &quot;Notification.DoNotAsk-External System Auto-Link Notification Group&quot;: &quot;true&quot;,
+    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
+    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
+    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
+    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/baile/Schoolwork/Winter2024/CS240/chess&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Libraries&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/server/lib" />
@@ -308,7 +297,9 @@
       <workItem from="1707945660216" duration="250000" />
       <workItem from="1707945991557" duration="1929000" />
       <workItem from="1708356432492" duration="7654000" />
-      <workItem from="1708462796165" duration="7277000" />
+      <workItem from="1708462796165" duration="7329000" />
+      <workItem from="1708545508548" duration="592000" />
+      <workItem from="1708655273950" duration="3108000" />
     </task>
     <task id="LOCAL-00001" summary="fix(tests) removed extra credit tests">
       <option name="closed" value="true" />
@@ -566,7 +557,15 @@
       <option name="project" value="LOCAL" />
       <updated>1708386685241</updated>
     </task>
-    <option name="localTasksCounter" value="33" />
+    <task id="LOCAL-00033" summary="Alexa, play 'In the End' by Linkin Park">
+      <option name="closed" value="true" />
+      <created>1708494555687</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1708494555688</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -574,7 +573,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="1.18.24 EOD" />
     <MESSAGE value="“And I feel God in this Chili’s tonight.”" />
     <MESSAGE value="Friday EOD&#10;-Add print statements to find the source of the empty array&#10;-get it to return the correct moves&#10;-find a boyfriend" />
     <MESSAGE value="Bishop, Knight, and King pass the tests. Pawn in progress" />
@@ -599,7 +597,8 @@
     <MESSAGE value="take 2" />
     <MESSAGE value="updated webpage design" />
     <MESSAGE value="updated webpage design -- pt ii" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated webpage design -- pt ii" />
+    <MESSAGE value="Alexa, play 'In the End' by Linkin Park" />
+    <option name="LAST_COMMIT_MESSAGE" value="Alexa, play 'In the End' by Linkin Park" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>
