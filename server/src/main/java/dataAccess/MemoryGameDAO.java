@@ -25,6 +25,11 @@ public class MemoryGameDAO implements GameDAO{
     public GameData updateGame() throws DataAccessException {
         return null;
     }
+
+    @Override
+    public void clear() throws DataAccessException {
+        return;
+    }
 }
 
 // listGames

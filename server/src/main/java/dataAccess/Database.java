@@ -11,6 +11,24 @@ public class Database {
     Map<String, UserData> auths = new HashMap<String, UserData>() {};
     Map<Integer, UserData> games = new HashMap<Integer, UserData>() {};
 
+    public void clear() {
+        users = new HashMap<String, UserData>() {};
+        auths = new HashMap<String, UserData>() {};
+        games = new HashMap<Integer, UserData>() {};
+
+        return;
+    }
+
+
+
+
+
+
+
+
+
+
+    // I think that it doesn't make sense to have these here at all...
 
     @Override
     public boolean equals(Object o) {
