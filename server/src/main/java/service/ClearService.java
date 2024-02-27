@@ -1,20 +1,17 @@
 package service;
-import dataAccess.AuthDAO;
-import dataAccess.DataAccessException;
-import dataAccess.GameDAO;
-import dataAccess.UserDAO;
+import dataAccess.*;
 
 public class ClearService {
     // talks to the interfaces
 
-    private final GameDAO dataAccess;
+    private static ClearDAO dataAccess = null;
 
 
-    public ClearService(GameDAO dataAccess) {
-        this.dataAccess = dataAccess;
+    public ClearService(ClearDAO dataAccess) {
+        ClearService.dataAccess = dataAccess;
     }
 
-    public void clear() throws DataAccessException {
+    public static void clear() throws DataAccessException {
         dataAccess.clear();
         return;
     }
