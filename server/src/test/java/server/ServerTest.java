@@ -19,8 +19,7 @@ class ServerTest {
 
     @Test
     public void testClear() throws ServiceException, DataAccessException {
-        // ad a couple thingies
-
+        // add a couple thingies
         assertDoesNotThrow(ClearService::clear);
     }
 

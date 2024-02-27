@@ -5,22 +5,22 @@ import org.eclipse.jetty.server.Authentication;
 
 public class MemoryUserDAO implements UserDAO {
     @Override
-    public UserData getUser() throws DataAccessException {
+    public UserData getUser(String username) throws DataAccessException {
         return null;
     }
 
     @Override
-    public UserData createUser() throws DataAccessException {
+    public UserData createUser(UserData userData) throws DataAccessException {
         return null;
     }
 
     @Override
-    public UserData login() throws DataAccessException {
+    public UserData login(UserData userData) throws DataAccessException {
         return null;
     }
 
     @Override
-    public UserData logout() throws DataAccessException {
+    public UserData logout(String username) throws DataAccessException {
         return null;
     }
 }

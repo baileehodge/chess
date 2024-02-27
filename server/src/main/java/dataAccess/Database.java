@@ -6,11 +6,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class Database {
-    static Map<String, UserData> users = new HashMap<String, UserData>() {
+    static HashMap<String, UserData> users = new HashMap<String, UserData>() {
     };
-    static Map<String, UserData> auths = new HashMap<String, UserData>() {
+    static HashMap<String, AuthData> auths = new HashMap<String, AuthData>() {
     };
-    static Map<Integer, UserData> games = new HashMap<Integer, UserData>() {
+    static HashMap<Object, GameData> games = new HashMap<Object, GameData>() {
     };
 
 }

@@ -15,16 +15,16 @@ public class GameService {
         this.dataAccess = dataAccess;
     }
 
-    public Collection<ChessGame> listGames(UserData user) throws DataAccessException {
+    public Collection<GameData> listGames() throws DataAccessException {
         return dataAccess.listGames();
     }
-    public GameData createGame(UserData user) throws DataAccessException {
-        return dataAccess.createGame();
+    public GameData createGame(String gameName) throws DataAccessException {
+        return dataAccess.createGame(gameName);
     }
-    public GameData joinGame(UserData user) throws DataAccessException {
-        return dataAccess.joinGame();
+    public GameData joinGame(int gameID) throws DataAccessException {
+        return dataAccess.joinGame(gameID);
     }
-    public GameData updateGame(UserData user) throws DataAccessException {
-        return dataAccess.updateGame();
+    public GameData updateGame(GameData game) throws DataAccessException {
+        return dataAccess.updateGame(game);
     }
 }

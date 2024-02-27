@@ -5,17 +5,17 @@ import model.AuthData;
 public class MemoryAuthDAO implements AuthDAO{
     // each of these had @Override at one point, placed automatically by the IDE
 
-    public AuthData createAuth() throws DataAccessException {
+    public AuthData createAuth(String username) throws DataAccessException {
         return null;
     }
 
 
-    public AuthData deleteAuth() throws DataAccessException {
+    public AuthData deleteAuth(String authToken) throws DataAccessException {
         return null;
     }
 
 
-    public AuthData getAuth() throws DataAccessException {
+    public AuthData getAuth(String authToken) throws DataAccessException {
         return null;
     }
 }

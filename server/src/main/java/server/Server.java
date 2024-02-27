@@ -1,8 +1,14 @@
 package server;
 
+import com.google.gson.Gson;
+import dataAccess.DataAccessException;
+import dataAccess.MemoryClearDAO;
+import service.*;
 import spark.Request;
 import spark.Response;
 import spark.Spark;
+
+import static service.ClearService.clear;
 
 public class Server {
 
@@ -24,6 +30,7 @@ public class Server {
         return Spark.port();
     }
 
+    // the handlers:
     private Object handleRegister(Request request, Response response) {
         return null;
     }
@@ -49,7 +56,13 @@ public class Server {
     }
 
     private Object handleClear(Request request, Response response) {
-        return null;
+        try {
+            clear();
+        } catch (DataAccessException e) {
+            response.status(500);
+            return new Gson().toJson(new RuntimeException(e.toString()));
+        }
+        return "";
     }
 
     public void stop() {

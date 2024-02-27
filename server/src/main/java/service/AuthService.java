@@ -12,17 +12,17 @@ public class AuthService {
         this.dataAccess = dataAccess;
     }
 
-    public AuthData createAuth(UserData user) throws DataAccessException {
-        return dataAccess.createAuth();
+    public AuthData createAuth(String username) throws DataAccessException {
+        return dataAccess.createAuth(username);
     }
 
-    public AuthData deleteAuth(UserData user) throws DataAccessException {
+    public AuthData deleteAuth(String authToken) throws DataAccessException {
 
-        return dataAccess.deleteAuth();
+        return dataAccess.deleteAuth(authToken);
     }
 
-    public AuthData getAuth(UserData user) throws DataAccessException {
-        return dataAccess.getAuth();
+    public AuthData getAuth(String authToken) throws DataAccessException {
+        return dataAccess.getAuth(authToken);
     }
 
 

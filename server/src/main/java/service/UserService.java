@@ -10,17 +10,17 @@ public class UserService {
         this.dataAccess = dataAccess;
     }
 
-    public UserData getUSer(UserData user) throws DataAccessException {
-        return dataAccess.getUser();
+    public UserData getUSer(String username) throws DataAccessException {
+        return dataAccess.getUser(username);
     }
     public UserData createUser(UserData user) throws DataAccessException {
-        return dataAccess.createUser();
+        return dataAccess.createUser(user);
     }
     public UserData login(UserData user) throws DataAccessException {
-        return dataAccess.login();
+        return dataAccess.login(user);
     }
-    public UserData logout(UserData user) throws DataAccessException {
-        return dataAccess.logout();
+    public UserData logout(String username) throws DataAccessException {
+        return dataAccess.logout(username);
     }
 }
 
