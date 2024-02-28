@@ -1,9 +1,18 @@
 package dataAccess;
 
+import model.AuthData;
+import model.GameData;
 import model.UserData;
 import org.eclipse.jetty.server.Authentication;
 
+import java.util.HashMap;
+
 public class MemoryUserDAO implements UserDAO {
+    static HashMap<String, UserData> users = new HashMap<String, UserData>();
+
+    public void clearUsers() throws DataAccessException {
+        users.clear();
+    }
     @Override
     public UserData getUser(String username) throws DataAccessException {
         return null;
@@ -14,14 +23,5 @@ public class MemoryUserDAO implements UserDAO {
         return null;
     }
 
-    @Override
-    public UserData login(UserData userData) throws DataAccessException {
-        return null;
-    }
-
-    @Override
-    public UserData logout(String username) throws DataAccessException {
-        return null;
-    }
 }
 

@@ -1,15 +1,26 @@
 package dataAccess;
 
 import chess.ChessGame;
+import model.AuthData;
 import model.GameData;
+import model.UserData;
 
 import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Random;
 
-import static dataAccess.Database.games;
 import static java.lang.Math.random;
 
 public class MemoryGameDAO implements GameDAO{
+
+    HashMap<Object, GameData> games = new HashMap<Object, GameData>();
+
+    @Override
+    public void clearGames() throws DataAccessException {
+        games.clear();
+    }
+
     @Override
     public Collection<GameData> listGames() throws DataAccessException {
         return games.values();
@@ -17,16 +28,11 @@ public class MemoryGameDAO implements GameDAO{
 
     @Override
     public GameData createGame(String gameName) throws DataAccessException {
-        Random random = new Random();
-        int randomNumber = random.nextInt(1000);
-
-        GameData game = new GameData();
-        game.setGameID(randomNumber);
-        return game;
+        return null;
     }
 
     @Override
-    public GameData joinGame(int gameID) throws DataAccessException {
+    public GameData getGame(int gameID) throws DataAccessException {
         return null;
     }
 

@@ -22,7 +22,7 @@ public class GameService {
         return dataAccess.createGame(gameName);
     }
     public GameData joinGame(int gameID) throws DataAccessException {
-        return dataAccess.joinGame(gameID);
+        return null;
     }
     public GameData updateGame(GameData game) throws DataAccessException {
         return dataAccess.updateGame(game);

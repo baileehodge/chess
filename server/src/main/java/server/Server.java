@@ -1,16 +1,20 @@
 package server;
 
 import com.google.gson.Gson;
-import dataAccess.DataAccessException;
-import dataAccess.MemoryClearDAO;
+import dataAccess.*;
 import service.*;
 import spark.Request;
 import spark.Response;
 import spark.Spark;
 
-import static service.ClearService.clear;
+import static service.ClearService.clearAll;
 
 public class Server {
+
+    public GameDAO gameDAO;
+    public UserDAO userDAO;
+    public AuthDAO authDAO;
+
 
     public int run(int desiredPort) {
         Spark.port(desiredPort);
@@ -57,11 +61,12 @@ public class Server {
 
     private Object handleClear(Request request, Response response) {
         try {
-            clear();
+            clearAll();
         } catch (DataAccessException e) {
             response.status(500);
             return new Gson().toJson(new RuntimeException(e.toString()));
         }
+        response.status(200);
         return "";
     }
 
