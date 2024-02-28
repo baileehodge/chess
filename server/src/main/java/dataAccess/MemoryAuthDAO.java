@@ -1,10 +1,9 @@
 package dataAccess;
 
 import model.AuthData;
-import model.GameData;
-import model.UserData;
 
 import java.util.HashMap;
+import java.util.UUID;
 
 public class MemoryAuthDAO implements AuthDAO{
     // each of these had @Override at one point, placed automatically by the IDE
@@ -16,17 +15,20 @@ public class MemoryAuthDAO implements AuthDAO{
     }
 
     public AuthData createAuth(String username) throws DataAccessException {
-        return null;
+        String token = UUID.randomUUID().toString();
+        AuthData auth = new AuthData(username, token);
+        auths.put(token, auth);
+        return auth;
     }
 
 
-    public AuthData deleteAuth(String authToken) throws DataAccessException {
-        return null;
+    public void deleteAuth(String authToken) throws DataAccessException {
+        auths.remove(authToken);
     }
 
 
     public AuthData getAuth(String authToken) throws DataAccessException {
-        return null;
+        return auths.get(authToken);
     }
 }
 

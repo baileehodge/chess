@@ -36,27 +36,27 @@ public class Server {
 
     // the handlers:
     private Object handleRegister(Request request, Response response) {
-        return null;
+        return "{}";
     }
 
     private Object handleLogin(Request request, Response response) {
-        return null;
+        return "{}";
     }
 
     private Object handleLogout(Request request, Response response) {
-        return null;
+        return "{}";
     }
 
     private Object handleNewGame(Request request, Response response) {
-        return null;
+        return "{}";
     }
 
     private Object handleJoinGame(Request request, Response response) {
-        return null;
+        return "{}";
     }
 
     private Object handleListGames(Request request, Response response) {
-        return null;
+        return "{}";
     }
 
     private Object handleClear(Request request, Response response) {

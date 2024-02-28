@@ -7,11 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Improved DAO setup. Hopefully.">
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="The server actually runs now">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryGameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryGameDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryUserDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/Server.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/service/ClearService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/service/ClearService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/test/java/server/ServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/server/ServerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/model/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/model/GameData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -177,7 +179,7 @@
       <recent name="server" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.StandardAPITests">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="server" />
@@ -242,8 +244,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.StandardAPITests" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.StandardAPITests.staticFiles" />
         <item itemvalue="JUnit.ServerTest.testClear" />
         <item itemvalue="JUnit.All in server" />
@@ -300,7 +302,7 @@
       <workItem from="1708971298923" duration="7732000" />
       <workItem from="1708994601624" duration="12449000" />
       <workItem from="1709060158561" duration="8386000" />
-      <workItem from="1709132552289" duration="2333000" />
+      <workItem from="1709132552289" duration="4313000" />
     </task>
     <task id="LOCAL-00001" summary="fix(tests) removed extra credit tests">
       <option name="closed" value="true" />
@@ -606,7 +608,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709099877859</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="The server actually runs now">
+      <option name="closed" value="true" />
+      <created>1709161444596</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1709161444597</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,7 +624,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="It works! Praise the Lord. [Had to override the hashCode in a couple of places.]" />
     <MESSAGE value="Switched out some of the code for calculating the piece moves with the code I wrote prepping for the programming exam since it was more concise. Tests still pass." />
     <MESSAGE value="Added ChessGame tests.&#10;Played with formatting.&#10;Cried, but only a little." />
     <MESSAGE value="Basic setup" />
@@ -639,7 +648,8 @@
     <MESSAGE value="IF YOU LIKE PIÑA COLADAS" />
     <MESSAGE value="AND GETTING CAUGHT IN THE RAIN" />
     <MESSAGE value="Improved DAO setup. Hopefully." />
-    <option name="LAST_COMMIT_MESSAGE" value="Improved DAO setup. Hopefully." />
+    <MESSAGE value="The server actually runs now" />
+    <option name="LAST_COMMIT_MESSAGE" value="The server actually runs now" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

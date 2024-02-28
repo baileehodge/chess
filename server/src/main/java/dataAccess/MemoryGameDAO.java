@@ -14,7 +14,7 @@ import static java.lang.Math.random;
 
 public class MemoryGameDAO implements GameDAO{
 
-    HashMap<Object, GameData> games = new HashMap<Object, GameData>();
+    HashMap<Integer, GameData> games = new HashMap<Integer, GameData>();
 
     @Override
     public void clearGames() throws DataAccessException {
@@ -28,17 +28,22 @@ public class MemoryGameDAO implements GameDAO{
 
     @Override
     public GameData createGame(String gameName) throws DataAccessException {
-        return null;
+        Random randomNum = new Random();
+        Integer gameID = randomNum.nextInt(1000);
+        GameData newGame = new GameData(gameID, null, null, gameName);
+        games.put(gameID,newGame);
+        return newGame;
     }
 
     @Override
     public GameData getGame(int gameID) throws DataAccessException {
-        return null;
+        return games.get(gameID);
     }
 
     @Override
     public GameData updateGame(GameData game) throws DataAccessException {
-        return null;
+        games.put(game.getGameID(), game);
+        return game;
     }
 }
 
