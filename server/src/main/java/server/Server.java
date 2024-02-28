@@ -67,7 +67,7 @@ public class Server {
             return new Gson().toJson(new RuntimeException(e.toString()));
         }
         response.status(200);
-        return "";
+        return "{}";
     }
 
     public void stop() {
