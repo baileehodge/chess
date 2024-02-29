@@ -7,12 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="The DAOs are actually written. For real this time. I promise.">
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="The service classes are fleshed out and ready for action">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryGameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryGameDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/service/GameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -178,7 +175,7 @@
       <recent name="server" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StandardAPITests">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="server" />
@@ -243,8 +240,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.StandardAPITests" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.StandardAPITests" />
         <item itemvalue="JUnit.StandardAPITests.staticFiles" />
         <item itemvalue="JUnit.ServerTest.testClear" />
         <item itemvalue="JUnit.All in server" />
@@ -301,7 +298,7 @@
       <workItem from="1708971298923" duration="7732000" />
       <workItem from="1708994601624" duration="12449000" />
       <workItem from="1709060158561" duration="8386000" />
-      <workItem from="1709132552289" duration="10733000" />
+      <workItem from="1709132552289" duration="17539000" />
     </task>
     <task id="LOCAL-00001" summary="fix(tests) removed extra credit tests">
       <option name="closed" value="true" />
@@ -623,7 +620,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709163588381</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="The service classes are fleshed out and ready for action">
+      <option name="closed" value="true" />
+      <created>1709171252137</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1709171252137</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -631,7 +636,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added ChessGame tests.&#10;Played with formatting.&#10;Cried, but only a little." />
     <MESSAGE value="Basic setup" />
     <MESSAGE value="validMoves method complete" />
     <MESSAGE value="- created simulation class&#10;- took notes on its implementation&#10;- &quot;Alexa, play Young Folks by Peter Bjorn and John.&quot;" />
@@ -656,7 +660,8 @@
     <MESSAGE value="Improved DAO setup. Hopefully." />
     <MESSAGE value="The server actually runs now" />
     <MESSAGE value="The DAOs are actually written. For real this time. I promise." />
-    <option name="LAST_COMMIT_MESSAGE" value="The DAOs are actually written. For real this time. I promise." />
+    <MESSAGE value="The service classes are fleshed out and ready for action" />
+    <option name="LAST_COMMIT_MESSAGE" value="The service classes are fleshed out and ready for action" />
   </component>
   <component name="XDebuggerManager">
     <watches-manager>

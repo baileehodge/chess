@@ -9,11 +9,21 @@ import spark.Spark;
 
 import static service.ClearService.clearAll;
 
+import spark.Request;
+import spark.Response;
+import model.*;
+
+import java.util.Collection;
+import java.util.HashMap;
+import java.util.Map;
+
+
 public class Server {
 
     public GameDAO gameDAO;
     public UserDAO userDAO;
     public AuthDAO authDAO;
+
 
 
     public int run(int desiredPort) {
@@ -55,17 +65,12 @@ public class Server {
         return "{}";
     }
 
-    private Object handleListGames(Request request, Response response) {
+    private Object handleListGames(Request request, Response response) throws ServiceException, DataAccessException {
         return "{}";
     }
 
-    private Object handleClear(Request request, Response response) {
-        try {
-            clearAll();
-        } catch (DataAccessException e) {
-            response.status(500);
-            return new Gson().toJson(new RuntimeException(e.toString()));
-        }
+    private Object handleClear(Request request, Response response) throws DataAccessException {
+        clearAll();
         response.status(200);
         return "{}";
     }
