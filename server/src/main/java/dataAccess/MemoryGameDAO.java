@@ -16,17 +16,17 @@ public class MemoryGameDAO implements GameDAO{
 
     HashMap<Integer, GameData> games = new HashMap<Integer, GameData>();
 
-    @Override
+
     public void clearGames() throws DataAccessException {
         games.clear();
     }
 
-    @Override
+
     public Collection<GameData> listGames() throws DataAccessException {
         return games.values();
     }
 
-    @Override
+
     public GameData createGame(String gameName) throws DataAccessException {
         Random randomNum = new Random();
         Integer gameID = randomNum.nextInt(1000);
@@ -35,12 +35,10 @@ public class MemoryGameDAO implements GameDAO{
         return newGame;
     }
 
-    @Override
     public GameData getGame(int gameID) throws DataAccessException {
         return games.get(gameID);
     }
 
-    @Override
     public GameData updateGame(GameData game) throws DataAccessException {
         games.put(game.getGameID(), game);
         return game;
