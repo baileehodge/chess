@@ -27,13 +27,14 @@ public class UserService {
     public AuthData login(UserData user) throws DataAccessException, ServiceException {
         UserData recordedUser = userAccess.getUser(user.getUsername());
         // if it's the wrong password
-        if (!Objects.equals(user.getPassword(), recordedUser.getPassword())) {
+        if ( recordedUser == null|| !Objects.equals(user.getPassword(), recordedUser.getPassword())) {
             throw new ServiceException("Error: unauthorized");
         }
         return authAccess.createAuth(user.getUsername());
     }
-    public void logout(String token) throws DataAccessException {
-        authAccess.deleteAuth(token);
+    public void logout(UserData user) throws DataAccessException {
+        authAccess.getAuth(user.getUsername());
+        authAccess.deleteAuth(authAccess.getAuth(user.getUsername()).toString());
     }
 }
 

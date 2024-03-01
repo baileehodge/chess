@@ -7,9 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="The service classes are fleshed out and ready for action">
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="EOD 2/28/24&#10;&#10;json serialization is casually killing me">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/service/UserService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/model/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/model/GameData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -129,6 +131,8 @@
     "JUnit.RookMoveTests.rookMoveUntilEdge.executor": "Debug",
     "JUnit.ServerTest.testClear.executor": "Run",
     "JUnit.StandardAPITests.executor": "Run",
+    "JUnit.StandardAPITests.goodJoin.executor": "Debug",
+    "JUnit.StandardAPITests.loginInvalidUser.executor": "Debug",
     "JUnit.StandardAPITests.staticFiles.executor": "Run",
     "JUnit.chessPieceTests in shared.executor": "Run",
     "JUnit.java in shared.executor": "Run",
@@ -175,34 +179,10 @@
       <recent name="server" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="JUnit.StandardAPITests">
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="server" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="All in server" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ServerTest.testClear" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="server.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="server" />
-      <option name="MAIN_CLASS_NAME" value="server.ServerTest" />
-      <option name="METHOD_NAME" value="testClear" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -218,6 +198,38 @@
       <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
       <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.StandardAPITests" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StandardAPITests.goodJoin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="passoffTests.serverTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.StandardAPITests" />
+      <option name="METHOD_NAME" value="goodJoin" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="StandardAPITests.loginInvalidUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="passoffTests.serverTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.StandardAPITests" />
+      <option name="METHOD_NAME" value="loginInvalidUser" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -240,11 +252,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.StandardAPITests" />
+        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.StandardAPITests.goodJoin" />
+        <item itemvalue="JUnit.StandardAPITests.loginInvalidUser" />
         <item itemvalue="JUnit.StandardAPITests.staticFiles" />
-        <item itemvalue="JUnit.ServerTest.testClear" />
-        <item itemvalue="JUnit.All in server" />
       </list>
     </recent_temporary>
   </component>
@@ -298,7 +310,8 @@
       <workItem from="1708971298923" duration="7732000" />
       <workItem from="1708994601624" duration="12449000" />
       <workItem from="1709060158561" duration="8386000" />
-      <workItem from="1709132552289" duration="17539000" />
+      <workItem from="1709132552289" duration="17893000" />
+      <workItem from="1709225214477" duration="9711000" />
     </task>
     <task id="LOCAL-00001" summary="fix(tests) removed extra credit tests">
       <option name="closed" value="true" />
@@ -628,7 +641,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709171252137</updated>
     </task>
-    <option name="localTasksCounter" value="42" />
+    <task id="LOCAL-00042" summary="EOD 2/28/24&#10;&#10;json serialization is casually killing me">
+      <option name="closed" value="true" />
+      <created>1709185896630</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1709185896630</updated>
+    </task>
+    <option name="localTasksCounter" value="43" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -636,7 +657,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Basic setup" />
     <MESSAGE value="validMoves method complete" />
     <MESSAGE value="- created simulation class&#10;- took notes on its implementation&#10;- &quot;Alexa, play Young Folks by Peter Bjorn and John.&quot;" />
     <MESSAGE value="SimulateMoves function written. Not tested; waiting on simulateMove function." />
@@ -661,9 +681,18 @@
     <MESSAGE value="The server actually runs now" />
     <MESSAGE value="The DAOs are actually written. For real this time. I promise." />
     <MESSAGE value="The service classes are fleshed out and ready for action" />
-    <option name="LAST_COMMIT_MESSAGE" value="The service classes are fleshed out and ready for action" />
+    <MESSAGE value="EOD 2/28/24&#10;&#10;json serialization is casually killing me" />
+    <option name="LAST_COMMIT_MESSAGE" value="EOD 2/28/24&#10;&#10;json serialization is casually killing me" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.NullPointerException" package="java.lang" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="board.squares[0]" />

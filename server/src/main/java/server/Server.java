@@ -16,13 +16,17 @@ import model.*;
 import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 
 public class Server {
 
-    public GameDAO gameDAO;
-    public UserDAO userDAO;
-    public AuthDAO authDAO;
+    public MemoryGameDAO gameDAO = new MemoryGameDAO();
+    public MemoryUserDAO userDAO = new MemoryUserDAO();
+    public MemoryAuthDAO authDAO = new MemoryAuthDAO();
+
+    public GameService gameService = new GameService(gameDAO, authDAO);
+    public UserService userService = new UserService(userDAO, authDAO);
 
 
 
@@ -39,34 +43,84 @@ public class Server {
         Spark.put("/game", this::handleJoinGame);
         Spark.get("/game", this::handleListGames);
         Spark.delete("/db", this::handleClear);
+        Spark.exception(Exception.class, this::exceptionHandler);
 
         Spark.awaitInitialization();
         return Spark.port();
     }
 
     // the handlers:
-    private Object handleRegister(Request request, Response response) {
-        return "{}";
+    private void exceptionHandler(Exception ex, Request req, Response res) {
+        res.status(401);
+        switch (ex.getMessage()) {
+            case "Error: bad request":
+                res.status(400);
+            case "Error: unauthorized":
+                res.status(401);
+                break;
+            case "Error: already taken":
+                res.status(403);
+            default:
+                res.status(500);
+        }
+        res.body(new Gson().toJson(Map.of("message", ex.getMessage())));
     }
 
-    private Object handleLogin(Request request, Response response) {
-        return "{}";
+    private Object handleRegister(Request request, Response response) throws ServiceException, DataAccessException {
+        UserData userData = new Gson().fromJson(request.body(), UserData.class);
+        var user = userService.register(userData);
+        response.status(200);
+        return new Gson().toJson(user);
     }
 
-    private Object handleLogout(Request request, Response response) {
-        return "{}";
+    private Object handleLogin(Request request, Response response) throws ServiceException, DataAccessException {
+        UserData userData = new Gson().fromJson(request.body(), UserData.class);
+        var auth = userService.login(userData);
+        response.status(200);
+        return new Gson().toJson(auth);
     }
 
-    private Object handleNewGame(Request request, Response response) {
-        return "{}";
+    private Object handleLogout(Request request, Response response) throws DataAccessException {
+        UserData userData = new Gson().fromJson(request.body(), UserData.class);
+        userService.logout(userData);
+        response.status(200);
+        response.body("beep beep");
+        return response;
     }
 
-    private Object handleJoinGame(Request request, Response response) {
+    private Object handleNewGame(Request request, Response response) throws ServiceException, DataAccessException {
+        AuthData authData = new Gson().fromJson(request.body(), AuthData.class);
+        GameData gameData = new Gson().fromJson(request.body(), GameData.class);
+        var game = gameService.createGame(gameData.getGameName(), authData.getAuthToken());
+        response.status(200);
+        return new Gson().toJson(game);
+    }
+
+    private Object handleJoinGame(Request request, Response response) throws ServiceException, DataAccessException {
+        AuthData authData = new Gson().fromJson(request.body(), AuthData.class);
+        GameData gameData = new Gson().fromJson(request.body(), GameData.class);
+        String color = "GREEN";
+        if (Objects.equals(authData.getUsername(), gameData.getBlackUsername())) {
+            color = "BLACK";
+        }
+        else if (Objects.equals(authData.getUsername(), gameData.getWhiteUsername())) {
+            color = "WHITE";
+        }
+        if (gameData.getGameID() == null) {
+            response.status(403);
+            response.body();
+        }
+        gameService.joinGame(gameData.getGameID(), authData.getAuthToken(), color);
+        response.status(200);
         return "{}";
     }
 
     private Object handleListGames(Request request, Response response) throws ServiceException, DataAccessException {
-        return "{}";
+        response.type("application/json");
+        String authToken = request.headers("Authorization");
+        var list = gameService.listGames(authToken).toArray(); // supposed to get auth token from request?
+        response.status(200);
+        return new Gson().toJson(Map.of("games", list));
     }
 
     private Object handleClear(Request request, Response response) throws DataAccessException {
