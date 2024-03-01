@@ -4,13 +4,22 @@ import dataAccess.*;
 public class ClearService {
     // talks to the interfaces
 
-    private static UserDAO userDAO = new MemoryUserDAO();
-    private static AuthDAO authDAO = new MemoryAuthDAO();
-    private static GameDAO gameDAO = new MemoryGameDAO();
+    private final UserDAO userDAO;
+    private final AuthDAO authDAO;
+    private final GameDAO gameDAO;
+
+    public ClearService(UserDAO userDAO, AuthDAO authDao, GameDAO gameDAO) {
+        this.userDAO = userDAO;
+        this.authDAO = authDao;
+        this.gameDAO = gameDAO;
+
+    }
 
 
 
-    public static void clearAll() throws DataAccessException {
+
+
+    public void clearAll() throws DataAccessException {
         authDAO.clearAuths();
         gameDAO.clearGames();
         userDAO.clearUsers();

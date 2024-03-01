@@ -3,11 +3,11 @@ package server;
 import com.google.gson.Gson;
 import dataAccess.*;
 import service.*;
+import service.requests.JoinRecord;
+import service.requests.MyError;
 import spark.Request;
 import spark.Response;
 import spark.Spark;
-
-import static service.ClearService.clearAll;
 
 import spark.Request;
 import spark.Response;
@@ -27,6 +27,10 @@ public class Server {
 
     public GameService gameService = new GameService(gameDAO, authDAO);
     public UserService userService = new UserService(userDAO, authDAO);
+
+    public AuthService authService = new AuthService(authDAO);
+
+    public ClearService clearService = new ClearService(userDAO,authDAO,gameDAO);
 
 
 
@@ -52,18 +56,26 @@ public class Server {
     // the handlers:
     private void exceptionHandler(Exception ex, Request req, Response res) {
         res.status(401);
+        MyError error;
         switch (ex.getMessage()) {
             case "Error: bad request":
                 res.status(400);
+                error = new MyError("Error: bad request");
+                break;
             case "Error: unauthorized":
                 res.status(401);
+                error = new MyError("Error: unauthorized");
                 break;
             case "Error: already taken":
                 res.status(403);
+                error = new MyError("Error: already taken");
+                break;
             default:
                 res.status(500);
+                error = new MyError("Error: bad request");
+                break;
         }
-        res.body(new Gson().toJson(Map.of("message", ex.getMessage())));
+        res.body(new Gson().toJson(error));
     }
 
     private Object handleRegister(Request request, Response response) throws ServiceException, DataAccessException {
@@ -80,37 +92,29 @@ public class Server {
         return new Gson().toJson(auth);
     }
 
-    private Object handleLogout(Request request, Response response) throws DataAccessException {
-        UserData userData = new Gson().fromJson(request.body(), UserData.class);
-        userService.logout(userData);
+    private Object handleLogout(Request request, Response response) throws DataAccessException, ServiceException {
+        String authToken = request.headers("Authorization");
+        userService.logout(authToken);
         response.status(200);
-        response.body("beep beep");
-        return response;
+        return "{}";
     }
 
     private Object handleNewGame(Request request, Response response) throws ServiceException, DataAccessException {
-        AuthData authData = new Gson().fromJson(request.body(), AuthData.class);
+        String authToken = request.headers("Authorization");
         GameData gameData = new Gson().fromJson(request.body(), GameData.class);
-        var game = gameService.createGame(gameData.getGameName(), authData.getAuthToken());
+        var game = gameService.createGame(gameData.getGameName(), authToken);
         response.status(200);
         return new Gson().toJson(game);
     }
 
     private Object handleJoinGame(Request request, Response response) throws ServiceException, DataAccessException {
-        AuthData authData = new Gson().fromJson(request.body(), AuthData.class);
-        GameData gameData = new Gson().fromJson(request.body(), GameData.class);
-        String color = "GREEN";
-        if (Objects.equals(authData.getUsername(), gameData.getBlackUsername())) {
-            color = "BLACK";
+        String authToken = request.headers("Authorization");
+        JoinRecord joinRecord = new Gson().fromJson(request.body(), JoinRecord.class);
+        joinRecord = new JoinRecord(authToken, joinRecord.playerColor(), joinRecord.gameID());
+        if (joinRecord.gameID() == null) {
+            throw new ServiceException("Error: bad request");
         }
-        else if (Objects.equals(authData.getUsername(), gameData.getWhiteUsername())) {
-            color = "WHITE";
-        }
-        if (gameData.getGameID() == null) {
-            response.status(403);
-            response.body();
-        }
-        gameService.joinGame(gameData.getGameID(), authData.getAuthToken(), color);
+        gameService.joinGame(joinRecord);
         response.status(200);
         return "{}";
     }
@@ -124,7 +128,7 @@ public class Server {
     }
 
     private Object handleClear(Request request, Response response) throws DataAccessException {
-        clearAll();
+        clearService.clearAll();
         response.status(200);
         return "{}";
     }

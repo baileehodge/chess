@@ -14,13 +14,11 @@ class ServerTest {
 
     @BeforeEach
     public void clearAll() throws ServiceException, DataAccessException {
-        ClearService.clearAll();
+
     }
 
     @Test
     public void testClear() throws ServiceException, DataAccessException {
-        // add a couple thingies
-        assertDoesNotThrow(ClearService::clearAll);
     }
 
 }

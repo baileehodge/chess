@@ -7,11 +7,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="EOD 2/28/24&#10;&#10;json serialization is casually killing me">
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Passing 9 of 24 tests. Time for some intense debugging">
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/service/requests/JoinRecord.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/service/requests/MyError.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/service/ClearService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/service/ClearService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/service/GameService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/service/UserService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/service/UserService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/model/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/model/GameData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,6 +27,7 @@
         <option value="Interface" />
         <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
   </component>
@@ -133,7 +137,9 @@
     "JUnit.StandardAPITests.executor": "Run",
     "JUnit.StandardAPITests.goodJoin.executor": "Debug",
     "JUnit.StandardAPITests.loginInvalidUser.executor": "Debug",
+    "JUnit.StandardAPITests.noGamesList.executor": "Run",
     "JUnit.StandardAPITests.staticFiles.executor": "Run",
+    "JUnit.StandardAPITests.uniqueAuthorizationTokens.executor": "Run",
     "JUnit.chessPieceTests in shared.executor": "Run",
     "JUnit.java in shared.executor": "Run",
     "Notification.DisplayName-DoNotAsk-External System Auto-Link Notification Group": "External system build scripts found",
@@ -218,7 +224,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StandardAPITests.loginInvalidUser" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StandardAPITests.noGamesList" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
         <pattern>
@@ -228,13 +234,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
       <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.StandardAPITests" />
-      <option name="METHOD_NAME" value="loginInvalidUser" />
+      <option name="METHOD_NAME" value="noGamesList" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StandardAPITests.staticFiles" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="StandardAPITests.uniqueAuthorizationTokens" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
         <pattern>
@@ -244,7 +250,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
       <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.StandardAPITests" />
-      <option name="METHOD_NAME" value="staticFiles" />
+      <option name="METHOD_NAME" value="uniqueAuthorizationTokens" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -253,10 +259,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.StandardAPITests" />
+        <item itemvalue="JUnit.StandardAPITests.noGamesList" />
+        <item itemvalue="JUnit.StandardAPITests.uniqueAuthorizationTokens" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.StandardAPITests.goodJoin" />
-        <item itemvalue="JUnit.StandardAPITests.loginInvalidUser" />
-        <item itemvalue="JUnit.StandardAPITests.staticFiles" />
       </list>
     </recent_temporary>
   </component>
@@ -312,6 +318,7 @@
       <workItem from="1709060158561" duration="8386000" />
       <workItem from="1709132552289" duration="17893000" />
       <workItem from="1709225214477" duration="9711000" />
+      <workItem from="1709314563830" duration="4055000" />
     </task>
     <task id="LOCAL-00001" summary="fix(tests) removed extra credit tests">
       <option name="closed" value="true" />
@@ -649,7 +656,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709185896630</updated>
     </task>
-    <option name="localTasksCounter" value="43" />
+    <task id="LOCAL-00043" summary="Passing 9 of 24 tests. Time for some intense debugging">
+      <option name="closed" value="true" />
+      <created>1709314651208</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1709314651208</updated>
+    </task>
+    <option name="localTasksCounter" value="44" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -657,7 +672,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="validMoves method complete" />
     <MESSAGE value="- created simulation class&#10;- took notes on its implementation&#10;- &quot;Alexa, play Young Folks by Peter Bjorn and John.&quot;" />
     <MESSAGE value="SimulateMoves function written. Not tested; waiting on simulateMove function." />
     <MESSAGE value="simulateMove function written." />
@@ -682,7 +696,8 @@
     <MESSAGE value="The DAOs are actually written. For real this time. I promise." />
     <MESSAGE value="The service classes are fleshed out and ready for action" />
     <MESSAGE value="EOD 2/28/24&#10;&#10;json serialization is casually killing me" />
-    <option name="LAST_COMMIT_MESSAGE" value="EOD 2/28/24&#10;&#10;json serialization is casually killing me" />
+    <MESSAGE value="Passing 9 of 24 tests. Time for some intense debugging" />
+    <option name="LAST_COMMIT_MESSAGE" value="Passing 9 of 24 tests. Time for some intense debugging" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -691,6 +706,15 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/server/src/main/java/service/GameService.java</url>
+          <line>34</line>
+          <properties class="service.GameService" method="joinGame">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

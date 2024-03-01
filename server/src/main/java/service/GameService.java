@@ -3,6 +3,7 @@ package service;
 import chess.ChessGame;
 import dataAccess.*;
 import model.*;
+import service.requests.JoinRecord;
 
 import java.util.Collection;
 import java.util.Objects;
@@ -31,17 +32,20 @@ public class GameService {
         }
         return gameAccess.createGame(gameName);
     }
-    public void joinGame(int gameID, String authToken, String color) throws DataAccessException, ServiceException {
-        if (authAccess.getAuth(authToken) == null) {
+    public void joinGame(JoinRecord joinRecord) throws DataAccessException, ServiceException {
+        if (authAccess.getAuth(joinRecord.authToken()) == null) {
             throw new ServiceException("Error: unauthorized");
         }
-        GameData game = gameAccess.getGame(gameID);
-        String username = (authAccess.getAuth(authToken).getUsername());
-
+        GameData game = gameAccess.getGame(joinRecord.gameID());
         if (game == null) {
             throw new ServiceException("Error: bad request");
         }
-        if (Objects.equals(color, "BLACK")) {
+        String username = (authAccess.getAuth(joinRecord.authToken()).getUsername());
+
+        if (joinRecord.playerColor() == null) {
+            // for websockets
+        }
+        else if ((joinRecord.playerColor().equalsIgnoreCase("BLACK"))) {
             if (game.getBlackUsername() == null) {
                 game.setBlackUsername(username);
             }
@@ -49,13 +53,16 @@ public class GameService {
                 throw new ServiceException("Error: already taken");
             }
         }
-        if (Objects.equals(color, "WHITE")) {
+        else if ((joinRecord.playerColor().equalsIgnoreCase("WHITE"))) {
             if (game.getWhiteUsername() == null) {
                 game.setWhiteUsername(username);
             }
             else {
                 throw new ServiceException("Error: already taken");
             }
+        }
+        else {
+            throw new ServiceException("Error: bad request");
         }
     }
 }
