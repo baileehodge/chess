@@ -20,7 +20,10 @@ public class AuthService {
         dataAccess.deleteAuth(authToken);
     }
 
-    public AuthData getAuth(String authToken) throws DataAccessException {
+    public AuthData getAuth(String authToken) throws DataAccessException, ServiceException {
+        if (dataAccess.getAuth(authToken) == null) {
+            throw new ServiceException("Error: bad request");
+        }
         return dataAccess.getAuth(authToken);
     }
 
