@@ -7,12 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="AHHH IT WORKS">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryAuthDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryAuthDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/test/java/server/ServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/server/ServerTest.java" afterDir="false" />
-    </list>
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Unit tests written and passing" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -338,7 +333,7 @@
       <workItem from="1709060158561" duration="8386000" />
       <workItem from="1709132552289" duration="17893000" />
       <workItem from="1709225214477" duration="9711000" />
-      <workItem from="1709314563830" duration="10047000" />
+      <workItem from="1709314563830" duration="10306000" />
     </task>
     <task id="LOCAL-00001" summary="fix(tests) removed extra credit tests">
       <option name="closed" value="true" />
@@ -692,7 +687,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709319099914</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="Unit tests written and passing">
+      <option name="closed" value="true" />
+      <created>1709330753114</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1709330753114</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -700,7 +703,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="SimulateMoves function written. Not tested; waiting on simulateMove function." />
     <MESSAGE value="simulateMove function written." />
     <MESSAGE value="Updated ChessGameTests.java to new file" />
     <MESSAGE value="Passes makeValidMoves test.&#10;&#10;Alexa, play Tik Tok by Ke$ha." />
@@ -725,7 +727,8 @@
     <MESSAGE value="EOD 2/28/24&#10;&#10;json serialization is casually killing me" />
     <MESSAGE value="Passing 9 of 24 tests. Time for some intense debugging" />
     <MESSAGE value="AHHH IT WORKS" />
-    <option name="LAST_COMMIT_MESSAGE" value="AHHH IT WORKS" />
+    <MESSAGE value="Unit tests written and passing" />
+    <option name="LAST_COMMIT_MESSAGE" value="Unit tests written and passing" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
