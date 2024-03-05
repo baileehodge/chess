@@ -7,6 +7,7 @@ import service.requests.JoinRecord;
 
 import java.util.Collection;
 import java.util.Objects;
+import java.util.Random;
 
 
 public class GameService {
@@ -30,7 +31,10 @@ public class GameService {
         if (authAccess.getAuth(authToken) == null) {
             throw new ServiceException("Error: unauthorized");
         }
-        return gameAccess.createGame(gameName);
+        Random randomNum = new Random();
+        Integer gameID = randomNum.nextInt(1000);
+        GameData newGame = new GameData(gameID, null, null, gameName);
+        return gameAccess.createGame(newGame);
     }
     public void joinGame(JoinRecord joinRecord) throws DataAccessException, ServiceException {
         if (authAccess.getAuth(joinRecord.authToken()) == null) {

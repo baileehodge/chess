@@ -12,7 +12,7 @@ public interface GameDAO {
     void clearGames() throws DataAccessException;
 
     Collection<GameData> listGames() throws DataAccessException;
-    GameData createGame(String gameName) throws DataAccessException;
+    GameData createGame(GameData newGame) throws DataAccessException;
     GameData getGame(int gameID) throws DataAccessException;
     GameData updateGame(GameData game) throws DataAccessException;
 

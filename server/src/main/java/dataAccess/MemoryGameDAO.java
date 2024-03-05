@@ -27,11 +27,8 @@ public class MemoryGameDAO implements GameDAO{
     }
 
 
-    public GameData createGame(String gameName) throws DataAccessException {
-        Random randomNum = new Random();
-        Integer gameID = randomNum.nextInt(1000);
-        GameData newGame = new GameData(gameID, null, null, gameName);
-        games.put(gameID,newGame);
+    public GameData createGame(GameData newGame) throws DataAccessException {
+        games.put(newGame.getGameID(),newGame);
         return newGame;
     }
 
