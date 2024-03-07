@@ -21,15 +21,17 @@ import java.util.Objects;
 
 public class Server {
 
-    public MemoryGameDAO gameDAO = new MemoryGameDAO();
-    public MemoryUserDAO userDAO = new MemoryUserDAO();
-    public MemoryAuthDAO authDAO = new MemoryAuthDAO();
+    public SQLGameDAO gameDAO = new SQLGameDAO();
+    public SQLUserDAO userDAO = new SQLUserDAO();
+    public SQLAuthDAO authDAO = new SQLAuthDAO();
     public AuthService authService = new AuthService(authDAO);
 
     public GameService gameService = new GameService(gameDAO, authDAO);
     public UserService userService = new UserService(userDAO, authDAO, authService);
     public ClearService clearService = new ClearService(userDAO,authDAO,gameDAO);
 
+    public Server() {
+    }
 
 
     public int run(int desiredPort) {
@@ -120,7 +122,7 @@ public class Server {
     private Object handleListGames(Request request, Response response) throws ServiceException, DataAccessException {
         response.type("application/json");
         String authToken = request.headers("Authorization");
-        var list = gameService.listGames(authToken).toArray(); // supposed to get auth token from request?
+        var list = gameService.listGames(authToken).toArray();
         response.status(200);
         return new Gson().toJson(Map.of("games", list));
     }

@@ -1,18 +1,26 @@
 package dataAccess;
 
 import model.AuthData;
+import model.GameData;
 import model.UserData;
 
+import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import static java.sql.Statement.RETURN_GENERATED_KEYS;
+import static java.sql.Types.NULL;
 
 public class SQLUserDAO implements UserDAO {
 
     // START create db tables on startup if they don't already exist
-    public SQLUserDAO() throws DataAccessException {
-        configureDatabase();
+    public SQLUserDAO() {
+        try {
+            configureDatabase();
+        } catch (DataAccessException e) {
+            throw new RuntimeException(e);
+        }
     }
 
-    // TODO: sql unverified
     private final String[] createStatements = {
             """
             CREATE TABLE IF NOT EXISTS  users (
@@ -23,7 +31,7 @@ public class SQLUserDAO implements UserDAO {
               PRIMARY KEY (`username`),
               INDEX(email),
               INDEX(password)
-            ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci
+            )
             """
     };
 
@@ -44,21 +52,68 @@ public class SQLUserDAO implements UserDAO {
 
     @Override
     public void clearUsers() throws DataAccessException {
-        // drop the users table if it exists
-        // create a fresh one
+        var statement = "TRUNCATE users";
+        voidExecute(statement);
     }
 
     @Override
     public UserData getUser(String username) throws DataAccessException {
-        // select from the user table by username
-        // primary key of the table might need to be username
-        // return the user as a UserData object
-        return null;
+        var statement = "SELECT * FROM users WHERE username=?";
+        return returnExecute(statement, username);
     }
 
     @Override
     public UserData createUser(UserData userData) throws DataAccessException {
-        // take the UserData object and make a row in the user table for it
+        var statement = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
+        voidExecute(statement, userData.getUsername(), userData.getEmail(), userData.getPassword());
+        return userData;
+    }
+    private UserData returnExecute(String statement, Object... params) throws DataAccessException {
+        try (var conn = DatabaseManager.getConnection()) {
+            try (var ps = conn.prepareStatement(statement)) {
+                for (var i = 0; i < params.length; i++) {
+                    var paramU = params[i];
+                    switch (paramU) {
+                        case String p -> ps.setString(i + 1, p);
+                        case Integer p -> ps.setInt(i + 1, p);
+                        case null -> ps.setNull(i + 1, NULL);
+                        default -> {
+                        }
+                    }
+                }
+                ResultSet rs = ps.executeQuery();
+                if (rs.next()) {
+                    String username = rs.getString("username");
+                    String email = rs.getString("email");
+                    String password = rs.getString("password");
+                    return new UserData(username, email, password);
+                }
+            }
+        } catch (SQLException e) {
+            throw new DataAccessException(e.getMessage());
+        }
         return null;
     }
+    private void voidExecute(String statement, Object... params) throws DataAccessException {
+        try (var conn = DatabaseManager.getConnection()) {
+            try (var ps = conn.prepareStatement(statement)) {
+                for (var i = 0; i < params.length; i++) {
+                    var paramU = params[i];
+                    switch (paramU) {
+                        case String p -> ps.setString(i + 1, p);
+                        case Integer p -> ps.setInt(i + 1, p);
+                        case null -> ps.setNull(i + 1, NULL);
+                        default -> {
+                        }
+                    }
+                }
+                ps.executeUpdate();
+
+            }
+        } catch (SQLException e) {
+            throw new DataAccessException(e.getMessage());
+        }
+    }
+
+
 }

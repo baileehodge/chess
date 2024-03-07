@@ -17,26 +17,26 @@ public class MemoryGameDAO implements GameDAO{
     HashMap<Integer, GameData> games = new HashMap<Integer, GameData>();
 
 
-    public void clearGames() throws DataAccessException {
+    public void clearGames(){
         games.clear();
     }
 
 
-    public Collection<GameData> listGames() throws DataAccessException {
+    public Collection<GameData> listGames(){
         return games.values();
     }
 
 
-    public GameData createGame(GameData newGame) throws DataAccessException {
+    public GameData createGame(GameData newGame) {
         games.put(newGame.getGameID(),newGame);
         return newGame;
     }
 
-    public GameData getGame(int gameID) throws DataAccessException {
+    public GameData getGame(int gameID) {
         return games.get(gameID);
     }
 
-    public GameData updateGame(GameData game) throws DataAccessException {
+    public GameData updateGame(GameData game) {
         games.put(game.getGameID(), game);
         return game;
     }

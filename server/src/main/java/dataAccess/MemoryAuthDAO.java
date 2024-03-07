@@ -10,11 +10,11 @@ public class MemoryAuthDAO implements AuthDAO{
 
     static HashMap<String, AuthData> auths = new HashMap<String, AuthData>();
 
-    public void clearAuths() throws DataAccessException {
+    public void clearAuths() {
         auths.clear();
     }
 
-    public AuthData createAuth(AuthData auth) throws DataAccessException {
+    public AuthData createAuth(AuthData auth) {
         // could make this check that the username is valid
 
         auths.put(auth.getAuthToken(), auth);
@@ -22,12 +22,12 @@ public class MemoryAuthDAO implements AuthDAO{
     }
 
 
-    public void deleteAuth(String authToken) throws DataAccessException {
+    public void deleteAuth(String authToken) {
         auths.remove(authToken);
     }
 
 
-    public AuthData getAuth(String authToken) throws DataAccessException {
+    public AuthData getAuth(String authToken) {
         return auths.get(authToken);
     }
 }

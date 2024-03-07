@@ -1,18 +1,15 @@
 package service;
-import dataAccess.DataAccessException;
-import dataAccess.MemoryAuthDAO;
-import dataAccess.MemoryUserDAO;
-import dataAccess.UserDAO;
+import dataAccess.*;
 import model.*;
 
 import java.util.Objects;
 
 public class UserService {
-    private final MemoryUserDAO userAccess;
-    private final MemoryAuthDAO authAccess;
+    private final SQLUserDAO userAccess;
+    private final SQLAuthDAO authAccess;
     private final AuthService authService;
 
-    public UserService(MemoryUserDAO userAccess, MemoryAuthDAO authAccess, AuthService authService) {
+    public UserService(SQLUserDAO userAccess, SQLAuthDAO authAccess, AuthService authService) {
         this.userAccess = userAccess;
         this.authAccess = authAccess;
         this.authService = authService;
