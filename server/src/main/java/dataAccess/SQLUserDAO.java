@@ -86,7 +86,7 @@ public class SQLUserDAO implements UserDAO {
                     String username = rs.getString("username");
                     String email = rs.getString("email");
                     String password = rs.getString("password");
-                    return new UserData(username, email, password);
+                    return new UserData(username, password, email);
                 }
             }
         } catch (SQLException e) {
