@@ -7,11 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Passing my server tests, not passing API tests">
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Passing most of the API tests">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLAuthDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLAuthDAO.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLGameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLGameDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLUserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/service/GameService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -122,6 +121,7 @@
     "JUnit.PawnMoveTests.pawnMiddleOfBoardWhite.executor": "Run",
     "JUnit.PawnMoveTests.pawnPromotionCapture.executor": "Run",
     "JUnit.PawnMoveTests.pawnPromotionWhite.executor": "Run",
+    "JUnit.PersistenceTests.executor": "Run",
     "JUnit.QueenMoveTests.executor": "Run",
     "JUnit.QueenMoveTests.queenBlocked.executor": "Debug",
     "JUnit.QueenMoveTests.queenCaptureEnemy.executor": "Debug",
@@ -198,17 +198,17 @@
       <recent name="server" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StandardAPITests.uniqueAuthorizationTokens">
-    <configuration name="ServerTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.StandardAPITests">
+    <configuration name="PersistenceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="server.*" />
+          <option name="PATTERN" value="passoffTests.serverTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="server" />
-      <option name="MAIN_CLASS_NAME" value="server.ServerTest" />
+      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.PersistenceTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -277,11 +277,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.StandardAPITests.uniqueAuthorizationTokens" />
         <item itemvalue="JUnit.StandardAPITests" />
+        <item itemvalue="JUnit.StandardAPITests.uniqueAuthorizationTokens" />
+        <item itemvalue="JUnit.PersistenceTests" />
         <item itemvalue="JUnit.StandardAPITests.successLogin" />
         <item itemvalue="JUnit.passoffTests.serverTests in server" />
-        <item itemvalue="JUnit.ServerTest" />
       </list>
     </recent_temporary>
   </component>
@@ -342,15 +342,7 @@
       <workItem from="1709580254616" duration="1465000" />
       <workItem from="1709603689403" duration="4583000" />
       <workItem from="1709652709743" duration="1449000" />
-      <workItem from="1709752497532" duration="29021000" />
-    </task>
-    <task id="LOCAL-00004" summary="double-checking that I have the latest chess.zip files">
-      <option name="closed" value="true" />
-      <created>1705611063491</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1705611063491</updated>
+      <workItem from="1709752497532" duration="31965000" />
     </task>
     <task id="LOCAL-00005" summary="double-checking that I have the latest chess.zip files">
       <option name="closed" value="true" />
@@ -736,7 +728,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709851234986</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Passing most of the API tests">
+      <option name="closed" value="true" />
+      <created>1709852514172</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1709852514173</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -744,7 +744,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="It works!!!" />
     <MESSAGE value="Minor cleanup in prep for phase 3" />
     <MESSAGE value="Alexa, play &quot;Sweet Child o' Mine&quot; by Guns N Roses.&#10;-cleaned imports&#10;-phase 3 starter code&#10;-added code libraries" />
     <MESSAGE value="take 2" />
@@ -769,7 +768,8 @@
     <MESSAGE value="3/5/24 EOD" />
     <MESSAGE value="Quicksave" />
     <MESSAGE value="Passing my server tests, not passing API tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Passing my server tests, not passing API tests" />
+    <MESSAGE value="Passing most of the API tests" />
+    <option name="LAST_COMMIT_MESSAGE" value="Passing most of the API tests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -778,6 +778,21 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/SQLGameDAO.java</url>
+          <line>61</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/SQLGameDAO.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/SQLGameDAO.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

@@ -52,6 +52,7 @@ public class GameService {
         else if ((joinRecord.playerColor().equalsIgnoreCase("BLACK"))) {
             if (game.getBlackUsername() == null) {
                 game.setBlackUsername(username);
+                gameAccess.updateGame(game);
             }
             else {
                 throw new ServiceException("Error: already taken");
@@ -60,6 +61,7 @@ public class GameService {
         else if ((joinRecord.playerColor().equalsIgnoreCase("WHITE"))) {
             if (game.getWhiteUsername() == null) {
                 game.setWhiteUsername(username);
+                gameAccess.updateGame(game);
             }
             else {
                 throw new ServiceException("Error: already taken");

@@ -27,12 +27,12 @@ public class SQLGameDAO implements GameDAO{
             """
             CREATE TABLE IF NOT EXISTS  games (
               `id` int NOT NULL AUTO_INCREMENT,
-              `name` varchar(256),
+              `gameName` varchar(256),
               `whiteUsername` varchar(256),
               `blackUsername` varchar(256),
               
               PRIMARY KEY (`id`),
-              INDEX(name)
+              INDEX(gameName)
             )
             """
     };
@@ -67,7 +67,7 @@ public class SQLGameDAO implements GameDAO{
 
             while (rs.next()) {
                 int gameID = rs.getInt("id");
-                String gameName = rs.getString("name");
+                String gameName = rs.getString("gameName");
                 String whiteUsername = rs.getString("whiteUsername");
                 String blackUsername = rs.getString("blackUsername");
 
@@ -81,7 +81,7 @@ public class SQLGameDAO implements GameDAO{
     }
 
     public GameData createGame(GameData newGame) throws DataAccessException {
-        var statement = "INSERT INTO games (id, name) VALUES (?, ?)";
+        var statement = "INSERT INTO games (id,gameName) VALUES (?, ?)";
         voidExecute(statement, newGame.getGameID(), newGame.getGameName());
         return newGame;
     }
@@ -92,8 +92,8 @@ public class SQLGameDAO implements GameDAO{
     }
 
     public GameData updateGame(GameData game) throws DataAccessException {
-        var statement = "UPDATE table_name SET column1 = value1 column2 = value2 WHERE id=?";
-        voidExecute(statement, game.getGameID());
+        var statement = "UPDATE games SET id=?, gameName=?, whiteUsername=?, blackUsername=? WHERE id=?";
+        voidExecute(statement, game.getGameID(), game.getGameName(), game.getWhiteUsername(), game.getBlackUsername(),game.getGameID());
         return game;
     }
 
@@ -114,7 +114,7 @@ public class SQLGameDAO implements GameDAO{
                 ResultSet rs = ps.executeQuery();
                 if (rs.next()) {
                     Integer gameID = rs.getInt("id");
-                    String gameName = rs.getString("name");
+                    String gameName = rs.getString("gameName");
                     String whiteUsername = rs.getString("whiteUsername");
                     String blackUsername = rs.getString("blackUsername");
                     return new GameData(gameID, whiteUsername, blackUsername, gameName);
