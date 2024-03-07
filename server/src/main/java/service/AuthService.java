@@ -4,6 +4,8 @@ import dataAccess.AuthDAO;
 import dataAccess.DataAccessException;
 import model.*;
 
+import java.util.UUID;
+
 public class AuthService {
 
     private final AuthDAO dataAccess;
@@ -13,7 +15,11 @@ public class AuthService {
     }
 
     public AuthData createAuth(String username) throws DataAccessException {
-        return dataAccess.createAuth(username);
+
+        String token = UUID.randomUUID().toString();
+        AuthData authData = new AuthData(username, token);
+
+        return dataAccess.createAuth(authData);
     }
 
     public void deleteAuth(String authToken) throws DataAccessException {

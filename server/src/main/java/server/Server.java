@@ -24,12 +24,10 @@ public class Server {
     public MemoryGameDAO gameDAO = new MemoryGameDAO();
     public MemoryUserDAO userDAO = new MemoryUserDAO();
     public MemoryAuthDAO authDAO = new MemoryAuthDAO();
-
-    public GameService gameService = new GameService(gameDAO, authDAO);
-    public UserService userService = new UserService(userDAO, authDAO);
-
     public AuthService authService = new AuthService(authDAO);
 
+    public GameService gameService = new GameService(gameDAO, authDAO);
+    public UserService userService = new UserService(userDAO, authDAO, authService);
     public ClearService clearService = new ClearService(userDAO,authDAO,gameDAO);
 
 

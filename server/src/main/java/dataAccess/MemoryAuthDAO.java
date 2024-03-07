@@ -14,13 +14,10 @@ public class MemoryAuthDAO implements AuthDAO{
         auths.clear();
     }
 
-    public AuthData createAuth(String username) throws DataAccessException {
+    public AuthData createAuth(AuthData auth) throws DataAccessException {
         // could make this check that the username is valid
-        // also, this auth token creation should take place in the service class, I think
 
-        String token = UUID.randomUUID().toString();
-        AuthData auth = new AuthData(username, token);
-        auths.put(token, auth);
+        auths.put(auth.getAuthToken(), auth);
         return auth;
     }
 

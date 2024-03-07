@@ -20,9 +20,9 @@ class ServerTest {
     public MemoryAuthDAO authDAO = new MemoryAuthDAO();
 
     public GameService gameService = new GameService(gameDAO, authDAO);
-    public UserService userService = new UserService(userDAO, authDAO);
-
     public AuthService authService = new AuthService(authDAO);
+    public UserService userService = new UserService(userDAO, authDAO, authService);
+
 
     public ClearService clearService = new ClearService(userDAO,authDAO,gameDAO);
 

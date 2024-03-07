@@ -10,10 +10,12 @@ import java.util.Objects;
 public class UserService {
     private final MemoryUserDAO userAccess;
     private final MemoryAuthDAO authAccess;
+    private final AuthService authService;
 
-    public UserService(MemoryUserDAO userAccess, MemoryAuthDAO authAccess) {
+    public UserService(MemoryUserDAO userAccess, MemoryAuthDAO authAccess, AuthService authService) {
         this.userAccess = userAccess;
         this.authAccess = authAccess;
+        this.authService = authService;
     }
 
     public AuthData register(UserData user) throws DataAccessException, ServiceException {
@@ -25,7 +27,7 @@ public class UserService {
             throw new ServiceException("Error: already taken");
         }
         userAccess.createUser(user);
-        return authAccess.createAuth(username);
+        return authService.createAuth(username);
     }
     public AuthData login(UserData user) throws DataAccessException, ServiceException {
         UserData recordedUser = userAccess.getUser(user.getUsername());
@@ -33,7 +35,7 @@ public class UserService {
         if ( recordedUser == null|| !Objects.equals(user.getPassword(), recordedUser.getPassword())) {
             throw new ServiceException("Error: unauthorized");
         }
-        return authAccess.createAuth(user.getUsername());
+        return authService.createAuth(user.getUsername());
     }
     public void logout(String authToken) throws DataAccessException, ServiceException {
         if (authAccess.getAuth(authToken) == null) {
