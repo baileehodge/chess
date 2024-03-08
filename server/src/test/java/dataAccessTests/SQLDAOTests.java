@@ -25,7 +25,7 @@ class SQLUserDAOTest {
 
     public ClearService clearService = new ClearService(userDAO,authDAO,gameDAO);
 
-    ServerTest() throws DataAccessException {
+    SQLUserDAOTest() throws DataAccessException {
     }
 
     @BeforeEach
