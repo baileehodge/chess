@@ -87,11 +87,17 @@ public class SQLGameDAO implements GameDAO{
     }
 
     public GameData getGame(int gameID) throws DataAccessException {
+        if (gameID < 0) {
+            throw new DataAccessException("negative gameID");
+        }
         var statement = "SELECT * FROM games WHERE id=?";
         return returnExecute(statement, gameID);
     }
 
     public GameData updateGame(GameData game) throws DataAccessException {
+        if (game.getGameID() < 0) {
+            throw new DataAccessException("negative gameID");
+        }
         var statement = "UPDATE games SET id=?, gameName=?, whiteUsername=?, blackUsername=? WHERE id=?";
         voidExecute(statement, game.getGameID(), game.getGameName(), game.getWhiteUsername(), game.getBlackUsername(),game.getGameID());
         return game;

@@ -7,8 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Passing ALL API tests">
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Created SQLDAOTests file. Copy-pasted my server tests from phase 3 into the file; I just need to see if making the file exist lets the autograder run.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLAuthDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLAuthDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLGameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLGameDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLUserDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/test/java/dataAccessTests/SQLDAOTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/dataAccessTests/SQLDAOTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +24,8 @@
       <list>
         <option value="Interface" />
         <option value="Record" />
-        <option value="JUnit5 Test Class" />
         <option value="Class" />
+        <option value="JUnit5 Test Class" />
       </list>
     </option>
   </component>
@@ -128,6 +132,27 @@
     "JUnit.RookMoveTests.rookBlocked.executor": "Debug",
     "JUnit.RookMoveTests.rookCaptureEnemy.executor": "Debug",
     "JUnit.RookMoveTests.rookMoveUntilEdge.executor": "Debug",
+    "JUnit.SQLUserDAOTest.clearAuthsPass.executor": "Run",
+    "JUnit.SQLUserDAOTest.clearGamesPass.executor": "Run",
+    "JUnit.SQLUserDAOTest.clearUsersPass.executor": "Run",
+    "JUnit.SQLUserDAOTest.createAuthFail.executor": "Run",
+    "JUnit.SQLUserDAOTest.createAuthPass.executor": "Run",
+    "JUnit.SQLUserDAOTest.createGameFail.executor": "Run",
+    "JUnit.SQLUserDAOTest.createGamePass.executor": "Run",
+    "JUnit.SQLUserDAOTest.createUserFail.executor": "Run",
+    "JUnit.SQLUserDAOTest.createUserPass.executor": "Run",
+    "JUnit.SQLUserDAOTest.deleteAuthFail.executor": "Run",
+    "JUnit.SQLUserDAOTest.deleteAuthPass.executor": "Run",
+    "JUnit.SQLUserDAOTest.getAuthFail.executor": "Run",
+    "JUnit.SQLUserDAOTest.getAuthPass.executor": "Run",
+    "JUnit.SQLUserDAOTest.getGameFail.executor": "Run",
+    "JUnit.SQLUserDAOTest.getGamePass.executor": "Run",
+    "JUnit.SQLUserDAOTest.getUserFail.executor": "Run",
+    "JUnit.SQLUserDAOTest.getUserPass.executor": "Run",
+    "JUnit.SQLUserDAOTest.listGamesMany.executor": "Run",
+    "JUnit.SQLUserDAOTest.listGamesOne.executor": "Run",
+    "JUnit.SQLUserDAOTest.listGamesPass.executor": "Run",
+    "JUnit.SQLUserDAOTest.updateGamePass.executor": "Run",
     "JUnit.ServerTest.clearServiceSuccess.executor": "Run",
     "JUnit.ServerTest.createAuthFail.executor": "Run",
     "JUnit.ServerTest.createAuthSuccess.executor": "Run",
@@ -191,77 +216,87 @@
       <recent name="chess" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="dataAccessTests" />
       <recent name="service" />
       <recent name="dataAccess" />
       <recent name="server" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in server">
-    <configuration name="All in server" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PersistenceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.SQLUserDAOTest">
+    <configuration name="SQLUserDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="passoffTests.serverTests.*" />
+          <option name="PATTERN" value="dataAccessTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.PersistenceTests" />
+      <option name="PACKAGE_NAME" value="dataAccessTests" />
+      <option name="MAIN_CLASS_NAME" value="dataAccessTests.SQLUserDAOTest" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StandardAPITests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SQLUserDAOTest.getGameFail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="passoffTests.serverTests.*" />
+          <option name="PATTERN" value="dataAccessTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.StandardAPITests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="StandardAPITests.successLogin" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="passoffTests.serverTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.StandardAPITests" />
-      <option name="METHOD_NAME" value="successLogin" />
+      <option name="PACKAGE_NAME" value="dataAccessTests" />
+      <option name="MAIN_CLASS_NAME" value="dataAccessTests.SQLUserDAOTest" />
+      <option name="METHOD_NAME" value="getGameFail" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="StandardAPITests.uniqueAuthorizationTokens" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="SQLUserDAOTest.getGamePass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="passoffTests.serverTests.*" />
+          <option name="PATTERN" value="dataAccessTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.StandardAPITests" />
-      <option name="METHOD_NAME" value="uniqueAuthorizationTokens" />
+      <option name="PACKAGE_NAME" value="dataAccessTests" />
+      <option name="MAIN_CLASS_NAME" value="dataAccessTests.SQLUserDAOTest" />
+      <option name="METHOD_NAME" value="getGamePass" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SQLUserDAOTest.updateGameFail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dataAccessTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dataAccessTests" />
+      <option name="MAIN_CLASS_NAME" value="dataAccessTests.SQLUserDAOTest" />
+      <option name="METHOD_NAME" value="updateGameFail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SQLUserDAOTest.updateGamePass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="dataAccessTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="dataAccessTests" />
+      <option name="MAIN_CLASS_NAME" value="dataAccessTests.SQLUserDAOTest" />
+      <option name="METHOD_NAME" value="updateGamePass" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -269,11 +304,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.All in server" />
-        <item itemvalue="JUnit.StandardAPITests" />
-        <item itemvalue="JUnit.StandardAPITests.uniqueAuthorizationTokens" />
-        <item itemvalue="JUnit.PersistenceTests" />
-        <item itemvalue="JUnit.StandardAPITests.successLogin" />
+        <item itemvalue="JUnit.SQLUserDAOTest" />
+        <item itemvalue="JUnit.SQLUserDAOTest.updateGameFail" />
+        <item itemvalue="JUnit.SQLUserDAOTest.updateGamePass" />
+        <item itemvalue="JUnit.SQLUserDAOTest.getGameFail" />
+        <item itemvalue="JUnit.SQLUserDAOTest.getGamePass" />
       </list>
     </recent_temporary>
   </component>
@@ -334,23 +369,7 @@
       <workItem from="1709580254616" duration="1465000" />
       <workItem from="1709603689403" duration="4583000" />
       <workItem from="1709652709743" duration="1449000" />
-      <workItem from="1709752497532" duration="32623000" />
-    </task>
-    <task id="LOCAL-00006" summary="Implemented just enough to get rid of the &quot;not implemented&quot; errors">
-      <option name="closed" value="true" />
-      <created>1705635990899</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1705635990899</updated>
-    </task>
-    <task id="LOCAL-00007" summary="Fixed the &quot;index out of range&quot; issue">
-      <option name="closed" value="true" />
-      <created>1705637164377</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1705637164377</updated>
+      <workItem from="1709752497532" duration="38922000" />
     </task>
     <task id="LOCAL-00008" summary="1.18.24 EOD">
       <option name="closed" value="true" />
@@ -728,7 +747,23 @@
       <option name="project" value="LOCAL" />
       <updated>1709855733339</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="Created SQLDAOTests file. Copy-pasted my server tests from phase 3 into the file; I just need to see if making the file exist lets the autograder run.">
+      <option name="closed" value="true" />
+      <created>1709856353274</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1709856353274</updated>
+    </task>
+    <task id="LOCAL-00056" summary="Created SQLDAOTests file. Copy-pasted my server tests from phase 3 into the file; I just need to see if making the file exist lets the autograder run.">
+      <option name="closed" value="true" />
+      <created>1709856383129</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1709856383129</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -736,7 +771,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Alexa, play &quot;Sweet Child o' Mine&quot; by Guns N Roses.&#10;-cleaned imports&#10;-phase 3 starter code&#10;-added code libraries" />
     <MESSAGE value="take 2" />
     <MESSAGE value="updated webpage design" />
     <MESSAGE value="updated webpage design -- pt ii" />
@@ -761,7 +795,8 @@
     <MESSAGE value="Passing my server tests, not passing API tests" />
     <MESSAGE value="Passing most of the API tests" />
     <MESSAGE value="Passing ALL API tests" />
-    <option name="LAST_COMMIT_MESSAGE" value="Passing ALL API tests" />
+    <MESSAGE value="Created SQLDAOTests file. Copy-pasted my server tests from phase 3 into the file; I just need to see if making the file exist lets the autograder run." />
+    <option name="LAST_COMMIT_MESSAGE" value="Created SQLDAOTests file. Copy-pasted my server tests from phase 3 into the file; I just need to see if making the file exist lets the autograder run." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -770,26 +805,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/SQLGameDAO.java</url>
-          <line>61</line>
-          <option name="timeStamp" value="14" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/SQLGameDAO.java</url>
-          <line>94</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/SQLGameDAO.java</url>
-          <line>96</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/SQLGameDAO.java</url>
-          <line>140</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

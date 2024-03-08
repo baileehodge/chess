@@ -55,17 +55,26 @@ public class SQLAuthDAO implements AuthDAO{
 
 
     public AuthData createAuth(AuthData authData) throws DataAccessException {
+        if (authData.getAuthToken().isEmpty()) {
+            throw new DataAccessException("missing auth token");
+        }
         var statement = "INSERT INTO auths (auth, username) VALUES (?, ?)";
         voidExecute(statement, authData.getAuthToken(), authData.getUsername());
         return authData;
     }
 
     public void deleteAuth(String authToken) throws DataAccessException {
+        if (authToken.isEmpty()) {
+            throw new DataAccessException("missing auth token");
+        }
         var statement = "DELETE FROM auths WHERE auth=?";
         voidExecute(statement, authToken);
     }
 
     public AuthData getAuth(String authToken) throws DataAccessException {
+        if (authToken.isEmpty()) {
+            throw new DataAccessException("missing auth token");
+        }
         var statement = "SELECT * FROM auths WHERE auth=?";
         return returnExecute(statement, authToken);
     }

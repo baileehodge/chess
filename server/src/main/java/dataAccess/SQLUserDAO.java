@@ -58,12 +58,18 @@ public class SQLUserDAO implements UserDAO {
 
     @Override
     public UserData getUser(String username) throws DataAccessException {
+        if (username.isEmpty()) {
+            throw new DataAccessException("missing username");
+        }
         var statement = "SELECT * FROM users WHERE username=?";
         return returnExecute(statement, username);
     }
 
     @Override
     public UserData createUser(UserData userData) throws DataAccessException {
+        if (userData.getUsername().isEmpty()) {
+            throw new DataAccessException("missing username");
+        }
         var statement = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
         voidExecute(statement, userData.getUsername(), userData.getEmail(), userData.getPassword());
         return userData;
