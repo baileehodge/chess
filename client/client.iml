@@ -25,5 +25,6 @@
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.junit.jupiter:junit-jupiter-engine:5.9.2" level="project" />
     <orderEntry type="library" scope="RUNTIME" name="Maven: org.junit.platform:junit-platform-engine:1.9.2" level="project" />
     <orderEntry type="module" module-name="server" scope="TEST" />
+    <orderEntry type="module" module-name="server" />
   </component>
 </module>
