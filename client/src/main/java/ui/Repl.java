@@ -10,4 +10,7 @@ public class Repl {
         postloginClient = new PostloginClient(serverUrl);
         gameplayClient = new GameplayClient(serverUrl);
     }
+
+    public void run() {
+    }
 }
