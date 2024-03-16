@@ -8,6 +8,16 @@ public class Repl {
     private final PreloginClient preloginClient;
     private final PostloginClient postloginClient;
     private final GameplayClient gameplayClient;
+    private static State state = State.SIGNEDOUT;
+    public enum State {
+        SIGNEDOUT,
+        SIGNEDIN,
+        INGAME
+    }
+
+    public static void setState(State newState) {
+        state = newState;
+    }
 
     public Repl(String serverUrl) {
         preloginClient = new PreloginClient();
@@ -26,7 +36,15 @@ public class Repl {
             String line = scanner.nextLine();
 
             try {
-                result = PreloginClient.eval(line);
+                if (state == State.INGAME) {
+                    result = GameplayClient.eval(line);
+                }
+                else if (state == State.SIGNEDIN) {
+                    result = PostloginClient.eval(line);
+                }
+                else {
+                    result = PreloginClient.eval(line);
+                }
                 System.out.print(SET_TEXT_COLOR_WHITE + result);
             } catch (Throwable e) {
                 System.out.print(e.getMessage());

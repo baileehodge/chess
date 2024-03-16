@@ -16,7 +16,7 @@ public class PreloginClient {
             var cmd = (tokens.length > 0) ? tokens[0] : "help";
             var params = Arrays.copyOfRange(tokens, 1, tokens.length);
             return switch (cmd) {
-                case "quit" -> "quitting...";
+                case "quit" -> "Goodbye";
                 case "login" -> login(params);
                 case "register" -> register();
 
@@ -37,10 +37,12 @@ public class PreloginClient {
 
     private static String login(String... params) throws UIException{
 
+        Repl.setState(Repl.State.SIGNEDIN);
         return "null";
     }
     private static String register() throws UIException{
 
+        Repl.setState(Repl.State.SIGNEDIN);
         return "null";
     }
 
