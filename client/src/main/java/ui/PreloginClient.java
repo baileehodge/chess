@@ -10,14 +10,13 @@ public class PreloginClient {
     public PreloginClient() {
 
     }
-    public String eval(String input) {
+    public static String eval(String input) {
         try {
             var tokens = input.toLowerCase().split(" ");
             var cmd = (tokens.length > 0) ? tokens[0] : "help";
             var params = Arrays.copyOfRange(tokens, 1, tokens.length);
             return switch (cmd) {
-                case "help" -> help();
-                case "quit" -> "quit";
+                case "quit" -> "quitting...";
                 case "login" -> login(params);
                 case "register" -> register();
 
@@ -28,16 +27,21 @@ public class PreloginClient {
         }
     }
 
-    private String help() {
-        // standard pre login stuff
-        return null;
+    public static String help() {
+        return """
+                    - login <username> <password>
+                    - register <username> <password> <email>
+                    - quit
+                    """;
     }
 
-    private String login(String... params) {
-        return null;
+    private static String login(String... params) throws UIException{
+
+        return "null";
     }
-    private String register() {
-        return null;
+    private static String register() throws UIException{
+
+        return "null";
     }
 
 

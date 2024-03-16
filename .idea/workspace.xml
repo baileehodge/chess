@@ -8,12 +8,6 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="3.14.24 EOD">
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/ServerFacade.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/ui/UIException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/chess.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/chess.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/PreloginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/PreloginClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/Repl.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/Repl.java" afterDir="false" />
     </list>
@@ -198,7 +192,7 @@
     "git-widget-placeholder": "main",
     "ignore.virus.scanning.warn.message": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/baile/Schoolwork/Winter2024/CS240/petshop",
+    "last_opened_file_path": "C:/Users/baile/Schoolwork/Winter2024/CS240/chess",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
@@ -230,7 +224,14 @@
       <recent name="server" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.All in chess">
+  <component name="RunManager" selected="Application.Main">
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
+      <module name="client" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="All in chess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="chess" />
       <option name="PACKAGE_NAME" value="" />
@@ -270,22 +271,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SQLUserDAOTest.updateGamePass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dataAccessTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dataAccessTests" />
-      <option name="MAIN_CLASS_NAME" value="dataAccessTests.SQLUserDAOTest" />
-      <option name="METHOD_NAME" value="updateGamePass" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="ServerFacadeTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="client" />
       <extension name="coverage">
@@ -303,11 +288,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.All in chess" />
         <item itemvalue="JUnit.ServerFacadeTests" />
         <item itemvalue="JUnit.SQLUserDAOTest" />
         <item itemvalue="JUnit.SQLUserDAOTest.updateGameFail" />
-        <item itemvalue="JUnit.SQLUserDAOTest.updateGamePass" />
       </list>
     </recent_temporary>
   </component>
@@ -374,6 +359,7 @@
       <workItem from="1710373000551" duration="2047000" />
       <workItem from="1710443885171" duration="4214000" />
       <workItem from="1710515352087" duration="9063000" />
+      <workItem from="1710626245722" duration="1613000" />
     </task>
     <task id="LOCAL-00012" summary="Pawn tests pass">
       <option name="closed" value="true" />
@@ -772,6 +758,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
