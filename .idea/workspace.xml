@@ -7,15 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Quicksave">
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/ui/DrawTheBoard.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/ui/examplecode/TicTacToe.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/PreloginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/PreloginClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/Repl.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/Repl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" afterDir="false" />
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Draws the chessboard. Probably draws the pieces correctly, but who's to say">
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/DrawTheBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/DrawTheBoard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +62,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.DrawTheBoard.executor": "Debug",
+    "Application.DrawTheBoard.executor": "Run",
     "Application.Main.executor": "Run",
     "Application.TicTacToe.executor": "Run",
     "Application.ui.examplecode.TicTacToe.executor": "Debug",
@@ -233,7 +226,7 @@
       <recent name="server" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.DrawTheBoard">
     <configuration name="DrawTheBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ui.DrawTheBoard" />
       <module name="client" />
@@ -290,8 +283,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.DrawTheBoard" />
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.ui.examplecode.TicTacToe" />
         <item itemvalue="Application.TicTacToe" />
         <item itemvalue="JUnit.All in server" />
@@ -361,15 +354,7 @@
       <workItem from="1710373000551" duration="2047000" />
       <workItem from="1710443885171" duration="4214000" />
       <workItem from="1710515352087" duration="9063000" />
-      <workItem from="1710626245722" duration="14221000" />
-    </task>
-    <task id="LOCAL-00014" summary="It works! Praise the Lord. [Had to override the hashCode in a couple of places.]">
-      <option name="closed" value="true" />
-      <created>1705998281148</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1705998281148</updated>
+      <workItem from="1710626245722" duration="14563000" />
     </task>
     <task id="LOCAL-00015" summary="Switched out some of the code for calculating the piece moves with the code I wrote prepping for the programming exam since it was more concise. Tests still pass.">
       <option name="closed" value="true" />
@@ -755,7 +740,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710633115604</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Draws the chessboard. Probably draws the pieces correctly, but who's to say">
+      <option name="closed" value="true" />
+      <created>1710646487897</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1710646487897</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -774,7 +767,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Wrote the DAOs. Are they correct? The world may never know." />
     <MESSAGE value="*internal screaming* :)" />
     <MESSAGE value="IF YOU LIKE PIÑA COLADAS" />
     <MESSAGE value="AND GETTING CAUGHT IN THE RAIN" />
@@ -799,7 +791,8 @@
     <MESSAGE value="3.14.24 EOD" />
     <MESSAGE value="&quot;I. Understand. Nothing.&quot; &#10;-Michael Scott" />
     <MESSAGE value="Quicksave" />
-    <option name="LAST_COMMIT_MESSAGE" value="Quicksave" />
+    <MESSAGE value="Draws the chessboard. Probably draws the pieces correctly, but who's to say" />
+    <option name="LAST_COMMIT_MESSAGE" value="Draws the chessboard. Probably draws the pieces correctly, but who's to say" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

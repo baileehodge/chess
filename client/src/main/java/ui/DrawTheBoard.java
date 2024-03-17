@@ -22,6 +22,12 @@ public class DrawTheBoard {
     private static final String QUEEN = " Q ";
     private static final String KING = " K ";
 
+    public static void main(String[] args) {
+        ChessBoard board = new ChessBoard();
+        board.resetBoard();
+        run(board);
+    }
+
 
     public static void run(ChessBoard board) {
         var out = new PrintStream(System.out, true, StandardCharsets.UTF_8);
@@ -84,7 +90,7 @@ public class DrawTheBoard {
                     out.print(SET_TEXT_COLOR_WHITE);
                 }
                 var squares = board.getSquares();
-                var square = squares[row][col];
+                var square = squares[col][row];
 
                 if (square != null) {
                     // set the color
@@ -96,10 +102,10 @@ public class DrawTheBoard {
                     }
 
                     // get the type
-                    if (square.getPieceType().equals(ChessPiece.PieceType.ROOK)) {
+                    if (square.getPieceType().equals(ChessPiece.PieceType.PAWN)) {
                         out.print(PAWN);
                     }
-                    else if (square.getPieceType().equals(ChessPiece.PieceType.PAWN)) {
+                    else if (square.getPieceType().equals(ChessPiece.PieceType.ROOK)) {
                         out.print(ROOK);
                     }
                     else if (square.getPieceType().equals(ChessPiece.PieceType.KNIGHT)) {
