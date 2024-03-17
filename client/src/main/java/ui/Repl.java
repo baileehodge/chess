@@ -54,7 +54,7 @@ public class Repl {
     }
 
     private void printPrompt() {
-        System.out.print("\n" + SET_TEXT_COLOR_BLUE + ">>> " + SET_TEXT_COLOR_WHITE);
+        System.out.print("\n" + SET_TEXT_COLOR_BLUE + ">>> " + RESET_TEXT_COLOR);
     }
 
 }

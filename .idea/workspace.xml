@@ -7,11 +7,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="&quot;I. Understand. Nothing.&quot; &#10;-Michael Scott">
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Quicksave">
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/ui/DrawTheBoard.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/ui/examplecode/TicTacToe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/PreloginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/PreloginClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/Repl.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/Repl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,7 +69,10 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.DrawTheBoard.executor": "Debug",
     "Application.Main.executor": "Run",
+    "Application.TicTacToe.executor": "Run",
+    "Application.ui.examplecode.TicTacToe.executor": "Debug",
     "Downloaded.Files.Path.Enabled": "false",
     "JUnit.All in chess.executor": "Run",
     "JUnit.All in server.executor": "Run",
@@ -227,6 +234,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Application.Main">
+    <configuration name="DrawTheBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ui.DrawTheBoard" />
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="client" />
@@ -234,56 +254,36 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in chess" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="chess" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SQLUserDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dataAccessTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dataAccessTests" />
-      <option name="MAIN_CLASS_NAME" value="dataAccessTests.SQLUserDAOTest" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="SQLUserDAOTest.updateGameFail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="dataAccessTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="dataAccessTests" />
-      <option name="MAIN_CLASS_NAME" value="dataAccessTests.SQLUserDAOTest" />
-      <option name="METHOD_NAME" value="updateGameFail" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ServerFacadeTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TicTacToe" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ui.TicTacToe" />
       <module name="client" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="clientTests.*" />
+          <option name="PATTERN" value="ui.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="clientTests" />
-      <option name="MAIN_CLASS_NAME" value="clientTests.ServerFacadeTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ui.examplecode.TicTacToe" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ui.examplecode.TicTacToe" />
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ui.examplecode.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="All in server" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TEST_OBJECT" value="package" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -291,10 +291,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.All in chess" />
-        <item itemvalue="JUnit.ServerFacadeTests" />
-        <item itemvalue="JUnit.SQLUserDAOTest" />
-        <item itemvalue="JUnit.SQLUserDAOTest.updateGameFail" />
+        <item itemvalue="Application.DrawTheBoard" />
+        <item itemvalue="Application.ui.examplecode.TicTacToe" />
+        <item itemvalue="Application.TicTacToe" />
+        <item itemvalue="JUnit.All in server" />
       </list>
     </recent_temporary>
   </component>
@@ -361,15 +361,7 @@
       <workItem from="1710373000551" duration="2047000" />
       <workItem from="1710443885171" duration="4214000" />
       <workItem from="1710515352087" duration="9063000" />
-      <workItem from="1710626245722" duration="4059000" />
-    </task>
-    <task id="LOCAL-00013" summary="Passing everything except reset board, even though the reset board test Expected and Actual are identical.">
-      <option name="closed" value="true" />
-      <created>1705998036069</created>
-      <option name="number" value="00013" />
-      <option name="presentableId" value="LOCAL-00013" />
-      <option name="project" value="LOCAL" />
-      <updated>1705998036069</updated>
+      <workItem from="1710626245722" duration="14221000" />
     </task>
     <task id="LOCAL-00014" summary="It works! Praise the Lord. [Had to override the hashCode in a couple of places.]">
       <option name="closed" value="true" />
@@ -755,7 +747,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710629800431</updated>
     </task>
-    <option name="localTasksCounter" value="62" />
+    <task id="LOCAL-00062" summary="Quicksave">
+      <option name="closed" value="true" />
+      <created>1710633115603</created>
+      <option name="number" value="00062" />
+      <option name="presentableId" value="LOCAL-00062" />
+      <option name="project" value="LOCAL" />
+      <updated>1710633115604</updated>
+    </task>
+    <option name="localTasksCounter" value="63" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -789,7 +789,6 @@
     <MESSAGE value="Phase 4 starter code" />
     <MESSAGE value="testing gitignore" />
     <MESSAGE value="3/5/24 EOD" />
-    <MESSAGE value="Quicksave" />
     <MESSAGE value="Passing my server tests, not passing API tests" />
     <MESSAGE value="Passing most of the API tests" />
     <MESSAGE value="Passing ALL API tests" />
@@ -799,7 +798,8 @@
     <MESSAGE value="created classes" />
     <MESSAGE value="3.14.24 EOD" />
     <MESSAGE value="&quot;I. Understand. Nothing.&quot; &#10;-Michael Scott" />
-    <option name="LAST_COMMIT_MESSAGE" value="&quot;I. Understand. Nothing.&quot; &#10;-Michael Scott" />
+    <MESSAGE value="Quicksave" />
+    <option name="LAST_COMMIT_MESSAGE" value="Quicksave" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -808,6 +808,51 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/client/src/main/java/ui/examplecode/TicTacToe.java</url>
+          <line>32</line>
+          <properties class="ui.examplecode.TicTacToe" method="drawHeaders">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/client/src/main/java/ui/examplecode/TicTacToe.java</url>
+          <line>48</line>
+          <properties class="ui.examplecode.TicTacToe" method="drawHeader">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/client/src/main/java/ui/examplecode/TicTacToe.java</url>
+          <line>57</line>
+          <properties class="ui.examplecode.TicTacToe" method="printHeaderText">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/client/src/main/java/ui/examplecode/TicTacToe.java</url>
+          <line>66</line>
+          <properties class="ui.examplecode.TicTacToe" method="drawTicTacToeBoard">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/client/src/main/java/ui/examplecode/TicTacToe.java</url>
+          <line>79</line>
+          <properties class="ui.examplecode.TicTacToe" method="drawRowOfSquares">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

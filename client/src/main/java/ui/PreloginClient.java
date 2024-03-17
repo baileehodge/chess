@@ -36,14 +36,19 @@ public class PreloginClient {
     }
 
     private static String login(String... params) throws UIException{
+        if (params.length >= 2) {
 
-        Repl.setState(Repl.State.SIGNEDIN);
-        return "null";
+            Repl.setState(Repl.State.SIGNEDIN);
+            return "login null";
+        }
+        throw new UIException(400, "expected login <username> <password>");
     }
-    private static String register() throws UIException{
-
-        Repl.setState(Repl.State.SIGNEDIN);
-        return "null";
+    private static String register(String... params) throws UIException{
+        if (params.length >= 3) {
+            Repl.setState(Repl.State.SIGNEDIN);
+            return "register null";
+        }
+        throw new UIException(400, "expected register <username> <password> <email>");
     }
 
 

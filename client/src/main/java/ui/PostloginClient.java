@@ -12,10 +12,10 @@ public class PostloginClient {
             return switch (cmd) {
                 case "quit" -> "Goodbye";
                 case "logout" -> logout(params);
-                case "create game" -> createGame(params);
-                case "list games" -> listGames();
-                case "join game" -> joinGame(params);
-                case "join observer" -> joinObserver(params);
+                case "createGame" -> createGame(params);
+                case "listGames" -> listGames();
+                case "joinGame" -> joinGame(params);
+                case "joinObserver" -> joinObserver(params);
 
                 default -> help();
             };
@@ -25,27 +25,30 @@ public class PostloginClient {
     }
 
     private static String help() {
-        return "null";
+        return "postlogin help";
 
     }
     private static String logout(String... params) throws UIException{
-        return "null";
+        Repl.setState(Repl.State.SIGNEDOUT);
+        return "logout null";
 
     }
     private static String createGame(String... params) throws UIException{
-        return "null";
+        return "createGame null";
 
     }
     private static String listGames() throws UIException{
-        return "null";
+        return "listGames null";
 
     }
     private static String joinGame(String... params) throws UIException{
-        return "null";
+        Repl.setState(Repl.State.INGAME);
+        return "joinGame null";
 
     }
     private static String joinObserver(String... params) throws UIException{
-        return "null";
+        Repl.setState(Repl.State.INGAME);
+        return "joinObserver null";
 
     }
 }
