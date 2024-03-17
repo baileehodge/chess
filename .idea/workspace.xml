@@ -226,7 +226,20 @@
       <recent name="server" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DrawTheBoard">
+  <component name="RunManager" selected="Application.DrawBoard">
+    <configuration name="DrawBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ui.DrawBoard" />
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="ui.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="DrawTheBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ui.DrawTheBoard" />
       <module name="client" />
@@ -273,21 +286,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="All in server" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <option name="PACKAGE_NAME" value="" />
-      <option name="TEST_OBJECT" value="package" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DrawBoard" />
         <item itemvalue="Application.DrawTheBoard" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.ui.examplecode.TicTacToe" />
         <item itemvalue="Application.TicTacToe" />
-        <item itemvalue="JUnit.All in server" />
       </list>
     </recent_temporary>
   </component>

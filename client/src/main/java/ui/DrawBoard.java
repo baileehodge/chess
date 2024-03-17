@@ -5,13 +5,11 @@ import chess.ChessGame;
 import chess.ChessPiece;
 
 import java.io.PrintStream;
-import java.lang.reflect.Array;
 import java.nio.charset.StandardCharsets;
-import java.util.Random;
 
 import static ui.EscapeSequences.*;
 
-public class DrawTheBoard {
+public class DrawBoard {
 
     private static final int BOARD_SIZE_IN_SQUARES = 8;
     private static final String BLANK = "   ";
@@ -29,6 +27,7 @@ public class DrawTheBoard {
     }
 
 
+    // takes a ChessBoard object. Draws both orientations
     public static void run(ChessBoard board) {
         var out = new PrintStream(System.out, true, StandardCharsets.UTF_8);
 

@@ -7,7 +7,7 @@ public class GameplayClient {
         // just draws a couple of empty boards
         ChessBoard board = new ChessBoard();
         board.resetBoard();
-        DrawTheBoard.run(board);
+        DrawBoard.run(board);
         return "\n";
     }
 }
