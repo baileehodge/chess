@@ -25,30 +25,30 @@ public class PostloginClient {
     }
 
     private static String help() {
-        return "postlogin help";
-
+        return """
+                    - logout
+                    - createGame <game name>
+                    - joinGame <gameID> <player color>
+                    - joinGame <gameID>  (to join the game as an observer)
+                    - quit
+                    """;
     }
     private static String logout(String... params) throws UIException{
         Repl.setState(Repl.State.SIGNEDOUT);
         return "logout null";
-
     }
     private static String createGame(String... params) throws UIException{
         return "createGame null";
-
     }
     private static String listGames() throws UIException{
         return "listGames null";
-
     }
     private static String joinGame(String... params) throws UIException{
         Repl.setState(Repl.State.INGAME);
         return "joinGame null";
-
     }
     private static String joinObserver(String... params) throws UIException{
         Repl.setState(Repl.State.INGAME);
         return "joinObserver null";
-
     }
 }

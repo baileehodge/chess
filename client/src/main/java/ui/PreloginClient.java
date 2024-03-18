@@ -2,9 +2,12 @@ package ui;
 
 import java.lang.reflect.Array;
 import java.util.*;
+
+import model.UserData;
 import ui.UIException;
 
 public class PreloginClient {
+
 
 
     public PreloginClient() {
@@ -45,8 +48,10 @@ public class PreloginClient {
     }
     private static String register(String... params) throws UIException{
         if (params.length >= 3) {
+            UserData user = new UserData(params[1],params[2], params[3]);
+
             Repl.setState(Repl.State.SIGNEDIN);
-            return "register null";
+            return "account created and user signed in";
         }
         throw new UIException(400, "expected register <username> <password> <email>");
     }

@@ -1,26 +1,103 @@
 import com.google.gson.Gson;
+import ui.UIException;
+import model.*;
 
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.net.HttpURLConnection;
-import java.net.URI;
-import java.util.Map;
+import java.io.*;
+import java.net.*;
 
 public class ServerFacade {
-    // BASED ON THE WEB API WEB CLIENT EXAMPLE CODE
-    public static void main(String[] args) throws Exception {
-        // Specify the desired endpoint
-        URI uri = new URI("http://localhost:8080/name");
-        HttpURLConnection http = (HttpURLConnection) uri.toURL().openConnection();
-        http.setRequestMethod("GET");
 
-        // Make the request
-        http.connect();
+    private final String serverUrl;
 
-        // Output the response body
-        try (InputStream respBody = http.getInputStream()) {
-            InputStreamReader inputStreamReader = new InputStreamReader(respBody);
-            System.out.println(new Gson().fromJson(inputStreamReader, Map.class));
+    public ServerFacade(String url) {
+        serverUrl = url;
+    }
+
+    public Object register(UserData data) throws UIException {
+        var path = "/user";
+        return this.makeRequest("POST", path, data, UserData.class);
+    }
+
+    public Object login(UserData data) throws UIException {
+        var path = "/session";
+        return this.makeRequest("POST", path, data, AuthData.class);
+    }
+    public Object logout(AuthData data) throws UIException {
+        var path = "/session";
+        return this.makeRequest("DELETE", path, data, AuthData.class);
+    }
+    public Object createGame(GameData data) throws UIException {
+        var path = "/game";
+        return this.makeRequest("POST", path, data, GameData.class);
+    }
+    public Object joinGame(GameData data) throws UIException {
+        var path = "/game";
+        return this.makeRequest("PUT", path, data, GameData.class);
+    }
+    public Object listGames(GameData data) throws UIException {
+        var path = "/game";
+        return this.makeRequest("GET", path, data, GameData.class);
+    }
+    public Object clear() throws UIException {
+        var path = "/db";
+        return this.makeRequest("DELETE", path, null, null);
+    }
+
+
+
+
+
+
+
+    private <T> T makeRequest(String method, String path, Object request, Class<T> responseClass) throws UIException {
+        try {
+            URL url = (new URI(serverUrl + path)).toURL();
+            HttpURLConnection http = (HttpURLConnection) url.openConnection();
+            http.setRequestMethod(method);
+            http.setDoOutput(true);
+
+            writeBody(request, http);
+            http.connect();
+            throwIfNotSuccessful(http);
+            return readBody(http, responseClass);
+        } catch (Exception ex) {
+            throw new UIException(500, ex.getMessage());
         }
+    }
+
+
+    private static void writeBody(Object request, HttpURLConnection http) throws IOException {
+        if (request != null) {
+            http.addRequestProperty("Content-Type", "application/json");
+            String reqData = new Gson().toJson(request);
+            try (OutputStream reqBody = http.getOutputStream()) {
+                reqBody.write(reqData.getBytes());
+            }
+        }
+    }
+
+    private void throwIfNotSuccessful(HttpURLConnection http) throws IOException, UIException {
+        var status = http.getResponseCode();
+        if (!isSuccessful(status)) {
+            throw new UIException(status, "failure: " + status);
+        }
+    }
+
+    private static <T> T readBody(HttpURLConnection http, Class<T> responseClass) throws IOException {
+        T response = null;
+        if (http.getContentLength() < 0) {
+            try (InputStream respBody = http.getInputStream()) {
+                InputStreamReader reader = new InputStreamReader(respBody);
+                if (responseClass != null) {
+                    response = new Gson().fromJson(reader, responseClass);
+                }
+            }
+        }
+        return response;
+    }
+
+
+    private boolean isSuccessful(int status) {
+        return status / 100 == 2;
     }
 }

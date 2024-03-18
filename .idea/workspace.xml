@@ -7,8 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Draws the chessboard. Probably draws the pieces correctly, but who's to say">
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/DrawTheBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/DrawTheBoard.java" afterDir="false" />
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Quick rename">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/ServerFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ServerFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/examplecode/TicTacToe.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,7 +65,9 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.DrawBoard.executor": "Run",
     "Application.DrawTheBoard.executor": "Run",
+    "Application.Main (1).executor": "Run",
     "Application.Main.executor": "Run",
     "Application.TicTacToe.executor": "Run",
     "Application.ui.examplecode.TicTacToe.executor": "Debug",
@@ -226,7 +231,7 @@
       <recent name="server" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DrawBoard">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="DrawBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ui.DrawBoard" />
       <module name="client" />
@@ -253,22 +258,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="client" />
+      <module name="server" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="TicTacToe" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ui.TicTacToe" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="client" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -288,11 +287,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
+        <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.DrawBoard" />
         <item itemvalue="Application.DrawTheBoard" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="Application.ui.examplecode.TicTacToe" />
-        <item itemvalue="Application.TicTacToe" />
       </list>
     </recent_temporary>
   </component>
@@ -359,23 +358,8 @@
       <workItem from="1710373000551" duration="2047000" />
       <workItem from="1710443885171" duration="4214000" />
       <workItem from="1710515352087" duration="9063000" />
-      <workItem from="1710626245722" duration="14563000" />
-    </task>
-    <task id="LOCAL-00015" summary="Switched out some of the code for calculating the piece moves with the code I wrote prepping for the programming exam since it was more concise. Tests still pass.">
-      <option name="closed" value="true" />
-      <created>1706336674864</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1706336674864</updated>
-    </task>
-    <task id="LOCAL-00016" summary="Added ChessGame tests.&#10;Played with formatting.&#10;Cried, but only a little.">
-      <option name="closed" value="true" />
-      <created>1706762040209</created>
-      <option name="number" value="00016" />
-      <option name="presentableId" value="LOCAL-00016" />
-      <option name="project" value="LOCAL" />
-      <updated>1706762040209</updated>
+      <workItem from="1710626245722" duration="15756000" />
+      <workItem from="1710687408177" duration="7070000" />
     </task>
     <task id="LOCAL-00017" summary="Basic setup">
       <option name="closed" value="true" />
@@ -753,7 +737,23 @@
       <option name="project" value="LOCAL" />
       <updated>1710646487897</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Ok now it works">
+      <option name="closed" value="true" />
+      <created>1710646634239</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1710646634239</updated>
+    </task>
+    <task id="LOCAL-00065" summary="Quick rename">
+      <option name="closed" value="true" />
+      <created>1710646946023</created>
+      <option name="number" value="00065" />
+      <option name="presentableId" value="LOCAL-00065" />
+      <option name="project" value="LOCAL" />
+      <updated>1710646946023</updated>
+    </task>
+    <option name="localTasksCounter" value="66" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -772,8 +772,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="*internal screaming* :)" />
-    <MESSAGE value="IF YOU LIKE PIÑA COLADAS" />
     <MESSAGE value="AND GETTING CAUGHT IN THE RAIN" />
     <MESSAGE value="Improved DAO setup. Hopefully." />
     <MESSAGE value="The server actually runs now" />
@@ -797,7 +795,9 @@
     <MESSAGE value="&quot;I. Understand. Nothing.&quot; &#10;-Michael Scott" />
     <MESSAGE value="Quicksave" />
     <MESSAGE value="Draws the chessboard. Probably draws the pieces correctly, but who's to say" />
-    <option name="LAST_COMMIT_MESSAGE" value="Draws the chessboard. Probably draws the pieces correctly, but who's to say" />
+    <MESSAGE value="Ok now it works" />
+    <MESSAGE value="Quick rename" />
+    <option name="LAST_COMMIT_MESSAGE" value="Quick rename" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -806,51 +806,6 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/client/src/main/java/ui/examplecode/TicTacToe.java</url>
-          <line>32</line>
-          <properties class="ui.examplecode.TicTacToe" method="drawHeaders">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="6" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/client/src/main/java/ui/examplecode/TicTacToe.java</url>
-          <line>48</line>
-          <properties class="ui.examplecode.TicTacToe" method="drawHeader">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="7" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/client/src/main/java/ui/examplecode/TicTacToe.java</url>
-          <line>57</line>
-          <properties class="ui.examplecode.TicTacToe" method="printHeaderText">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="8" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/client/src/main/java/ui/examplecode/TicTacToe.java</url>
-          <line>66</line>
-          <properties class="ui.examplecode.TicTacToe" method="drawTicTacToeBoard">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="9" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/client/src/main/java/ui/examplecode/TicTacToe.java</url>
-          <line>79</line>
-          <properties class="ui.examplecode.TicTacToe" method="drawRowOfSquares">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="10" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

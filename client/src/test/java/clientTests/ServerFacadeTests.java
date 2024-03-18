@@ -22,8 +22,28 @@ public class ServerFacadeTests {
 
 
     @Test
-    public void sampleTest() {
+    public void loginTestPass() {
         Assertions.assertTrue(true);
     }
+    public void registerTestPass() {
+        Assertions.assertTrue(true);
+    }
+    public void logoutTestPass() {
+        Assertions.assertTrue(true);
+    }
+    public void createGameTestPass() {
+        Assertions.assertTrue(true);
+    }
+    public void listGamesTestPass() {
+        Assertions.assertTrue(true);
+    }
+    public void joinGameTestPass() {
+        Assertions.assertTrue(true);
+    }
+    public void joinObserverTestPass() {
+        Assertions.assertTrue(true);
+    }
+
+
 
 }
