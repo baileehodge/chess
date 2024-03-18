@@ -1,16 +1,14 @@
 package ui;
 
-import java.lang.reflect.Array;
 import java.util.*;
 
 import model.UserData;
-import ui.UIException;
 
 public class PreloginClient {
+    static ServerFacade serverFacade;
 
-
-
-    public PreloginClient() {
+    public PreloginClient(String serverUrl) {
+        serverFacade = new ServerFacade(serverUrl);
 
     }
     public static String eval(String input) {
@@ -47,8 +45,11 @@ public class PreloginClient {
         throw new UIException(400, "expected login <username> <password>");
     }
     private static String register(String... params) throws UIException{
-        if (params.length >= 3) {
+        if (params.length >= 4) {
             UserData user = new UserData(params[1],params[2], params[3]);
+            serverFacade.register(user);
+
+            // TODO: provide for when the register fails
 
             Repl.setState(Repl.State.SIGNEDIN);
             return "account created and user signed in";

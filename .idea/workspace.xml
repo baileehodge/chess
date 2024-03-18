@@ -7,11 +7,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Quick rename">
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="ServerFacade written, untested">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ServerFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ServerFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/ServerFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/examplecode/TicTacToe.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/PreloginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/PreloginClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/Repl.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/Repl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/Server.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +72,7 @@
     "Application.DrawBoard.executor": "Run",
     "Application.DrawTheBoard.executor": "Run",
     "Application.Main (1).executor": "Run",
-    "Application.Main.executor": "Run",
+    "Application.Main.executor": "Debug",
     "Application.TicTacToe.executor": "Run",
     "Application.ui.examplecode.TicTacToe.executor": "Debug",
     "Downloaded.Files.Path.Enabled": "false",
@@ -359,15 +363,7 @@
       <workItem from="1710443885171" duration="4214000" />
       <workItem from="1710515352087" duration="9063000" />
       <workItem from="1710626245722" duration="15756000" />
-      <workItem from="1710687408177" duration="7070000" />
-    </task>
-    <task id="LOCAL-00017" summary="Basic setup">
-      <option name="closed" value="true" />
-      <created>1706763191043</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1706763191043</updated>
+      <workItem from="1710687408177" duration="10084000" />
     </task>
     <task id="LOCAL-00018" summary="validMoves method complete">
       <option name="closed" value="true" />
@@ -753,7 +749,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710646946023</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="ServerFacade written, untested">
+      <option name="closed" value="true" />
+      <created>1710733233153</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1710733233153</updated>
+    </task>
+    <option name="localTasksCounter" value="67" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -772,7 +776,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="AND GETTING CAUGHT IN THE RAIN" />
     <MESSAGE value="Improved DAO setup. Hopefully." />
     <MESSAGE value="The server actually runs now" />
     <MESSAGE value="The DAOs are actually written. For real this time. I promise." />
@@ -797,7 +800,8 @@
     <MESSAGE value="Draws the chessboard. Probably draws the pieces correctly, but who's to say" />
     <MESSAGE value="Ok now it works" />
     <MESSAGE value="Quick rename" />
-    <option name="LAST_COMMIT_MESSAGE" value="Quick rename" />
+    <MESSAGE value="ServerFacade written, untested" />
+    <option name="LAST_COMMIT_MESSAGE" value="ServerFacade written, untested" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -806,6 +810,15 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="3" />
         </breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/client/src/main/java/ui/PreloginClient.java</url>
+          <line>46</line>
+          <properties class="ui.PreloginClient" method="register">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>

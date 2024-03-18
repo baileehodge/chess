@@ -9,14 +9,9 @@ import spark.Request;
 import spark.Response;
 import spark.Spark;
 
-import spark.Request;
-import spark.Response;
 import model.*;
 
-import java.util.Collection;
-import java.util.HashMap;
 import java.util.Map;
-import java.util.Objects;
 
 
 public class Server {
@@ -31,6 +26,12 @@ public class Server {
     public ClearService clearService = new ClearService(userDAO,authDAO,gameDAO);
 
     public Server() {
+    }
+
+    // not functional
+    public void main() {
+        Server server = new Server();
+        server.run(8080);
     }
 
 

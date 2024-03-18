@@ -3,6 +3,11 @@ package ui;
 import java.util.Arrays;
 
 public class PostloginClient {
+    static ServerFacade serverFacade;
+
+    public PostloginClient(String serverUrl) {
+        serverFacade = new ServerFacade(serverUrl);
+    }
 
     public static String eval(String input) {
         try {
