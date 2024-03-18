@@ -15,9 +15,9 @@ public class ServerFacade {
         serverUrl = url;
     }
 
-    public Object register(UserData data) throws UIException {
+    public AuthData register(UserData data) throws UIException {
         var path = "/user";
-        return this.makeRequest("POST", path, data, UserData.class);
+        return this.makeRequest("POST", path, data, AuthData.class);
     }
 
     public Object login(UserData data) throws UIException {

@@ -2,6 +2,7 @@ package ui;
 
 import java.util.*;
 
+import model.AuthData;
 import model.UserData;
 
 public class PreloginClient {
@@ -19,7 +20,7 @@ public class PreloginClient {
             return switch (cmd) {
                 case "quit" -> "Goodbye";
                 case "login" -> login(params);
-                case "register" -> register();
+                case "register" -> register(params);
 
                 default -> help();
             };
@@ -45,12 +46,13 @@ public class PreloginClient {
         throw new UIException(400, "expected login <username> <password>");
     }
     private static String register(String... params) throws UIException{
-        if (params.length >= 4) {
-            UserData user = new UserData(params[1],params[2], params[3]);
-            serverFacade.register(user);
+        if (params.length >= 3) {
+            UserData user = new UserData(params[0],params[1], params[2]);
+            AuthData auth = serverFacade.register(user);
 
             // TODO: provide for when the register fails
 
+            Repl.setToken(auth.getAuthToken());
             Repl.setState(Repl.State.SIGNEDIN);
             return "account created and user signed in";
         }

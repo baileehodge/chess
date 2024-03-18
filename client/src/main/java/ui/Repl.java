@@ -9,6 +9,7 @@ public class Repl {
     private final PostloginClient postloginClient;
     private final GameplayClient gameplayClient;
     private static State state = State.SIGNEDOUT;
+    private static String authToken = "";
     public enum State {
         SIGNEDOUT,
         SIGNEDIN,
@@ -17,6 +18,9 @@ public class Repl {
 
     public static void setState(State newState) {
         state = newState;
+    }
+    public static void setToken(String token) {
+        authToken = token;
     }
 
     public Repl(String serverUrl) {
