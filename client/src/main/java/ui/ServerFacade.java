@@ -1,7 +1,6 @@
 package ui;
 
 import com.google.gson.Gson;
-import service.requests.JoinRecord;
 import model.*;
 
 import java.io.*;
@@ -39,10 +38,12 @@ public class ServerFacade {
         JoinRecord record = new JoinRecord(auth, playerColor, gameID);
         this.makeRequest("PUT", path, record, GameData.class, auth);
     }
-    public GameList listGames(String auth) throws UIException {
+    public GameData[] listGames(String auth) throws UIException {
         var path = "/game";
-        // we want this to return several games, should I change GameData.class to something else? A collection?
-        return this.makeRequest("GET", path, null, GameList.class , auth);
+        record GameList(GameData[] games) {
+        }
+        var response =  this.makeRequest("GET", path, null, GameList.class, auth);
+        return response.games();
     }
     public void clear() throws UIException {
         var path = "/db";

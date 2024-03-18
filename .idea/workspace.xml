@@ -7,16 +7,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Register works now">
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/ui/GameList.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/ui/JoinRecord.java" afterDir="false" />
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Lots of things are working now. Listgames is not. Waiting to test other game-related functions because of the need for listgames">
+      <change beforePath="$PROJECT_DIR$/.idea/chess.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/chess.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/GameList.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/PreloginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/PreloginClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/Repl.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/Repl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLAuthDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLAuthDAO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/test/java/clientTests/ServerFacadeTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/java/clientTests/ServerFacadeTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/shared.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shared/shared.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,7 +74,7 @@
     "Application.DrawBoard.executor": "Run",
     "Application.DrawTheBoard.executor": "Run",
     "Application.Main (1).executor": "Run",
-    "Application.Main.executor": "Debug",
+    "Application.Main.executor": "Run",
     "Application.TicTacToe.executor": "Run",
     "Application.ui.examplecode.TicTacToe.executor": "Debug",
     "Downloaded.Files.Path.Enabled": "false",
@@ -166,6 +167,9 @@
     "JUnit.SQLUserDAOTest.updateGameFail.executor": "Run",
     "JUnit.SQLUserDAOTest.updateGamePass.executor": "Run",
     "JUnit.ServerFacadeTests.executor": "Run",
+    "JUnit.ServerFacadeTests.loginTestFail.executor": "Run",
+    "JUnit.ServerFacadeTests.loginTestPass.executor": "Run",
+    "JUnit.ServerFacadeTests.logoutTestFail.executor": "Run",
     "JUnit.ServerTest.clearServiceSuccess.executor": "Run",
     "JUnit.ServerTest.createAuthFail.executor": "Run",
     "JUnit.ServerTest.createAuthSuccess.executor": "Run",
@@ -236,33 +240,7 @@
       <recent name="server" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DrawBoard">
-    <configuration name="DrawBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ui.DrawBoard" />
-      <module name="client" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="DrawTheBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ui.DrawTheBoard" />
-      <module name="client" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="ui.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.ServerFacadeTests">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="server" />
@@ -270,33 +248,76 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
+    <configuration name="ServerFacadeTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="clientTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="clientTests" />
+      <option name="MAIN_CLASS_NAME" value="clientTests.ServerFacadeTests" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ui.examplecode.TicTacToe" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="ui.examplecode.TicTacToe" />
+    <configuration name="ServerFacadeTests.loginTestFail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="client" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="ui.examplecode.*" />
+          <option name="PATTERN" value="clientTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="clientTests" />
+      <option name="MAIN_CLASS_NAME" value="clientTests.ServerFacadeTests" />
+      <option name="METHOD_NAME" value="loginTestFail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerFacadeTests.loginTestPass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="clientTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="clientTests" />
+      <option name="MAIN_CLASS_NAME" value="clientTests.ServerFacadeTests" />
+      <option name="METHOD_NAME" value="loginTestPass" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerFacadeTests.logoutTestFail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="clientTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="clientTests" />
+      <option name="MAIN_CLASS_NAME" value="clientTests.ServerFacadeTests" />
+      <option name="METHOD_NAME" value="logoutTestFail" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.DrawBoard" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.ServerFacadeTests" />
+        <item itemvalue="JUnit.ServerFacadeTests.logoutTestFail" />
         <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.DrawTheBoard" />
-        <item itemvalue="Application.ui.examplecode.TicTacToe" />
+        <item itemvalue="JUnit.ServerFacadeTests.loginTestFail" />
+        <item itemvalue="JUnit.ServerFacadeTests.loginTestPass" />
       </list>
     </recent_temporary>
   </component>
@@ -365,15 +386,7 @@
       <workItem from="1710515352087" duration="9063000" />
       <workItem from="1710626245722" duration="15756000" />
       <workItem from="1710687408177" duration="10436000" />
-      <workItem from="1710772167268" duration="15185000" />
-    </task>
-    <task id="LOCAL-00020" summary="SimulateMoves function written. Not tested; waiting on simulateMove function.">
-      <option name="closed" value="true" />
-      <created>1706915511420</created>
-      <option name="number" value="00020" />
-      <option name="presentableId" value="LOCAL-00020" />
-      <option name="project" value="LOCAL" />
-      <updated>1706915511420</updated>
+      <workItem from="1710772167268" duration="22939000" />
     </task>
     <task id="LOCAL-00021" summary="simulateMove function written.">
       <option name="closed" value="true" />
@@ -759,7 +772,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710773769615</updated>
     </task>
-    <option name="localTasksCounter" value="69" />
+    <task id="LOCAL-00069" summary="Lots of things are working now. Listgames is not. Waiting to test other game-related functions because of the need for listgames">
+      <option name="closed" value="true" />
+      <created>1710793727118</created>
+      <option name="number" value="00069" />
+      <option name="presentableId" value="LOCAL-00069" />
+      <option name="project" value="LOCAL" />
+      <updated>1710793727118</updated>
+    </task>
+    <option name="localTasksCounter" value="70" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -778,7 +799,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="The DAOs are actually written. For real this time. I promise." />
     <MESSAGE value="The service classes are fleshed out and ready for action" />
     <MESSAGE value="EOD 2/28/24&#10;&#10;json serialization is casually killing me" />
     <MESSAGE value="Passing 9 of 24 tests. Time for some intense debugging" />
@@ -803,7 +823,8 @@
     <MESSAGE value="ServerFacade written, untested" />
     <MESSAGE value="3.17.24 EOD" />
     <MESSAGE value="Register works now" />
-    <option name="LAST_COMMIT_MESSAGE" value="Register works now" />
+    <MESSAGE value="Lots of things are working now. Listgames is not. Waiting to test other game-related functions because of the need for listgames" />
+    <option name="LAST_COMMIT_MESSAGE" value="Lots of things are working now. Listgames is not. Waiting to test other game-related functions because of the need for listgames" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -812,11 +833,10 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java</url>
-          <line>32</line>
-          <option name="timeStamp" value="17" />
-        </line-breakpoint>
+        <breakpoint enabled="true" type="java-exception">
+          <properties class="java.lang.ClassNotFoundException" package="java.lang" />
+          <option name="timeStamp" value="28" />
+        </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/main/java/server/Server.java</url>
           <line>60</line>
@@ -828,6 +848,9 @@
           <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
+      <default-breakpoints>
+        <breakpoint enabled="true" type="java-exception" />
+      </default-breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>

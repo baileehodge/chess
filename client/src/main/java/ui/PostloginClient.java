@@ -59,8 +59,16 @@ public class PostloginClient {
     }
     private static String listGames() throws UIException{
         //TODO: return multiple games
-        serverFacade.listGames(getToken());
-        return "list those games";
+        GameData[] list = serverFacade.listGames(getToken());
+        StringBuilder returnString = new StringBuilder();
+        returnString.append("---All games--- \n");
+        for (int i = 0; i < list.length; i++) {
+            returnString.append(list[i].getGameID() +": ");
+            returnString.append(list[i].getGameName());
+            returnString.append("\n");
+        }
+
+        return returnString.toString();
     }
     private static String joinGame(String... params) throws UIException{
         if (params.length >= 2) {
