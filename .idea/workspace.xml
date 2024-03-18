@@ -7,11 +7,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="3.17.24 EOD">
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Register works now">
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/ui/GameList.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/ui/JoinRecord.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/PreloginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/PreloginClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/Repl.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/Repl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLAuthDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLAuthDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -208,7 +213,7 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.2",
     "run.code.analysis.last.selected.profile": "pProject Default",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -231,7 +236,7 @@
       <recent name="server" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main">
+  <component name="RunManager" selected="Application.DrawBoard">
     <configuration name="DrawBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ui.DrawBoard" />
       <module name="client" />
@@ -287,9 +292,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.DrawBoard" />
         <item itemvalue="Application.Main" />
         <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.DrawBoard" />
         <item itemvalue="Application.DrawTheBoard" />
         <item itemvalue="Application.ui.examplecode.TicTacToe" />
       </list>
@@ -360,15 +365,7 @@
       <workItem from="1710515352087" duration="9063000" />
       <workItem from="1710626245722" duration="15756000" />
       <workItem from="1710687408177" duration="10436000" />
-      <workItem from="1710772167268" duration="1255000" />
-    </task>
-    <task id="LOCAL-00019" summary="- created simulation class&#10;- took notes on its implementation&#10;- &quot;Alexa, play Young Folks by Peter Bjorn and John.&quot;">
-      <option name="closed" value="true" />
-      <created>1706899416958</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1706899416958</updated>
+      <workItem from="1710772167268" duration="15185000" />
     </task>
     <task id="LOCAL-00020" summary="SimulateMoves function written. Not tested; waiting on simulateMove function.">
       <option name="closed" value="true" />
@@ -754,7 +751,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710734889993</updated>
     </task>
-    <option name="localTasksCounter" value="68" />
+    <task id="LOCAL-00068" summary="Register works now">
+      <option name="closed" value="true" />
+      <created>1710773769615</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1710773769615</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -773,7 +778,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="The server actually runs now" />
     <MESSAGE value="The DAOs are actually written. For real this time. I promise." />
     <MESSAGE value="The service classes are fleshed out and ready for action" />
     <MESSAGE value="EOD 2/28/24&#10;&#10;json serialization is casually killing me" />
@@ -798,7 +802,8 @@
     <MESSAGE value="Quick rename" />
     <MESSAGE value="ServerFacade written, untested" />
     <MESSAGE value="3.17.24 EOD" />
-    <option name="LAST_COMMIT_MESSAGE" value="3.17.24 EOD" />
+    <MESSAGE value="Register works now" />
+    <option name="LAST_COMMIT_MESSAGE" value="Register works now" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -807,17 +812,28 @@
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/client/src/main/java/ui/PreloginClient.java</url>
-          <line>47</line>
-          <properties class="ui.PreloginClient" method="register">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="5" />
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java</url>
+          <line>32</line>
+          <option name="timeStamp" value="17" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/server/Server.java</url>
+          <line>60</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/main/java/server/Server.java</url>
+          <line>127</line>
+          <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="ui.UIException" memberName="cause" />
+      </pinned-members>
+    </pin-to-top-manager>
     <watches-manager>
       <configuration name="JUnit">
         <watch expression="board.squares[0]" />

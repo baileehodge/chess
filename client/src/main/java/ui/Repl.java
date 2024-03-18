@@ -1,5 +1,9 @@
 package ui;
 
+import model.GameData;
+
+import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Scanner;
 
 import static ui.EscapeSequences.*;
@@ -10,10 +14,18 @@ public class Repl {
     private final GameplayClient gameplayClient;
     private static State state = State.SIGNEDOUT;
     private static String authToken = "";
+    private static Collection<GameData> gameList = new ArrayList<>();
     public enum State {
         SIGNEDOUT,
         SIGNEDIN,
         INGAME
+    }
+
+    public void setGameList(Collection<GameData> newList) {
+        gameList = newList;
+    }
+    public Collection<GameData> getGameList() {
+        return gameList;
     }
 
     public static void setState(State newState) {
@@ -21,6 +33,9 @@ public class Repl {
     }
     public static void setToken(String token) {
         authToken = token;
+    }
+    public static String getToken() {
+        return authToken;
     }
 
     public Repl(String serverUrl) {
@@ -58,7 +73,7 @@ public class Repl {
     }
 
     private void printPrompt() {
-        System.out.print("\n" + SET_TEXT_COLOR_BLUE + ">>> " + RESET_TEXT_COLOR);
+        System.out.print("\n" + SET_TEXT_COLOR_BLUE + "[" + state + "] " + ">>> " + RESET_TEXT_COLOR);
     }
 
 }

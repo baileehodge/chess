@@ -1,11 +1,12 @@
 package ui;
 
 import com.google.gson.Gson;
-import ui.UIException;
+import service.requests.JoinRecord;
 import model.*;
 
 import java.io.*;
 import java.net.*;
+import java.util.Collection;
 
 public class ServerFacade {
 
@@ -20,43 +21,53 @@ public class ServerFacade {
         return this.makeRequest("POST", path, data, AuthData.class);
     }
 
-    public Object login(UserData data) throws UIException {
+    public AuthData login(UserData data) throws UIException {
         var path = "/session";
         return this.makeRequest("POST", path, data, AuthData.class);
     }
-    public Object logout(AuthData data) throws UIException {
+    public void logout(AuthData token) throws UIException {
+        String auth = token.getAuthToken();
         var path = "/session";
-        return this.makeRequest("DELETE", path, data, AuthData.class);
+        this.makeRequest("DELETE", path, null, AuthData.class, auth);
     }
-    public Object createGame(GameData data) throws UIException {
+    public void createGame(GameData data, String auth) throws UIException {
         var path = "/game";
-        return this.makeRequest("POST", path, data, GameData.class);
+        this.makeRequest("POST", path, data, GameData.class, auth);
     }
-    public Object joinGame(GameData data) throws UIException {
+    public void joinGame(String auth, String playerColor, int gameID) throws UIException {
         var path = "/game";
-        return this.makeRequest("PUT", path, data, GameData.class);
+        JoinRecord record = new JoinRecord(auth, playerColor, gameID);
+        this.makeRequest("PUT", path, record, GameData.class, auth);
     }
-    public Object listGames(GameData data) throws UIException {
+    public GameList listGames(String auth) throws UIException {
         var path = "/game";
-        return this.makeRequest("GET", path, data, GameData.class);
+        // we want this to return several games, should I change GameData.class to something else? A collection?
+        return this.makeRequest("GET", path, null, GameList.class , auth);
     }
-    public Object clear() throws UIException {
+    public void clear() throws UIException {
         var path = "/db";
-        return this.makeRequest("DELETE", path, null, null);
+        this.makeRequest("DELETE", path, null, null);
     }
-
-
 
 
 
 
 
     private <T> T makeRequest(String method, String path, Object request, Class<T> responseClass) throws UIException {
+        return makeRequest(method, path, request, responseClass, null);
+    }
+
+
+    private <T> T makeRequest(String method, String path, Object request, Class<T> responseClass, String auth) throws UIException {
         try {
             URL url = (new URI(serverUrl + path)).toURL();
             HttpURLConnection http = (HttpURLConnection) url.openConnection();
             http.setRequestMethod(method);
             http.setDoOutput(true);
+
+            if (auth != null) {
+                http.addRequestProperty("authorization", auth);
+            }
 
             writeBody(request, http);
             http.connect();
@@ -80,8 +91,9 @@ public class ServerFacade {
 
     private void throwIfNotSuccessful(HttpURLConnection http) throws IOException, UIException {
         var status = http.getResponseCode();
+        var error = http.getResponseMessage();
         if (!isSuccessful(status)) {
-            throw new UIException(status, "failure: " + status);
+            throw new UIException(status, "failure: " + status + ", " + error);
         }
     }
 

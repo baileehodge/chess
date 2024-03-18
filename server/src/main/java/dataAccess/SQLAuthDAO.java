@@ -72,7 +72,7 @@ public class SQLAuthDAO implements AuthDAO{
     }
 
     public AuthData getAuth(String authToken) throws DataAccessException {
-        if (authToken.isEmpty()) {
+        if (authToken == null) {
             throw new DataAccessException("missing auth token");
         }
         var statement = "SELECT * FROM auths WHERE auth=?";

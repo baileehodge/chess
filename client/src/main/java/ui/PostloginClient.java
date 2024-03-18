@@ -1,6 +1,11 @@
 package ui;
 
+import model.AuthData;
+import model.GameData;
+
 import java.util.Arrays;
+
+import static ui.Repl.*;
 
 public class PostloginClient {
     static ServerFacade serverFacade;
@@ -16,11 +21,11 @@ public class PostloginClient {
             var params = Arrays.copyOfRange(tokens, 1, tokens.length);
             return switch (cmd) {
                 case "quit" -> "Goodbye";
-                case "logout" -> logout(params);
-                case "createGame" -> createGame(params);
-                case "listGames" -> listGames();
-                case "joinGame" -> joinGame(params);
-                case "joinObserver" -> joinObserver(params);
+                case "logout" -> logout();
+                case "creategame" -> createGame(params);
+                case "listgames" -> listGames();
+                case "joingame" -> joinGame(params);
+                case "joinobserver" -> joinObserver(params);
 
                 default -> help();
             };
@@ -32,28 +37,43 @@ public class PostloginClient {
     private static String help() {
         return """
                     - logout
-                    - createGame <game name>
-                    - joinGame <gameID> <player color>
-                    - joinGame <gameID>  (to join the game as an observer)
+                    - createGame <gameName>
+                    - joinGame <gameID> <playerColor>
+                    - joinObserver <gameID>
                     - quit
                     """;
     }
-    private static String logout(String... params) throws UIException{
+    private static String logout() throws UIException{
+        AuthData auth = new AuthData("", getToken());
+        serverFacade.logout(auth);
         Repl.setState(Repl.State.SIGNEDOUT);
-        return "logout null";
+        return "logout successful";
     }
     private static String createGame(String... params) throws UIException{
-        return "createGame null";
+        if (params.length >= 1) {
+            GameData game = new GameData(null, null, null, params[0]);
+            serverFacade.createGame(game, getToken());
+            return "game created with the following name: " + params[0];
+        }
+        throw new UIException(400, "expected CreateGame <gameName>");
     }
     private static String listGames() throws UIException{
-        return "listGames null";
+        //TODO: return multiple games
+        serverFacade.listGames(getToken());
+        return "list those games";
     }
     private static String joinGame(String... params) throws UIException{
-        Repl.setState(Repl.State.INGAME);
-        return "joinGame null";
+        if (params.length >= 2) {
+            serverFacade.joinGame(getToken(), params[1], Integer.parseInt(params[0]));
+            Repl.setState(Repl.State.INGAME);
+            return "joined game as player";
+        }
+        throw new UIException(400, "expected joinGame <gameID> <playerColor>");
     }
     private static String joinObserver(String... params) throws UIException{
+        //record - authtoken, player color, game id
+        serverFacade.joinGame(getToken(), null,  Integer.parseInt(params[0]));
         Repl.setState(Repl.State.INGAME);
-        return "joinObserver null";
+        return "joined game as observer";
     }
 }

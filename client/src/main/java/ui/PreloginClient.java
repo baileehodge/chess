@@ -39,9 +39,12 @@ public class PreloginClient {
 
     private static String login(String... params) throws UIException{
         if (params.length >= 2) {
+            UserData user = new UserData(params[0],params[1], null);
+            AuthData auth = serverFacade.login(user);
 
+            Repl.setToken(auth.getAuthToken());
             Repl.setState(Repl.State.SIGNEDIN);
-            return "login null";
+            return "user signed in";
         }
         throw new UIException(400, "expected login <username> <password>");
     }
@@ -49,8 +52,6 @@ public class PreloginClient {
         if (params.length >= 3) {
             UserData user = new UserData(params[0],params[1], params[2]);
             AuthData auth = serverFacade.register(user);
-
-            // TODO: provide for when the register fails
 
             Repl.setToken(auth.getAuthToken());
             Repl.setState(Repl.State.SIGNEDIN);
