@@ -37,6 +37,7 @@ public class PostloginClient {
     private static String help() {
         return """
                     - logout
+                    - listGames
                     - createGame <gameName>
                     - joinGame <gameID> <playerColor>
                     - joinObserver <gameID>
