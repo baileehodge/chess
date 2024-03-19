@@ -7,7 +7,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="the tests run...?">
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="quicksave">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/test/java/clientTests/ServerFacadeTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/java/clientTests/ServerFacadeTests.java" afterDir="false" />
     </list>
@@ -162,6 +162,7 @@
     "JUnit.ServerFacadeTests.createGameTestPass.executor": "Run",
     "JUnit.ServerFacadeTests.executor": "Run",
     "JUnit.ServerFacadeTests.joinGameTestFail.executor": "Run",
+    "JUnit.ServerFacadeTests.joinGameTestPass.executor": "Run",
     "JUnit.ServerFacadeTests.listGamesTestFail.executor": "Run",
     "JUnit.ServerFacadeTests.listGamesTestPass.executor": "Run",
     "JUnit.ServerFacadeTests.loginTestFail.executor": "Debug",
@@ -240,8 +241,8 @@
       <recent name="server" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ServerFacadeTests.joinGameTestFail">
-    <configuration name="ServerFacadeTests.createGameTesFail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ServerFacadeTests">
+    <configuration name="ServerFacadeTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="client" />
       <extension name="coverage">
         <pattern>
@@ -251,24 +252,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="clientTests" />
       <option name="MAIN_CLASS_NAME" value="clientTests.ServerFacadeTests" />
-      <option name="METHOD_NAME" value="createGameTesFail" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ServerFacadeTests.createGameTestPass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="client" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="clientTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="clientTests" />
-      <option name="MAIN_CLASS_NAME" value="clientTests.ServerFacadeTests" />
-      <option name="METHOD_NAME" value="createGameTestPass" />
-      <option name="TEST_OBJECT" value="method" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -284,6 +268,22 @@
       <option name="PACKAGE_NAME" value="clientTests" />
       <option name="MAIN_CLASS_NAME" value="clientTests.ServerFacadeTests" />
       <option name="METHOD_NAME" value="joinGameTestFail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerFacadeTests.joinGameTestPass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="clientTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="clientTests" />
+      <option name="MAIN_CLASS_NAME" value="clientTests.ServerFacadeTests" />
+      <option name="METHOD_NAME" value="joinGameTestPass" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -323,11 +323,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.ServerFacadeTests" />
+        <item itemvalue="JUnit.ServerFacadeTests.joinGameTestPass" />
         <item itemvalue="JUnit.ServerFacadeTests.joinGameTestFail" />
         <item itemvalue="JUnit.ServerFacadeTests.listGamesTestFail" />
         <item itemvalue="JUnit.ServerFacadeTests.listGamesTestPass" />
-        <item itemvalue="JUnit.ServerFacadeTests.createGameTesFail" />
-        <item itemvalue="JUnit.ServerFacadeTests.createGameTestPass" />
       </list>
     </recent_temporary>
   </component>
@@ -396,15 +396,7 @@
       <workItem from="1710515352087" duration="9063000" />
       <workItem from="1710626245722" duration="15756000" />
       <workItem from="1710687408177" duration="10436000" />
-      <workItem from="1710772167268" duration="26710000" />
-    </task>
-    <task id="LOCAL-00022" summary="Updated ChessGameTests.java to new file">
-      <option name="closed" value="true" />
-      <created>1706919435926</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1706919435926</updated>
+      <workItem from="1710772167268" duration="27080000" />
     </task>
     <task id="LOCAL-00023" summary="Passes makeValidMoves test.&#10;&#10;Alexa, play Tik Tok by Ke$ha.">
       <option name="closed" value="true" />
@@ -790,7 +782,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710804685457</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="quicksave">
+      <option name="closed" value="true" />
+      <created>1710809270780</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1710809270780</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -809,7 +809,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="EOD 2/28/24&#10;&#10;json serialization is casually killing me" />
     <MESSAGE value="Passing 9 of 24 tests. Time for some intense debugging" />
     <MESSAGE value="AHHH IT WORKS" />
     <MESSAGE value="Unit tests written and passing" />
@@ -834,7 +833,8 @@
     <MESSAGE value="Register works now" />
     <MESSAGE value="Lots of things are working now. Listgames is not. Waiting to test other game-related functions because of the need for listgames" />
     <MESSAGE value="the tests run...?" />
-    <option name="LAST_COMMIT_MESSAGE" value="the tests run...?" />
+    <MESSAGE value="quicksave" />
+    <option name="LAST_COMMIT_MESSAGE" value="quicksave" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

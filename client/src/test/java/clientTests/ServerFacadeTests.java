@@ -35,6 +35,7 @@ public class ServerFacadeTests {
 
     @Test
     public void loginTestPass() throws UIException {
+        serverFacade.clear();
         // good username and password
         UserData testUser = new UserData("testboi1", "testboi1", "testboi1@byu.edu");
         serverFacade.register(testUser);
@@ -45,6 +46,7 @@ public class ServerFacadeTests {
 
     @Test
     public void loginTestFail() throws UIException {
+        serverFacade.clear();
         // bad password
         UserData testUser = new UserData("testboi1", "testboi1", "testboi1@byu.edu");
         assertThrows(UIException.class, () -> {
@@ -54,6 +56,7 @@ public class ServerFacadeTests {
 
     @Test
     public void registerTestPass() throws UIException {
+        serverFacade.clear();
         UserData testUser = new UserData("testboi1", "testboi1", "testboi1@byu.edu");
         assertDoesNotThrow(() -> {
             serverFacade.register(testUser);
@@ -61,7 +64,8 @@ public class ServerFacadeTests {
     }
 
     @Test
-    public void registerTestFail() {
+    public void registerTestFail() throws UIException {
+        serverFacade.clear();
         UserData testUser = new UserData(null, null, null);
         assertThrows(UIException.class, () -> {
             serverFacade.login(testUser);
@@ -69,6 +73,7 @@ public class ServerFacadeTests {
     }
     @Test
     public void logoutTestPass() throws UIException {
+        serverFacade.clear();
         UserData testUser = new UserData("testboi1", "testboi1", "testboi1@byu.edu");
         var person = serverFacade.register(testUser);
         AuthData authData = new AuthData(null, person.getAuthToken());
@@ -78,7 +83,8 @@ public class ServerFacadeTests {
     }
 
     @Test
-    public void logoutTestFail() {
+    public void logoutTestFail() throws UIException {
+        serverFacade.clear();
         AuthData authData = new AuthData(null, "thisisnotanauthtoken");
 
         assertThrows(UIException.class, () -> {
@@ -87,6 +93,7 @@ public class ServerFacadeTests {
     }
     @Test
     public void createGameTestPass() throws UIException {
+        serverFacade.clear();
         UserData testUser = new UserData("testboi1", "testboi1", "testboi1@byu.edu");
         var token = serverFacade.register(testUser).getAuthToken();
         GameData gameData = new GameData(null,null,null, "cheddar");
@@ -96,7 +103,8 @@ public class ServerFacadeTests {
     }
 
     @Test
-    public void createGameTesFail() {
+    public void createGameTesFail() throws UIException {
+        serverFacade.clear();
         var token = "notarealauthtoken";
         GameData gameData = new GameData(null,null,null, "cheddar");
         assertThrows(UIException.class, () -> {
@@ -105,6 +113,7 @@ public class ServerFacadeTests {
     }
     @Test
     public void listGamesTestPass() throws UIException {
+        serverFacade.clear();
         UserData testUser = new UserData("testboi1", "testboi1", "testboi1@byu.edu");
         var token = serverFacade.register(testUser).getAuthToken();
         assertDoesNotThrow(() -> {
@@ -113,32 +122,49 @@ public class ServerFacadeTests {
     }
 
     @Test
-    public void listGamesTestFail() {
+    public void listGamesTestFail() throws UIException {
+        serverFacade.clear();
         var token = "definitelynotanauth";
         assertThrows(UIException.class, () -> {
             serverFacade.listGames(token);
         });
     }
     @Test
-    public void joinGameTestPass() {
+    public void joinGameTestPass() throws UIException {
+        serverFacade.clear();
+        UserData testUser = new UserData("testboi1", "testboi1", "testboi1@byu.edu");
+        var token = serverFacade.register(testUser).getAuthToken();
+
+        GameData gameData = new GameData(null,null,null, "cheddar");
+        serverFacade.createGame(gameData, token);
+
         assertThrows(UIException.class, () -> {
-            serverFacade.joinGame("definitelynotanauth", "beige", 7);
+            serverFacade.joinGame(token, "WHITE", 7);
         });
     }
 
     @Test
-    public void joinGameTestFail() {
+    public void joinGameTestFail() throws UIException {
+        serverFacade.clear();
         assertThrows(UIException.class, () -> {
             serverFacade.joinGame("definitelynotanauth", "beige", 7);
         });
     }
     @Test
-    public void joinObserverTestPass() {
-        Assertions.assertTrue(true);
+    public void joinObserverTestPass() throws UIException {
+        serverFacade.clear();
+        UserData testUser = new UserData("testboi1", "testboi1", "testboi1@byu.edu");
+        var token = serverFacade.register(testUser).getAuthToken();
+        assertThrows(UIException.class, () -> {
+            serverFacade.joinGame(token, null, 7);
+        });
     }
     @Test
-    public void joinObserverTestFail() {
-        Assertions.assertTrue(true);
+    public void joinObserverTestFail() throws UIException {
+        serverFacade.clear();
+        assertThrows(UIException.class, () -> {
+            serverFacade.joinGame("definitelynotanauth", null, 7);
+        });
     }
 
 
