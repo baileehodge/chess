@@ -7,17 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Lots of things are working now. Listgames is not. Waiting to test other game-related functions because of the need for listgames">
-      <change beforePath="$PROJECT_DIR$/.idea/chess.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/chess.iml" afterDir="false" />
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="the tests run...?">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/GameList.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/test/java/clientTests/ServerFacadeTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/java/clientTests/ServerFacadeTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/shared.iml" beforeDir="false" afterPath="$PROJECT_DIR$/shared/shared.iml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +63,7 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.DrawBoard.executor": "Run",
+    "Application.DrawBoard.executor": "Debug",
     "Application.DrawTheBoard.executor": "Run",
     "Application.Main (1).executor": "Run",
     "Application.Main.executor": "Run",
@@ -166,10 +158,18 @@
     "JUnit.SQLUserDAOTest.listGamesPass.executor": "Run",
     "JUnit.SQLUserDAOTest.updateGameFail.executor": "Run",
     "JUnit.SQLUserDAOTest.updateGamePass.executor": "Run",
+    "JUnit.ServerFacadeTests.createGameTesFail.executor": "Run",
+    "JUnit.ServerFacadeTests.createGameTestPass.executor": "Run",
     "JUnit.ServerFacadeTests.executor": "Run",
-    "JUnit.ServerFacadeTests.loginTestFail.executor": "Run",
+    "JUnit.ServerFacadeTests.joinGameTestFail.executor": "Run",
+    "JUnit.ServerFacadeTests.listGamesTestFail.executor": "Run",
+    "JUnit.ServerFacadeTests.listGamesTestPass.executor": "Run",
+    "JUnit.ServerFacadeTests.loginTestFail.executor": "Debug",
     "JUnit.ServerFacadeTests.loginTestPass.executor": "Run",
     "JUnit.ServerFacadeTests.logoutTestFail.executor": "Run",
+    "JUnit.ServerFacadeTests.logoutTestPass.executor": "Run",
+    "JUnit.ServerFacadeTests.registerTestFail.executor": "Run",
+    "JUnit.ServerFacadeTests.registerTestPass.executor": "Run",
     "JUnit.ServerTest.clearServiceSuccess.executor": "Run",
     "JUnit.ServerTest.createAuthFail.executor": "Run",
     "JUnit.ServerTest.createAuthSuccess.executor": "Run",
@@ -240,15 +240,8 @@
       <recent name="server" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.ServerFacadeTests">
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="server" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ServerFacadeTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.ServerFacadeTests.joinGameTestFail">
+    <configuration name="ServerFacadeTests.createGameTesFail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="client" />
       <extension name="coverage">
         <pattern>
@@ -258,28 +251,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="clientTests" />
       <option name="MAIN_CLASS_NAME" value="clientTests.ServerFacadeTests" />
-      <option name="TEST_OBJECT" value="class" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ServerFacadeTests.loginTestFail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="client" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="clientTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="clientTests" />
-      <option name="MAIN_CLASS_NAME" value="clientTests.ServerFacadeTests" />
-      <option name="METHOD_NAME" value="loginTestFail" />
+      <option name="METHOD_NAME" value="createGameTesFail" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServerFacadeTests.loginTestPass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ServerFacadeTests.createGameTestPass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="client" />
       <extension name="coverage">
         <pattern>
@@ -289,13 +267,13 @@
       </extension>
       <option name="PACKAGE_NAME" value="clientTests" />
       <option name="MAIN_CLASS_NAME" value="clientTests.ServerFacadeTests" />
-      <option name="METHOD_NAME" value="loginTestPass" />
+      <option name="METHOD_NAME" value="createGameTestPass" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServerFacadeTests.logoutTestFail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="ServerFacadeTests.joinGameTestFail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="client" />
       <extension name="coverage">
         <pattern>
@@ -305,7 +283,39 @@
       </extension>
       <option name="PACKAGE_NAME" value="clientTests" />
       <option name="MAIN_CLASS_NAME" value="clientTests.ServerFacadeTests" />
-      <option name="METHOD_NAME" value="logoutTestFail" />
+      <option name="METHOD_NAME" value="joinGameTestFail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerFacadeTests.listGamesTestFail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="clientTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="clientTests" />
+      <option name="MAIN_CLASS_NAME" value="clientTests.ServerFacadeTests" />
+      <option name="METHOD_NAME" value="listGamesTestFail" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerFacadeTests.listGamesTestPass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="client" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="clientTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="clientTests" />
+      <option name="MAIN_CLASS_NAME" value="clientTests.ServerFacadeTests" />
+      <option name="METHOD_NAME" value="listGamesTestPass" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -313,11 +323,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.ServerFacadeTests" />
-        <item itemvalue="JUnit.ServerFacadeTests.logoutTestFail" />
-        <item itemvalue="Application.Main (1)" />
-        <item itemvalue="JUnit.ServerFacadeTests.loginTestFail" />
-        <item itemvalue="JUnit.ServerFacadeTests.loginTestPass" />
+        <item itemvalue="JUnit.ServerFacadeTests.joinGameTestFail" />
+        <item itemvalue="JUnit.ServerFacadeTests.listGamesTestFail" />
+        <item itemvalue="JUnit.ServerFacadeTests.listGamesTestPass" />
+        <item itemvalue="JUnit.ServerFacadeTests.createGameTesFail" />
+        <item itemvalue="JUnit.ServerFacadeTests.createGameTestPass" />
       </list>
     </recent_temporary>
   </component>
@@ -386,15 +396,7 @@
       <workItem from="1710515352087" duration="9063000" />
       <workItem from="1710626245722" duration="15756000" />
       <workItem from="1710687408177" duration="10436000" />
-      <workItem from="1710772167268" duration="22939000" />
-    </task>
-    <task id="LOCAL-00021" summary="simulateMove function written.">
-      <option name="closed" value="true" />
-      <created>1706917558565</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1706917558565</updated>
+      <workItem from="1710772167268" duration="26710000" />
     </task>
     <task id="LOCAL-00022" summary="Updated ChessGameTests.java to new file">
       <option name="closed" value="true" />
@@ -780,7 +782,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710793727118</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="the tests run...?">
+      <option name="closed" value="true" />
+      <created>1710804685457</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1710804685457</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -799,7 +809,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="The service classes are fleshed out and ready for action" />
     <MESSAGE value="EOD 2/28/24&#10;&#10;json serialization is casually killing me" />
     <MESSAGE value="Passing 9 of 24 tests. Time for some intense debugging" />
     <MESSAGE value="AHHH IT WORKS" />
@@ -824,33 +833,26 @@
     <MESSAGE value="3.17.24 EOD" />
     <MESSAGE value="Register works now" />
     <MESSAGE value="Lots of things are working now. Listgames is not. Waiting to test other game-related functions because of the need for listgames" />
-    <option name="LAST_COMMIT_MESSAGE" value="Lots of things are working now. Listgames is not. Waiting to test other game-related functions because of the need for listgames" />
+    <MESSAGE value="the tests run...?" />
+    <option name="LAST_COMMIT_MESSAGE" value="the tests run...?" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
+        <breakpoint type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <breakpoint enabled="true" type="java-exception">
+        <breakpoint type="java-exception">
           <properties class="java.lang.ClassNotFoundException" package="java.lang" />
           <option name="timeStamp" value="28" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/server/Server.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="21" />
-        </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/main/java/server/Server.java</url>
           <line>127</line>
           <option name="timeStamp" value="23" />
         </line-breakpoint>
       </breakpoints>
-      <default-breakpoints>
-        <breakpoint enabled="true" type="java-exception" />
-      </default-breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
