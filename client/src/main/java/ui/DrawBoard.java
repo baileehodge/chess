@@ -74,7 +74,7 @@ public class DrawBoard {
             for (int row = start; row < BOARD_SIZE_IN_SQUARES && row >= 0; row += increment) {
                 // draw vertical border
                 if (row == start) {
-                    int label = col + 1;
+                    int label = 8 - col;
                     out.print(SET_BG_COLOR_DARK_GREY);
                     out.print(SET_TEXT_COLOR_WHITE);
                     out.print(" " + label + " ");
@@ -127,7 +127,7 @@ public class DrawBoard {
 
                 if (row == start + (7 * increment)) {
                     // Draw vertical border
-                    int label = col + 1;
+                    int label = 8 - col;
                     out.print(SET_BG_COLOR_DARK_GREY);
                     out.print(SET_TEXT_COLOR_WHITE);
                     out.print(" " + label + " ");
