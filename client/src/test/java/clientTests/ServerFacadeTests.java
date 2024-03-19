@@ -21,9 +21,12 @@ public class ServerFacadeTests {
 
     @BeforeAll
     public static void init() throws UIException {
+        // come on, come on
 
         Server server = new Server();
         server.run(8080);
+
+
 
 
 //        serverFacade.clear();
