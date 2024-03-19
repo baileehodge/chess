@@ -2,14 +2,26 @@ package ui;
 
 import chess.ChessBoard;
 
+import java.util.Arrays;
+
 public class GameplayClient {
     static ServerFacade serverFacade;
     public GameplayClient(String serverUrl) {
         serverFacade = new ServerFacade(serverUrl);
     }
 
-    public static String eval(String line) {
-        // just draws a couple of empty boards
+    public static String eval(String input) {
+        var tokens = input.toLowerCase().split(" ");
+        var cmd = (tokens.length > 0) ? tokens[0] : "help";
+        var params = Arrays.copyOfRange(tokens, 1, tokens.length);
+        return switch (cmd) {
+            case "quit" -> "Goodbye";
+
+            default -> drawBasic();
+        };
+    }
+    private static String drawBasic() {
+        // draws a starting board
         ChessBoard board = new ChessBoard();
         board.resetBoard();
         DrawBoard.run(board);
