@@ -53,6 +53,7 @@ public class PreloginClient {
             UserData user = new UserData(params[0],params[1], params[2]);
             AuthData auth = serverFacade.register(user);
 
+            serverFacade.login(user);
             Repl.setToken(auth.getAuthToken());
             Repl.setState(Repl.State.SIGNEDIN);
             return "account created and user signed in";

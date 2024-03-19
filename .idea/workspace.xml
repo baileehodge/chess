@@ -7,7 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Removed the script of Dune as a dependency." />
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="If this doesn't work I might cry.">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/PreloginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/PreloginClient.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -376,15 +379,7 @@
       <workItem from="1710626245722" duration="15756000" />
       <workItem from="1710687408177" duration="10436000" />
       <workItem from="1710772167268" duration="29686000" />
-      <workItem from="1710857156116" duration="3136000" />
-    </task>
-    <task id="LOCAL-00029" summary="Alexa, play &quot;Sweet Child o' Mine&quot; by Guns N Roses.&#10;-cleaned imports&#10;-phase 3 starter code&#10;-added code libraries">
-      <option name="closed" value="true" />
-      <created>1708366914581</created>
-      <option name="number" value="00029" />
-      <option name="presentableId" value="LOCAL-00029" />
-      <option name="project" value="LOCAL" />
-      <updated>1708366914581</updated>
+      <workItem from="1710857156116" duration="3851000" />
     </task>
     <task id="LOCAL-00030" summary="take 2">
       <option name="closed" value="true" />
@@ -770,7 +765,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710870861582</updated>
     </task>
-    <option name="localTasksCounter" value="78" />
+    <task id="LOCAL-00078" summary="If this doesn't work I might cry.">
+      <option name="closed" value="true" />
+      <created>1710871320572</created>
+      <option name="number" value="00078" />
+      <option name="presentableId" value="LOCAL-00078" />
+      <option name="project" value="LOCAL" />
+      <updated>1710871320572</updated>
+    </task>
+    <option name="localTasksCounter" value="79" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -789,7 +792,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Passing my server tests, not passing API tests" />
     <MESSAGE value="Passing most of the API tests" />
     <MESSAGE value="Passing ALL API tests" />
     <MESSAGE value="Created SQLDAOTests file. Copy-pasted my server tests from phase 3 into the file; I just need to see if making the file exist lets the autograder run." />
@@ -814,7 +816,8 @@
     <MESSAGE value="Do I have enough tests now?" />
     <MESSAGE value="Added the script of Dune as a dependency." />
     <MESSAGE value="Removed the script of Dune as a dependency." />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed the script of Dune as a dependency." />
+    <MESSAGE value="If this doesn't work I might cry." />
+    <option name="LAST_COMMIT_MESSAGE" value="If this doesn't work I might cry." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
