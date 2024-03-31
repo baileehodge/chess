@@ -52,5 +52,6 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-expression:6.1.2" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-jcl:6.1.2" level="project" />
     <orderEntry type="module" module-name="server" />
+    <orderEntry type="library" name="glassfish.tyrus.bundles.standalone.client" level="project" />
   </component>
 </module>
