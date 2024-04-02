@@ -7,14 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Alexa play &quot;Overture&quot;.">
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/glassfish_tyrus_bundles_standalone_client.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/test/java/passoffTests/serverTests/WebSocketTests.java" afterDir="false" />
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Added Phase 6 starter code. WebSocketTests.java is unhappy and I don't know why">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/server/server.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/test/java/passoffTests/serverTests/PersistenceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/passoffTests/PersistenceTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/test/java/passoffTests/serverTests/StandardAPITests.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/passoffTests/StandardAPITests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/test/java/passoffTests/serverTests/WebSocketTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/passoffTests/serverTests/WebSocketTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -389,15 +384,7 @@
       <workItem from="1710772167268" duration="29686000" />
       <workItem from="1710857156116" duration="5293000" />
       <workItem from="1711736838551" duration="584000" />
-      <workItem from="1711861222275" duration="429000" />
-    </task>
-    <task id="LOCAL-00032" summary="updated webpage design -- pt ii">
-      <option name="closed" value="true" />
-      <created>1708386685241</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1708386685241</updated>
+      <workItem from="1711861222275" duration="2542000" />
     </task>
     <task id="LOCAL-00033" summary="Alexa, play 'In the End' by Linkin Park">
       <option name="closed" value="true" />
@@ -783,7 +770,15 @@
       <option name="project" value="LOCAL" />
       <updated>1710877110172</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="Added Phase 6 starter code. WebSocketTests.java is unhappy and I don't know why">
+      <option name="closed" value="true" />
+      <created>1711861975991</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1711861975992</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -802,7 +797,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Created SQLDAOTests file. Copy-pasted my server tests from phase 3 into the file; I just need to see if making the file exist lets the autograder run." />
     <MESSAGE value="Created and passed my flippin tests" />
     <MESSAGE value="Starter code" />
     <MESSAGE value="created classes" />
@@ -827,7 +821,8 @@
     <MESSAGE value="If this doesn't work I might cry." />
     <MESSAGE value="ALexa, play the entire rock opera album &quot;Tommy&quot; by The Who." />
     <MESSAGE value="Alexa play &quot;Overture&quot;." />
-    <option name="LAST_COMMIT_MESSAGE" value="Alexa play &quot;Overture&quot;." />
+    <MESSAGE value="Added Phase 6 starter code. WebSocketTests.java is unhappy and I don't know why" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added Phase 6 starter code. WebSocketTests.java is unhappy and I don't know why" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
