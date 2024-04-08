@@ -20,6 +20,8 @@ public class DrawBoard {
     private static final String QUEEN = " Q ";
     private static final String KING = " K ";
 
+//    Draws a blank board, used for testing purposes
+
     public static void main(String[] args) {
         ChessBoard board = new ChessBoard();
         board.resetBoard();

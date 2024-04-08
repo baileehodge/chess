@@ -71,4 +71,24 @@ public class GameService {
             throw new ServiceException("Error: bad request");
         }
     }
+
+    // new methods, phase 6
+
+    void joinPlayer() {
+
+    }
+    void joinObserver() {
+
+    }
+    void makeMove() {
+
+    }
+    void leaveGame() {
+
+    }
+    void resignGame() {
+
+    }
+
+
 }

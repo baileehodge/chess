@@ -7,9 +7,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Added Phase 6 starter code. WebSocketTests.java is unhappy and I don't know why">
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="TestFactory.java has a twin now">
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/websocket/MessageHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/client/src/main/java/websocket/WebSocketFacade.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketSessions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/test/java/passoffTests/serverTests/WebSocketTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/passoffTests/serverTests/WebSocketTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/client.iml" beforeDir="false" afterPath="$PROJECT_DIR$/client/client.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/DrawBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/DrawBoard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/service/GameService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,168 +66,171 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;Application.DrawBoard.executor&quot;: &quot;Debug&quot;,
-    &quot;Application.DrawTheBoard.executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main (1).executor&quot;: &quot;Run&quot;,
-    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
-    &quot;Application.TicTacToe.executor&quot;: &quot;Run&quot;,
-    &quot;Application.ui.examplecode.TicTacToe.executor&quot;: &quot;Debug&quot;,
-    &quot;Downloaded.Files.Path.Enabled&quot;: &quot;false&quot;,
-    &quot;JUnit.All in chess.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.All in server.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.BishopMoveTests.bishopBlocked.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.BishopMoveTests.bishopCaptureEnemy.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.BishopMoveTests.bishopMoveUntilEdge.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.BishopMoveTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChessBoardTests.defaultGameBoard.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChessBoardTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChessBoardTests.getAddPiece.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.ChessGameTests$ValidMoveTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChessGameTests$ValidMoveTests.forcedMove.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChessGameTests$ValidMoveTests.moveIntoCheck.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChessGameTests$ValidMoveTests.rookPinnedToKing.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChessGameTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChessGameTests.invalidMoves.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChessGameTests.makeValidMoves.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChessGameTests.promotionMoves.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChessMoveTests.equalsTest.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.ChessMoveTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ChessMoveTests.hashSetTest.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.ChessMoveTests.hashTest.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.ChessPositionTests.equalsTest.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.ChessPositionTests.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.ChessPositionTests.hashSetTest.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.ChessPositionTests.hashTest.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.KingMoveTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.KingMoveTests.kingBlocked.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.KingMoveTests.kingCaptureEnemy.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.KingMoveTests.kingMoveUntilEdge.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.KnightMoveTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.KnightMoveTests.knightBlocked.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.KnightMoveTests.knightCaptureEnemy.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.KnightMoveTests.knightCornerOfBoardBottomLeft.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.KnightMoveTests.knightCornerOfBoardBottomRight.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.KnightMoveTests.knightCornerOfBoardTopLeft.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.KnightMoveTests.knightCornerOfBoardTopRight.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.KnightMoveTests.knightEdgeOfBoardBottom.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.KnightMoveTests.knightEdgeOfBoardLeft.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.KnightMoveTests.knightEdgeOfBoardRight.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.KnightMoveTests.knightEdgeOfBoardTop.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.KnightMoveTests.knightMiddleOfBoardBlack.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.KnightMoveTests.knightMiddleOfBoardWhite.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.PawnMoveTests.edgePromotionBlack.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PawnMoveTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PawnMoveTests.pawnAdvanceBlockedBlack.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.PawnMoveTests.pawnAdvanceBlockedDoubleMoveBlack.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.PawnMoveTests.pawnAdvanceBlockedDoubleMoveWhite.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.PawnMoveTests.pawnAdvanceBlockedWhite.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.PawnMoveTests.pawnCaptureBlack.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PawnMoveTests.pawnCaptureWhite.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PawnMoveTests.pawnInitialMoveBlack.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PawnMoveTests.pawnInitialMoveWhite.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PawnMoveTests.pawnMiddleOfBoardBlack.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PawnMoveTests.pawnMiddleOfBoardWhite.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PawnMoveTests.pawnPromotionCapture.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PawnMoveTests.pawnPromotionWhite.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.PersistenceTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.QueenMoveTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.QueenMoveTests.queenBlocked.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.QueenMoveTests.queenCaptureEnemy.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.QueenMoveTests.queenMoveUntilEdge.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.RookMoveTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.RookMoveTests.rookBlocked.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.RookMoveTests.rookCaptureEnemy.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.RookMoveTests.rookMoveUntilEdge.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.SQLUserDAOTest.clearAuthsPass.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SQLUserDAOTest.clearGamesPass.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SQLUserDAOTest.clearUsersPass.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SQLUserDAOTest.createAuthFail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SQLUserDAOTest.createAuthPass.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SQLUserDAOTest.createGameFail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SQLUserDAOTest.createGamePass.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SQLUserDAOTest.createUserFail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SQLUserDAOTest.createUserPass.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SQLUserDAOTest.deleteAuthFail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SQLUserDAOTest.deleteAuthPass.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SQLUserDAOTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SQLUserDAOTest.getAuthFail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SQLUserDAOTest.getAuthPass.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SQLUserDAOTest.getGameFail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SQLUserDAOTest.getGamePass.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SQLUserDAOTest.getUserFail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SQLUserDAOTest.getUserPass.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SQLUserDAOTest.listGamesMany.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SQLUserDAOTest.listGamesOne.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SQLUserDAOTest.listGamesPass.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SQLUserDAOTest.updateGameFail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.SQLUserDAOTest.updateGamePass.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerFacadeTests.createGameTesFail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerFacadeTests.createGameTestPass.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerFacadeTests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerFacadeTests.joinGameTestFail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerFacadeTests.joinGameTestPass.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerFacadeTests.listGamesTestFail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerFacadeTests.listGamesTestPass.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerFacadeTests.loginTestFail.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.ServerFacadeTests.loginTestPass.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerFacadeTests.logoutTestFail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerFacadeTests.logoutTestPass.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerFacadeTests.registerTestFail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerFacadeTests.registerTestPass.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerTest.clearServiceSuccess.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerTest.createAuthFail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerTest.createAuthSuccess.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerTest.createGameFail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerTest.createGameSuccess.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerTest.deleteAuthFail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerTest.deleteAuthSuccess.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerTest.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerTest.getAuthFail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerTest.joinGameFail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerTest.joinGameSuccess.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerTest.listGamesFail.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerTest.listGamesSuccess.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.ServerTest.testClear.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StandardAPITests.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StandardAPITests.goodJoin.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.StandardAPITests.loginInvalidUser.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.StandardAPITests.noGamesList.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StandardAPITests.staticFiles.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.StandardAPITests.successLogin.executor&quot;: &quot;Debug&quot;,
-    &quot;JUnit.StandardAPITests.uniqueAuthorizationTokens.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.chessPieceTests in shared.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.java in shared.executor&quot;: &quot;Run&quot;,
-    &quot;JUnit.passoffTests.serverTests in server.executor&quot;: &quot;Run&quot;,
-    &quot;Notification.DisplayName-DoNotAsk-External System Auto-Link Notification Group&quot;: &quot;External system build scripts found&quot;,
-    &quot;Notification.DoNotAsk-External System Auto-Link Notification Group&quot;: &quot;true&quot;,
-    &quot;Repository.Attach.Annotations&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.JavaDocs&quot;: &quot;false&quot;,
-    &quot;Repository.Attach.Sources&quot;: &quot;false&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;extract.method.default.visibility&quot;: &quot;private&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
-    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/baile/Schoolwork/Winter2024/CS240/chess&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;run.code.analysis.last.selected.profile&quot;: &quot;pProject Default&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.IDE.editor.colors.General&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "Application.DrawBoard.executor": "Run",
+    "Application.DrawTheBoard.executor": "Run",
+    "Application.Main (1).executor": "Run",
+    "Application.Main.executor": "Run",
+    "Application.TicTacToe.executor": "Run",
+    "Application.ui.examplecode.TicTacToe.executor": "Debug",
+    "Downloaded.Files.Path.Enabled": "false",
+    "JUnit.All in chess.executor": "Run",
+    "JUnit.All in server.executor": "Run",
+    "JUnit.BishopMoveTests.bishopBlocked.executor": "Debug",
+    "JUnit.BishopMoveTests.bishopCaptureEnemy.executor": "Debug",
+    "JUnit.BishopMoveTests.bishopMoveUntilEdge.executor": "Debug",
+    "JUnit.BishopMoveTests.executor": "Run",
+    "JUnit.ChessBoardTests.defaultGameBoard.executor": "Run",
+    "JUnit.ChessBoardTests.executor": "Run",
+    "JUnit.ChessBoardTests.getAddPiece.executor": "Debug",
+    "JUnit.ChessGameTests$ValidMoveTests.executor": "Run",
+    "JUnit.ChessGameTests$ValidMoveTests.forcedMove.executor": "Run",
+    "JUnit.ChessGameTests$ValidMoveTests.moveIntoCheck.executor": "Run",
+    "JUnit.ChessGameTests$ValidMoveTests.rookPinnedToKing.executor": "Run",
+    "JUnit.ChessGameTests.executor": "Run",
+    "JUnit.ChessGameTests.invalidMoves.executor": "Run",
+    "JUnit.ChessGameTests.makeValidMoves.executor": "Run",
+    "JUnit.ChessGameTests.promotionMoves.executor": "Run",
+    "JUnit.ChessMoveTests.equalsTest.executor": "Debug",
+    "JUnit.ChessMoveTests.executor": "Run",
+    "JUnit.ChessMoveTests.hashSetTest.executor": "Debug",
+    "JUnit.ChessMoveTests.hashTest.executor": "Debug",
+    "JUnit.ChessPositionTests.equalsTest.executor": "Debug",
+    "JUnit.ChessPositionTests.executor": "Debug",
+    "JUnit.ChessPositionTests.hashSetTest.executor": "Debug",
+    "JUnit.ChessPositionTests.hashTest.executor": "Debug",
+    "JUnit.KingMoveTests.executor": "Run",
+    "JUnit.KingMoveTests.kingBlocked.executor": "Debug",
+    "JUnit.KingMoveTests.kingCaptureEnemy.executor": "Debug",
+    "JUnit.KingMoveTests.kingMoveUntilEdge.executor": "Debug",
+    "JUnit.KnightMoveTests.executor": "Run",
+    "JUnit.KnightMoveTests.knightBlocked.executor": "Debug",
+    "JUnit.KnightMoveTests.knightCaptureEnemy.executor": "Debug",
+    "JUnit.KnightMoveTests.knightCornerOfBoardBottomLeft.executor": "Debug",
+    "JUnit.KnightMoveTests.knightCornerOfBoardBottomRight.executor": "Debug",
+    "JUnit.KnightMoveTests.knightCornerOfBoardTopLeft.executor": "Debug",
+    "JUnit.KnightMoveTests.knightCornerOfBoardTopRight.executor": "Debug",
+    "JUnit.KnightMoveTests.knightEdgeOfBoardBottom.executor": "Debug",
+    "JUnit.KnightMoveTests.knightEdgeOfBoardLeft.executor": "Debug",
+    "JUnit.KnightMoveTests.knightEdgeOfBoardRight.executor": "Debug",
+    "JUnit.KnightMoveTests.knightEdgeOfBoardTop.executor": "Debug",
+    "JUnit.KnightMoveTests.knightMiddleOfBoardBlack.executor": "Debug",
+    "JUnit.KnightMoveTests.knightMiddleOfBoardWhite.executor": "Debug",
+    "JUnit.PawnMoveTests.edgePromotionBlack.executor": "Run",
+    "JUnit.PawnMoveTests.executor": "Run",
+    "JUnit.PawnMoveTests.pawnAdvanceBlockedBlack.executor": "Debug",
+    "JUnit.PawnMoveTests.pawnAdvanceBlockedDoubleMoveBlack.executor": "Debug",
+    "JUnit.PawnMoveTests.pawnAdvanceBlockedDoubleMoveWhite.executor": "Debug",
+    "JUnit.PawnMoveTests.pawnAdvanceBlockedWhite.executor": "Debug",
+    "JUnit.PawnMoveTests.pawnCaptureBlack.executor": "Run",
+    "JUnit.PawnMoveTests.pawnCaptureWhite.executor": "Run",
+    "JUnit.PawnMoveTests.pawnInitialMoveBlack.executor": "Run",
+    "JUnit.PawnMoveTests.pawnInitialMoveWhite.executor": "Run",
+    "JUnit.PawnMoveTests.pawnMiddleOfBoardBlack.executor": "Run",
+    "JUnit.PawnMoveTests.pawnMiddleOfBoardWhite.executor": "Run",
+    "JUnit.PawnMoveTests.pawnPromotionCapture.executor": "Run",
+    "JUnit.PawnMoveTests.pawnPromotionWhite.executor": "Run",
+    "JUnit.PersistenceTests.executor": "Run",
+    "JUnit.QueenMoveTests.executor": "Run",
+    "JUnit.QueenMoveTests.queenBlocked.executor": "Debug",
+    "JUnit.QueenMoveTests.queenCaptureEnemy.executor": "Debug",
+    "JUnit.QueenMoveTests.queenMoveUntilEdge.executor": "Debug",
+    "JUnit.RookMoveTests.executor": "Run",
+    "JUnit.RookMoveTests.rookBlocked.executor": "Debug",
+    "JUnit.RookMoveTests.rookCaptureEnemy.executor": "Debug",
+    "JUnit.RookMoveTests.rookMoveUntilEdge.executor": "Debug",
+    "JUnit.SQLUserDAOTest.clearAuthsPass.executor": "Run",
+    "JUnit.SQLUserDAOTest.clearGamesPass.executor": "Run",
+    "JUnit.SQLUserDAOTest.clearUsersPass.executor": "Run",
+    "JUnit.SQLUserDAOTest.createAuthFail.executor": "Run",
+    "JUnit.SQLUserDAOTest.createAuthPass.executor": "Run",
+    "JUnit.SQLUserDAOTest.createGameFail.executor": "Run",
+    "JUnit.SQLUserDAOTest.createGamePass.executor": "Run",
+    "JUnit.SQLUserDAOTest.createUserFail.executor": "Run",
+    "JUnit.SQLUserDAOTest.createUserPass.executor": "Run",
+    "JUnit.SQLUserDAOTest.deleteAuthFail.executor": "Run",
+    "JUnit.SQLUserDAOTest.deleteAuthPass.executor": "Run",
+    "JUnit.SQLUserDAOTest.executor": "Run",
+    "JUnit.SQLUserDAOTest.getAuthFail.executor": "Run",
+    "JUnit.SQLUserDAOTest.getAuthPass.executor": "Run",
+    "JUnit.SQLUserDAOTest.getGameFail.executor": "Run",
+    "JUnit.SQLUserDAOTest.getGamePass.executor": "Run",
+    "JUnit.SQLUserDAOTest.getUserFail.executor": "Run",
+    "JUnit.SQLUserDAOTest.getUserPass.executor": "Run",
+    "JUnit.SQLUserDAOTest.listGamesMany.executor": "Run",
+    "JUnit.SQLUserDAOTest.listGamesOne.executor": "Run",
+    "JUnit.SQLUserDAOTest.listGamesPass.executor": "Run",
+    "JUnit.SQLUserDAOTest.updateGameFail.executor": "Run",
+    "JUnit.SQLUserDAOTest.updateGamePass.executor": "Run",
+    "JUnit.ServerFacadeTests.createGameTesFail.executor": "Run",
+    "JUnit.ServerFacadeTests.createGameTestPass.executor": "Run",
+    "JUnit.ServerFacadeTests.executor": "Run",
+    "JUnit.ServerFacadeTests.joinGameTestFail.executor": "Run",
+    "JUnit.ServerFacadeTests.joinGameTestPass.executor": "Run",
+    "JUnit.ServerFacadeTests.listGamesTestFail.executor": "Run",
+    "JUnit.ServerFacadeTests.listGamesTestPass.executor": "Run",
+    "JUnit.ServerFacadeTests.loginTestFail.executor": "Debug",
+    "JUnit.ServerFacadeTests.loginTestPass.executor": "Run",
+    "JUnit.ServerFacadeTests.logoutTestFail.executor": "Run",
+    "JUnit.ServerFacadeTests.logoutTestPass.executor": "Run",
+    "JUnit.ServerFacadeTests.registerTestFail.executor": "Run",
+    "JUnit.ServerFacadeTests.registerTestPass.executor": "Run",
+    "JUnit.ServerTest.clearServiceSuccess.executor": "Run",
+    "JUnit.ServerTest.createAuthFail.executor": "Run",
+    "JUnit.ServerTest.createAuthSuccess.executor": "Run",
+    "JUnit.ServerTest.createGameFail.executor": "Run",
+    "JUnit.ServerTest.createGameSuccess.executor": "Run",
+    "JUnit.ServerTest.deleteAuthFail.executor": "Run",
+    "JUnit.ServerTest.deleteAuthSuccess.executor": "Run",
+    "JUnit.ServerTest.executor": "Run",
+    "JUnit.ServerTest.getAuthFail.executor": "Run",
+    "JUnit.ServerTest.joinGameFail.executor": "Run",
+    "JUnit.ServerTest.joinGameSuccess.executor": "Run",
+    "JUnit.ServerTest.listGamesFail.executor": "Run",
+    "JUnit.ServerTest.listGamesSuccess.executor": "Run",
+    "JUnit.ServerTest.testClear.executor": "Run",
+    "JUnit.StandardAPITests.executor": "Run",
+    "JUnit.StandardAPITests.goodJoin.executor": "Debug",
+    "JUnit.StandardAPITests.loginInvalidUser.executor": "Debug",
+    "JUnit.StandardAPITests.noGamesList.executor": "Run",
+    "JUnit.StandardAPITests.staticFiles.executor": "Run",
+    "JUnit.StandardAPITests.successLogin.executor": "Debug",
+    "JUnit.StandardAPITests.uniqueAuthorizationTokens.executor": "Run",
+    "JUnit.WebSocketTests.executor": "Run",
+    "JUnit.WebSocketTests.joinPlayerGood.executor": "Run",
+    "JUnit.WebSocketTests.joinPlayerSteal.executor": "Run",
+    "JUnit.chessPieceTests in shared.executor": "Run",
+    "JUnit.java in shared.executor": "Run",
+    "JUnit.passoffTests.serverTests in server.executor": "Run",
+    "Notification.DisplayName-DoNotAsk-External System Auto-Link Notification Group": "External system build scripts found",
+    "Notification.DoNotAsk-External System Auto-Link Notification Group": "true",
+    "Repository.Attach.Annotations": "false",
+    "Repository.Attach.JavaDocs": "false",
+    "Repository.Attach.Sources": "false",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "extract.method.default.visibility": "private",
+    "git-widget-placeholder": "main",
+    "ignore.virus.scanning.warn.message": "true",
+    "kotlin-language-version-configured": "true",
+    "last_opened_file_path": "C:/Users/baile/Schoolwork/Winter2024/CS240/websocket example code",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "run.code.analysis.last.selected.profile": "pProject Default",
+    "settings.editor.selected.configurable": "reference.settingsdialog.IDE.editor.colors.General",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/server/lib" />
@@ -244,63 +253,77 @@
       <recent name="passoffTests.serverTests" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.Main (1)">
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="client" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="server" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="ServerFacadeTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+  <component name="RunManager" selected="JUnit.WebSocketTests.joinPlayerSteal">
+    <configuration name="DrawBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="ui.DrawBoard" />
       <module name="client" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="clientTests.*" />
+          <option name="PATTERN" value="ui.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="clientTests" />
-      <option name="MAIN_CLASS_NAME" value="clientTests.ServerFacadeTests" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="PersistenceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="passoffTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="passoffTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.PersistenceTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServerFacadeTests.joinGameTestFail" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="client" />
+    <configuration name="StandardAPITests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="clientTests.*" />
+          <option name="PATTERN" value="passoffTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="clientTests" />
-      <option name="MAIN_CLASS_NAME" value="clientTests.ServerFacadeTests" />
-      <option name="METHOD_NAME" value="joinGameTestFail" />
+      <option name="PACKAGE_NAME" value="passoffTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.StandardAPITests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebSocketTests.joinPlayerGood" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="passoffTests.serverTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.WebSocketTests" />
+      <option name="METHOD_NAME" value="joinPlayerGood" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ServerFacadeTests.joinGameTestPass" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="client" />
+    <configuration name="WebSocketTests.joinPlayerSteal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="clientTests.*" />
+          <option name="PATTERN" value="passoffTests.serverTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="clientTests" />
-      <option name="MAIN_CLASS_NAME" value="clientTests.ServerFacadeTests" />
-      <option name="METHOD_NAME" value="joinGameTestPass" />
+      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.WebSocketTests" />
+      <option name="METHOD_NAME" value="joinPlayerSteal" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -308,11 +331,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.ServerFacadeTests" />
-        <item itemvalue="JUnit.ServerFacadeTests.joinGameTestPass" />
-        <item itemvalue="JUnit.ServerFacadeTests.joinGameTestFail" />
+        <item itemvalue="JUnit.WebSocketTests.joinPlayerSteal" />
+        <item itemvalue="JUnit.WebSocketTests.joinPlayerGood" />
+        <item itemvalue="Application.DrawBoard" />
+        <item itemvalue="JUnit.StandardAPITests" />
+        <item itemvalue="JUnit.PersistenceTests" />
       </list>
     </recent_temporary>
   </component>
@@ -385,14 +408,11 @@
       <workItem from="1710857156116" duration="5293000" />
       <workItem from="1711736838551" duration="584000" />
       <workItem from="1711861222275" duration="2542000" />
-    </task>
-    <task id="LOCAL-00033" summary="Alexa, play 'In the End' by Linkin Park">
-      <option name="closed" value="true" />
-      <created>1708494555687</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1708494555688</updated>
+      <workItem from="1712080629558" duration="434000" />
+      <workItem from="1712258174859" duration="1852000" />
+      <workItem from="1712457472294" duration="661000" />
+      <workItem from="1712531568107" duration="2901000" />
+      <workItem from="1712584508925" duration="7641000" />
     </task>
     <task id="LOCAL-00034" summary="Wrote the DAOs. Are they correct? The world may never know.">
       <option name="closed" value="true" />
@@ -778,7 +798,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711861975992</updated>
     </task>
-    <option name="localTasksCounter" value="82" />
+    <task id="LOCAL-00082" summary="TestFactory.java has a twin now">
+      <option name="closed" value="true" />
+      <created>1712080873450</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1712080873451</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -797,7 +825,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Created and passed my flippin tests" />
     <MESSAGE value="Starter code" />
     <MESSAGE value="created classes" />
     <MESSAGE value="3.14.24 EOD" />
@@ -822,7 +849,8 @@
     <MESSAGE value="ALexa, play the entire rock opera album &quot;Tommy&quot; by The Who." />
     <MESSAGE value="Alexa play &quot;Overture&quot;." />
     <MESSAGE value="Added Phase 6 starter code. WebSocketTests.java is unhappy and I don't know why" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added Phase 6 starter code. WebSocketTests.java is unhappy and I don't know why" />
+    <MESSAGE value="TestFactory.java has a twin now" />
+    <option name="LAST_COMMIT_MESSAGE" value="TestFactory.java has a twin now" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -835,11 +863,6 @@
           <properties class="java.lang.ClassNotFoundException" package="java.lang" />
           <option name="timeStamp" value="28" />
         </breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/server/Server.java</url>
-          <line>127</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
