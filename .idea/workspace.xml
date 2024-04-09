@@ -7,9 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Jfhg yzivob nzwv zoo lu gsv mvd urovh. I nrtsg yv hxivdvw lm gsrh kilqvxg, ylbh.">
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="WebSocketHandler onMessage">
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/server/websocket/Connection.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/server/websocket/ConnectionManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketSessions.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -406,15 +409,7 @@
       <workItem from="1712258174859" duration="1852000" />
       <workItem from="1712457472294" duration="661000" />
       <workItem from="1712531568107" duration="2901000" />
-      <workItem from="1712584508925" duration="14050000" />
-    </task>
-    <task id="LOCAL-00035" summary="*internal screaming* :)">
-      <option name="closed" value="true" />
-      <created>1708975181295</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1708975181295</updated>
+      <workItem from="1712584508925" duration="17729000" />
     </task>
     <task id="LOCAL-00036" summary="IF YOU LIKE PIÑA COLADAS">
       <option name="closed" value="true" />
@@ -800,7 +795,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712606743143</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="WebSocketHandler onMessage">
+      <option name="closed" value="true" />
+      <created>1712628234820</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1712628234820</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -819,7 +822,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="created classes" />
     <MESSAGE value="3.14.24 EOD" />
     <MESSAGE value="&quot;I. Understand. Nothing.&quot; &#10;-Michael Scott" />
     <MESSAGE value="Quicksave" />
@@ -844,7 +846,8 @@
     <MESSAGE value="Added Phase 6 starter code. WebSocketTests.java is unhappy and I don't know why" />
     <MESSAGE value="TestFactory.java has a twin now" />
     <MESSAGE value="Jfhg yzivob nzwv zoo lu gsv mvd urovh. I nrtsg yv hxivdvw lm gsrh kilqvxg, ylbh." />
-    <option name="LAST_COMMIT_MESSAGE" value="Jfhg yzivob nzwv zoo lu gsv mvd urovh. I nrtsg yv hxivdvw lm gsrh kilqvxg, ylbh." />
+    <MESSAGE value="WebSocketHandler onMessage" />
+    <option name="LAST_COMMIT_MESSAGE" value="WebSocketHandler onMessage" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

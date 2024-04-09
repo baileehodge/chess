@@ -15,11 +15,7 @@ import static WebSocketMessages.userCommands.UserGameCommand.CommandType.*;
 import static java.lang.System.exit;
 
 public class WebSocketHandler {
-    final WebSocketSessions sessions;
-
-    public WebSocketHandler(WebSocketSessions sessions) {
-        this.sessions = sessions;
-    }
+    final ConnectionManager connections = new ConnectionManager();
 
     @OnWebSocketConnect
     void onConnect(Session session) {
