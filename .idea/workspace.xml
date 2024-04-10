@@ -7,9 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="4/8/24 EOD. Alexa, play &quot;Call My Dad -- clean version&quot; by AJR">
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Saving before I edit ServerMessage.java">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/serverMessages/ServerMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/serverMessages/ServerMessage.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -247,7 +248,7 @@
       <recent name="passoffTests.serverTests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.WebSocketTests.joinPlayerSteal">
+  <component name="RunManager" selected="JUnit.WebSocketTests">
     <configuration name="DrawBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ui.DrawBoard" />
       <module name="client" />
@@ -257,21 +258,6 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="PersistenceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="passoffTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="passoffTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.PersistenceTests" />
-      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -286,6 +272,21 @@
       </extension>
       <option name="PACKAGE_NAME" value="passoffTests" />
       <option name="MAIN_CLASS_NAME" value="passoffTests.StandardAPITests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="WebSocketTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="passoffTests.serverTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.WebSocketTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -325,11 +326,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.WebSocketTests" />
         <item itemvalue="JUnit.WebSocketTests.joinPlayerSteal" />
         <item itemvalue="JUnit.WebSocketTests.joinPlayerGood" />
         <item itemvalue="Application.DrawBoard" />
         <item itemvalue="JUnit.StandardAPITests" />
-        <item itemvalue="JUnit.PersistenceTests" />
       </list>
     </recent_temporary>
   </component>
@@ -407,15 +408,7 @@
       <workItem from="1712457472294" duration="661000" />
       <workItem from="1712531568107" duration="2901000" />
       <workItem from="1712584508925" duration="18163000" />
-      <workItem from="1712671585856" duration="990000" />
-    </task>
-    <task id="LOCAL-00037" summary="AND GETTING CAUGHT IN THE RAIN">
-      <option name="closed" value="true" />
-      <created>1709012215560</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1709012215560</updated>
+      <workItem from="1712671585856" duration="6365000" />
     </task>
     <task id="LOCAL-00038" summary="Improved DAO setup. Hopefully.">
       <option name="closed" value="true" />
@@ -801,7 +794,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712638985550</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="Saving before I edit ServerMessage.java">
+      <option name="closed" value="true" />
+      <created>1712673105537</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1712673105537</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -820,7 +821,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="&quot;I. Understand. Nothing.&quot; &#10;-Michael Scott" />
     <MESSAGE value="Quicksave" />
     <MESSAGE value="Draws the chessboard. Probably draws the pieces correctly, but who's to say" />
     <MESSAGE value="Ok now it works" />
@@ -845,7 +845,8 @@
     <MESSAGE value="Jfhg yzivob nzwv zoo lu gsv mvd urovh. I nrtsg yv hxivdvw lm gsrh kilqvxg, ylbh." />
     <MESSAGE value="WebSocketHandler onMessage" />
     <MESSAGE value="4/8/24 EOD. Alexa, play &quot;Call My Dad -- clean version&quot; by AJR" />
-    <option name="LAST_COMMIT_MESSAGE" value="4/8/24 EOD. Alexa, play &quot;Call My Dad -- clean version&quot; by AJR" />
+    <MESSAGE value="Saving before I edit ServerMessage.java" />
+    <option name="LAST_COMMIT_MESSAGE" value="Saving before I edit ServerMessage.java" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

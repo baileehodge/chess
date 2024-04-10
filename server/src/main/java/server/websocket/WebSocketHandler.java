@@ -41,7 +41,7 @@ public class WebSocketHandler {
         UserGameCommand command = new Gson().fromJson(message, UserGameCommand.class);
         switch (command.getCommandType()) {
             case JOIN_PLAYER -> joinPlayer(command, session);
-            case JOIN_OBSERVER -> joinObserver(message);
+            case JOIN_OBSERVER -> joinObserver(command, session);
             case MAKE_MOVE -> makeMove(message);
             case LEAVE -> leaveGame(message);
             case RESIGN -> resignGame(message);
@@ -55,15 +55,21 @@ public class WebSocketHandler {
 
         String playerName = command.getAuthString(); // change this so that it gets the user
         connections.add(playerName, session);
-        var message = String.format("%s has joined the game.", playerName);
+        var message = String.format("%s has joined the game as a player.", playerName);
         var notification = new ServerMessage(NOTIFICATION);
         connections.broadcast(playerName, notification);
 
     }
-    void joinObserver(String message) {
+    void joinObserver(UserGameCommand command, Session session) throws IOException {
+        String playerName = command.getAuthString(); // change this so that it gets the user
+        connections.add(playerName, session);
+        var message = String.format("%s has joined the game as an observer.", playerName);
+        var notification = new ServerMessage(NOTIFICATION);
+        connections.broadcast(playerName, notification);
 
     }
     void makeMove(String message) {
+        // call gameService to make a move
 
     }
     void leaveGame(String message) {
