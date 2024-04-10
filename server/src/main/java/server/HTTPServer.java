@@ -2,9 +2,6 @@ package server;
 
 import com.google.gson.Gson;
 import dataAccess.*;
-import org.eclipse.jetty.websocket.api.Session;
-import org.eclipse.jetty.websocket.api.annotations.OnWebSocketMessage;
-import server.websocket.WebSocketHandler;
 import service.*;
 import service.requests.JoinRecord;
 import service.requests.MyError;
@@ -17,32 +14,24 @@ import model.*;
 import java.util.Map;
 
 
-public class Server {
+public class HTTPServer {
 
     public SQLGameDAO gameDAO = new SQLGameDAO();
     public SQLUserDAO userDAO = new SQLUserDAO();
     public SQLAuthDAO authDAO = new SQLAuthDAO();
-
     public AuthService authService = new AuthService(authDAO);
+
     public GameService gameService = new GameService(gameDAO, authDAO);
     public UserService userService = new UserService(userDAO, authDAO, authService);
     public ClearService clearService = new ClearService(userDAO,authDAO,gameDAO);
 
-    private final WebSocketHandler wsHandler = new WebSocketHandler();
-
-    public Server() {
+    public HTTPServer() {
     }
 
-    // not functional?
+    // not functional
     public void main() {
-        Server server = new Server();
-        Spark.webSocket("/connect", Server.class);
+        HTTPServer server = new HTTPServer();
         server.run(8080);
-    }
-
-    @OnWebSocketMessage
-    public void onMessage(Session session, String message) throws Exception {
-        session.getRemote().sendString("WebSocket response: " + message);
     }
 
 
@@ -50,8 +39,6 @@ public class Server {
         Spark.port(desiredPort);
 
         Spark.staticFiles.location("web");
-
-        Spark.webSocket("/connect", wsHandler);
 
         // Register your endpoints and handle exceptions here.
         Spark.post("/user", this::handleRegister);
