@@ -1,6 +1,10 @@
 package WebSocketMessages.userCommands;
 
+import chess.ChessMove;
+
 import java.util.Objects;
+
+import static WebSocketMessages.userCommands.UserGameCommand.CommandType.MAKE_MOVE;
 
 /**
  * Represents a command a user can send the server over a websocket
@@ -8,31 +12,27 @@ import java.util.Objects;
  * Note: You can add to this class, but you should not alter the existing
  * methods.
  */
-public class UserGameCommand {
+public class MakeMoveCommand extends UserGameCommand{
 
-    public UserGameCommand(String authToken) {
+    public MakeMoveCommand(String authToken, String username, CommandType commandType, String gameID, String color, ChessMove move) {
+        super(authToken);
         this.authToken = authToken;
+        this.commandType = MAKE_MOVE;
+        this.gameID = gameID;
+        this.move = move;
     }
 
-    public enum CommandType {
-        JOIN_PLAYER,
-        JOIN_OBSERVER,
-        MAKE_MOVE,
-        LEAVE,
-        RESIGN
-    }
-
-    protected CommandType commandType;
 
     private final String authToken;
+    protected CommandType commandType;
+    private final String gameID;
+    private final ChessMove move;
 
-    public String getAuthString() {
-        return authToken;
-    }
 
-    public CommandType getCommandType() {
-        return this.commandType;
-    }
+    public String getAuthString() {return authToken;}
+    public CommandType getCommandType() {return this.commandType;}
+    public String getGameID() {return this.gameID;}
+    public ChessMove getMove() {return move;}
 
     @Override
     public boolean equals(Object o) {

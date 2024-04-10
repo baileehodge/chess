@@ -7,11 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Added the updated jar file. Probably did some other stuff, too. Alexa, play &quot;100 Goodnights&quot; by Ben Stevens">
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/server/HTTPServer.java" afterDir="false" />
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Alexa, play &quot;Yes, I'm a Mess&quot; by AJR">
+      <change afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/JoinObserverCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/JoinPlayerCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/LeaveCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/MakeMoveCommand.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/ResignCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/UserGameCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/UserGameCommand.java" afterDir="false" />
     </list>
@@ -403,15 +405,8 @@
       <workItem from="1712457472294" duration="661000" />
       <workItem from="1712531568107" duration="2901000" />
       <workItem from="1712584508925" duration="18163000" />
-      <workItem from="1712671585856" duration="19711000" />
-    </task>
-    <task id="LOCAL-00039" summary="The server actually runs now">
-      <option name="closed" value="true" />
-      <created>1709161444596</created>
-      <option name="number" value="00039" />
-      <option name="presentableId" value="LOCAL-00039" />
-      <option name="project" value="LOCAL" />
-      <updated>1709161444597</updated>
+      <workItem from="1712671585856" duration="19772000" />
+      <workItem from="1712757839403" duration="3861000" />
     </task>
     <task id="LOCAL-00040" summary="The DAOs are actually written. For real this time. I promise.">
       <option name="closed" value="true" />
@@ -797,7 +792,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712709209423</updated>
     </task>
-    <option name="localTasksCounter" value="88" />
+    <task id="LOCAL-00088" summary="Alexa, play &quot;Yes, I'm a Mess&quot; by AJR">
+      <option name="closed" value="true" />
+      <created>1712727332417</created>
+      <option name="number" value="00088" />
+      <option name="presentableId" value="LOCAL-00088" />
+      <option name="project" value="LOCAL" />
+      <updated>1712727332417</updated>
+    </task>
+    <option name="localTasksCounter" value="89" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -816,7 +819,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Draws the chessboard. Probably draws the pieces correctly, but who's to say" />
     <MESSAGE value="Ok now it works" />
     <MESSAGE value="Quick rename" />
     <MESSAGE value="ServerFacade written, untested" />
@@ -841,7 +843,8 @@
     <MESSAGE value="4/8/24 EOD. Alexa, play &quot;Call My Dad -- clean version&quot; by AJR" />
     <MESSAGE value="Saving before I edit ServerMessage.java" />
     <MESSAGE value="Added the updated jar file. Probably did some other stuff, too. Alexa, play &quot;100 Goodnights&quot; by Ben Stevens" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added the updated jar file. Probably did some other stuff, too. Alexa, play &quot;100 Goodnights&quot; by Ben Stevens" />
+    <MESSAGE value="Alexa, play &quot;Yes, I'm a Mess&quot; by AJR" />
+    <option name="LAST_COMMIT_MESSAGE" value="Alexa, play &quot;Yes, I'm a Mess&quot; by AJR" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -856,7 +859,7 @@
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java</url>
-          <line>59</line>
+          <line>65</line>
           <option name="timeStamp" value="33" />
         </line-breakpoint>
       </breakpoints>

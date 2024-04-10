@@ -1,6 +1,9 @@
 package server.websocket;
 
 import WebSocketMessages.serverMessages.*;
+import WebSocketMessages.userCommands.JoinObserverCommand;
+import WebSocketMessages.userCommands.JoinPlayerCommand;
+import WebSocketMessages.userCommands.MakeMoveCommand;
 import WebSocketMessages.userCommands.UserGameCommand;
 import chess.ChessMove;
 import com.google.gson.Gson;
@@ -38,70 +41,89 @@ public class WebSocketHandler {
         //    you can also call a service method, probably GameService
         UserGameCommand command = new Gson().fromJson(message, UserGameCommand.class);
         switch (command.getCommandType()) {
-            case JOIN_PLAYER -> joinPlayer(command, session);
-            case JOIN_OBSERVER -> joinObserver(command, session);
-            case MAKE_MOVE -> makeMove(command, session);
-            case LEAVE -> leaveGame(command, session);
-            case RESIGN -> resignGame(command, session);
+            case JOIN_PLAYER -> joinPlayer(message, session);
+            case JOIN_OBSERVER -> joinObserver(message, session);
+            case MAKE_MOVE -> makeMove(message, session);
+            case LEAVE -> leaveGame(message, session);
+            case RESIGN -> resignGame(message, session);
             // set a default?
         }
     }
     // assuming these are void for now
-    void joinPlayer(UserGameCommand command, Session session) throws IOException {
-        String playerName = command.getUsername();
+    void joinPlayer(String message, Session session) throws IOException {
+        JoinPlayerCommand command = new Gson().fromJson(message, JoinPlayerCommand.class);
+
+        String auth = command.getAuthString();
         String color = command.getColor();
+        String playerName = ""; // get the username from the auth
+
+        connections.add(playerName, session);
+        // call game service method??
+
+        String notificationText = String.format("%s has joined the game as the %s team player.", playerName, color);
+        var notification = new ServerMessage(NOTIFICATION);
+        notification.setServerMessageText(notificationText);
+        connections.broadcast(playerName, notification);
+
+    }
+    void joinObserver(String message, Session session) throws IOException {
+        JoinObserverCommand command = new Gson().fromJson(message, JoinObserverCommand.class);
+
+
+        //String playerName = command.getUsername();
+        String playerName = ""; // get the username from the auth
+
 
         connections.add(playerName, session);
         // call game service method?
 
-        String message = String.format("%s has joined the game as the %s team player.", playerName, color);
+        var notificationText = String.format("%s has joined the game as an observer.", playerName);
         var notification = new ServerMessage(NOTIFICATION);
-        notification.setServerMessageText(message);
-        connections.broadcast(playerName, notification);
-
-    }
-    void joinObserver(UserGameCommand command, Session session) throws IOException {
-        String playerName = command.getUsername();
-
-        connections.add(playerName, session);
-        // call game service method?
-
-        var message = String.format("%s has joined the game as an observer.", playerName);
-        var notification = new ServerMessage(NOTIFICATION);
-        notification.setServerMessageText(message);
+        notification.setServerMessageText(notificationText);
         connections.broadcast(playerName, notification);
     }
-    void makeMove(UserGameCommand command, Session session) throws IOException {
+    void makeMove(String message, Session session) throws IOException {
+        MakeMoveCommand command = new Gson().fromJson(message, MakeMoveCommand.class);
+
+
         ChessMove move = command.getMove();
-        String playerName = command.getUsername();
+        String playerName = ""; // get the username from the auth
 
         // call gameService to make a move?
 
-        var message = String.format("%s made the following move: %s.", playerName, move.toString());
+        var notificationText = String.format("%s made the following move: %s.", playerName, move.toString());
         var notification = new ServerMessage(NOTIFICATION);
-        notification.setServerMessageText(message);
+        notification.setServerMessageText(notificationText);
         connections.broadcast(playerName, notification);
     }
-    void leaveGame(UserGameCommand command, Session session) throws IOException {
-        String playerName = command.getUsername();
+    void leaveGame(String message, Session session) throws IOException {
+        MakeMoveCommand command = new Gson().fromJson(message, MakeMoveCommand.class);
+
+        // String playerName = command.getUsername();
+        String playerName = ""; // get the username from the auth
+
 
         connections.remove(playerName);
         // call game service method?
 
-        var message = String.format("%s left the game.", playerName);
+        var notificationText = String.format("%s left the game.", playerName);
         var notification = new ServerMessage(NOTIFICATION);
         notification.setServerMessageText(message);
         connections.broadcast(playerName, notification);
     }
-    void resignGame(UserGameCommand command, Session session) throws IOException {
-        String playerName = command.getUsername();
+    void resignGame(String message, Session session) throws IOException {
+        MakeMoveCommand command = new Gson().fromJson(message, MakeMoveCommand.class);
+
+        // String playerName = command.getUsername();
+        String playerName = ""; // get the username from the auth
+
 
         connections.remove(playerName);
         // call game service method?
 
-        var message = String.format("%s resigned from the game.", playerName);
+        var notificationText = String.format("%s resigned from the game.", playerName);
         var notification = new ServerMessage(NOTIFICATION);
-        notification.setServerMessageText(message);
+        notification.setServerMessageText(notificationText);
         connections.broadcast(playerName, notification);
 
     }
