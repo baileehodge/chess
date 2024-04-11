@@ -13,6 +13,9 @@ public class Main {
         System.out.println("♕ 240 Chess Server: " + piece);
         Server server = new Server();
         server.run(8080);
+        Spark.webSocket("/connect", Server.class); // SERVER RECEIVE???
+        Spark.get("/echo/:msg", (req, res) -> "HTTP response: " + req.params(":msg")); // SERVER RECEIVE?
+        System.out.println("SERVER RECEIVE...?");
     }
 
 

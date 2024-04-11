@@ -59,7 +59,6 @@ public class PostloginClient {
         throw new UIException(400, "expected CreateGame <gameName>");
     }
     private static String listGames() throws UIException{
-        //TODO: return multiple games
         GameData[] list = serverFacade.listGames(getToken());
         StringBuilder returnString = new StringBuilder();
         returnString.append("---All games--- \n");

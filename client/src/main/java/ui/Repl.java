@@ -1,20 +1,31 @@
 package ui;
 
+import WebSocketMessages.ResponseException;
 import model.GameData;
+import websocket.NotificationHandler;
 
+import javax.management.Notification;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Scanner;
 
 import static ui.EscapeSequences.*;
 
-public class Repl {
+public class Repl implements NotificationHandler {
     private final PreloginClient preloginClient;
     private final PostloginClient postloginClient;
     private final GameplayClient gameplayClient;
     private static State state = State.SIGNEDOUT;
     private static String authToken = "";
     private static Collection<GameData> gameList = new ArrayList<>();
+
+    @Override
+    public void notify(Notification notification) {
+        System.out.println(SET_TEXT_COLOR_RED + notification.getMessage());
+        printPrompt();
+
+    }
+
     public enum State {
         SIGNEDOUT,
         SIGNEDIN,
@@ -38,10 +49,10 @@ public class Repl {
         return authToken;
     }
 
-    public Repl(String serverUrl) {
+    public Repl(String serverUrl) throws ResponseException {
         preloginClient = new PreloginClient(serverUrl);
         postloginClient = new PostloginClient(serverUrl);
-        gameplayClient = new GameplayClient(serverUrl);
+        gameplayClient = new GameplayClient(serverUrl, this);
     }
 
     public void run() {
@@ -73,7 +84,7 @@ public class Repl {
     }
 
     private void printPrompt() {
-        System.out.print("\n" + SET_TEXT_COLOR_BLUE + "[" + state + "] " + ">>> " + RESET_TEXT_COLOR);
+        System.out.print("\n" + SET_TEXT_COLOR_BLUE + "[" + state + "] " + ">>> " + SET_TEXT_COLOR_WHITE);
     }
 
 }

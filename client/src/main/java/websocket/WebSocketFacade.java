@@ -1,13 +1,46 @@
 package websocket;
-import com.mysql.cj.Session;
+import WebSocketMessages.ResponseException;
+import com.google.gson.Gson;
 
-import javax.websocket.Endpoint;
-import javax.websocket.EndpointConfig;
-import javax.websocket.OnOpen;
+import javax.management.Notification;
+import javax.websocket.*;
+import javax.websocket.MessageHandler;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
+
+
 
 
 public class WebSocketFacade extends Endpoint {
     Session session;
+    NotificationHandler notificationHandler;
+
+    public WebSocketFacade(String url, NotificationHandler notificationHandler) throws ResponseException {
+        try {
+            url = url.replace("http", "ws");
+            URI socketURI = new URI(url + "/connect");
+            this.notificationHandler = notificationHandler;
+
+            WebSocketContainer container = ContainerProvider.getWebSocketContainer();
+            this.session = container.connectToServer(this, socketURI);
+            this.session.getBasicRemote().sendText("there ain't a cloud in sight"); // client send
+            System.out.println("CLIENT SEND (probably)");
+
+            //set message handler
+            this.session.addMessageHandler(new MessageHandler.Whole<String>() {
+                @Override
+                public void onMessage(String message) { // client receive
+                    System.out.println(message);
+                    System.out.println("CLIENT RECEIVE");
+                    Notification notification = new Gson().fromJson(message, Notification.class);
+                    notificationHandler.notify(notification);
+                }
+            });
+        } catch (DeploymentException | IOException | URISyntaxException ex) {
+            throw new ResponseException(500, ex.getMessage());
+        }
+    }
 
     void connect() {
 
@@ -20,19 +53,24 @@ public class WebSocketFacade extends Endpoint {
     // 1. create command message
     // 2. send message to server
 
-    void joinPlayer() {
+    public void joinPlayer() throws ResponseException {
+        try {
+            this.session.getBasicRemote().sendText(new Gson().toJson("sun is shining in the sky")); // client send
+            System.out.println("CLIENT SEND");
+        } catch (IOException ex) {
+            throw new ResponseException(500, ex.getMessage());
+        }
+    }
+    public void joinObserver() {
 
     }
-    void joinObserver() {
+    public void makeMove() {
 
     }
-    void makeMove() {
+    public void leaveGame() {
 
     }
-    void leaveGame() {
-
-    }
-    void resignGame() {
+    public void resignGame() {
 
     }
 
@@ -46,12 +84,20 @@ public class WebSocketFacade extends Endpoint {
     // 1. deserialize message
     // 2. call gameHandler to process message
 
-    void onMessage(String message) {
-
+    @OnOpen
+    public void onOpen(Session session, EndpointConfig config) {
+        // Handle the WebSocket connection opening
+        System.out.println("WebSocket connection opened");
     }
 
-    @Override
-    public void onOpen(javax.websocket.Session session, EndpointConfig endpointConfig) {
-
+    @OnClose
+    public void onClose(Session session, CloseReason closeReason) {
+        // Handle the WebSocket connection closing
+        System.out.println("WebSocket connection closed: " + closeReason.getReasonPhrase());
+    }
+    @OnError
+    public void onError(Session session, Throwable throwable) {
+        // Handle any errors that occur during the WebSocket connection
+        System.out.println("WebSocket error: " + throwable.getMessage());
     }
 }

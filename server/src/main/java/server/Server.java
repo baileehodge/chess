@@ -38,11 +38,15 @@ public class Server {
         Server server = new Server();
         Spark.webSocket("/connect", Server.class);
         server.run(8080);
+        Spark.get("/echo/:msg", (req, res) -> "HTTP response: " + req.params(":msg")); // CLIENT RECEIVE?
+        System.out.println("SERVER RECEIVE...?");
+
     }
 
     @OnWebSocketMessage
     public void onMessage(Session session, String message) throws Exception {
         session.getRemote().sendString("WebSocket response: " + message);
+        System.out.println("SERVER SEND");
     }
 
 
