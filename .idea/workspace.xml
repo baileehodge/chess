@@ -7,11 +7,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Alexa, play &quot;Stayin' Alive&quot; by the Bee Gees :,(">
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="noNE OF THE TESTS PASS">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketSessions.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketSessions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/LeaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/LeaveCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -195,7 +195,7 @@
     "JUnit.StandardAPITests.successLogin.executor": "Debug",
     "JUnit.StandardAPITests.uniqueAuthorizationTokens.executor": "Run",
     "JUnit.WebSocketTests.executor": "Run",
-    "JUnit.WebSocketTests.joinPlayerGood.executor": "Debug",
+    "JUnit.WebSocketTests.joinPlayerGood.executor": "Run",
     "JUnit.WebSocketTests.joinPlayerSteal.executor": "Run",
     "JUnit.chessPieceTests in shared.executor": "Run",
     "JUnit.java in shared.executor": "Run",
@@ -249,7 +249,7 @@
       <recent name="passoffTests.serverTests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.WebSocketTests">
+  <component name="RunManager" selected="Application.Main (1)">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="client" />
@@ -312,11 +312,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.WebSocketTests" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.PersistenceTests" />
         <item itemvalue="JUnit.WebSocketTests.joinPlayerGood" />
+        <item itemvalue="JUnit.WebSocketTests" />
+        <item itemvalue="JUnit.PersistenceTests" />
       </list>
     </recent_temporary>
   </component>
@@ -397,15 +397,7 @@
       <workItem from="1712671585856" duration="19772000" />
       <workItem from="1712757839403" duration="23663000" />
       <workItem from="1712844171595" duration="1977000" />
-      <workItem from="1712863832039" duration="8742000" />
-    </task>
-    <task id="LOCAL-00043" summary="Passing 9 of 24 tests. Time for some intense debugging">
-      <option name="closed" value="true" />
-      <created>1709314651208</created>
-      <option name="number" value="00043" />
-      <option name="presentableId" value="LOCAL-00043" />
-      <option name="project" value="LOCAL" />
-      <updated>1709314651208</updated>
+      <workItem from="1712863832039" duration="13936000" />
     </task>
     <task id="LOCAL-00044" summary="AHHH IT WORKS">
       <option name="closed" value="true" />
@@ -791,7 +783,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712885196548</updated>
     </task>
-    <option name="localTasksCounter" value="92" />
+    <task id="LOCAL-00092" summary="noNE OF THE TESTS PASS">
+      <option name="closed" value="true" />
+      <created>1712890982461</created>
+      <option name="number" value="00092" />
+      <option name="presentableId" value="LOCAL-00092" />
+      <option name="project" value="LOCAL" />
+      <updated>1712890982462</updated>
+    </task>
+    <option name="localTasksCounter" value="93" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -810,7 +810,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="3.17.24 EOD" />
     <MESSAGE value="Register works now" />
     <MESSAGE value="Lots of things are working now. Listgames is not. Waiting to test other game-related functions because of the need for listgames" />
     <MESSAGE value="the tests run...?" />
@@ -835,7 +834,8 @@
     <MESSAGE value="Created the usergamecommand classes" />
     <MESSAGE value="Alexa, play &quot;Stolen Dance&quot; by Milky Chance." />
     <MESSAGE value="Alexa, play &quot;Stayin' Alive&quot; by the Bee Gees :,(" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alexa, play &quot;Stayin' Alive&quot; by the Bee Gees :,(" />
+    <MESSAGE value="noNE OF THE TESTS PASS" />
+    <option name="LAST_COMMIT_MESSAGE" value="noNE OF THE TESTS PASS" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

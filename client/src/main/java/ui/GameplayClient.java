@@ -9,8 +9,12 @@ import javax.management.Notification;
 import java.io.IOException;
 import java.util.Arrays;
 
+import static ui.Repl.getToken;
+
 public class GameplayClient {
     static WebSocketFacade wsServer;
+    static ServerFacade serverFacade;
+
     static ServerFacade httpServer;
     private final String serverUrl;
     private static int gameID;
@@ -24,27 +28,23 @@ public class GameplayClient {
     }
 
     public static String eval(String input) {
-        try {
-            var tokens = input.toLowerCase().split(" ");
-            var cmd = (tokens.length > 0) ? tokens[0] : "help";
-            var params = Arrays.copyOfRange(tokens, 1, tokens.length);
-            return switch (cmd) {
-                case "quit" -> "Goodbye";
-                case "joinplayer" -> joinPlayer();
-                case "joinobserver" -> joinObserver();
-                case "makemove" -> makeMove();
-                case "leave" -> leave();
-                case "resign" -> resign();
-                case "help" -> help();
-                default -> help();
-            };
-        } catch (IOException ex) {
-        // } catch (IOException | UIException ex) {
-            return ex.getMessage();
-        }
+        var tokens = input.toLowerCase().split(" ");
+        var cmd = (tokens.length > 0) ? tokens[0] : "help";
+        var params = Arrays.copyOfRange(tokens, 1, tokens.length);
+        return switch (cmd) {
+            case "quit" -> "Goodbye";
+            case "joinplayer" -> joinPlayer(params);
+            case "joinobserver" -> joinObserver();
+            case "makemove" -> makeMove();
+            case "leave" -> leave();
+            case "resign" -> resign();
+            case "help" -> help();
+            default -> help();
+        };
     }
 
-    private static String joinPlayer() throws IOException {
+    private static String joinPlayer(String... params) {
+        // TODO: make this actually implement the given params
         try {
             System.out.println("before joinplayer() from the client");
 
@@ -54,6 +54,8 @@ public class GameplayClient {
             String color = "white";
 
             gameID = game;
+
+
             wsServer.joinPlayer(auth, game, color);
 
 

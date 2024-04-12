@@ -2,14 +2,17 @@ package server.websocket;
 
 import WebSocketMessages.serverMessages.*;
 import WebSocketMessages.userCommands.*;
+import chess.ChessGame;
 import chess.ChessMove;
 import com.google.gson.Gson;
 import dataAccess.*;
+import model.GameData;
 import org.eclipse.jetty.websocket.api.Session;
 
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 import static WebSocketMessages.serverMessages.ServerMessage.ServerMessageType.LOAD_GAME;
 import static WebSocketMessages.serverMessages.ServerMessage.ServerMessageType.NOTIFICATION;
@@ -35,10 +38,13 @@ public class WebSocketHandler {
     AuthDAO authDAO = new SQLAuthDAO();
     UserDAO userDAO = new SQLUserDAO();
 
-    @OnWebSocketError
-    public void onError(Throwable throwable) {
 
-    }
+
+//    @OnWebSocketError
+//    public void onError(Throwable throwable) {
+//        // should I add something here...?
+//
+//    }
 
     @OnWebSocketMessage
     public void onMessage(Session session, String message) throws IOException {
@@ -63,26 +69,60 @@ public class WebSocketHandler {
         int gameID = command.getGameID();
         String color = command.getColor();
         String username;
-        try {
-            username = authDAO.getAuth(authToken).getUsername();
-        } catch (DataAccessException e) {
-            throw new RuntimeException(e.getMessage());
-        }
+        ChessGame game;
+        GameData gameData;
+        boolean success = true;
 
         sessions.addSessionToGame(gameID, authToken, session);
-        // call game service method??
 
-        String notificationText = String.format("%s has joined the game as the %s team player.", username, color);
-        var notification = new ServerMessage(NOTIFICATION);
-        notification.setServerMessageText(notificationText);
-        String json = new Gson().toJson(notification);
-        this.broadcastMessage(gameID, json, authToken);
+        try {
+            username = authDAO.getAuth(authToken).getUsername();
+            try {
+                gameData = gameDAO.getGame(gameID);
+                game = gameData.getGame();
+            } catch (Exception e) {
+                String text = new Gson().toJson(new Error("Error: The game does not exist"));
+                this.sendMessage(gameID, text, authToken);
+                return;
+            }
+            // check that something happened
+            if (gameData.getBlackUsername() == null && gameData.getWhiteUsername() == null) {
+                success = false;
+            }
+            if("white".equalsIgnoreCase(color) && gameData.getWhiteUsername() != null
+                    && !Objects.equals(gameData.getWhiteUsername(), username)) {
+                success = false;
+            }
+            if("black".equalsIgnoreCase(color) && gameData.getBlackUsername() != null
+                    && !Objects.equals(gameData.getBlackUsername(), username)) {
+                success = false;
+            }
 
-        notification = new ServerMessage(LOAD_GAME);
-        notification.setServerMessageText("Loading game " + gameID);
-        json = new Gson().toJson(notification);
+        } catch (DataAccessException e) {
+            String text2 = new Gson().toJson(new Error("Error: That user does not exist."));
+            this.sendMessage(gameID, text2, authToken);
+            throw new RuntimeException(e);
+        }
 
+        if (success) {
+            String notificationText = String.format("%s has joined the game as the %s team player.", username, color);
+            var notification = new ServerMessage(NOTIFICATION);
+            notification.setServerMessageText(notificationText);
+            String json = new Gson().toJson(notification);
+            this.broadcastMessage(gameID, json, authToken);
+
+            notification = new ServerMessage(LOAD_GAME);
+            notification.setServerMessageText("Loading game " + gameID);
+            String text4 = new Gson().toJson(notification);
+            this.sendMessage(gameID, text4,authToken);
+
+        }
+        else {
+            String text3 = new Gson().toJson(new Error("Error: The player is already taken"));
+            this.sendMessage(gameID, text3,authToken);
+        }
     }
+
     void joinObserver(String message, Session session) throws IOException {
         JoinPlayerCommand command = new Gson().fromJson(message, JoinPlayerCommand.class);
         // TODO
@@ -158,14 +198,24 @@ public class WebSocketHandler {
 
     }
 
-    void sendMessage(int gameID, String message, String authToken) {
+    void sendMessage(int gameID, String message, String authToken) throws IOException {
+        HashMap<String, Session> theSessions = sessions.getSessions(gameID);
+        Session yesThisSession = theSessions.get(authToken);
+
+        for (Map.Entry<String, Session> entry: theSessions.entrySet()) {
+            Session c = entry.getValue();
+            if (c.isOpen()) {
+                if (c.equals(yesThisSession)) {
+                    c.getRemote().sendString(message);
+                }
+            }
+        }
 
     }
     void broadcastMessage(int gameID, String message, String notThisAuthToken) throws IOException {
         HashMap<String, Session> theSessions = sessions.getSessions(gameID);
         Session exceptThisSession = theSessions.get(notThisAuthToken);
         for (Map.Entry<String, Session> entry: theSessions.entrySet()) {
-            String authToken = entry.getKey();
             Session c = entry.getValue();
             if (c.isOpen()) {
                 if (!c.equals(exceptThisSession)) {
