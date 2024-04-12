@@ -1,23 +1,24 @@
 package server.websocket;
 
 import WebSocketMessages.serverMessages.*;
-import WebSocketMessages.userCommands.JoinObserverCommand;
-import WebSocketMessages.userCommands.JoinPlayerCommand;
-import WebSocketMessages.userCommands.MakeMoveCommand;
-import WebSocketMessages.userCommands.UserGameCommand;
+import WebSocketMessages.userCommands.*;
 import chess.ChessMove;
 import com.google.gson.Gson;
+import dataAccess.*;
 import org.eclipse.jetty.websocket.api.Session;
 
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
+import static WebSocketMessages.serverMessages.ServerMessage.ServerMessageType.LOAD_GAME;
 import static WebSocketMessages.serverMessages.ServerMessage.ServerMessageType.NOTIFICATION;
 
 import org.eclipse.jetty.websocket.api.annotations.*;
 
 @WebSocket
 public class WebSocketHandler {
-    final ConnectionManager connections = new ConnectionManager();
+    // final ConnectionManager connections = new ConnectionManager();
 
 //    @OnWebSocketConnect
 //    public void onConnect(Session session) {
@@ -28,6 +29,11 @@ public class WebSocketHandler {
 //    public void onClose(Session session) {
 //
 //    }
+
+    WebSocketSessions sessions = new WebSocketSessions();
+    GameDAO gameDAO = new SQLGameDAO();
+    AuthDAO authDAO = new SQLAuthDAO();
+    UserDAO userDAO = new SQLUserDAO();
 
     @OnWebSocketError
     public void onError(Throwable throwable) {
@@ -53,34 +59,55 @@ public class WebSocketHandler {
     void joinPlayer(String message, Session session) throws IOException {
         JoinPlayerCommand command = new Gson().fromJson(message, JoinPlayerCommand.class);
 
-        String auth = command.getAuthString();
+        String authToken = command.getAuthString();
+        int gameID = command.getGameID();
         String color = command.getColor();
-        String playerName = ""; // get the username from the auth
+        String username;
+        try {
+            username = authDAO.getAuth(authToken).getUsername();
+        } catch (DataAccessException e) {
+            throw new RuntimeException(e.getMessage());
+        }
 
-        connections.add(playerName, session);
+        sessions.addSessionToGame(gameID, authToken, session);
         // call game service method??
 
-        String notificationText = String.format("%s has joined the game as the %s team player.", playerName, color);
+        String notificationText = String.format("%s has joined the game as the %s team player.", username, color);
         var notification = new ServerMessage(NOTIFICATION);
         notification.setServerMessageText(notificationText);
-        connections.broadcast(playerName, notification);
+        String json = new Gson().toJson(notification);
+        this.broadcastMessage(gameID, json, authToken);
+
+        notification = new ServerMessage(LOAD_GAME);
+        notification.setServerMessageText("Loading game " + gameID);
+        json = new Gson().toJson(notification);
 
     }
     void joinObserver(String message, Session session) throws IOException {
-        JoinObserverCommand command = new Gson().fromJson(message, JoinObserverCommand.class);
+        JoinPlayerCommand command = new Gson().fromJson(message, JoinPlayerCommand.class);
+        // TODO
 
+        String authToken = command.getAuthString();
+        String username;
+        try {
+            username = authDAO.getAuth(authToken).getUsername();
+        } catch (DataAccessException e) {
+            throw new RuntimeException(e.getMessage());
+        }
+        int gameID = command.getGameID();
+        String color = command.getColor();
 
-        //String playerName = command.getUsername();
-        String playerName = ""; // get the username from the auth
+        sessions.addSessionToGame(gameID, authToken, session);
 
-
-        connections.add(playerName, session);
-        // call game service method?
-
-        var notificationText = String.format("%s has joined the game as an observer.", playerName);
+        String notificationText = String.format("%s has joined the game as an observer.", username);
         var notification = new ServerMessage(NOTIFICATION);
         notification.setServerMessageText(notificationText);
-        connections.broadcast(playerName, notification);
+        String json = new Gson().toJson(notification);
+        this.broadcastMessage(gameID, json, authToken);
+
+        notification = new ServerMessage(LOAD_GAME);
+        notification.setServerMessageText("Loading game " + gameID);
+        json = new Gson().toJson(notification);
     }
     void makeMove(String message, Session session) throws IOException {
         MakeMoveCommand command = new Gson().fromJson(message, MakeMoveCommand.class);
@@ -91,10 +118,12 @@ public class WebSocketHandler {
 
         // call gameService to make a move?
 
-        var notificationText = String.format("%s made the following move: %s.", playerName, move.toString());
-        var notification = new ServerMessage(NOTIFICATION);
-        notification.setServerMessageText(notificationText);
-        connections.broadcast(playerName, notification);
+// TODO: un-comment this and fix it
+//        String notificationText = String.format("%s made the following move: .", username, move.toString());
+//        var notification = new ServerMessage(NOTIFICATION);
+//        notification.setServerMessageText(notificationText);
+//        String json = new Gson().toJson(notification);
+//        this.broadcastMessage(gameID, json, authToken);
     }
     void leaveGame(String message, Session session) throws IOException {
         MakeMoveCommand command = new Gson().fromJson(message, MakeMoveCommand.class);
@@ -102,14 +131,15 @@ public class WebSocketHandler {
         // String playerName = command.getUsername();
         String playerName = ""; // get the username from the auth
 
-
-        connections.remove(playerName);
-        // call game service method?
-
-        var notificationText = String.format("%s left the game.", playerName);
-        var notification = new ServerMessage(NOTIFICATION);
-        notification.setServerMessageText(message);
-        connections.broadcast(playerName, notification);
+// TODO: un-comment this and fix it
+//
+//        connections.remove(playerName);
+//        // call game service method?
+//
+//        var notificationText = String.format("%s left the game.", playerName);
+//        var notification = new ServerMessage(NOTIFICATION);
+//        notification.setServerMessageText(message);
+//        connections.broadcast(playerName, notification);
     }
     void resignGame(String message, Session session) throws IOException {
         MakeMoveCommand command = new Gson().fromJson(message, MakeMoveCommand.class);
@@ -117,22 +147,32 @@ public class WebSocketHandler {
         // String playerName = command.getUsername();
         String playerName = ""; // get the username from the auth
 
-
-        connections.remove(playerName);
-        // call game service method?
-
-        var notificationText = String.format("%s resigned from the game.", playerName);
-        var notification = new ServerMessage(NOTIFICATION);
-        notification.setServerMessageText(notificationText);
-        connections.broadcast(playerName, notification);
+// TODO: un-comment this and fix it
+//        connections.remove(playerName);
+//        // call game service method?
+//
+//        var notificationText = String.format("%s resigned from the game.", playerName);
+//        var notification = new ServerMessage(NOTIFICATION);
+//        notification.setServerMessageText(notificationText);
+//        connections.broadcast(playerName, notification);
 
     }
 
     void sendMessage(int gameID, String message, String authToken) {
 
     }
-    void broadcastMessage(int gameID, String message, String notThisAuthToken) {
-
+    void broadcastMessage(int gameID, String message, String notThisAuthToken) throws IOException {
+        HashMap<String, Session> theSessions = sessions.getSessions(gameID);
+        Session exceptThisSession = theSessions.get(notThisAuthToken);
+        for (Map.Entry<String, Session> entry: theSessions.entrySet()) {
+            String authToken = entry.getKey();
+            Session c = entry.getValue();
+            if (c.isOpen()) {
+                if (!c.equals(exceptThisSession)) {
+                    c.getRemote().sendString(message);
+                }
+            }
+        }
     }
 
 }

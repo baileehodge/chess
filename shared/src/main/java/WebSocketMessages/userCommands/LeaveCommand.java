@@ -12,30 +12,22 @@ import java.util.Objects;
  */
 public class LeaveCommand extends UserGameCommand{
 
-    public LeaveCommand(String authToken, String username, CommandType commandType, String gameID, String color, ChessMove move) {
+    public LeaveCommand(String authToken, int gameID) {
         super(authToken);
         this.authToken = authToken;
-        this.username = username;
-        this.commandType = commandType;
         this.gameID = gameID;
-        this.color = color;
-        this.move = move;
     }
 
     private final String authToken;
     protected CommandType commandType;
-    private final String username;
-    private final String gameID;
-    private final String color;
-    private final ChessMove move;
+    private final int gameID;
+
 
 
     public String getAuthString() {return authToken;}
     public CommandType getCommandType() {return this.commandType;}
-    public String getUsername() {return this.username;}
-    public String getGameID() {return this.gameID;}
-    public String getColor() {return color;}
-    public ChessMove getMove() {return move;}
+    public int getGameID() {return this.gameID;}
+
 
     @Override
     public boolean equals(Object o) {
