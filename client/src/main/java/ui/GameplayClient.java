@@ -13,13 +13,13 @@ public class GameplayClient {
     static WebSocketFacade wsServer;
     static ServerFacade httpServer;
     private final String serverUrl;
+    private static int gameID;
 
     private final NotificationHandler notificationHandler;
     public GameplayClient(String serverUrl, NotificationHandler notificationHandler) throws ResponseException {
         this.notificationHandler = notificationHandler;
         this.serverUrl = serverUrl;
         wsServer = new WebSocketFacade(serverUrl, notificationHandler);
-        // probably don't need that one? ^^
         httpServer = new ServerFacade(serverUrl);
     }
 
@@ -47,7 +47,16 @@ public class GameplayClient {
     private static String joinPlayer() throws IOException {
         try {
             System.out.println("before joinplayer() from the client");
-            wsServer.joinPlayer();
+
+            // test parameters so I don't have to keep typing them
+            String auth = "wekqfhwpiurhfiufbfo";
+            int game = 42;
+            String color = "white";
+
+            gameID = game;
+            wsServer.joinPlayer(auth, game, color);
+
+
             System.out.println("after joinplayer() from the client");
 
             return "not yet implemented";

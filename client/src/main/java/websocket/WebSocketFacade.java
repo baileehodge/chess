@@ -1,5 +1,6 @@
 package websocket;
 import WebSocketMessages.ResponseException;
+import WebSocketMessages.userCommands.JoinPlayerCommand;
 import com.google.gson.Gson;
 
 import javax.management.Notification;
@@ -53,9 +54,10 @@ public class WebSocketFacade extends Endpoint {
     // 1. create command message
     // 2. send message to server
 
-    public void joinPlayer() throws ResponseException {
+    public void joinPlayer(String authToken, int gameID, String color) throws ResponseException {
         try {
-            this.session.getBasicRemote().sendText(new Gson().toJson("sun is shining in the sky")); // client send
+            var action = new JoinPlayerCommand(authToken, gameID, color);
+            this.session.getBasicRemote().sendText(new Gson().toJson(action)); // client send
             System.out.println("CLIENT SEND");
         } catch (IOException ex) {
             throw new ResponseException(500, ex.getMessage());

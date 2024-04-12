@@ -7,17 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Created the usergamecommand classes">
-      <change afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/ResponseException.java" afterDir="false" />
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Alexa, play &quot;Stolen Dance&quot; by Milky Chance.">
+      <change afterPath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketSessions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/Main.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/Repl.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/Repl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/websocket/MessageHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/websocket/NotificationHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/websocket/WebSocketFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/websocket/WebSocketFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/JoinPlayerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/JoinPlayerCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,6 +265,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="PersistenceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="passoffTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="passoffTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.PersistenceTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WebSocketTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
@@ -301,29 +311,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WebSocketTests.joinPlayerSteal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="server" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="passoffTests.serverTests.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
-      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.WebSocketTests" />
-      <option name="METHOD_NAME" value="joinPlayerSteal" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.PersistenceTests" />
         <item itemvalue="JUnit.WebSocketTests.joinPlayerGood" />
         <item itemvalue="JUnit.WebSocketTests" />
-        <item itemvalue="JUnit.WebSocketTests.joinPlayerSteal" />
       </list>
     </recent_temporary>
   </component>
@@ -402,15 +396,9 @@
       <workItem from="1712531568107" duration="2901000" />
       <workItem from="1712584508925" duration="18163000" />
       <workItem from="1712671585856" duration="19772000" />
-      <workItem from="1712757839403" duration="23288000" />
-    </task>
-    <task id="LOCAL-00041" summary="The service classes are fleshed out and ready for action">
-      <option name="closed" value="true" />
-      <created>1709171252137</created>
-      <option name="number" value="00041" />
-      <option name="presentableId" value="LOCAL-00041" />
-      <option name="project" value="LOCAL" />
-      <updated>1709171252137</updated>
+      <workItem from="1712757839403" duration="23663000" />
+      <workItem from="1712844171595" duration="1977000" />
+      <workItem from="1712863832039" duration="3937000" />
     </task>
     <task id="LOCAL-00042" summary="EOD 2/28/24&#10;&#10;json serialization is casually killing me">
       <option name="closed" value="true" />
@@ -796,7 +784,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712761977226</updated>
     </task>
-    <option name="localTasksCounter" value="90" />
+    <task id="LOCAL-00090" summary="Alexa, play &quot;Stolen Dance&quot; by Milky Chance.">
+      <option name="closed" value="true" />
+      <created>1712816678528</created>
+      <option name="number" value="00090" />
+      <option name="presentableId" value="LOCAL-00090" />
+      <option name="project" value="LOCAL" />
+      <updated>1712816678528</updated>
+    </task>
+    <option name="localTasksCounter" value="91" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -815,7 +811,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Quick rename" />
     <MESSAGE value="ServerFacade written, untested" />
     <MESSAGE value="3.17.24 EOD" />
     <MESSAGE value="Register works now" />
@@ -840,7 +835,8 @@
     <MESSAGE value="Added the updated jar file. Probably did some other stuff, too. Alexa, play &quot;100 Goodnights&quot; by Ben Stevens" />
     <MESSAGE value="Alexa, play &quot;Yes, I'm a Mess&quot; by AJR" />
     <MESSAGE value="Created the usergamecommand classes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Created the usergamecommand classes" />
+    <MESSAGE value="Alexa, play &quot;Stolen Dance&quot; by Milky Chance." />
+    <option name="LAST_COMMIT_MESSAGE" value="Alexa, play &quot;Stolen Dance&quot; by Milky Chance." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

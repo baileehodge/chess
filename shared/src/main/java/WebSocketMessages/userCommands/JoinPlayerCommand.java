@@ -14,7 +14,7 @@ import static WebSocketMessages.userCommands.UserGameCommand.CommandType.JOIN_PL
  */
 public class JoinPlayerCommand extends UserGameCommand{
 
-    public JoinPlayerCommand(String authToken, String username, CommandType commandType, String gameID, String color, ChessMove move) {
+    public JoinPlayerCommand(String authToken, int gameID, String color) {
         super(authToken);
         this.authToken = authToken;
         this.commandType = JOIN_PLAYER;
@@ -26,13 +26,13 @@ public class JoinPlayerCommand extends UserGameCommand{
 
     private final String authToken;
     protected CommandType commandType;
-    private final String gameID;
+    private final int gameID;
     private final String color;
 
 
     public String getAuthString() {return authToken;}
     public CommandType getCommandType() {return this.commandType;}
-    public String getGameID() {return this.gameID;}
+    public int getGameID() {return this.gameID;}
     public String getColor() {return color;}
 
     @Override
