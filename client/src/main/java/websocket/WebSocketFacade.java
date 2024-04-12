@@ -57,8 +57,9 @@ public class WebSocketFacade extends Endpoint {
     public void joinPlayer(String authToken, int gameID, String color) throws ResponseException {
         try {
             var action = new JoinPlayerCommand(authToken, gameID, color);
+            // TODO: I think this is the problem vvv ...
             this.session.getBasicRemote().sendText(new Gson().toJson(action)); // client send
-            System.out.println("CLIENT SEND");
+            System.out.println("CLIENT SEND"); // ...because this isn't being printed
         } catch (IOException ex) {
             throw new ResponseException(500, ex.getMessage());
         }

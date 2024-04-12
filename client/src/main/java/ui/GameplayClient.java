@@ -5,8 +5,6 @@ import chess.ChessBoard;
 import websocket.NotificationHandler;
 import websocket.WebSocketFacade;
 
-import javax.management.Notification;
-import java.io.IOException;
 import java.util.Arrays;
 
 import static ui.Repl.getToken;
@@ -17,7 +15,8 @@ public class GameplayClient {
 
     static ServerFacade httpServer;
     private final String serverUrl;
-    private static int gameID;
+
+    private static int gameID = 0;
 
     private final NotificationHandler notificationHandler;
     public GameplayClient(String serverUrl, NotificationHandler notificationHandler) throws ResponseException {
@@ -27,15 +26,23 @@ public class GameplayClient {
         httpServer = new ServerFacade(serverUrl);
     }
 
+    public static int getGameID() {
+        return gameID;
+    }
+
+    public static void setGameID(int gameID) {
+        GameplayClient.gameID = gameID;
+    }
+
     public static String eval(String input) {
         var tokens = input.toLowerCase().split(" ");
         var cmd = (tokens.length > 0) ? tokens[0] : "help";
         var params = Arrays.copyOfRange(tokens, 1, tokens.length);
         return switch (cmd) {
             case "quit" -> "Goodbye";
-            case "joinplayer" -> joinPlayer(params);
-            case "joinobserver" -> joinObserver();
-            case "makemove" -> makeMove();
+            case "redrawBoard" -> redrawBoard();
+            case "showLegalMoves" -> showLegalMoves(params);
+            case "makemove" -> makeMove(params);
             case "leave" -> leave();
             case "resign" -> resign();
             case "help" -> help();
@@ -43,25 +50,29 @@ public class GameplayClient {
         };
     }
 
+    private static String showLegalMoves(String[] params) {
+        return "not yet implemented";
+    }
+
+    private static String redrawBoard() {
+        return "not yet implemented";
+    }
+
     private static String joinPlayer(String... params) {
-        // TODO: make this actually implement the given params
+        // TODO: I don't... I don't even need this... do I?
         try {
             System.out.println("before joinplayer() from the client");
 
-            // test parameters so I don't have to keep typing them
-            String auth = "wekqfhwpiurhfiufbfo";
-            int game = 42;
-            String color = "white";
-
-            gameID = game;
+            String auth = getToken();
+            String color = params[0];
 
 
-            wsServer.joinPlayer(auth, game, color);
+            wsServer.joinPlayer(auth, gameID, color);
 
 
             System.out.println("after joinplayer() from the client");
 
-            return "not yet implemented";
+            return "this is the joinplayer return statement";
         } catch (ResponseException ex) {
             return ex.getMessage();
         }
@@ -71,7 +82,7 @@ public class GameplayClient {
         return "not yet implemented";
     }
 
-    private static String makeMove() {
+    private static String makeMove(String... params) {
         return "not yet implemented";
     }
 
@@ -85,10 +96,9 @@ public class GameplayClient {
 
 
     private static String help() {
-        // TODO: make it so they don't have to input the gameID
         return """
-                    - joinPlayer <gameID> <playerColor>
-                    - joinObserver <gameID>
+                    - redrawBoard
+                    - showLegalMoves
                     - makeMove <gameID> <move, format 1:5-1:6>
                     - leave <gameID>
                     - resign <gameID>
@@ -107,6 +117,7 @@ public class GameplayClient {
     }
 
     // this is probably a useless method
+
     private static String drawBoard(ChessBoard board) {
         DrawBoard.run(board);
         return "\n";

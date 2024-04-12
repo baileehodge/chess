@@ -71,9 +71,11 @@ public class PostloginClient {
         return returnString.toString();
     }
     private static String joinGame(String... params) throws UIException{
+
         if (params.length >= 2) {
             serverFacade.joinGame(getToken(), params[1], Integer.parseInt(params[0]));
             Repl.setState(Repl.State.INGAME);
+            GameplayClient.setGameID(Integer.parseInt(params[0]));
             return "joined game as player";
         }
         throw new UIException(400, "expected joinGame <gameID> <playerColor>");
@@ -82,6 +84,7 @@ public class PostloginClient {
         //record - authtoken, player color, game id
         serverFacade.joinGame(getToken(), null,  Integer.parseInt(params[0]));
         Repl.setState(Repl.State.INGAME);
+        GameplayClient.setGameID(Integer.parseInt(params[0]));
         return "joined game as observer";
     }
 }
