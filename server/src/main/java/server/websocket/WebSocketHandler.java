@@ -13,6 +13,7 @@ import static dataAccess.DatabaseManager.getConnection;
 
 @WebSocket
 public class WebSocketHandler {
+    //
 
     ConnectionManager connections = new ConnectionManager();
     @OnWebSocketMessage

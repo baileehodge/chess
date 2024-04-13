@@ -1,6 +1,7 @@
 package server.websocket;
 
 import WebSocketMessages.serverMessages.ServerMessage;
+import com.google.gson.Gson;
 import org.eclipse.jetty.websocket.api.Session;
 
 import java.io.IOException;
@@ -8,6 +9,7 @@ import java.util.ArrayList;
 import java.util.concurrent.ConcurrentHashMap;
 
 public class ConnectionManager {
+    //
     public final ConcurrentHashMap<String, Connection> connections = new ConcurrentHashMap<>();
     public final ConcurrentHashMap<Connection, Integer> games = new ConcurrentHashMap<Connection, Integer>();
 
@@ -30,7 +32,8 @@ public class ConnectionManager {
 
     }
 
-    public void broadcast(String excludeVisitorName, ServerMessage notification) throws IOException {
+    // It's called gossip because it notifies all the users except for one
+    public void gossip(String excludeVisitorName, ServerMessage notification) throws IOException {
         var removeList = new ArrayList<Connection>();
         for (var c : connections.values()) {
             if (c.session.isOpen()) {
@@ -45,6 +48,19 @@ public class ConnectionManager {
         // Clean up any connections that were left open.
         for (var c : removeList) {
             connections.remove(c.visitorName);
+        }
+    }
+
+    // tell everyone
+    public void announce(int gameID, ServerMessage notification) throws IOException {
+        String message = new Gson().toJson(notification);
+
+        for (var c : games.entrySet()) {
+            if (c.getKey().session.isOpen()) {
+                if (c.getValue().equals(gameID)) {
+                    c.getKey().send(message);
+                }
+            }
         }
     }
 }
