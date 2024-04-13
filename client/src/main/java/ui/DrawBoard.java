@@ -4,9 +4,12 @@ import chess.ChessBoard;
 import chess.ChessGame;
 import chess.ChessPiece;
 
+
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 
+import static chess.ChessGame.TeamColor.BLACK;
+import static chess.ChessGame.TeamColor.WHITE;
 import static ui.EscapeSequences.*;
 
 public class DrawBoard {
@@ -25,31 +28,59 @@ public class DrawBoard {
     public static void main(String[] args) {
         ChessBoard board = new ChessBoard();
         board.resetBoard();
-        run(board);
+//        run(board, BLACK);
+//        run(board, WHITE);
+        run(board, null);
+
     }
 
 
-    // takes a ChessBoard object. Draws both orientations
-    public static void run(ChessBoard board) {
+    // takes a ChessBoard object and a TeamColor. Draws orientation based on TeamColor
+    // use null as color to print both
+    public static void run(ChessBoard board, ChessGame.TeamColor color) {
         var out = new PrintStream(System.out, true, StandardCharsets.UTF_8);
 
-        out.print(ERASE_SCREEN);
+        //out.print(ERASE_SCREEN);
 
-        int start = 7;
-        int increment = -1;
-
-        drawHeader(out, start, increment);
-        drawChessBoard(out, start, increment, board);
-        drawHeader(out, start, increment);
+        if (color == WHITE) {
+            printWhiteTeamView(board, out);
+        }
+        else if (color == BLACK) {
+            printBlackTeamView(board, out);
+        }
+        else {
+            printWhiteTeamView(board, out);
+            out.println();
+            printBlackTeamView(board, out);
+        }
 
         out.println();
+
+    }
+
+    private static void printBlackTeamView(ChessBoard board, PrintStream out) {
+        int increment;
+        int start;
         start = 0;
         increment = 1;
 
+        printKey(out);
+
         drawHeader(out, start, increment);
         drawChessBoard(out, start, increment, board);
         drawHeader(out, start, increment);
 
+    }
+
+    private static void printWhiteTeamView(ChessBoard board, PrintStream out) {
+        int start = 7;
+        int increment = -1;
+
+        printKey(out);
+
+        drawHeader(out, start, increment);
+        drawChessBoard(out, start, increment, board);
+        drawHeader(out, start, increment);
 
     }
 
@@ -95,7 +126,7 @@ public class DrawBoard {
 
                 if (square != null) {
                     // set the color
-                    if (square.getTeamColor() == ChessGame.TeamColor.WHITE) {
+                    if (square.getTeamColor() == WHITE) {
                         out.print(SET_TEXT_COLOR_BLUE);
                     }
                     else {
@@ -140,6 +171,13 @@ public class DrawBoard {
 
             out.println();
         }
+    }
+
+    private static void printKey(PrintStream out) {
+        out.print(SET_BG_COLOR_DARK_GREY);
+        out.print(SET_TEXT_COLOR_WHITE);
+        out.print("Blue = White Team; Red = Black Team");
+        out.println();
     }
 
 

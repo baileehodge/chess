@@ -54,7 +54,7 @@ public class Repl implements NotificationHandler {
     public Repl(String serverUrl) throws ResponseException {
         preloginClient = new PreloginClient(serverUrl);
         postloginClient = new PostloginClient(serverUrl);
-        gameplayClient = new GameplayClient(serverUrl, this);
+        gameplayClient = new GameplayClient(serverUrl);
     }
 
     public void run() {
