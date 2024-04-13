@@ -7,16 +7,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="AHHHHHHHHHHHHHHH">
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/ui/DeprecatedGameplayClient.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/client/src/main/java/websocket/DeprecatedWebSocketFacade.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/server/src/main/java/server/websocket/DeprecatedWebSocketHandler.txt" afterDir="false" />
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Starting over on Phase 6.&#10;- deprecated phase 6 files&#10;- reconfigured DrawBoard to take a TeamColor and print accordingly&#10;- Alexa play &quot;Breaking Free&quot; from High School Musical">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/DrawBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/DrawBoard.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/Repl.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/Repl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/websocket/WebSocketFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/websocket/WebSocketFacade.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/DatabaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/Server.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/websocket/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/websocket/ConnectionManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/UserGameCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/UserGameCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,7 +256,7 @@
       <recent name="passoffTests.serverTests" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DrawBoard">
+  <component name="RunManager" selected="Application.Main">
     <configuration name="DrawBoard" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="ui.DrawBoard" />
       <module name="client" />
@@ -318,9 +317,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.Main" />
         <item itemvalue="Application.DrawBoard" />
         <item itemvalue="Application.Main (1)" />
-        <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.WebSocketTests.joinPlayerGood" />
         <item itemvalue="JUnit.WebSocketTests" />
       </list>
@@ -405,15 +404,7 @@
       <workItem from="1712844171595" duration="1977000" />
       <workItem from="1712863832039" duration="14186000" />
       <workItem from="1712927916625" duration="19871000" />
-      <workItem from="1713020272960" duration="3696000" />
-    </task>
-    <task id="LOCAL-00047" summary="testing gitignore">
-      <option name="closed" value="true" />
-      <created>1709603831239</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1709603831239</updated>
+      <workItem from="1713020272960" duration="7413000" />
     </task>
     <task id="LOCAL-00048" summary="testing gitignore">
       <option name="closed" value="true" />
@@ -799,7 +790,15 @@
       <option name="project" value="LOCAL" />
       <updated>1712984583654</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="Starting over on Phase 6.&#10;- deprecated phase 6 files&#10;- reconfigured DrawBoard to take a TeamColor and print accordingly&#10;- Alexa play &quot;Breaking Free&quot; from High School Musical">
+      <option name="closed" value="true" />
+      <created>1713027256981</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1713027256982</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -818,7 +817,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="quicksave" />
     <MESSAGE value="DONE" />
     <MESSAGE value="DONE?????" />
     <MESSAGE value="This had better work" />
@@ -843,7 +841,8 @@
     <MESSAGE value="Alexa, play &quot;Hello (Swedish Cover)&quot;." />
     <MESSAGE value="Alexa, play &quot;Where Love Is&quot; by MoTab." />
     <MESSAGE value="AHHHHHHHHHHHHHHH" />
-    <option name="LAST_COMMIT_MESSAGE" value="AHHHHHHHHHHHHHHH" />
+    <MESSAGE value="Starting over on Phase 6.&#10;- deprecated phase 6 files&#10;- reconfigured DrawBoard to take a TeamColor and print accordingly&#10;- Alexa play &quot;Breaking Free&quot; from High School Musical" />
+    <option name="LAST_COMMIT_MESSAGE" value="Starting over on Phase 6.&#10;- deprecated phase 6 files&#10;- reconfigured DrawBoard to take a TeamColor and print accordingly&#10;- Alexa play &quot;Breaking Free&quot; from High School Musical" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

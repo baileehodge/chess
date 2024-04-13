@@ -9,14 +9,25 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class ConnectionManager {
     public final ConcurrentHashMap<String, Connection> connections = new ConcurrentHashMap<>();
+    public final ConcurrentHashMap<Connection, Integer> games = new ConcurrentHashMap<Connection, Integer>();
 
-    public void add(String visitorName, Session session) {
+    public void add(String visitorName, Session session, int gameID) {
         var connection = new Connection(visitorName, session);
         connections.put(visitorName, connection);
+
+        // should I make gameID an Integer before I add it to the hash map?
+        games.put(connection, gameID);
     }
 
     public void remove(String visitorName) {
-        connections.remove(visitorName);
+        var connection = connections.get(visitorName);
+
+        // if the homie even exists
+        if (connection != null) {
+            connections.remove(visitorName);
+            games.remove(connection);
+        }
+
     }
 
     public void broadcast(String excludeVisitorName, ServerMessage notification) throws IOException {

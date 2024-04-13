@@ -22,9 +22,9 @@ public class UserGameCommand {
         RESIGN
     }
 
-    protected CommandType commandType;
+    public CommandType commandType;
 
-    private final String authToken;
+    public final String authToken;
 
     public String getAuthString() {
         return authToken;

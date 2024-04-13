@@ -5,6 +5,7 @@ import chess.ChessBoard;
 import java.util.Arrays;
 
 public class GameplayClient {
+    //
     static ServerFacade serverFacade;
 
     public static int getGameID() {

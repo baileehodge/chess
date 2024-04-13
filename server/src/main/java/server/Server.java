@@ -17,7 +17,7 @@ import model.*;
 
 import java.util.Map;
 
-@WebSocket
+
 public class Server {
 
     public SQLGameDAO gameDAO = new SQLGameDAO();
