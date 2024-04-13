@@ -32,7 +32,7 @@ public class ConnectionManager {
 
     }
 
-    // It's called gossip because it notifies all the users except for one
+    // It's called gossip because it notifies all the users except for one lol
     public void gossip(String excludeVisitorName, ServerMessage notification) throws IOException {
         var removeList = new ArrayList<Connection>();
         for (var c : connections.values()) {

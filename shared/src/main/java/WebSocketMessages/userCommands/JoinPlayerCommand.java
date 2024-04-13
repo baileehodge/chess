@@ -1,5 +1,6 @@
 package WebSocketMessages.userCommands;
 
+import chess.ChessGame;
 import chess.ChessMove;
 
 import java.util.Objects;
@@ -14,7 +15,7 @@ import static WebSocketMessages.userCommands.UserGameCommand.CommandType.JOIN_PL
  */
 public class JoinPlayerCommand extends UserGameCommand{
 
-    public JoinPlayerCommand(String authToken, int gameID, String color) {
+    public JoinPlayerCommand(String authToken, int gameID, ChessGame.TeamColor color) {
         super(authToken);
         this.authToken = authToken;
         this.commandType = JOIN_PLAYER;
@@ -25,15 +26,22 @@ public class JoinPlayerCommand extends UserGameCommand{
 
 
     private final String authToken;
+
+
+
     protected CommandType commandType;
     private final int gameID;
-    private final String color;
+    private final ChessGame.TeamColor color;
 
 
     public String getAuthString() {return authToken;}
     public CommandType getCommandType() {return this.commandType;}
     public int getGameID() {return this.gameID;}
-    public String getColor() {return color;}
+    public ChessGame.TeamColor getColor() {return color;}
+
+    public void setCommandType(CommandType commandType) {
+        this.commandType = commandType;
+    }
 
     @Override
     public boolean equals(Object o) {
