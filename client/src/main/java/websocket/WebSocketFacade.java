@@ -1,5 +1,6 @@
 package websocket;
 import WebSocketMessages.ResponseException;
+import WebSocketMessages.serverMessages.ServerMessage;
 import WebSocketMessages.userCommands.JoinPlayerCommand;
 import com.google.gson.Gson;
 
@@ -34,7 +35,8 @@ public class WebSocketFacade extends Endpoint {
                 public void onMessage(String message) { // client receive
                     System.out.println(message);
                     System.out.println("CLIENT RECEIVE");
-                    Notification notification = new Gson().fromJson(message, Notification.class);
+                    // ^^those^^ print statements never print
+                    ServerMessage notification = new Gson().fromJson(message, ServerMessage.class);
                     notificationHandler.notify(notification);
                 }
             });
@@ -54,10 +56,20 @@ public class WebSocketFacade extends Endpoint {
     // 1. create command message
     // 2. send message to server
 
+    public void testMessage() throws ResponseException {
+        System.out.println("testMessage() started to run");
+        try {
+            String testString = "this is testMessage() sending a message";
+            this.session.getBasicRemote().sendText(new Gson().toJson(testString));
+        } catch (IOException ex) {
+            throw new ResponseException(500, ex.getMessage());
+        }
+    }
+
     public void joinPlayer(String authToken, int gameID, String color) throws ResponseException {
         try {
             var action = new JoinPlayerCommand(authToken, gameID, color);
-            // TODO: I think this is the problem vvv ...
+            // TODO: I think this could be the problem vvv ...
             this.session.getBasicRemote().sendText(new Gson().toJson(action)); // client send
             System.out.println("CLIENT SEND"); // ...because this isn't being printed
         } catch (IOException ex) {

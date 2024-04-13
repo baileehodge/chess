@@ -4,6 +4,7 @@ import com.google.gson.Gson;
 import dataAccess.*;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketMessage;
+import org.eclipse.jetty.websocket.api.annotations.WebSocket;
 import server.websocket.WebSocketHandler;
 import service.*;
 import service.requests.JoinRecord;
@@ -16,7 +17,7 @@ import model.*;
 
 import java.util.Map;
 
-
+@WebSocket
 public class Server {
 
     public SQLGameDAO gameDAO = new SQLGameDAO();
@@ -36,10 +37,10 @@ public class Server {
     // not functional?
     public void main() {
         Server server = new Server();
-        Spark.webSocket("/connect", Server.class);
         server.run(8080);
+        Spark.webSocket("/connect", Server.class);
         Spark.get("/echo/:msg", (req, res) -> "HTTP response: " + req.params(":msg")); // CLIENT RECEIVE?
-        System.out.println("SERVER RECEIVE...?");
+        System.out.println("SERVER RECEIVE");
 
     }
 

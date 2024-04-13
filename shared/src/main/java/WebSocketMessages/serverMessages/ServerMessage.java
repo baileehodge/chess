@@ -14,6 +14,8 @@ public class ServerMessage {
     String serverMessageText = "no message to display";
 
 
+
+
     public enum ServerMessageType {
         LOAD_GAME,
         ERROR,

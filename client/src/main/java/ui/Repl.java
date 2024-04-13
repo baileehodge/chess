@@ -1,6 +1,7 @@
 package ui;
 
 import WebSocketMessages.ResponseException;
+import WebSocketMessages.serverMessages.ServerMessage;
 import model.GameData;
 import websocket.NotificationHandler;
 
@@ -20,11 +21,12 @@ public class Repl implements NotificationHandler {
     private static Collection<GameData> gameList = new ArrayList<>();
 
     @Override
-    public void notify(Notification notification) {
-        System.out.println(SET_TEXT_COLOR_RED + notification.getMessage());
+    public void notify(ServerMessage notification) {
+        System.out.println(SET_TEXT_COLOR_RED + notification.getServerMessageText());
         printPrompt();
 
     }
+
 
     public enum State {
         SIGNEDOUT,

@@ -34,7 +34,7 @@ public class GameplayClient {
         GameplayClient.gameID = gameID;
     }
 
-    public static String eval(String input) {
+    public static String eval(String input) throws ResponseException {
         var tokens = input.toLowerCase().split(" ");
         var cmd = (tokens.length > 0) ? tokens[0] : "help";
         var params = Arrays.copyOfRange(tokens, 1, tokens.length);
@@ -59,7 +59,7 @@ public class GameplayClient {
     }
 
     private static String joinPlayer(String... params) {
-        // TODO: I don't... I don't even need this... do I?
+        // TODO: I don't... I don't even need this... do I???
         try {
             System.out.println("before joinplayer() from the client");
 
@@ -79,18 +79,23 @@ public class GameplayClient {
     }
 
     private static String joinObserver() {
+        wsServer.joinObserver();
         return "not yet implemented";
     }
 
     private static String makeMove(String... params) {
+        wsServer.makeMove();
         return "not yet implemented";
     }
 
     private static String leave() {
+        wsServer.leaveGame();
         return "not yet implemented";
     }
 
-    private static String resign() {
+    private static String resign() throws ResponseException {
+        wsServer.testMessage();
+        //wsServer.resignGame();
         return "not yet implemented";
     }
 
