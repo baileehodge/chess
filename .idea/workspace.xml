@@ -7,12 +7,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Connection manager written, not tested">
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Alexa, play &quot;Hurtling Towards a Gruesome Death&quot; by Kyle Dixon and Michael Stein">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/websocket/WebSocketFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/websocket/WebSocketFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/websocket/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/websocket/ConnectionManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/JoinPlayerCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/JoinPlayerCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -401,15 +399,7 @@
       <workItem from="1712844171595" duration="1977000" />
       <workItem from="1712863832039" duration="14186000" />
       <workItem from="1712927916625" duration="19871000" />
-      <workItem from="1713020272960" duration="13939000" />
-    </task>
-    <task id="LOCAL-00050" summary="3/5/24 EOD">
-      <option name="closed" value="true" />
-      <created>1709698352166</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1709698352167</updated>
+      <workItem from="1713020272960" duration="16311000" />
     </task>
     <task id="LOCAL-00051" summary="Quicksave">
       <option name="closed" value="true" />
@@ -795,7 +785,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713043157443</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="Alexa, play &quot;Hurtling Towards a Gruesome Death&quot; by Kyle Dixon and Michael Stein">
+      <option name="closed" value="true" />
+      <created>1713050513855</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1713050513856</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -814,7 +812,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="This had better work" />
     <MESSAGE value="Do I have enough tests now?" />
     <MESSAGE value="Added the script of Dune as a dependency." />
     <MESSAGE value="Removed the script of Dune as a dependency." />
@@ -839,7 +836,8 @@
     <MESSAGE value="Starting over on Phase 6.&#10;- deprecated phase 6 files&#10;- reconfigured DrawBoard to take a TeamColor and print accordingly&#10;- Alexa play &quot;Breaking Free&quot; from High School Musical" />
     <MESSAGE value="Quicksave" />
     <MESSAGE value="Connection manager written, not tested" />
-    <option name="LAST_COMMIT_MESSAGE" value="Connection manager written, not tested" />
+    <MESSAGE value="Alexa, play &quot;Hurtling Towards a Gruesome Death&quot; by Kyle Dixon and Michael Stein" />
+    <option name="LAST_COMMIT_MESSAGE" value="Alexa, play &quot;Hurtling Towards a Gruesome Death&quot; by Kyle Dixon and Michael Stein" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

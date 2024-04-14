@@ -3,6 +3,7 @@ package websocket;
 import WebSocketMessages.ResponseException;
 import WebSocketMessages.serverMessages.ServerMessage;
 import WebSocketMessages.userCommands.JoinPlayerCommand;
+import WebSocketMessages.userCommands.LeaveCommand;
 import WebSocketMessages.userCommands.UserGameCommand;
 import chess.ChessGame;
 import com.google.gson.Gson;
@@ -87,7 +88,15 @@ public class WebSocketFacade extends Endpoint {
 
     }
 
-    public void leave(){
+    public void leave(String authToken, int gameID) throws ResponseException {
+        try {
+            LeaveCommand newCommand = new LeaveCommand(authToken, gameID);
+            this.session.getBasicRemote().sendText(new Gson().toJson(newCommand));
+        }
+        catch(IOException ex)
+        {
+            throw new ResponseException(500, ex.getMessage());
+        }
 
     }
 
