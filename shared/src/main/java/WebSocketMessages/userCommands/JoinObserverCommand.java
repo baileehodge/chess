@@ -13,8 +13,10 @@ import static WebSocketMessages.userCommands.UserGameCommand.CommandType.JOIN_OB
  * methods.
  */
 public class JoinObserverCommand extends UserGameCommand{
+    private final int gameID;
 
-    public JoinObserverCommand(String authToken, String username, CommandType commandType, String gameID, String color, ChessMove move) {
+
+    public JoinObserverCommand(String authToken, int gameID) {
         super(authToken);
         this.authToken = authToken;
         this.commandType = JOIN_OBSERVER;
@@ -22,11 +24,9 @@ public class JoinObserverCommand extends UserGameCommand{
 
     }
 
-    private final String gameID;
-
     public String getAuthString() {return authToken;}
     public CommandType getCommandType() {return this.commandType;}
-    public String getGameID() {return this.gameID;}
+    public int getGameID() {return this.gameID;}
     @Override
     public boolean equals(Object o) {
         if (this == o)

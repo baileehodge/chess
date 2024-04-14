@@ -7,6 +7,8 @@ import websocket.WebSocketFacade;
 
 import java.util.Arrays;
 
+import static ui.Repl.getToken;
+
 public class GameplayClient {
 
     static ServerFacade serverFacade;
@@ -40,10 +42,10 @@ public class GameplayClient {
         return switch (cmd) {
             // redundant: case "help" -> help();
             case "redrawBoard" -> redrawBoard();
-            case "leave" -> leave(params);
+            case "leave" -> leave();
             case "move" -> move(params);
             case "resign" -> resign();
-            case "highlight" -> highlight();
+            case "highlight" -> highlight(params);
             default -> help();
         };
     }
@@ -69,9 +71,8 @@ public class GameplayClient {
         return "Allow the user to input what move they want to make. The board is updated to reflect the result of the move, and the board automatically updates on all clients involved in the game.\n";
     }
 
-    private static String leave(String... params) throws ResponseException {
-        String authToken = "fake auth";
-        // TODO: figure out how to get this auth token
+    private static String leave() throws ResponseException {
+        String authToken = getToken();
 
         ws = new WebSocketFacade(serverURL, notificationHandler);
         ws.leave(authToken, gameID);
@@ -86,7 +87,7 @@ public class GameplayClient {
         return "Prompts the user to confirm they want to resign. If they do, the user forfeits the game and the game is over. Does not cause the user to leave the game.\n";
     }
 
-    private static String highlight() {
+    private static String highlight(String... params) {
         return "Allows the user to input what piece for which they want to highlight legal moves. The selected piece’s current square and all squares it can legally move to are highlighted. This is a local operation and has no effect on remote users’ screens.\n";
     }
 

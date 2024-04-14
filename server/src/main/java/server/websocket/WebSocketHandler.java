@@ -35,22 +35,27 @@ public class WebSocketHandler {
 
     // I am, once again, assuming these bad boys are void until proven otherwise
     void joinPlayer(JoinPlayerCommand command, Session session) {
+        // TODO
 
     }
 
     void joinObserver(JoinObserverCommand command, Session session) {
+        // TODO
 
     }
 
     void makeMove(MakeMoveCommand command, Session session) {
+        // TODO
 
     }
 
     void leave(LeaveCommand command, Session session) {
+        // TODO
 
     }
 
     void resign(ResignCommand command, Session session) {
+        // TODO
 
     }
 

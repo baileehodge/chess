@@ -1,11 +1,10 @@
 import chess.ChessGame;
 import chess.ChessPiece;
 import dataAccess.DataAccessException;
-import org.eclipse.jetty.websocket.api.annotations.WebSocket;
 import server.Server;
-import spark.Spark;
 
 
+// SERVER MAIN
 public class Main {
 
     public static void main(String[] args) throws DataAccessException {

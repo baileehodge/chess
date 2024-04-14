@@ -7,13 +7,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Alexa, play &quot;What's the Internet?&quot; by Kyle Dixon and Michael Stein">
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="&quot;The TA who wrote this code doesn't think this should be possible under normal conditions. Please try again, and come see a TA if this error persists.&quot; -- FIXED! ...PROBABLY!">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/websocket/WebSocketFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/websocket/WebSocketFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/LeaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/LeaveCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/UserGameCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/UserGameCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/JoinObserverCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/JoinObserverCommand.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -197,6 +197,7 @@
     "JUnit.StandardAPITests.successLogin.executor": "Debug",
     "JUnit.StandardAPITests.uniqueAuthorizationTokens.executor": "Run",
     "JUnit.WebSocketTests.executor": "Run",
+    "JUnit.WebSocketTests.joinPlayerBadGameID.executor": "Run",
     "JUnit.WebSocketTests.joinPlayerGood.executor": "Run",
     "JUnit.WebSocketTests.joinPlayerSteal.executor": "Run",
     "JUnit.WebSocketTests.leaveGame.executor": "Run",
@@ -255,7 +256,7 @@
       <recent name="passoffTests.serverTests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.WebSocketTests.leaveGame">
+  <component name="RunManager" selected="JUnit.WebSocketTests.joinPlayerBadGameID">
     <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="client" />
@@ -270,7 +271,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="WebSocketTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WebSocketTests.joinPlayerBadGameID" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
         <pattern>
@@ -280,7 +281,8 @@
       </extension>
       <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
       <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.WebSocketTests" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="METHOD_NAME" value="joinPlayerBadGameID" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -319,11 +321,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.WebSocketTests.leaveGame" />
-        <item itemvalue="JUnit.WebSocketTests.joinPlayerGood" />
+        <item itemvalue="JUnit.WebSocketTests.joinPlayerBadGameID" />
         <item itemvalue="Application.Main (1)" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="JUnit.WebSocketTests" />
+        <item itemvalue="JUnit.WebSocketTests.joinPlayerGood" />
+        <item itemvalue="JUnit.WebSocketTests.leaveGame" />
       </list>
     </recent_temporary>
   </component>
@@ -406,15 +408,8 @@
       <workItem from="1712844171595" duration="1977000" />
       <workItem from="1712863832039" duration="14186000" />
       <workItem from="1712927916625" duration="19871000" />
-      <workItem from="1713020272960" duration="19033000" />
-    </task>
-    <task id="LOCAL-00052" summary="Passing my server tests, not passing API tests">
-      <option name="closed" value="true" />
-      <created>1709851234986</created>
-      <option name="number" value="00052" />
-      <option name="presentableId" value="LOCAL-00052" />
-      <option name="project" value="LOCAL" />
-      <updated>1709851234986</updated>
+      <workItem from="1713020272960" duration="19408000" />
+      <workItem from="1713129103565" duration="3630000" />
     </task>
     <task id="LOCAL-00053" summary="Passing most of the API tests">
       <option name="closed" value="true" />
@@ -800,7 +795,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713052830384</updated>
     </task>
-    <option name="localTasksCounter" value="101" />
+    <task id="LOCAL-00101" summary="&quot;The TA who wrote this code doesn't think this should be possible under normal conditions. Please try again, and come see a TA if this error persists.&quot; -- FIXED! ...PROBABLY!">
+      <option name="closed" value="true" />
+      <created>1713070924753</created>
+      <option name="number" value="00101" />
+      <option name="presentableId" value="LOCAL-00101" />
+      <option name="project" value="LOCAL" />
+      <updated>1713070924753</updated>
+    </task>
+    <option name="localTasksCounter" value="102" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -819,7 +822,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Added the script of Dune as a dependency." />
     <MESSAGE value="Removed the script of Dune as a dependency." />
     <MESSAGE value="If this doesn't work I might cry." />
     <MESSAGE value="ALexa, play the entire rock opera album &quot;Tommy&quot; by The Who." />
@@ -844,7 +846,8 @@
     <MESSAGE value="Connection manager written, not tested" />
     <MESSAGE value="Alexa, play &quot;Hurtling Towards a Gruesome Death&quot; by Kyle Dixon and Michael Stein" />
     <MESSAGE value="Alexa, play &quot;What's the Internet?&quot; by Kyle Dixon and Michael Stein" />
-    <option name="LAST_COMMIT_MESSAGE" value="Alexa, play &quot;What's the Internet?&quot; by Kyle Dixon and Michael Stein" />
+    <MESSAGE value="&quot;The TA who wrote this code doesn't think this should be possible under normal conditions. Please try again, and come see a TA if this error persists.&quot; -- FIXED! ...PROBABLY!" />
+    <option name="LAST_COMMIT_MESSAGE" value="&quot;The TA who wrote this code doesn't think this should be possible under normal conditions. Please try again, and come see a TA if this error persists.&quot; -- FIXED! ...PROBABLY!" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

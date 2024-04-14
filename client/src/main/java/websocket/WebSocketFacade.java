@@ -2,6 +2,7 @@ package websocket;
 
 import WebSocketMessages.ResponseException;
 import WebSocketMessages.serverMessages.ServerMessage;
+import WebSocketMessages.userCommands.JoinObserverCommand;
 import WebSocketMessages.userCommands.JoinPlayerCommand;
 import WebSocketMessages.userCommands.LeaveCommand;
 import WebSocketMessages.userCommands.UserGameCommand;
@@ -67,7 +68,6 @@ public class WebSocketFacade extends Endpoint {
         try {
             // 1.
             JoinPlayerCommand newCommand = new JoinPlayerCommand(auth, game, color);
-            newCommand.setCommandType(UserGameCommand.CommandType.JOIN_PLAYER);
 
             // 2.
             this.session.getBasicRemote().sendText(new Gson().toJson(newCommand));
@@ -79,11 +79,23 @@ public class WebSocketFacade extends Endpoint {
 
     }
 
-    public void joinObserver() {
+    public void joinObserver(String auth, int game) throws ResponseException {
+        try {
+            // 1.
+            JoinObserverCommand newCommand = new JoinObserverCommand(auth, game);
+
+            // 2.
+            this.session.getBasicRemote().sendText(new Gson().toJson(newCommand));
+        }
+        catch (IOException ex)
+        {
+            throw new ResponseException(500,ex.getMessage());
+        }
 
     }
 
     public void movePiece() {
+        // TODO
 
     }
 
@@ -100,6 +112,7 @@ public class WebSocketFacade extends Endpoint {
     }
 
     public void resign() {
+        // TODO
 
     }
 

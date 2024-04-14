@@ -1,7 +1,13 @@
 package ui;
 
+import WebSocketMessages.ResponseException;
+import WebSocketMessages.userCommands.JoinPlayerCommand;
+import WebSocketMessages.userCommands.UserGameCommand;
+import chess.ChessGame;
 import model.AuthData;
 import model.GameData;
+import websocket.NotificationHandler;
+import websocket.WebSocketFacade;
 
 import java.util.Arrays;
 
@@ -9,9 +15,14 @@ import static ui.Repl.*;
 
 public class PostloginClient {
     static ServerFacade serverFacade;
+    public static String serverUrl;
+    static NotificationHandler notificationHandler;
+    public static WebSocketFacade ws;
 
     public PostloginClient(String serverUrl) {
+
         serverFacade = new ServerFacade(serverUrl);
+        this.serverUrl = serverUrl;
     }
 
     public static String eval(String input) {
@@ -29,8 +40,11 @@ public class PostloginClient {
 
                 default -> help();
             };
+            //  should v these v be the same as each other? Probably
         } catch (UIException ex) {
             return ex.getMessage();
+        } catch (ResponseException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -70,19 +84,34 @@ public class PostloginClient {
 
         return returnString.toString();
     }
-    private static String joinGame(String... params) throws UIException{
 
+    // TO DONE: modify both of these to do websocket things
+    private static String joinGame(String... params) throws UIException, ResponseException {
         if (params.length >= 2) {
+            ChessGame.TeamColor teamColor = ChessGame.TeamColor.valueOf(params[1].toUpperCase());
+            String authToken = getToken();
+            int gameID = Integer.parseInt(params[0]);
+
             serverFacade.joinGame(getToken(), params[1], Integer.parseInt(params[0]));
+
+            ws = new WebSocketFacade(serverUrl, notificationHandler);
+            ws.joinPlayer(authToken, gameID, teamColor);
+
             Repl.setState(Repl.State.INGAME);
-            GameplayClient.setGameID(Integer.parseInt(params[0]));
+            GameplayClient.setGameID(gameID);
             return "joined game as player";
         }
         throw new UIException(400, "expected joinGame <gameID> <playerColor>");
     }
-    private static String joinObserver(String... params) throws UIException{
-        //record - authtoken, player color, game id
-        serverFacade.joinGame(getToken(), null,  Integer.parseInt(params[0]));
+    private static String joinObserver(String... params) throws UIException, ResponseException {
+        String authToken = getToken();
+        int gameID = Integer.parseInt(params[0]);
+
+        serverFacade.joinGame(authToken, null,  gameID);
+
+        ws = new WebSocketFacade(serverUrl, notificationHandler);
+        ws.joinObserver(authToken, gameID);
+
         Repl.setState(Repl.State.INGAME);
         GameplayClient.setGameID(Integer.parseInt(params[0]));
         return "joined game as observer";
