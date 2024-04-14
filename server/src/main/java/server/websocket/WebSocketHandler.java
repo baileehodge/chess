@@ -2,12 +2,14 @@ package server.websocket;
 
 import WebSocketMessages.userCommands.*;
 import org.eclipse.jetty.websocket.api.Session;
+import org.eclipse.jetty.websocket.api.annotations.OnWebSocketError;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketMessage;
 import org.eclipse.jetty.websocket.api.annotations.WebSocket;
 import com.google.gson.Gson;
 
 
-
+import java.io.PrintStream;
+import java.nio.charset.StandardCharsets;
 
 import static dataAccess.DatabaseManager.getConnection;
 
@@ -51,6 +53,16 @@ public class WebSocketHandler {
     void resign(ResignCommand command, Session session) {
 
     }
+
+    @OnWebSocketError
+    public void onError(Throwable throwable) {
+        // TODO: make this useful?
+        var out = new PrintStream(System.out, true, StandardCharsets.UTF_8);
+        System.out.println("Threw an @OnWebSocketError");
+        System.out.println(throwable.getMessage());
+    }
+
+
 
 
 

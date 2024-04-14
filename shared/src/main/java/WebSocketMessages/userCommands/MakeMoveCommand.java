@@ -22,9 +22,6 @@ public class MakeMoveCommand extends UserGameCommand{
         this.move = move;
     }
 
-
-    private final String authToken;
-    protected CommandType commandType;
     private final String gameID;
     private final ChessMove move;
 

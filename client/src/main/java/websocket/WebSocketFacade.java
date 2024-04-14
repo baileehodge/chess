@@ -46,7 +46,6 @@ public class WebSocketFacade extends Endpoint {
                         case LOAD_GAME: {
                             // does it work if I print the ChessBoard from here?
                             ChessGame game = new Gson().fromJson(message, ChessGame.class);
-                            var out = new PrintStream(System.out, true, StandardCharsets.UTF_8);
                             DrawBoard.run(game.getBoard(), ChessGame.TeamColor.WHITE);
                             // TODO: change this to have the player's team... somehow...
                             //

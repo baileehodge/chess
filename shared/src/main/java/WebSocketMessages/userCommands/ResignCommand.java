@@ -21,8 +21,6 @@ public class ResignCommand extends UserGameCommand {
         this.gameID = gameID;
     }
 
-    private final String authToken;
-    protected CommandType commandType;
     private final String gameID;
 
 

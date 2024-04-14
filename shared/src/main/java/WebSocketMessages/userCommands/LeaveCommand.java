@@ -11,6 +11,8 @@ import java.util.Objects;
  * methods.
  */
 public class LeaveCommand extends UserGameCommand{
+    private final int gameID;
+
 
     public LeaveCommand(String authToken, int gameID) {
         super(authToken);
@@ -18,9 +20,7 @@ public class LeaveCommand extends UserGameCommand{
         this.gameID = gameID;
     }
 
-    private final String authToken;
-    protected CommandType commandType;
-    private final int gameID;
+
 
 
 

@@ -22,10 +22,6 @@ public class JoinObserverCommand extends UserGameCommand{
 
     }
 
-
-
-    private final String authToken;
-    protected CommandType commandType;
     private final String gameID;
 
     public String getAuthString() {return authToken;}

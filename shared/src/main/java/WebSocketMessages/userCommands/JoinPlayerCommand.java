@@ -24,12 +24,6 @@ public class JoinPlayerCommand extends UserGameCommand{
     }
 
 
-
-    private final String authToken;
-
-
-
-    protected CommandType commandType;
     private final int gameID;
     private final ChessGame.TeamColor color;
 
