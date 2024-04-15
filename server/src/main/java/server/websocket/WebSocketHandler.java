@@ -4,7 +4,10 @@ import WebSocketMessages.serverMessages.LoadGameMessage;
 import WebSocketMessages.serverMessages.NotificationMessage;
 import WebSocketMessages.serverMessages.ServerMessage;
 import WebSocketMessages.userCommands.*;
+import chess.ChessBoard;
 import chess.ChessGame;
+import chess.ChessMove;
+import chess.InvalidMoveException;
 import com.google.gson.Gson;
 import dataAccess.DataAccessException;
 import org.eclipse.jetty.websocket.api.Session;
@@ -91,16 +94,22 @@ public class WebSocketHandler {
         return true;
     }
 
-    void makeMove(MakeMoveCommand command, Session session) {
-        // TODO
+    void makeMove(MakeMoveCommand command, Session session) throws DataAccessException, InvalidMoveException, ServiceException, IOException {
 
+        ChessGame game = getGame(command.getGameID());
+        ChessMove move = command.getMove();
+        game.makeMove(move);
+
+        String playerName = getAuth(command.getAuthString()).getUsername();
+        connections.gossip(playerName, new NotificationMessage(playerName + " made the following move: " + move.toString() +"\n"));
+
+        NotificationMessage notificationMessage = new NotificationMessage("You made the following move: " + move.toString() +"\n");
+        session.getRemote().sendString(new Gson().toJson(notificationMessage));
     }
 
     void leave(LeaveCommand command, Session session) throws ServiceException, DataAccessException, IOException {
         // gets the username based on the auth token
         String playerName = getAuth(command.getAuthString()).getUsername();
-        int gameID = command.getGameID();
-        ChessGame game = getGame(gameID);
 
         connections.remove(playerName);
         connections.gossip(playerName, new NotificationMessage(playerName + " left the game."));
@@ -110,16 +119,19 @@ public class WebSocketHandler {
     }
 
     void resign(ResignCommand command, Session session) throws ServiceException, IOException, DataAccessException {
+        String playerName = getAuth(command.getAuthString()).getUsername();
+
         LeaveCommand leave = new LeaveCommand(command.getAuthString(), command.getGameID());
         JoinObserverCommand join = new JoinObserverCommand(command.getAuthString(), command.getGameID());
         leave(leave, session);
         joinObserver(join,session);
 
+        connections.gossip(playerName, new NotificationMessage(playerName + " resigned from the game."));
+
     }
 
     @OnWebSocketError
     public void onError(Throwable throwable) {
-        // TODO: make this useful?
         var out = new PrintStream(System.out, true, StandardCharsets.UTF_8);
         System.out.println("Threw an @OnWebSocketError");
         System.out.println(throwable.getMessage());

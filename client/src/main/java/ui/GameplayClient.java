@@ -1,8 +1,7 @@
 package ui;
 
 import WebSocketMessages.ResponseException;
-import chess.ChessBoard;
-import chess.ChessGame;
+import chess.*;
 import model.GameData;
 import websocket.NotificationHandler;
 import websocket.WebSocketFacade;
@@ -26,7 +25,7 @@ public class GameplayClient {
 
     public GameplayClient(String serverUrl) {
         serverFacade = new ServerFacade(serverUrl);
-        this.serverURL = serverUrl;
+        serverURL = serverUrl;
     }
 
     public static int getGameID() {
@@ -65,7 +64,7 @@ public class GameplayClient {
         return """
                     - help
                     - redraw
-                    - move <move> (Format: 3,4:4,5)
+                    - move <startRow> <startCol> <endRow> <endCol> <promotion(when applicable)>
                     - highlight <piece> (Format: 3,4 . Highlights legal moves for that piece.)
                     - leave
                     - resign
@@ -97,9 +96,53 @@ public class GameplayClient {
         return "\n";
     }
 
-    private static String move(String... params) {
-        return "Allow the user to input what move they want to make. The board is updated to reflect the result of the move, and the board automatically updates on all clients involved in the game.\n";
+    private static String move(String... params) throws ResponseException, UIException {
+
+        ChessPosition start = new ChessPosition(Integer.parseInt(params[0]), convertToNum(params[1]));
+        ChessPosition end = new ChessPosition(Integer.parseInt(params[2]), convertToNum(params[3]));
+
+//        Implement promo??
+//        if (params.length >= 5) {
+//            ws = new WebSocketFacade(serverURL, notificationHandler);
+//            ws.movePiece(getToken(),getGameID(),start,end,promo);
+//        }
+//        else {
+//            ws = new WebSocketFacade(serverURL, notificationHandler);
+//            ws.movePiece(getToken(),getGameID(),start,end,null);
+//        }
+
+        ws = new WebSocketFacade(serverURL, notificationHandler);
+        ws.movePiece(getToken(),getGameID(),start,end,null);
+
+        redrawBoard();
+
+        return String.format("Moved from %d,%s to %d,%s.\n", start.getRow(), convertToLetter(start.getColumn()), end.getRow(), convertToLetter(end.getColumn()));
     }
+
+    private static int convertToNum(String letter) {
+        return switch (letter) {
+            case "a" -> 1;
+            case "b" -> 2;
+            case "c" -> 3;
+            case "d" -> 4;
+            case "e" -> 5;
+            case "f" -> 6;
+            default -> 0;
+        };
+    }
+    private static String convertToLetter(int number) {
+        return switch (number) {
+            case 1 -> "a";
+            case 2 -> "b";
+            case 3 -> "c";
+            case 4 -> "d";
+            case 5 -> "e";
+            case 6 -> "f";
+            default -> "q";
+        };
+    }
+
+
 
     private static String leave() throws ResponseException {
         String authToken = getToken();

@@ -8,8 +8,7 @@ import chess.ChessPiece;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 
-import static chess.ChessGame.TeamColor.BLACK;
-import static chess.ChessGame.TeamColor.WHITE;
+import static chess.ChessGame.TeamColor.*;
 import static ui.EscapeSequences.*;
 
 public class DrawBoard {
@@ -43,7 +42,7 @@ public class DrawBoard {
         //out.print(ERASE_SCREEN);
         out.println();
 
-        if (color == WHITE) {
+        if (color == WHITE || color == NONE) {
             printWhiteTeamView(board, out);
         }
         else if (color == BLACK) {

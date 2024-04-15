@@ -1,8 +1,6 @@
 package ui;
 
 import WebSocketMessages.ResponseException;
-import WebSocketMessages.userCommands.JoinPlayerCommand;
-import WebSocketMessages.userCommands.UserGameCommand;
 import chess.ChessGame;
 import model.AuthData;
 import model.GameData;
@@ -11,7 +9,7 @@ import websocket.WebSocketFacade;
 
 import java.util.Arrays;
 
-import static ui.Repl.*;
+import static ui.Repl.getToken;
 
 public class PostloginClient {
     static ServerFacade serverFacade;
