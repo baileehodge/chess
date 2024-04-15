@@ -1,5 +1,6 @@
 package clientTests;
 
+import chess.ChessGame;
 import model.AuthData;
 import model.GameData;
 import model.UserData;
@@ -106,8 +107,9 @@ public class ServerFacadeTests {
     public void createGameTestPass() throws UIException {
         serverFacade.clear();
         UserData testUser = new UserData("testboi1", "testboi1", "testboi1@byu.edu");
+        ChessGame testGame = new ChessGame();
         var token = serverFacade.register(testUser).getAuthToken();
-        GameData gameData = new GameData(null,null,null, "cheddar");
+        GameData gameData = new GameData(null,null,null, "cheddar", testGame);
         assertDoesNotThrow(() -> {
             serverFacade.createGame(gameData, token);
         });
@@ -117,7 +119,8 @@ public class ServerFacadeTests {
     public void createGameTesFail() throws UIException {
         serverFacade.clear();
         var token = "notarealauthtoken";
-        GameData gameData = new GameData(null,null,null, "cheddar");
+        ChessGame testGame = new ChessGame();
+        GameData gameData = new GameData(null,null,null, "cheddar", testGame);
         assertThrows(UIException.class, () -> {
             serverFacade.createGame(gameData, token);
         });
@@ -146,7 +149,8 @@ public class ServerFacadeTests {
         UserData testUser = new UserData("testboi1", "testboi1", "testboi1@byu.edu");
         var token = serverFacade.register(testUser).getAuthToken();
 
-        GameData gameData = new GameData(null,null,null, "cheddar");
+        ChessGame testGame = new ChessGame();
+        GameData gameData = new GameData(null,null,null, "cheddar", testGame);
         serverFacade.createGame(gameData, token);
 
         assertThrows(UIException.class, () -> {
