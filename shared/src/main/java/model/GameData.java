@@ -9,7 +9,6 @@ public class GameData {
     String whiteUsername;
     String blackUsername;
     String gameName;
-
     ChessGame game;
 
     public GameData(Integer gameID, String whiteUsername, String blackUsername, String gameName) {
@@ -17,6 +16,7 @@ public class GameData {
         this.whiteUsername = whiteUsername;
         this.blackUsername = blackUsername;
         this.gameName = gameName;
+        this.game = new ChessGame();
     }
 
     public Integer getGameID() {

@@ -30,14 +30,14 @@ public class DrawBoard {
         board.resetBoard();
 //        run(board, BLACK);
 //        run(board, WHITE);
-        run(board, null);
+        drawBoard(board, null);
 
     }
 
 
     // takes a ChessBoard object and a TeamColor. Draws orientation based on TeamColor
     // use null as color to print both
-    public static void run(ChessBoard board, ChessGame.TeamColor color) {
+    public static void drawBoard(ChessBoard board, ChessGame.TeamColor color) {
         var out = new PrintStream(System.out, true, StandardCharsets.UTF_8);
 
         //out.print(ERASE_SCREEN);

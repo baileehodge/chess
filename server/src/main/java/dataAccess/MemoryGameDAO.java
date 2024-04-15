@@ -40,6 +40,16 @@ public class MemoryGameDAO implements GameDAO{
         games.put(game.getGameID(), game);
         return game;
     }
+
+    @Override
+    public String getWhiteUsername(int gameID) throws DataAccessException {
+        return null;
+    }
+
+    @Override
+    public String getBlackUsername(int gameID) throws DataAccessException {
+        return null;
+    }
 }
 
 // listGames

@@ -1,22 +1,20 @@
 package websocket;
 
 import WebSocketMessages.ResponseException;
+import WebSocketMessages.serverMessages.LoadGameMessage;
 import WebSocketMessages.serverMessages.ServerMessage;
-import WebSocketMessages.userCommands.JoinObserverCommand;
-import WebSocketMessages.userCommands.JoinPlayerCommand;
-import WebSocketMessages.userCommands.LeaveCommand;
-import WebSocketMessages.userCommands.UserGameCommand;
-import chess.ChessGame;
+import WebSocketMessages.userCommands.*;
+import chess.*;
 import com.google.gson.Gson;
 import ui.DrawBoard;
 
 import javax.management.Notification;
 import javax.websocket.*;
 import java.io.IOException;
-import java.io.PrintStream;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.nio.charset.StandardCharsets;
+
+import static ui.DrawBoard.drawBoard;
 
 
 public class WebSocketFacade extends Endpoint {
@@ -46,10 +44,10 @@ public class WebSocketFacade extends Endpoint {
                         }
                         case LOAD_GAME: {
                             // does it work if I print the ChessBoard from here?
-                            ChessGame game = new Gson().fromJson(message, ChessGame.class);
-                            DrawBoard.run(game.getBoard(), ChessGame.TeamColor.WHITE);
-                            // TODO: change this to have the player's team... somehow...
-                            //
+                            LoadGameMessage gameMessage = new Gson().fromJson(message, LoadGameMessage.class);
+                            ChessBoard gameBoard = gameMessage.getGame().getBoard();
+                            ChessGame.TeamColor color = gameMessage.getColor();
+                            drawBoard(gameBoard, color);
                         }
                     }
                 }
@@ -94,14 +92,12 @@ public class WebSocketFacade extends Endpoint {
 
     }
 
-    public void movePiece() {
-        // TODO
-
-    }
-
-    public void leave(String authToken, int gameID) throws ResponseException {
+    public void movePiece(String authToken, int gameID, ChessPosition startPosition, ChessPosition endPosition, ChessPiece.PieceType promotionType) throws ResponseException {
         try {
-            LeaveCommand newCommand = new LeaveCommand(authToken, gameID);
+            // 1.
+            // MakeMoveCommand wants an auth, a gameID, and a ChessMove
+            MakeMoveCommand newCommand = new MakeMoveCommand(authToken, gameID, new ChessMove(startPosition, endPosition, promotionType));
+            // 2.
             this.session.getBasicRemote().sendText(new Gson().toJson(newCommand));
         }
         catch(IOException ex)
@@ -111,8 +107,31 @@ public class WebSocketFacade extends Endpoint {
 
     }
 
-    public void resign() {
-        // TODO
+    public void leave(String authToken, int gameID) throws ResponseException {
+        try {
+            // 1.
+            LeaveCommand newCommand = new LeaveCommand(authToken, gameID);
+            // 2.
+            this.session.getBasicRemote().sendText(new Gson().toJson(newCommand));
+        }
+        catch(IOException ex)
+        {
+            throw new ResponseException(500, ex.getMessage());
+        }
+
+    }
+
+    public void resign(String authToken, int gameID) throws ResponseException {
+        try {
+            // 1.
+            ResignCommand newCommand = new ResignCommand(authToken, gameID);
+            // 2.
+            this.session.getBasicRemote().sendText(new Gson().toJson(newCommand));
+        }
+        catch(IOException ex)
+        {
+            throw new ResponseException(500, ex.getMessage());
+        }
 
     }
 

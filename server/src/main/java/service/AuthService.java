@@ -8,7 +8,7 @@ import java.util.UUID;
 
 public class AuthService {
 
-    private final AuthDAO dataAccess;
+    private static AuthDAO dataAccess = null;
 
     public AuthService(AuthDAO dataAccess) {
         this.dataAccess = dataAccess;
@@ -26,7 +26,7 @@ public class AuthService {
         dataAccess.deleteAuth(authToken);
     }
 
-    public AuthData getAuth(String authToken) throws DataAccessException, ServiceException {
+    public static AuthData getAuth(String authToken) throws DataAccessException, ServiceException {
         if (dataAccess.getAuth(authToken) == null) {
             throw new ServiceException("Error: bad request");
         }

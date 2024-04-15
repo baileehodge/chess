@@ -14,19 +14,19 @@ import static WebSocketMessages.userCommands.UserGameCommand.CommandType.RESIGN;
  */
 public class ResignCommand extends UserGameCommand {
 
-    public ResignCommand(String authToken, String gameID) {
+    public ResignCommand(String authToken, int gameID) {
         super(authToken);
         this.authToken = authToken;
         this.commandType = RESIGN;
         this.gameID = gameID;
     }
 
-    private final String gameID;
+    private final int gameID;
 
 
     public String getAuthString() {return authToken;}
     public CommandType getCommandType() {return this.commandType;}
-    public String getGameID() {return this.gameID;}
+    public int getGameID() {return this.gameID;}
 
 
     @Override

@@ -6,22 +6,20 @@ import static WebSocketMessages.serverMessages.ServerMessage.ServerMessageType.E
 import static WebSocketMessages.serverMessages.ServerMessage.ServerMessageType.NOTIFICATION;
 
 public class NotificationMessage extends ServerMessage {
-    String message;
-    ServerMessageType serverMessageType;
 
-    public NotificationMessage(String error) {
-        super(ERROR);
+    public NotificationMessage(String text) {
+        super(NOTIFICATION);
         serverMessageType = NOTIFICATION;
-        message = error;
+        serverMessageText = text;
 
     }
 
     public String getMessage() {
-        return message;
+        return serverMessageText;
     }
 
     public void setMessage(String errorMessage) {
-        this.message = errorMessage;
+        this.serverMessageText = errorMessage;
     }
 
 

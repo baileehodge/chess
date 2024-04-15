@@ -12,7 +12,7 @@ import java.util.Random;
 
 public class GameService {
 
-    private final GameDAO gameAccess;
+    private static GameDAO gameAccess = null;
     private final AuthDAO authAccess;
 
     public GameService(GameDAO gameAccess, AuthDAO authAccess) {
@@ -26,6 +26,22 @@ public class GameService {
             throw new ServiceException("Error: unauthorized");
         }
         return gameAccess.listGames();
+    }
+
+    public static boolean verifyGame(int gameID) throws DataAccessException {
+
+        Collection<GameData> listOfGames = gameAccess.listGames();
+
+        for (GameData game : listOfGames) {
+            if (game.getGameID() == gameID) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static ChessGame getGame(int gameID) throws DataAccessException {
+        return gameAccess.getGame(gameID).getGame();
     }
     public GameData createGame(String gameName, String authToken) throws DataAccessException, ServiceException {
         if (authAccess.getAuth(authToken) == null) {
@@ -72,23 +88,11 @@ public class GameService {
         }
     }
 
-    // new methods, phase 6
-
-    void joinPlayer() {
-
-    }
-    void joinObserver() {
-
-    }
-    void makeMove() {
-
-    }
-    void leaveGame() {
-
-    }
-    void resignGame() {
-
+    public static String getWhiteUsername(int gameID) throws DataAccessException {
+        return gameAccess.getWhiteUsername(gameID);
     }
 
-
+    public static String getBlackUsername(int gameID) throws DataAccessException {
+        return gameAccess.getBlackUsername(gameID);
+    }
 }

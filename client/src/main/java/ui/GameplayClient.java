@@ -100,7 +100,7 @@ public class GameplayClient {
         // draws a starting board
         ChessBoard board = new ChessBoard();
         board.resetBoard();
-        DrawBoard.run(board, null);
+        DrawBoard.drawBoard(board, null);
         return "\n";
     }
 }

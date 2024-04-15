@@ -1,17 +1,26 @@
 package server.websocket;
 
+import WebSocketMessages.serverMessages.LoadGameMessage;
+import WebSocketMessages.serverMessages.NotificationMessage;
+import WebSocketMessages.serverMessages.ServerMessage;
 import WebSocketMessages.userCommands.*;
+import chess.ChessGame;
+import com.google.gson.Gson;
+import dataAccess.DataAccessException;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketError;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketMessage;
 import org.eclipse.jetty.websocket.api.annotations.WebSocket;
-import com.google.gson.Gson;
+import service.ServiceException;
 
-
+import java.io.IOException;
 import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 
-import static dataAccess.DatabaseManager.getConnection;
+import static service.AuthService.getAuth;
+import static service.GameService.verifyGame;
+import static service.GameService.*;
+
 
 @WebSocket
 public class WebSocketHandler {
@@ -34,14 +43,54 @@ public class WebSocketHandler {
     }
 
     // I am, once again, assuming these bad boys are void until proven otherwise
-    void joinPlayer(JoinPlayerCommand command, Session session) {
-        // TODO
+    void joinPlayer(JoinPlayerCommand command, Session session) throws ServiceException, DataAccessException, IOException {
+        // gets the username based on the auth token
+        String playerName = getAuth(command.getAuthString()).getUsername();
+        int gameID = command.getGameID();
+        ChessGame game = getGame(gameID);
+        ChessGame.TeamColor color = command.getColor();
 
+        // verify game
+        // if (!gameVerification(session, gameID, command.getAuthString())) return;
+
+        connections.add(playerName, session, gameID);
+        connections.gossip(playerName, new NotificationMessage(playerName + " just joined the game."));
+
+        LoadGameMessage loadGameMessage = new LoadGameMessage(game, color);
+        session.getRemote().sendString(new Gson().toJson(loadGameMessage));
     }
 
-    void joinObserver(JoinObserverCommand command, Session session) {
-        // TODO
+    void joinObserver(JoinObserverCommand command, Session session) throws DataAccessException, ServiceException, IOException {
+        // gets the username based on the auth token
+        String playerName = getAuth(command.getAuthString()).getUsername();
+        int gameID = command.getGameID();
+        ChessGame game = getGame(gameID);
 
+        // verify game
+        // if (!gameVerification(session, gameID, command.getAuthString())) return;
+
+        connections.add(playerName, session, gameID);
+        connections.gossip(playerName, new NotificationMessage(playerName + " just joined the game as an observer."));
+
+        LoadGameMessage loadGameMessage = new LoadGameMessage(game);
+        session.getRemote().sendString(new Gson().toJson(loadGameMessage));
+    }
+
+    private boolean gameVerification(Session session, int gameID, String authString) throws DataAccessException, IOException, ServiceException {
+        if(!verifyGame(gameID))
+        {
+            Error messageToSend = new Error("Error: That game doesn't exist.");
+            session.getRemote().sendString(new Gson().toJson(messageToSend));
+            return false;
+        }
+        // verify auth
+        else if(getAuth(authString) == null)
+        {
+            Error messageToSend = new Error("Error: That authToken is not valid.");
+            session.getRemote().sendString(new Gson().toJson(messageToSend));
+            return false;
+        }
+        return true;
     }
 
     void makeMove(MakeMoveCommand command, Session session) {

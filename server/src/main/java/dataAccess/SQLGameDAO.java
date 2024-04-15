@@ -103,6 +103,14 @@ public class SQLGameDAO implements GameDAO{
         return game;
     }
 
+    public String getWhiteUsername(int gameID) throws DataAccessException {
+        return getGame(gameID).getWhiteUsername();
+    }
+
+    public String getBlackUsername(int gameID) throws DataAccessException {
+        return getGame(gameID).getBlackUsername();
+    }
+
 
     private GameData returnExecute(String statement, Object... params) throws DataAccessException {
         try (var conn = DatabaseManager.getConnection()) {

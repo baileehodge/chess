@@ -16,11 +16,9 @@ import static chess.Simulation.kingSafe;
 public class ChessGame {
     static ChessBoard board;
     static TeamColor turn;
-    static boolean blackStale = false;
-    static boolean whiteStale = false;
 
     public ChessGame() {
-
+        board = new ChessBoard();
     }
 
     /**
@@ -53,7 +51,8 @@ public class ChessGame {
      */
     public enum TeamColor {
         WHITE,
-        BLACK
+        BLACK,
+        NONE
     }
 
     /**
