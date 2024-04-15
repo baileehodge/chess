@@ -64,7 +64,8 @@ public class PostloginClient {
     }
     private static String createGame(String... params) throws UIException{
         if (params.length >= 1) {
-            GameData game = new GameData(null, null, null, params[0]);
+            ChessGame gameObject = new ChessGame();
+            GameData game = new GameData(null, null, null, params[0], gameObject);
             serverFacade.createGame(game, getToken());
             return "game created with the following name: " + params[0];
         }
