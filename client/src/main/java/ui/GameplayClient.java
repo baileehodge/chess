@@ -5,15 +5,12 @@ import chess.ChessBoard;
 import chess.ChessGame;
 import dataAccess.DataAccessException;
 import model.GameData;
-import service.UserService;
 import websocket.NotificationHandler;
 import websocket.WebSocketFacade;
 
 import java.util.Arrays;
 
 import static chess.ChessGame.TeamColor.NONE;
-import static chess.ChessGame.TeamColor.WHITE;
-import static service.GameService.getGame;
 import static ui.DrawBoard.drawBoard;
 import static ui.Repl.getRole;
 import static ui.Repl.getToken;
