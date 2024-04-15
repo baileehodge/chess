@@ -7,7 +7,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Optimized imports pt ii" />
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="coDe QuALIty">
+      <change afterPath="$PROJECT_DIR$/CodeQuality.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -423,23 +428,7 @@
       <workItem from="1712927916625" duration="19871000" />
       <workItem from="1713020272960" duration="19408000" />
       <workItem from="1713129103565" duration="12889000" />
-      <workItem from="1713189929181" duration="17293000" />
-    </task>
-    <task id="LOCAL-00062" summary="Quicksave">
-      <option name="closed" value="true" />
-      <created>1710633115603</created>
-      <option name="number" value="00062" />
-      <option name="presentableId" value="LOCAL-00062" />
-      <option name="project" value="LOCAL" />
-      <updated>1710633115604</updated>
-    </task>
-    <task id="LOCAL-00063" summary="Draws the chessboard. Probably draws the pieces correctly, but who's to say">
-      <option name="closed" value="true" />
-      <created>1710646487897</created>
-      <option name="number" value="00063" />
-      <option name="presentableId" value="LOCAL-00063" />
-      <option name="project" value="LOCAL" />
-      <updated>1710646487897</updated>
+      <workItem from="1713189929181" duration="18551000" />
     </task>
     <task id="LOCAL-00064" summary="Ok now it works">
       <option name="closed" value="true" />
@@ -817,7 +806,23 @@
       <option name="project" value="LOCAL" />
       <updated>1713211551977</updated>
     </task>
-    <option name="localTasksCounter" value="111" />
+    <task id="LOCAL-00111" summary="coDeQuALIty">
+      <option name="closed" value="true" />
+      <created>1713211911190</created>
+      <option name="number" value="00111" />
+      <option name="presentableId" value="LOCAL-00111" />
+      <option name="project" value="LOCAL" />
+      <updated>1713211911190</updated>
+    </task>
+    <task id="LOCAL-00112" summary="coDe QuALIty">
+      <option name="closed" value="true" />
+      <created>1713212102317</created>
+      <option name="number" value="00112" />
+      <option name="presentableId" value="LOCAL-00112" />
+      <option name="project" value="LOCAL" />
+      <updated>1713212102317</updated>
+    </task>
+    <option name="localTasksCounter" value="113" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -836,8 +841,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Saving before I edit ServerMessage.java" />
-    <MESSAGE value="Added the updated jar file. Probably did some other stuff, too. Alexa, play &quot;100 Goodnights&quot; by Ben Stevens" />
     <MESSAGE value="Alexa, play &quot;Yes, I'm a Mess&quot; by AJR" />
     <MESSAGE value="Created the usergamecommand classes" />
     <MESSAGE value="Alexa, play &quot;Stolen Dance&quot; by Milky Chance." />
@@ -861,7 +864,9 @@
     <MESSAGE value="It's like. so good at putting the game in the db and getting it out." />
     <MESSAGE value="Optimized imports" />
     <MESSAGE value="Optimized imports pt ii" />
-    <option name="LAST_COMMIT_MESSAGE" value="Optimized imports pt ii" />
+    <MESSAGE value="coDeQuALIty" />
+    <MESSAGE value="coDe QuALIty" />
+    <option name="LAST_COMMIT_MESSAGE" value="coDe QuALIty" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

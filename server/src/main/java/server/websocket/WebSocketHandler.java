@@ -44,7 +44,6 @@ public class WebSocketHandler {
 
     // I am, once again, assuming these bad boys are void until proven otherwise
     void joinPlayer(JoinPlayerCommand command, Session session) throws ServiceException, DataAccessException, IOException {
-        // gets the username based on the auth token
         String playerName = getAuth(command.getAuthString()).getUsername();
         int gameID = command.getGameID();
         ChessGame game = getGame(gameID);
@@ -61,7 +60,6 @@ public class WebSocketHandler {
     }
 
     void joinObserver(JoinObserverCommand command, Session session) throws DataAccessException, ServiceException, IOException {
-        // gets the username based on the auth token
         String playerName = getAuth(command.getAuthString()).getUsername();
         int gameID = command.getGameID();
         ChessGame game = getGame(gameID);
@@ -98,13 +96,24 @@ public class WebSocketHandler {
 
     }
 
-    void leave(LeaveCommand command, Session session) {
-        // TODO
+    void leave(LeaveCommand command, Session session) throws ServiceException, DataAccessException, IOException {
+        // gets the username based on the auth token
+        String playerName = getAuth(command.getAuthString()).getUsername();
+        int gameID = command.getGameID();
+        ChessGame game = getGame(gameID);
 
+        connections.remove(playerName);
+        connections.gossip(playerName, new NotificationMessage(playerName + " left the game."));
+
+        NotificationMessage notificationMessage = new NotificationMessage(playerName + " left the game.");
+        session.getRemote().sendString(new Gson().toJson(notificationMessage));
     }
 
-    void resign(ResignCommand command, Session session) {
-        // TODO
+    void resign(ResignCommand command, Session session) throws ServiceException, IOException, DataAccessException {
+        LeaveCommand leave = new LeaveCommand(command.getAuthString(), command.getGameID());
+        JoinObserverCommand join = new JoinObserverCommand(command.getAuthString(), command.getGameID());
+        leave(leave, session);
+        joinObserver(join,session);
 
     }
 

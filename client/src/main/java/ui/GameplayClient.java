@@ -113,8 +113,14 @@ public class GameplayClient {
     }
 
 
-    private static String resign() {
-        return "Prompts the user to confirm they want to resign. If they do, the user forfeits the game and the game is over. Does not cause the user to leave the game.\n";
+    private static String resign() throws ResponseException {
+        String authToken = getToken();
+
+        ws = new WebSocketFacade(serverURL, notificationHandler);
+        ws.resign(authToken, gameID);
+
+
+        return "You resigned from the game.\n\n Your opponent wins.";
     }
 
     private static String highlight(String... params) {
