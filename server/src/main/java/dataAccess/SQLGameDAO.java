@@ -106,8 +106,11 @@ public class SQLGameDAO implements GameDAO{
         if (game.getGameID() < 0) {
             throw new DataAccessException("negative gameID");
         }
-        var statement = "UPDATE games SET id=?, gameName=?, whiteUsername=?, blackUsername=? WHERE id=?";
-        voidExecute(statement, game.getGameID(), game.getGameName(), game.getWhiteUsername(), game.getBlackUsername(),game.getGameID());
+
+        String gameString = new Gson().toJson(game.getGame());
+
+        var statement = "UPDATE games SET id=?, gameName=?, whiteUsername=?, blackUsername=?, gameObject=? WHERE id=?";
+        voidExecute(statement, game.getGameID(), game.getGameName(), game.getWhiteUsername(), game.getBlackUsername(),gameString,game.getGameID());
         return game;
     }
 

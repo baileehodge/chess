@@ -7,12 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Added a col to the games table for a gameObject">
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Stores a game in the db, serializes and deserializes without issue. &#10;- passes persistence tests&#10;- passes standard api tests&#10;- Alexa, play &quot;Piano Concerto No 1 in B Flat Minor&quot; by Tchaikovsky.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLGameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLGameDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/service/GameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/test/java/dataAccessTests/SQLDAOTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/dataAccessTests/SQLDAOTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/model/GameData.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/model/GameData.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -198,7 +195,7 @@
     "JUnit.WebSocketTests.executor": "Run",
     "JUnit.WebSocketTests.joinObserverGood.executor": "Run",
     "JUnit.WebSocketTests.joinPlayerBadGameID.executor": "Run",
-    "JUnit.WebSocketTests.joinPlayerGood.executor": "Run",
+    "JUnit.WebSocketTests.joinPlayerGood.executor": "Debug",
     "JUnit.WebSocketTests.joinPlayerSteal.executor": "Run",
     "JUnit.WebSocketTests.leaveGame.executor": "Run",
     "JUnit.chessPieceTests in shared.executor": "Run",
@@ -260,14 +257,7 @@
       <recent name="passoffTests.serverTests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.StandardAPITests">
-    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="server" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="JUnit.WebSocketTests.joinPlayerGood">
     <configuration name="PersistenceTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
@@ -329,13 +319,29 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WebSocketTests.joinPlayerGood" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="passoffTests.serverTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.WebSocketTests" />
+      <option name="METHOD_NAME" value="joinPlayerGood" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.StandardAPITests" />
-        <item itemvalue="JUnit.PersistenceTests" />
-        <item itemvalue="JUnit.StandardAPITests.uniqueAuthorizationTokens" />
+        <item itemvalue="JUnit.WebSocketTests.joinPlayerGood" />
         <item itemvalue="JUnit.WebSocketTests" />
-        <item itemvalue="Application.Main" />
+        <item itemvalue="JUnit.PersistenceTests" />
+        <item itemvalue="JUnit.StandardAPITests" />
+        <item itemvalue="JUnit.StandardAPITests.uniqueAuthorizationTokens" />
       </list>
     </recent_temporary>
   </component>
@@ -420,15 +426,7 @@
       <workItem from="1712927916625" duration="19871000" />
       <workItem from="1713020272960" duration="19408000" />
       <workItem from="1713129103565" duration="12889000" />
-      <workItem from="1713189929181" duration="15260000" />
-    </task>
-    <task id="LOCAL-00058" summary="Starter code">
-      <option name="closed" value="true" />
-      <created>1710194318236</created>
-      <option name="number" value="00058" />
-      <option name="presentableId" value="LOCAL-00058" />
-      <option name="project" value="LOCAL" />
-      <updated>1710194318236</updated>
+      <workItem from="1713189929181" duration="16466000" />
     </task>
     <task id="LOCAL-00059" summary="created classes">
       <option name="closed" value="true" />
@@ -814,7 +812,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713208544466</updated>
     </task>
-    <option name="localTasksCounter" value="107" />
+    <task id="LOCAL-00107" summary="Stores a game in the db, serializes and deserializes without issue. &#10;- passes persistence tests&#10;- passes standard api tests&#10;- Alexa, play &quot;Piano Concerto No 1 in B Flat Minor&quot; by Tchaikovsky.">
+      <option name="closed" value="true" />
+      <created>1713209741448</created>
+      <option name="number" value="00107" />
+      <option name="presentableId" value="LOCAL-00107" />
+      <option name="project" value="LOCAL" />
+      <updated>1713209741448</updated>
+    </task>
+    <option name="localTasksCounter" value="108" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -833,7 +839,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="TestFactory.java has a twin now" />
     <MESSAGE value="Jfhg yzivob nzwv zoo lu gsv mvd urovh. I nrtsg yv hxivdvw lm gsrh kilqvxg, ylbh." />
     <MESSAGE value="WebSocketHandler onMessage" />
     <MESSAGE value="4/8/24 EOD. Alexa, play &quot;Call My Dad -- clean version&quot; by AJR" />
@@ -858,28 +863,36 @@
     <MESSAGE value="Saving this, but I'm honestly just going to roll back these changes" />
     <MESSAGE value="Rollback SQL Game DAO changes so that old tests run" />
     <MESSAGE value="Added a col to the games table for a gameObject" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a col to the games table for a gameObject" />
+    <MESSAGE value="Stores a game in the db, serializes and deserializes without issue. &#10;- passes persistence tests&#10;- passes standard api tests&#10;- Alexa, play &quot;Piano Concerto No 1 in B Flat Minor&quot; by Tchaikovsky." />
+    <option name="LAST_COMMIT_MESSAGE" value="Stores a game in the db, serializes and deserializes without issue. &#10;- passes persistence tests&#10;- passes standard api tests&#10;- Alexa, play &quot;Piano Concerto No 1 in B Flat Minor&quot; by Tchaikovsky." />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
-        <breakpoint enabled="true" type="java-exception">
+        <breakpoint type="java-exception">
           <properties class="java.lang.NullPointerException" package="java.lang" />
           <option name="timeStamp" value="3" />
         </breakpoint>
-        <breakpoint enabled="true" type="java-exception">
+        <breakpoint type="java-exception">
           <properties class="java.lang.ClassNotFoundException" package="java.lang" />
           <option name="timeStamp" value="28" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java</url>
-          <line>31</line>
-          <option name="timeStamp" value="35" />
+          <url>file://$PROJECT_DIR$/server/src/test/java/passoffTests/serverTests/WebSocketTests.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/test/java/passoffTests/serverTests/WebSocketTests.java</url>
+          <line>90</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/server/src/test/java/passoffTests/serverTests/WebSocketTests.java</url>
+          <line>94</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
       </breakpoints>
-      <default-breakpoints>
-        <breakpoint enabled="true" type="java-exception" />
-      </default-breakpoints>
     </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
