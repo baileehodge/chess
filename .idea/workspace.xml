@@ -7,16 +7,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Alexa, play &quot;Royals&quot; by Lorde.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/DrawBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/DrawBoard.java" afterDir="false" />
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Saving this, but I'm honestly just going to roll back these changes">
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/Repl.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/Repl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/websocket/WebSocketFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/websocket/WebSocketFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLGameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLGameDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -215,7 +207,6 @@
     "Repository.Attach.Sources": "false",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
     "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
     "extract.method.default.visibility": "private",
@@ -417,15 +408,7 @@
       <workItem from="1712927916625" duration="19871000" />
       <workItem from="1713020272960" duration="19408000" />
       <workItem from="1713129103565" duration="12889000" />
-      <workItem from="1713189929181" duration="11204000" />
-    </task>
-    <task id="LOCAL-00055" summary="Created SQLDAOTests file. Copy-pasted my server tests from phase 3 into the file; I just need to see if making the file exist lets the autograder run.">
-      <option name="closed" value="true" />
-      <created>1709856353274</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1709856353274</updated>
+      <workItem from="1713189929181" duration="11671000" />
     </task>
     <task id="LOCAL-00056" summary="Created SQLDAOTests file. Copy-pasted my server tests from phase 3 into the file; I just need to see if making the file exist lets the autograder run.">
       <option name="closed" value="true" />
@@ -811,7 +794,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713193800377</updated>
     </task>
-    <option name="localTasksCounter" value="104" />
+    <task id="LOCAL-00104" summary="Saving this, but I'm honestly just going to roll back these changes">
+      <option name="closed" value="true" />
+      <created>1713205207377</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1713205207377</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -830,7 +821,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="ALexa, play the entire rock opera album &quot;Tommy&quot; by The Who." />
     <MESSAGE value="Alexa play &quot;Overture&quot;." />
     <MESSAGE value="Added Phase 6 starter code. WebSocketTests.java is unhappy and I don't know why" />
     <MESSAGE value="TestFactory.java has a twin now" />
@@ -855,7 +845,8 @@
     <MESSAGE value="&quot;The TA who wrote this code doesn't think this should be possible under normal conditions. Please try again, and come see a TA if this error persists.&quot; -- FIXED! ...PROBABLY!" />
     <MESSAGE value="PostLoginClient now does WebSocket things. Alexa, play Despacito." />
     <MESSAGE value="Alexa, play &quot;Royals&quot; by Lorde." />
-    <option name="LAST_COMMIT_MESSAGE" value="Alexa, play &quot;Royals&quot; by Lorde." />
+    <MESSAGE value="Saving this, but I'm honestly just going to roll back these changes" />
+    <option name="LAST_COMMIT_MESSAGE" value="Saving this, but I'm honestly just going to roll back these changes" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

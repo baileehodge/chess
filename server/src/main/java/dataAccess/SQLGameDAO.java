@@ -1,8 +1,5 @@
 package dataAccess;
 
-import chess.ChessBoard;
-import chess.ChessGame;
-import com.google.gson.Gson;
 import model.AuthData;
 import model.GameData;
 
@@ -33,15 +30,12 @@ public class SQLGameDAO implements GameDAO{
               `gameName` varchar(256),
               `whiteUsername` varchar(256),
               `blackUsername` varchar(256),
-    
               
               PRIMARY KEY (`id`),
               INDEX(gameName)
             )
             """
     };
-
-    //           `gameObject` text,
 
     private void configureDatabase() throws DataAccessException {
         DatabaseManager.createDatabase();
@@ -87,10 +81,8 @@ public class SQLGameDAO implements GameDAO{
     }
 
     public GameData createGame(GameData newGame) throws DataAccessException {
-        ChessGame game = new ChessGame();
-        String gameString= new Gson().toJson(game);
-        var statement = "INSERT INTO games (id,gameName,gameObject) VALUES (?, ?, ?)";
-        voidExecute(statement, newGame.getGameID(), newGame.getGameName(), gameString);
+        var statement = "INSERT INTO games (id,gameName) VALUES (?, ?)";
+        voidExecute(statement, newGame.getGameID(), newGame.getGameName());
         return newGame;
     }
 
@@ -106,11 +98,8 @@ public class SQLGameDAO implements GameDAO{
         if (game.getGameID() < 0) {
             throw new DataAccessException("negative gameID");
         }
-        ChessGame gameObject = new ChessGame();
-        // TODO: make this into the real game, not a blank game
-
-        var statement = "UPDATE games SET id=?, gameName=?, whiteUsername=?, blackUsername=?, gameObject = ? WHERE id=?";
-        voidExecute(statement, game.getGameID(), game.getGameName(), game.getWhiteUsername(), game.getBlackUsername(),gameObject,game.getGameID());
+        var statement = "UPDATE games SET id=?, gameName=?, whiteUsername=?, blackUsername=? WHERE id=?";
+        voidExecute(statement, game.getGameID(), game.getGameName(), game.getWhiteUsername(), game.getBlackUsername(),game.getGameID());
         return game;
     }
 
