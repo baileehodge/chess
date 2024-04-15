@@ -2,6 +2,7 @@ package ui;
 
 import WebSocketMessages.ResponseException;
 import WebSocketMessages.serverMessages.ServerMessage;
+import chess.ChessGame;
 import model.GameData;
 import websocket.NotificationHandler;
 
@@ -18,7 +19,12 @@ public class Repl implements NotificationHandler {
     private final GameplayClient gameplayClient;
     private static State state = State.SIGNEDOUT;
     private static String authToken = "";
+    private static ChessGame.TeamColor role;
     private static Collection<GameData> gameList = new ArrayList<>();
+
+
+
+
 
     @Override
     public void notify(ServerMessage notification) {
@@ -47,9 +53,7 @@ public class Repl implements NotificationHandler {
     public static void setToken(String token) {
         authToken = token;
     }
-    public static String getToken() {
-        return authToken;
-    }
+
 
     public Repl(String serverUrl) throws ResponseException {
         preloginClient = new PreloginClient(serverUrl);
@@ -87,6 +91,18 @@ public class Repl implements NotificationHandler {
 
     private void printPrompt() {
         System.out.print("\n" + SET_TEXT_COLOR_BLUE + "[" + state + "] " + ">>> " + SET_TEXT_COLOR_WHITE);
+    }
+
+    public static String getToken() {
+        return authToken;
+    }
+
+    public static ChessGame.TeamColor getRole() {
+        return role;
+    }
+
+    public static void setRole(ChessGame.TeamColor role) {
+        Repl.role = role;
     }
 
 }

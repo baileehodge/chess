@@ -2,11 +2,20 @@ package ui;
 
 import WebSocketMessages.ResponseException;
 import chess.ChessBoard;
+import chess.ChessGame;
+import dataAccess.DataAccessException;
+import model.GameData;
+import service.UserService;
 import websocket.NotificationHandler;
 import websocket.WebSocketFacade;
 
 import java.util.Arrays;
 
+import static chess.ChessGame.TeamColor.NONE;
+import static chess.ChessGame.TeamColor.WHITE;
+import static service.GameService.getGame;
+import static ui.DrawBoard.drawBoard;
+import static ui.Repl.getRole;
 import static ui.Repl.getToken;
 
 public class GameplayClient {
@@ -35,19 +44,23 @@ public class GameplayClient {
 
 
 
-    public static String eval(String input) throws ResponseException {
-        var tokens = input.toLowerCase().split(" ");
-        var cmd = (tokens.length > 0) ? tokens[0] : "help";
-        var params = Arrays.copyOfRange(tokens, 1, tokens.length);
-        return switch (cmd) {
-            // redundant: case "help" -> help();
-            case "redrawBoard" -> redrawBoard();
-            case "leave" -> leave();
-            case "move" -> move(params);
-            case "resign" -> resign();
-            case "highlight" -> highlight(params);
-            default -> help();
-        };
+    public static String eval(String input) {
+        try {
+            var tokens = input.toLowerCase().split(" ");
+            var cmd = (tokens.length > 0) ? tokens[0] : "help";
+            var params = Arrays.copyOfRange(tokens, 1, tokens.length);
+            return switch (cmd) {
+                // redundant: case "help" -> help();
+                case "redraw" -> redrawBoard();
+                case "leave" -> leave();
+                case "move" -> move(params);
+                case "resign" -> resign();
+                case "highlight" -> highlight(params);
+                default -> help();
+            };
+        } catch (ResponseException | DataAccessException | UIException e) {
+            return e.getMessage();
+        }
     }
 
 
@@ -55,7 +68,7 @@ public class GameplayClient {
     private static String help() {
         return """
                     - help
-                    - redrawBoard
+                    - redraw
                     - move <move> (Format: 3,4:4,5)
                     - highlight <piece> (Format: 3,4 . Highlights legal moves for that piece.)
                     - leave
@@ -63,8 +76,29 @@ public class GameplayClient {
                     """;
     }
 
-    private static String redrawBoard() {
-        return "Redraws the chess board upon the user’s request.\n";
+    private static String redrawBoard() throws DataAccessException, UIException {
+        ChessGame.TeamColor color = getRole();
+        ChessBoard board = null;
+
+        GameData[] list = serverFacade.listGames(getToken());
+
+        for (int i = 0; i < list.length; i++) {
+            if (list[i].getGameID() == gameID) {
+                board = list[i].getGame().getBoard();
+            }
+        }
+        if (board == null){
+            throw new DataAccessException("you're not real");
+        }
+
+
+        if (color == NONE) {
+            color = null;
+        }
+
+        drawBoard(board, color);
+
+        return "\n";
     }
 
     private static String move(String... params) {
@@ -100,7 +134,7 @@ public class GameplayClient {
         // draws a starting board
         ChessBoard board = new ChessBoard();
         board.resetBoard();
-        DrawBoard.drawBoard(board, null);
+        drawBoard(board, null);
         return "\n";
     }
 }

@@ -41,10 +41,8 @@ public class PostloginClient {
                 default -> help();
             };
             //  should v these v be the same as each other? Probably
-        } catch (UIException ex) {
+        } catch (UIException | RuntimeException | ResponseException ex) {
             return ex.getMessage();
-        } catch (ResponseException e) {
-            throw new RuntimeException(e);
         }
     }
 
@@ -98,6 +96,7 @@ public class PostloginClient {
             ws.joinPlayer(authToken, gameID, teamColor);
 
             Repl.setState(Repl.State.INGAME);
+            Repl.setRole(teamColor);
             GameplayClient.setGameID(gameID);
             return "joined game as player";
         }
@@ -113,6 +112,7 @@ public class PostloginClient {
         ws.joinObserver(authToken, gameID);
 
         Repl.setState(Repl.State.INGAME);
+        Repl.setRole(ChessGame.TeamColor.NONE);
         GameplayClient.setGameID(Integer.parseInt(params[0]));
         return "joined game as observer";
     }

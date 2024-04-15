@@ -62,10 +62,10 @@ public class WebSocketFacade extends Endpoint {
     // 1. create command message
     // 2. send message to server
 
-    public void joinPlayer(String auth, int game, ChessGame.TeamColor color) throws ResponseException {
+    public void joinPlayer(String auth, int gameID, ChessGame.TeamColor color) throws ResponseException {
         try {
             // 1.
-            JoinPlayerCommand newCommand = new JoinPlayerCommand(auth, game, color);
+            JoinPlayerCommand newCommand = new JoinPlayerCommand(auth, gameID, color);
 
             // 2.
             this.session.getBasicRemote().sendText(new Gson().toJson(newCommand));
@@ -77,10 +77,10 @@ public class WebSocketFacade extends Endpoint {
 
     }
 
-    public void joinObserver(String auth, int game) throws ResponseException {
+    public void joinObserver(String auth, int gameID) throws ResponseException {
         try {
             // 1.
-            JoinObserverCommand newCommand = new JoinObserverCommand(auth, game);
+            JoinObserverCommand newCommand = new JoinObserverCommand(auth, gameID);
 
             // 2.
             this.session.getBasicRemote().sendText(new Gson().toJson(newCommand));

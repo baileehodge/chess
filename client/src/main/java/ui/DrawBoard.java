@@ -41,6 +41,7 @@ public class DrawBoard {
         var out = new PrintStream(System.out, true, StandardCharsets.UTF_8);
 
         //out.print(ERASE_SCREEN);
+        out.println();
 
         if (color == WHITE) {
             printWhiteTeamView(board, out);
