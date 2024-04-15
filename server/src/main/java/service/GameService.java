@@ -49,7 +49,8 @@ public class GameService {
         }
         Random randomNum = new Random();
         Integer gameID = randomNum.nextInt(1000);
-        GameData newGame = new GameData(gameID, null, null, gameName);
+        ChessGame gameObject = new ChessGame();
+        GameData newGame = new GameData(gameID, null, null, gameName, gameObject);
         return gameAccess.createGame(newGame);
     }
     public void joinGame(JoinRecord joinRecord) throws DataAccessException, ServiceException {

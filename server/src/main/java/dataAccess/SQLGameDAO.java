@@ -1,5 +1,7 @@
 package dataAccess;
 
+import chess.ChessGame;
+import com.google.gson.Gson;
 import model.AuthData;
 import model.GameData;
 
@@ -71,8 +73,10 @@ public class SQLGameDAO implements GameDAO{
                 String gameName = rs.getString("gameName");
                 String whiteUsername = rs.getString("whiteUsername");
                 String blackUsername = rs.getString("blackUsername");
+                String gameString = rs.getString("gameObject");
+                ChessGame gameObject = new Gson().fromJson(gameString, ChessGame.class);
 
-                GameData game = new GameData(gameID, whiteUsername, blackUsername, gameName);
+                GameData game = new GameData(gameID, whiteUsername, blackUsername, gameName, gameObject);
                 games.add(game);
             }
         } catch (SQLException e) {
@@ -82,8 +86,11 @@ public class SQLGameDAO implements GameDAO{
     }
 
     public GameData createGame(GameData newGame) throws DataAccessException {
-        var statement = "INSERT INTO games (id,gameName) VALUES (?, ?)";
-        voidExecute(statement, newGame.getGameID(), newGame.getGameName());
+        ChessGame gameObject = new ChessGame();
+        String gameString = new Gson().toJson(gameObject);
+
+        var statement = "INSERT INTO games (id,gameName,gameObject) VALUES (?, ?, ?)";
+        voidExecute(statement, newGame.getGameID(), newGame.getGameName(), gameString);
         return newGame;
     }
 
@@ -132,7 +139,9 @@ public class SQLGameDAO implements GameDAO{
                     String gameName = rs.getString("gameName");
                     String whiteUsername = rs.getString("whiteUsername");
                     String blackUsername = rs.getString("blackUsername");
-                    return new GameData(gameID, whiteUsername, blackUsername, gameName);
+                    String gameString = rs.getString("gameObject");
+                    ChessGame gameObject = new Gson().fromJson(gameString, ChessGame.class);
+                    return new GameData(gameID, whiteUsername, blackUsername, gameName, gameObject);
                 }
             }
         } catch (SQLException e) {

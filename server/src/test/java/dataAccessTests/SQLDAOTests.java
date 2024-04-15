@@ -1,5 +1,6 @@
 package dataAccessTests;
 
+import chess.ChessGame;
 import dataAccess.DataAccessException;
 import dataAccess.SQLAuthDAO;
 import dataAccess.SQLGameDAO;
@@ -145,7 +146,8 @@ class SQLUserDAOTest {
 
     @Test
     void clearGamesPass() throws DataAccessException {
-        GameData gameData = new GameData(1234, "Chidi", "Eleanor", "fork");
+        ChessGame game = new ChessGame();
+        GameData gameData = new GameData(1234, "Chidi", "Eleanor", "fork", game);
         gameDAO.createGame(gameData);
         assertDoesNotThrow(() -> {
             gameDAO.clearGames();
@@ -155,7 +157,8 @@ class SQLUserDAOTest {
 
     @Test
     void listGamesOne() throws DataAccessException {
-        GameData gameData = new GameData(1234, "Chidi", "Eleanor", "fork");
+        ChessGame game = new ChessGame();
+        GameData gameData = new GameData(1234, "Chidi", "Eleanor", "fork", game);
         gameDAO.createGame(gameData);
         assertDoesNotThrow(() -> {
             gameDAO.listGames();
@@ -164,15 +167,16 @@ class SQLUserDAOTest {
     }
     @Test
     void listGamesMany() throws DataAccessException {
-        GameData gameData = new GameData(1234, "Chidi", "Eleanor", "fork");
+        ChessGame game = new ChessGame();
+        GameData gameData = new GameData(1234, "Chidi", "Eleanor", "fork", game);
         gameDAO.createGame(gameData);
-        GameData gameData1 = new GameData(4321, "Leslie", "Ben", "Pawnee");
+        GameData gameData1 = new GameData(4321, "Leslie", "Ben", "Pawnee", game);
         gameDAO.createGame(gameData1);
-        GameData gameData2 = new GameData(8, "April", "Andy", "halloween");
+        GameData gameData2 = new GameData(8, "April", "Andy", "halloween", game);
         gameDAO.createGame(gameData2);
-        GameData gameData3 = new GameData(7, "Jean-Ralphio", "Mona-Lisa", "suspicious");
+        GameData gameData3 = new GameData(7, "Jean-Ralphio", "Mona-Lisa", "suspicious", game);
         gameDAO.createGame(gameData3);
-        GameData gameData4 = new GameData(6, "Janet", "Michael", "frozen yogurt");
+        GameData gameData4 = new GameData(6, "Janet", "Michael", "frozen yogurt", game);
         gameDAO.createGame(gameData4);
         assertDoesNotThrow(() -> {
             gameDAO.listGames();
@@ -182,7 +186,8 @@ class SQLUserDAOTest {
 
     @Test
     void createGamePass() {
-        GameData gameData = new GameData(1234, "Chidi", "Eleanor", "fork");
+        ChessGame game = new ChessGame();
+        GameData gameData = new GameData(1234, "Chidi", "Eleanor", "fork", game);
         assertDoesNotThrow(() -> {
             gameDAO.createGame(gameData);
         });
@@ -191,16 +196,18 @@ class SQLUserDAOTest {
     }
     @Test
     void createGameFail() throws DataAccessException {
-        GameData gameData1 = new GameData(7, "Jean-Ralphio", "Mona-Lisa", "suspicious");
+        ChessGame game = new ChessGame();
+        GameData gameData1 = new GameData(7, "Jean-Ralphio", "Mona-Lisa", "suspicious", game);
         gameDAO.createGame(gameData1);
-        GameData gameData2 = new GameData(7, "Jean-Ralphio", "Mona-Lisa", "suspicious");
+        GameData gameData2 = new GameData(7, "Jean-Ralphio", "Mona-Lisa", "suspicious", game);
         assertThrows(DataAccessException.class, () -> gameDAO.createGame(gameData2));
     }
 // getGame()
 
     @Test
     void getGamePass() throws DataAccessException {
-        GameData gameData = new GameData(1234, "Chidi", "Eleanor", "fork");
+        ChessGame game = new ChessGame();
+        GameData gameData = new GameData(1234, "Chidi", "Eleanor", "fork", game);
         gameDAO.createGame(gameData);
         assertDoesNotThrow(() -> {
             gameDAO.getGame(1234);
@@ -208,7 +215,8 @@ class SQLUserDAOTest {
     }
     @Test
     void getGameFail() throws DataAccessException {
-        GameData gameData = new GameData(-1, "Chidi", "Eleanor", "fork");
+        ChessGame game = new ChessGame();
+        GameData gameData = new GameData(-1, "Chidi", "Eleanor", "fork", game);
         gameDAO.createGame(gameData);
         assertThrows(DataAccessException.class, () -> gameDAO.getGame(gameData.getGameID()));
     }
@@ -216,7 +224,8 @@ class SQLUserDAOTest {
 
     @Test
     void updateGamePass() throws DataAccessException {
-        GameData gameData = new GameData(1234, "Chidi", "Eleanor", "fork");
+        ChessGame game = new ChessGame();
+        GameData gameData = new GameData(1234, "Chidi", "Eleanor", "fork", game);
         gameDAO.createGame(gameData);
         assertDoesNotThrow(() -> {
             gameDAO.updateGame(gameData);
@@ -224,7 +233,8 @@ class SQLUserDAOTest {
     }
     @Test
     void updateGameFail() throws DataAccessException {
-        GameData gameData = new GameData(-1, "Chidi", "Eleanor", "fork");
+        ChessGame game = new ChessGame();
+        GameData gameData = new GameData(-1, "Chidi", "Eleanor", "fork", game);
         gameDAO.createGame(gameData);
         assertThrows(DataAccessException.class, () -> gameDAO.updateGame(gameData));
     }
