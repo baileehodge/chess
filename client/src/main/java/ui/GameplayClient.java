@@ -3,7 +3,6 @@ package ui;
 import WebSocketMessages.ResponseException;
 import chess.ChessBoard;
 import chess.ChessGame;
-import dataAccess.DataAccessException;
 import model.GameData;
 import websocket.NotificationHandler;
 import websocket.WebSocketFacade;
@@ -55,7 +54,7 @@ public class GameplayClient {
                 case "highlight" -> highlight(params);
                 default -> help();
             };
-        } catch (ResponseException | DataAccessException | UIException e) {
+        } catch (ResponseException | UIException e) {
             return e.getMessage();
         }
     }
@@ -73,7 +72,7 @@ public class GameplayClient {
                     """;
     }
 
-    private static String redrawBoard() throws DataAccessException, UIException {
+    private static String redrawBoard() throws UIException {
         ChessGame.TeamColor color = getRole();
         ChessBoard board = null;
 
@@ -85,7 +84,7 @@ public class GameplayClient {
             }
         }
         if (board == null){
-            throw new DataAccessException("you're not real");
+            throw new UIException(500, "you're not real");
         }
 
 
