@@ -7,8 +7,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Saving this, but I'm honestly just going to roll back these changes">
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" afterDir="false" />
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="Rollback SQL Game DAO changes so that old tests run">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLGameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLGameDAO.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -257,13 +258,6 @@
     </key>
   </component>
   <component name="RunManager" selected="JUnit.PersistenceTests">
-    <configuration name="Main (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Main" />
-      <module name="client" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="server" />
@@ -301,6 +295,21 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WebSocketTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="passoffTests.serverTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.WebSocketTests" />
+      <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="WebSocketTests.joinPlayerGood" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
@@ -320,10 +329,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="JUnit.PersistenceTests" />
+        <item itemvalue="JUnit.WebSocketTests" />
+        <item itemvalue="JUnit.StandardAPITests" />
         <item itemvalue="Application.Main" />
         <item itemvalue="JUnit.WebSocketTests.joinPlayerGood" />
-        <item itemvalue="JUnit.StandardAPITests" />
-        <item itemvalue="Application.Main (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -408,15 +417,7 @@
       <workItem from="1712927916625" duration="19871000" />
       <workItem from="1713020272960" duration="19408000" />
       <workItem from="1713129103565" duration="12889000" />
-      <workItem from="1713189929181" duration="11671000" />
-    </task>
-    <task id="LOCAL-00056" summary="Created SQLDAOTests file. Copy-pasted my server tests from phase 3 into the file; I just need to see if making the file exist lets the autograder run.">
-      <option name="closed" value="true" />
-      <created>1709856383129</created>
-      <option name="number" value="00056" />
-      <option name="presentableId" value="LOCAL-00056" />
-      <option name="project" value="LOCAL" />
-      <updated>1709856383129</updated>
+      <workItem from="1713189929181" duration="13582000" />
     </task>
     <task id="LOCAL-00057" summary="Created and passed my flippin tests">
       <option name="closed" value="true" />
@@ -802,7 +803,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713205207377</updated>
     </task>
-    <option name="localTasksCounter" value="105" />
+    <task id="LOCAL-00105" summary="Rollback SQL Game DAO changes so that old tests run">
+      <option name="closed" value="true" />
+      <created>1713205636707</created>
+      <option name="number" value="00105" />
+      <option name="presentableId" value="LOCAL-00105" />
+      <option name="project" value="LOCAL" />
+      <updated>1713205636707</updated>
+    </task>
+    <option name="localTasksCounter" value="106" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -821,7 +830,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Alexa play &quot;Overture&quot;." />
     <MESSAGE value="Added Phase 6 starter code. WebSocketTests.java is unhappy and I don't know why" />
     <MESSAGE value="TestFactory.java has a twin now" />
     <MESSAGE value="Jfhg yzivob nzwv zoo lu gsv mvd urovh. I nrtsg yv hxivdvw lm gsrh kilqvxg, ylbh." />
@@ -846,7 +854,8 @@
     <MESSAGE value="PostLoginClient now does WebSocket things. Alexa, play Despacito." />
     <MESSAGE value="Alexa, play &quot;Royals&quot; by Lorde." />
     <MESSAGE value="Saving this, but I'm honestly just going to roll back these changes" />
-    <option name="LAST_COMMIT_MESSAGE" value="Saving this, but I'm honestly just going to roll back these changes" />
+    <MESSAGE value="Rollback SQL Game DAO changes so that old tests run" />
+    <option name="LAST_COMMIT_MESSAGE" value="Rollback SQL Game DAO changes so that old tests run" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

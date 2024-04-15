@@ -30,6 +30,7 @@ public class SQLGameDAO implements GameDAO{
               `gameName` varchar(256),
               `whiteUsername` varchar(256),
               `blackUsername` varchar(256),
+              `gameObject` text,
               
               PRIMARY KEY (`id`),
               INDEX(gameName)
