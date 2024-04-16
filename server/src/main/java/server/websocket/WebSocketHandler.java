@@ -55,8 +55,7 @@ public class WebSocketHandler {
         ChessGame game = getGame(gameID);
         ChessGame.TeamColor color = command.getColor();
 
-        // verify game
-        // if (!gameVerification(session, gameID, command.getAuthString())) return;
+        // verify game?
 
         connections.add(playerName, session, gameID);
         connections.gossip(playerName, new NotificationMessage(playerName + " just joined the game as the " + color + " team."));
@@ -70,8 +69,7 @@ public class WebSocketHandler {
         int gameID = command.getGameID();
         ChessGame game = getGame(gameID);
 
-        // verify game
-        // if (!gameVerification(session, gameID, command.getAuthString())) return;
+        // verify game?
 
         connections.add(playerName, session, gameID);
         connections.gossip(playerName, new NotificationMessage(playerName + " just joined the game as an observer."));
@@ -80,22 +78,7 @@ public class WebSocketHandler {
         session.getRemote().sendString(new Gson().toJson(loadGameMessage));
     }
 
-    private boolean gameVerification(Session session, int gameID, String authString) throws DataAccessException, IOException, ServiceException {
-        if(!verifyGame(gameID))
-        {
-            Error messageToSend = new Error("Error: That game doesn't exist.");
-            session.getRemote().sendString(new Gson().toJson(messageToSend));
-            return false;
-        }
-        // verify auth
-        else if(getAuth(authString) == null)
-        {
-            Error messageToSend = new Error("Error: That authToken is not valid.");
-            session.getRemote().sendString(new Gson().toJson(messageToSend));
-            return false;
-        }
-        return true;
-    }
+    // see CodeQualityVictims.txt for gameVerification function
 
     void makeMove(MakeMoveCommand command, Session session) throws DataAccessException, InvalidMoveException, ServiceException, IOException {
         ChessGame game = getGame(command.getGameID());

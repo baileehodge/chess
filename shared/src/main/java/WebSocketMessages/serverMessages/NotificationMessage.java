@@ -18,9 +18,4 @@ public class NotificationMessage extends ServerMessage {
         return serverMessageText;
     }
 
-    public void setMessage(String errorMessage) {
-        this.serverMessageText = errorMessage;
-    }
-
-
 }

@@ -105,15 +105,7 @@ public class GameplayClient implements NotificationHandler{
         ChessPosition start = new ChessPosition(Integer.parseInt(params[0]), convertToNum(params[1]));
         ChessPosition end = new ChessPosition(Integer.parseInt(params[2]), convertToNum(params[3]));
 
-//        Implement promo??
-//        if (params.length >= 5) {
-//            ws = new WebSocketFacade(serverURL, notificationHandler);
-//            ws.movePiece(getToken(),getGameID(),start,end,promo);
-//        }
-//        else {
-//            ws = new WebSocketFacade(serverURL, notificationHandler);
-//            ws.movePiece(getToken(),getGameID(),start,end,null);
-//        }
+        // see CodeQualityVictims.txt for beginning of promo functionality
 
         ws = new WebSocketFacade(serverURL, notificationHandler);
         ws.movePiece(getToken(),getGameID(),start,end,null);
@@ -176,19 +168,6 @@ public class GameplayClient implements NotificationHandler{
 
     private static String highlight(String... params) {
         return "Allows the user to input what piece for which they want to highlight legal moves. The selected piece’s current square and all squares it can legally move to are highlighted. This is a local operation and has no effect on remote users’ screens.\n";
-    }
-
-
-
-
-    // Draws a basic starting board
-    // probably obsolete for phase 6
-    private static String drawBasic() {
-        // draws a starting board
-        ChessBoard board = new ChessBoard();
-        board.resetBoard();
-        drawBoard(board, null);
-        return "\n";
     }
 
 

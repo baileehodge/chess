@@ -33,9 +33,6 @@ public class JoinPlayerCommand extends UserGameCommand{
     public int getGameID() {return this.gameID;}
     public ChessGame.TeamColor getColor() {return playerColor;}
 
-    public void setCommandType(CommandType commandType) {
-        this.commandType = commandType;
-    }
 
     @Override
     public boolean equals(Object o) {

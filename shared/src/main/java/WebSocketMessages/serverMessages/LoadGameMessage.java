@@ -23,10 +23,6 @@ public class LoadGameMessage extends ServerMessage{
         return playerColor;
     }
 
-    public void setColor(ChessGame.TeamColor currentUser) {
-        this.playerColor = currentUser;
-    }
-
     public ChessGame getGame() {
         return game;
     }

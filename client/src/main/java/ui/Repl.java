@@ -35,9 +35,6 @@ public class Repl {
         INGAME
     }
 
-    public void setGameList(Collection<GameData> newList) {
-        gameList = newList;
-    }
     public Collection<GameData> getGameList() {
         return gameList;
     }

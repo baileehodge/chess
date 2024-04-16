@@ -9,10 +9,6 @@ public class UIException extends Exception {
         this.message = message;
     }
 
-    public int statusCode() {
-        return statusCode;
-    }
-
     public String getMessage() {
         return message;
     }

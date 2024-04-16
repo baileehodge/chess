@@ -1,0 +1,51 @@
+Unused code deleted to make the auto grader happy.
+Saved here in case of future need.
+
+
+ConnectionManager.java
+
+    // tell everyone
+    public void announce(int gameID, ServerMessage notification) throws IOException {
+        String message = new Gson().toJson(notification);
+
+        for (var c : games.entrySet()) {
+            if (c.getKey().session.isOpen()) {
+                if (c.getValue().equals(gameID)) {
+                    c.getKey().send(message);
+                }
+            }
+        }
+    }
+
+
+
+WebSocketHandler.java
+    private boolean gameVerification(Session session, int gameID, String authString) throws DataAccessException, IOException, ServiceException {
+        if(!verifyGame(gameID))
+        {
+            Error messageToSend = new Error("Error: That game doesn't exist.");
+            session.getRemote().sendString(new Gson().toJson(messageToSend));
+            return false;
+        }
+        // verify auth
+        else if(getAuth(authString) == null)
+        {
+            Error messageToSend = new Error("Error: That authToken is not valid.");
+            session.getRemote().sendString(new Gson().toJson(messageToSend));
+            return false;
+        }
+        return true;
+    }
+
+GameplayClient.java
+    from move method
+
+//        Implement promo??
+//        if (params.length >= 5) {
+//            ws = new WebSocketFacade(serverURL, notificationHandler);
+//            ws.movePiece(getToken(),getGameID(),start,end,promo);
+//        }
+//        else {
+//            ws = new WebSocketFacade(serverURL, notificationHandler);
+//            ws.movePiece(getToken(),getGameID(),start,end,null);
+//        }

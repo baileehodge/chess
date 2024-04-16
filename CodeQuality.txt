@@ -1,15 +1,11 @@
-Results
 Naming:
-	[MethodName]:
-		X [ERROR] /shared/src/main/java/WebSocketMessages/ResponseException.java:11:16: Method name 'StatusCode' must match pattern '^[a-z][a-zA-Z0-9]*$' (lowerCamelCase). [MethodName]
-		X [ERROR] /client/src/main/java/ui/UIException.java:12:16: Method name 'StatusCode' must match pattern '^[a-z][a-zA-Z0-9]*$' (lowerCamelCase). [MethodName]
 	[ClassTypeParameterName]:
 		[ERROR] /shared/src/main/java/chess/PieceMovesCalc.java:7:29: Class type name 'board' must match pattern '^[A-Z]$' (A single letter, like T). [ClassTypeParameterName]
 		[ERROR] /shared/src/main/java/chess/PieceMovesCalc.java:7:36: Class type name 'position' must match pattern '^[A-Z]$' (A single letter, like T). [ClassTypeParameterName]
 Code Decomposition:
 	[DuplicateLines]:
-		[ERROR] repo/shared/src/main/java/WebSocketMessages/userCommands/LeaveCommand.java:25: Duplicated 22 lines from repo/shared/src/main/java/WebSocketMessages/userCommands/ResignCommand.java:25 [DuplicateLines]
-		[ERROR] repo/shared/src/main/java/WebSocketMessages/userCommands/UserGameCommand.java:35: Duplicated 17 lines from repo/shared/src/main/java/WebSocketMessages/userCommands/JoinPlayerCommand.java:38 [DuplicateLines]
+		[ERROR] repo/shared/src/main/java/WebSocketMessages/userCommands/LeaveCommand.java:28: Duplicated 22 lines from repo/shared/src/main/java/WebSocketMessages/userCommands/ResignCommand.java:25 [DuplicateLines]
+		[ERROR] repo/shared/src/main/java/WebSocketMessages/userCommands/UserGameCommand.java:37: Duplicated 17 lines from repo/shared/src/main/java/WebSocketMessages/userCommands/JoinPlayerCommand.java:38 [DuplicateLines]
 		[ERROR] repo/shared/src/main/java/chess/calc/QueenMovesCalc.java:12: Duplicated 22 lines from repo/shared/src/main/java/chess/calc/RookMovesCalc.java:12 [DuplicateLines]
 		[ERROR] repo/shared/src/main/java/chess/calc/QueenMovesCalc.java:80: Duplicated 54 lines from repo/shared/src/main/java/chess/calc/RookMovesCalc.java:34 [DuplicateLines]
 		[ERROR] repo/shared/src/main/java/chess/calc/PawnMovesCalc.java:117: Duplicated 15 lines from repo/shared/src/main/java/chess/calc/PawnMovesCalc.java:91 [DuplicateLines]
@@ -17,9 +13,9 @@ Code Decomposition:
 		[ERROR] repo/server/src/main/java/server/Server.java:60: Duplicated 100 lines from repo/server/src/main/java/server/HTTPServer.java:42 [DuplicateLines]
 	[DuplicateBlock]:
 		[ERROR] /shared/src/main/java/WebSocketMessages/userCommands/ResignCommand.java:33:37: Duplicated code from /shared/src/main/java/WebSocketMessages/userCommands/MakeMoveCommand.java:35 [DuplicateBlock]
-		[ERROR] /shared/src/main/java/WebSocketMessages/userCommands/LeaveCommand.java:33:37: Duplicated code from /shared/src/main/java/WebSocketMessages/userCommands/MakeMoveCommand.java:35 [DuplicateBlock]
+		[ERROR] /shared/src/main/java/WebSocketMessages/userCommands/LeaveCommand.java:36:37: Duplicated code from /shared/src/main/java/WebSocketMessages/userCommands/MakeMoveCommand.java:35 [DuplicateBlock]
 		[ERROR] /shared/src/main/java/WebSocketMessages/userCommands/JoinPlayerCommand.java:41:37: Duplicated code from /shared/src/main/java/WebSocketMessages/userCommands/MakeMoveCommand.java:35 [DuplicateBlock]
-		[ERROR] /shared/src/main/java/WebSocketMessages/userCommands/UserGameCommand.java:38:37: Duplicated code from /shared/src/main/java/WebSocketMessages/userCommands/MakeMoveCommand.java:35 [DuplicateBlock]
+		[ERROR] /shared/src/main/java/WebSocketMessages/userCommands/UserGameCommand.java:40:37: Duplicated code from /shared/src/main/java/WebSocketMessages/userCommands/MakeMoveCommand.java:35 [DuplicateBlock]
 		[ERROR] /shared/src/main/java/WebSocketMessages/userCommands/JoinObserverCommand.java:31:37: Duplicated code from /shared/src/main/java/WebSocketMessages/userCommands/MakeMoveCommand.java:35 [DuplicateBlock]
 		[ERROR] /shared/src/main/java/chess/calc/QueenMovesCalc.java:119:72: Duplicated code from /shared/src/main/java/chess/calc/RookMovesCalc.java:73 [DuplicateBlock]
 		[ERROR] /shared/src/main/java/chess/calc/PawnMovesCalc.java:97:80: Duplicated code from /shared/src/main/java/chess/calc/PawnMovesCalc.java:91 [DuplicateBlock]
@@ -28,7 +24,6 @@ Code Decomposition:
 		[ERROR] /shared/src/main/java/chess/calc/BishopMovesCalc.java:76:72: Duplicated code from /shared/src/main/java/chess/calc/RookMovesCalc.java:73 [DuplicateBlock]
 		[ERROR] /shared/src/main/java/chess/calc/KingMovesCalc.java:45:72: Duplicated code from /shared/src/main/java/chess/calc/KnightMovesCalc.java:82 [DuplicateBlock]
 		[ERROR] /server/src/main/java/dataAccess/SQLAuthDAO.java:110:57: Duplicated code from /server/src/main/java/dataAccess/SQLAuthDAO.java:85 [DuplicateBlock]
-		[ERROR] /server/src/main/java/dataAccess/SQLGameDAO.java:158:57: Duplicated code from /server/src/main/java/dataAccess/SQLGameDAO.java:129 [DuplicateBlock]
 		[ERROR] /server/src/main/java/dataAccess/SQLUserDAO.java:106:57: Duplicated code from /server/src/main/java/dataAccess/SQLUserDAO.java:80 [DuplicateBlock]
 		[ERROR] /server/src/main/java/server/Server.java:76:76: Duplicated code from /server/src/main/java/server/HTTPServer.java:58 [DuplicateBlock]
 		[ERROR] /server/src/main/java/server/Server.java:100:116: Duplicated code from /server/src/main/java/server/HTTPServer.java:82 [DuplicateBlock]
@@ -38,44 +33,24 @@ Code Decomposition:
 		[ERROR] /server/src/main/java/server/Server.java:141:117: Duplicated code from /server/src/main/java/server/HTTPServer.java:123 [DuplicateBlock]
 Code Readability:
 	[UnusedMethodReporter]:
-		[ERROR] /shared/src/main/java/model/UserData.java:30: Unused method setPassword [UnusedMethodReporter]
-		[ERROR] /shared/src/main/java/WebSocketMessages/userCommands/JoinPlayerCommand.java:36: Unused method setCommandType [UnusedMethodReporter]
-		[ERROR] /client/src/main/java/ui/GameplayClient.java:129: Unused method drawBasic [UnusedMethodReporter]
-		[ERROR] /client/src/main/java/ui/UIException.java:12: Unused method StatusCode [UnusedMethodReporter]
-		[ERROR] /shared/src/main/java/WebSocketMessages/serverMessages/ErrorMessage.java:18: Unused method setErrorMessage [UnusedMethodReporter]
-		[ERROR] /shared/src/main/java/model/UserData.java:40: Unused method setEmail [UnusedMethodReporter]
-		[ERROR] /shared/src/main/java/model/AuthData.java:18: Unused method setAuthToken [UnusedMethodReporter]
-		[ERROR] /shared/src/main/java/WebSocketMessages/serverMessages/LoadGameMessage.java:26: Unused method setColor [UnusedMethodReporter]
-		[ERROR] /shared/src/main/java/model/GameData.java:50: Unused method setGameName [UnusedMethodReporter]
-		[ERROR] /client/src/main/java/ui/Repl.java:43: Unused method setGameList [UnusedMethodReporter]
-		[ERROR] /server/src/main/java/server/websocket/ConnectionManager.java:55: Unused method announce [UnusedMethodReporter]
-		[ERROR] /server/src/main/java/server/websocket/WebSocketSessions.java:12: Unused method addSessionToGame [UnusedMethodReporter]
-		[ERROR] /shared/src/main/java/WebSocketMessages/serverMessages/LoadGameMessage.java:34: Unused method setGame [UnusedMethodReporter]
-		[ERROR] /client/src/main/java/websocket/WebSocketFacade.java:95: Unused method movePiece [UnusedMethodReporter]
-		[ERROR] /client/src/main/java/websocket/NotificationHandler.java:9: Unused method notify [UnusedMethodReporter]
-		[ERROR] /server/src/main/java/server/websocket/WebSocketHandler.java:79: Unused method gameVerification [UnusedMethodReporter]
-		[ERROR] /shared/src/main/java/WebSocketMessages/serverMessages/NotificationMessage.java:21: Unused method setMessage [UnusedMethodReporter]
-		[ERROR] /server/src/main/java/server/websocket/WebSocketSessions.java:45: Unused method getSessions [UnusedMethodReporter]
-		[ERROR] /shared/src/main/java/WebSocketMessages/serverMessages/ServerMessage.java:29: Unused method setServerMessageText [UnusedMethodReporter]
-		[ERROR] /shared/src/main/java/model/UserData.java:20: Unused method setUsername [UnusedMethodReporter]
-		[ERROR] /server/src/main/java/server/websocket/WebSocketSessions.java:28: Unused method removeSessions [UnusedMethodReporter]
+		* [ERROR] /shared/src/main/java/WebSocketMessages/serverMessages/ServerMessage.java:27: Unused method setServerMessageText [UnusedMethodReporter]
+	[CommentedCode]:
+
 Warnings:
 	[WARN] /shared/src/main/java/WebSocketMessages/userCommands/ResignCommand.java:32:5: Method duplicated from /shared/src/main/java/WebSocketMessages/userCommands/MakeMoveCommand.java:34 [DuplicateMethod]
-	[WARN] /shared/src/main/java/WebSocketMessages/userCommands/LeaveCommand.java:32:5: Method duplicated from /shared/src/main/java/WebSocketMessages/userCommands/MakeMoveCommand.java:34 [DuplicateMethod]
+	[WARN] /shared/src/main/java/WebSocketMessages/userCommands/LeaveCommand.java:35:5: Method duplicated from /shared/src/main/java/WebSocketMessages/userCommands/MakeMoveCommand.java:34 [DuplicateMethod]
 	[WARN] /shared/src/main/java/WebSocketMessages/userCommands/JoinPlayerCommand.java:40:5: Method duplicated from /shared/src/main/java/WebSocketMessages/userCommands/MakeMoveCommand.java:34 [DuplicateMethod]
-	[WARN] /shared/src/main/java/WebSocketMessages/userCommands/UserGameCommand.java:37:5: Method duplicated from /shared/src/main/java/WebSocketMessages/userCommands/MakeMoveCommand.java:34 [DuplicateMethod]
+	[WARN] /shared/src/main/java/WebSocketMessages/userCommands/UserGameCommand.java:39:5: Method duplicated from /shared/src/main/java/WebSocketMessages/userCommands/MakeMoveCommand.java:34 [DuplicateMethod]
 	[WARN] /shared/src/main/java/WebSocketMessages/userCommands/JoinObserverCommand.java:30:5: Method duplicated from /shared/src/main/java/WebSocketMessages/userCommands/MakeMoveCommand.java:34 [DuplicateMethod]
 	[WARN] /shared/src/main/java/chess/calc/QueenMovesCalc.java:119:5: Method duplicated from /shared/src/main/java/chess/calc/RookMovesCalc.java:73 [DuplicateMethod]
 	[WARN] /shared/src/main/java/chess/calc/BishopMovesCalc.java:76:5: Method duplicated from /shared/src/main/java/chess/calc/RookMovesCalc.java:73 [DuplicateMethod]
 	[WARN] /shared/src/main/java/chess/calc/KingMovesCalc.java:45:5: Method duplicated from /shared/src/main/java/chess/calc/KnightMovesCalc.java:82 [DuplicateMethod]
-	[WARN] /server/src/main/java/dataAccess/SQLGameDAO.java:155:5: Method duplicated from /server/src/main/java/dataAccess/SQLAuthDAO.java:107 [DuplicateMethod]
 	[WARN] /server/src/main/java/dataAccess/SQLUserDAO.java:103:5: Method duplicated from /server/src/main/java/dataAccess/SQLAuthDAO.java:107 [DuplicateMethod]
-	[WARN] /server/src/main/java/server/websocket/WebSocketHandler.java:97:11: TODO or FIXME comment [TodoComment]
-	[WARN] /server/src/main/java/server/websocket/WebSocketHandler.java:102:11: TODO or FIXME comment [TodoComment]
-	[WARN] /server/src/main/java/server/websocket/WebSocketHandler.java:107:11: TODO or FIXME comment [TodoComment]
-	[WARN] /server/src/main/java/server/websocket/WebSocketHandler.java:113:11: TODO or FIXME comment [TodoComment]
 	[WARN] /server/src/main/java/server/Server.java:100:5: Method duplicated from /server/src/main/java/server/HTTPServer.java:82 [DuplicateMethod]
 	[WARN] /server/src/main/java/server/Server.java:107:5: Method duplicated from /server/src/main/java/server/HTTPServer.java:89 [DuplicateMethod]
 	[WARN] /server/src/main/java/server/Server.java:121:5: Method duplicated from /server/src/main/java/server/HTTPServer.java:103 [DuplicateMethod]
 	[WARN] /server/src/main/java/server/Server.java:129:5: Method duplicated from /server/src/main/java/server/HTTPServer.java:111 [DuplicateMethod]
 	[WARN] /server/src/main/java/server/Server.java:141:5: Method duplicated from /server/src/main/java/server/HTTPServer.java:123 [DuplicateMethod]
+
+
+

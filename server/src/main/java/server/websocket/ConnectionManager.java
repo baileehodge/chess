@@ -52,16 +52,6 @@ public class ConnectionManager {
         }
     }
 
-    // tell everyone
-    public void announce(int gameID, ServerMessage notification) throws IOException {
-        String message = new Gson().toJson(notification);
+    // see CodeQualityVictims.txt for announce function
 
-        for (var c : games.entrySet()) {
-            if (c.getKey().session.isOpen()) {
-                if (c.getValue().equals(gameID)) {
-                    c.getKey().send(message);
-                }
-            }
-        }
-    }
 }

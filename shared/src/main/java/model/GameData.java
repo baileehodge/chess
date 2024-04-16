@@ -47,10 +47,6 @@ public class GameData {
         return gameName;
     }
 
-    public void setGameName(String gameName) {
-        this.gameName = gameName;
-    }
-
     public ChessGame getGame() {
         return game;
     }
