@@ -1,9 +1,6 @@
 package dataAccess;
 import model.UserData;
 
-import javax.xml.crypto.Data;
-import java.util.HashMap;
-
 public interface UserDAO {
 
     void clearUsers() throws DataAccessException;

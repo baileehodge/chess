@@ -3,7 +3,6 @@ package dataAccess;
 import model.AuthData;
 
 import java.util.HashMap;
-import java.util.UUID;
 
 public class MemoryAuthDAO implements AuthDAO{
     // each of these had @Override at one point, placed automatically by the IDE

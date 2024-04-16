@@ -4,7 +4,6 @@ import com.google.gson.Gson;
 import dataAccess.*;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketMessage;
-import org.eclipse.jetty.websocket.api.annotations.WebSocket;
 import server.websocket.WebSocketHandler;
 import service.*;
 import service.requests.JoinRecord;

@@ -39,9 +39,8 @@ public class ServerMessage {
     public boolean equals(Object o) {
         if (this == o)
             return true;
-        if (!(o instanceof ServerMessage))
+        if (!(o instanceof ServerMessage that))
             return false;
-        ServerMessage that = (ServerMessage) o;
         return getServerMessageType() == that.getServerMessageType();
     }
 

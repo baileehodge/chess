@@ -1,9 +1,6 @@
 package dataAccess;
 
-import model.AuthData;
-import model.GameData;
 import model.UserData;
-import org.eclipse.jetty.server.Authentication;
 
 import java.util.HashMap;
 

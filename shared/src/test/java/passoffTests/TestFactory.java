@@ -67,7 +67,7 @@ public class TestFactory {
     }
 
     static public void validateMoves(ChessBoard board, ChessPiece testPiece, ChessPosition startPosition, Set<ChessMove> validMoves) {
-        var pieceMoves = new HashSet<>(testPiece.pieceMoves(board, startPosition));
+        var pieceMoves = new HashSet<>(ChessPiece.pieceMoves(board, startPosition));
         Assertions.assertEquals(validMoves, pieceMoves, "Wrong moves");
     }
 

@@ -4,7 +4,6 @@ import WebSocketMessages.ResponseException;
 import WebSocketMessages.serverMessages.ErrorMessage;
 import WebSocketMessages.serverMessages.LoadGameMessage;
 import WebSocketMessages.serverMessages.NotificationMessage;
-import WebSocketMessages.serverMessages.ServerMessage;
 import chess.*;
 import model.GameData;
 import websocket.NotificationHandler;

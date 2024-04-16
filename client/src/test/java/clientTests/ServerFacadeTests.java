@@ -6,7 +6,6 @@ import model.GameData;
 import model.UserData;
 import org.junit.jupiter.api.*;
 import server.Server;
-import ui.Repl;
 import ui.ServerFacade;
 import ui.UIException;
 
@@ -16,19 +15,14 @@ import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class ServerFacadeTests {
 
-    private static Server server;
-
     private static ServerFacade serverFacade;
 
 
     @BeforeAll
-    public static void init() throws UIException {
+    public static void init() {
         // come on, come on
 
-//        Server server = new Server();
-//        server.run(8080);
-
-        server = new Server();
+        Server server = new Server();
         var port = server.run(0);
         System.out.println("Started test HTTP server on " + port);
 

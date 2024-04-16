@@ -1,7 +1,5 @@
 package WebSocketMessages.userCommands;
 
-import chess.ChessMove;
-
 import java.util.Objects;
 
 import static WebSocketMessages.userCommands.UserGameCommand.CommandType.LEAVE;
@@ -27,8 +25,12 @@ public class LeaveCommand extends UserGameCommand{
 
 
 
-    public String getAuthString() {return authToken;}
-    public CommandType getCommandType() {return this.commandType;}
+    public String getAuthString() {
+        return super.getAuthString();
+    }
+    public CommandType getCommandType() {
+        return super.getCommandType();
+    }
     public int getGameID() {return this.gameID;}
 
 
@@ -36,9 +38,8 @@ public class LeaveCommand extends UserGameCommand{
     public boolean equals(Object o) {
         if (this == o)
             return true;
-        if (!(o instanceof UserGameCommand))
+        if (!(o instanceof UserGameCommand that))
             return false;
-        UserGameCommand that = (UserGameCommand) o;
         return getCommandType() == that.getCommandType() && Objects.equals(getAuthString(), that.getAuthString());
     }
 

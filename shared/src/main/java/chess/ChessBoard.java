@@ -14,7 +14,7 @@ import static chess.ChessPiece.PieceType.*;
  */
 public class ChessBoard {
 
-    private ChessPiece[][] squares = new ChessPiece[8][8];
+    private final ChessPiece[][] squares;
 
     public ChessBoard() {
         squares = new ChessPiece[8][8];
@@ -146,7 +146,7 @@ public class ChessBoard {
         for (ChessPiece[] square : squares) {
             for (ChessPiece piece : square) {
                 if (piece != null) {
-                    sb.append(piece.toString());
+                    sb.append(piece);
                 } else {
                     sb.append("-");
                 }

@@ -27,8 +27,6 @@ public class DrawBoard {
     public static void main(String[] args) {
         ChessBoard board = new ChessBoard();
         board.resetBoard();
-//        run(board, BLACK);
-//        run(board, WHITE);
         drawBoard(board, null);
 
     }

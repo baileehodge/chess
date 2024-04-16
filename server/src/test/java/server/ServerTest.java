@@ -7,8 +7,6 @@ import org.junit.jupiter.api.Test;
 import service.*;
 import service.requests.JoinRecord;
 
-import java.security.Provider;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 class ServerTest {
@@ -23,11 +21,11 @@ class ServerTest {
 
     public ClearService clearService = new ClearService(userDAO,authDAO,gameDAO);
 
-    ServerTest() throws DataAccessException {
+    ServerTest() {
     }
 
     @BeforeEach
-    public void clearAll() throws ServiceException, DataAccessException {
+    public void clearAll() throws DataAccessException {
         clearService.clearAll();
     }
     @Test
@@ -68,7 +66,7 @@ class ServerTest {
         assertEquals("Error: unauthorized", exception.getMessage());    }
 
     @Test
-    void createGameSuccess() throws DataAccessException, ServiceException {
+    void createGameSuccess() throws DataAccessException {
         // create a game with no errors thrown
         String auth = authService.createAuth("user").getAuthToken();
         assertDoesNotThrow(() -> {
@@ -171,16 +169,16 @@ class ServerTest {
         String auth = authService.createAuth(userData.getUsername()).getAuthToken();
         // get the auth token without throwing an error
         assertDoesNotThrow(() -> {
-            authService.getAuth(auth);
+            AuthService.getAuth(auth);
         });
 
     }
 
     @Test
-    void getAuthFail() throws DataAccessException, ServiceException {
+    void getAuthFail() {
         // don't create an auth token
         // try to get the auth token and expect it to throw an error
-        ServiceException exception = assertThrows(ServiceException.class, () -> authService.getAuth("beef"));
+        ServiceException exception = assertThrows(ServiceException.class, () -> AuthService.getAuth("beef"));
         assertEquals("Error: bad request", exception.getMessage());
 
     }

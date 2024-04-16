@@ -1,13 +1,11 @@
 package dataAccess;
 
-import model.AuthData;
-import model.GameData;
 import model.UserData;
 
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static java.sql.Statement.RETURN_GENERATED_KEYS;
 import static java.sql.Types.NULL;
 
 public class SQLUserDAO implements UserDAO {
@@ -77,16 +75,7 @@ public class SQLUserDAO implements UserDAO {
     private UserData returnExecute(String statement, Object... params) throws DataAccessException {
         try (var conn = DatabaseManager.getConnection()) {
             try (var ps = conn.prepareStatement(statement)) {
-                for (var i = 0; i < params.length; i++) {
-                    var paramU = params[i];
-                    switch (paramU) {
-                        case String p -> ps.setString(i + 1, p);
-                        case Integer p -> ps.setInt(i + 1, p);
-                        case null -> ps.setNull(i + 1, NULL);
-                        default -> {
-                        }
-                    }
-                }
+                executeHelper(params, ps);
                 ResultSet rs = ps.executeQuery();
                 if (rs.next()) {
                     String username = rs.getString("username");
@@ -100,19 +89,24 @@ public class SQLUserDAO implements UserDAO {
         }
         return null;
     }
+
+    private static void executeHelper(Object[] params, PreparedStatement ps) throws SQLException {
+        for (var i = 0; i < params.length; i++) {
+            var paramU = params[i];
+            switch (paramU) {
+                case String p -> ps.setString(i + 1, p);
+                case Integer p -> ps.setInt(i + 1, p);
+                case null -> ps.setNull(i + 1, NULL);
+                default -> {
+                }
+            }
+        }
+    }
+
     private void voidExecute(String statement, Object... params) throws DataAccessException {
         try (var conn = DatabaseManager.getConnection()) {
             try (var ps = conn.prepareStatement(statement)) {
-                for (var i = 0; i < params.length; i++) {
-                    var paramU = params[i];
-                    switch (paramU) {
-                        case String p -> ps.setString(i + 1, p);
-                        case Integer p -> ps.setInt(i + 1, p);
-                        case null -> ps.setNull(i + 1, NULL);
-                        default -> {
-                        }
-                    }
-                }
+                executeHelper(params, ps);
                 ps.executeUpdate();
 
             }

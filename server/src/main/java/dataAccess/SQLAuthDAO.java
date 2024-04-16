@@ -82,16 +82,7 @@ public class SQLAuthDAO implements AuthDAO{
     private AuthData returnExecute(String statement, Object... params) throws DataAccessException {
         try (var conn = DatabaseManager.getConnection()) {
             try (var ps = conn.prepareStatement(statement)) {
-                for (var i = 0; i < params.length; i++) {
-                    var paramA = params[i];
-                    switch (paramA) {
-                        case String p -> ps.setString(i + 1, p);
-                        case Integer p -> ps.setInt(i + 1, p);
-                        case null -> ps.setNull(i + 1, NULL);
-                        default -> {
-                        }
-                    }
-                }
+                executeHelper(params, ps);
                 ResultSet rs = ps.executeQuery();
                 if (rs.next()) {
                     String authToken = rs.getString("auth");
@@ -104,19 +95,24 @@ public class SQLAuthDAO implements AuthDAO{
         }
         return null;
     }
+
+    private static void executeHelper(Object[] params, PreparedStatement ps) throws SQLException {
+        for (var i = 0; i < params.length; i++) {
+            var paramA = params[i];
+            switch (paramA) {
+                case String p -> ps.setString(i + 1, p);
+                case Integer p -> ps.setInt(i + 1, p);
+                case null -> ps.setNull(i + 1, NULL);
+                default -> {
+                }
+            }
+        }
+    }
+
     private void voidExecute(String statement, Object... params) throws DataAccessException {
         try (var conn = DatabaseManager.getConnection()) {
             try (var ps = conn.prepareStatement(statement)) {
-                for (var i = 0; i < params.length; i++) {
-                    var paramA = params[i];
-                    switch (paramA) {
-                        case String p -> ps.setString(i + 1, p);
-                        case Integer p -> ps.setInt(i + 1, p);
-                        case null -> ps.setNull(i + 1, NULL);
-                        default -> {
-                        }
-                    }
-                }
+                executeHelper(params, ps);
                 ps.executeUpdate();
             }
         } catch (SQLException e) {

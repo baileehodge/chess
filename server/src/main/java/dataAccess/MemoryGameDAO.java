@@ -1,16 +1,9 @@
 package dataAccess;
 
-import chess.ChessGame;
-import model.AuthData;
 import model.GameData;
-import model.UserData;
 
 import java.util.Collection;
 import java.util.HashMap;
-import java.util.Map;
-import java.util.Random;
-
-import static java.lang.Math.random;
 
 public class MemoryGameDAO implements GameDAO{
 
@@ -36,18 +29,17 @@ public class MemoryGameDAO implements GameDAO{
         return games.get(gameID);
     }
 
-    public GameData updateGame(GameData game) {
+    public void updateGame(GameData game) {
         games.put(game.getGameID(), game);
-        return game;
     }
 
     @Override
-    public String getWhiteUsername(int gameID) throws DataAccessException {
+    public String getWhiteUsername(int gameID) {
         return null;
     }
 
     @Override
-    public String getBlackUsername(int gameID) throws DataAccessException {
+    public String getBlackUsername(int gameID) {
         return null;
     }
 }

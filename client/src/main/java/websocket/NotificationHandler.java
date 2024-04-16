@@ -3,9 +3,6 @@ package websocket;
 import WebSocketMessages.serverMessages.ErrorMessage;
 import WebSocketMessages.serverMessages.LoadGameMessage;
 import WebSocketMessages.serverMessages.NotificationMessage;
-import WebSocketMessages.serverMessages.ServerMessage;
-
-import javax.management.Notification;
 
 public interface NotificationHandler {
 

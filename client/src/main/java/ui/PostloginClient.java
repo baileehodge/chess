@@ -20,7 +20,7 @@ public class PostloginClient {
     public PostloginClient(String serverUrl) {
 
         serverFacade = new ServerFacade(serverUrl);
-        this.serverUrl = serverUrl;
+        PostloginClient.serverUrl = serverUrl;
     }
 
     public static String eval(String input) {
@@ -74,7 +74,7 @@ public class PostloginClient {
         StringBuilder returnString = new StringBuilder();
         returnString.append("---All games--- \n");
         for (int i = 0; i < list.length; i++) {
-            returnString.append(list[i].getGameID() +": ");
+            returnString.append(list[i].getGameID()).append(": ");
             returnString.append(list[i].getGameName());
             returnString.append("\n");
         }

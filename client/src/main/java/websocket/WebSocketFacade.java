@@ -9,7 +9,6 @@ import WebSocketMessages.userCommands.*;
 import chess.*;
 import com.google.gson.Gson;
 
-import javax.management.Notification;
 import javax.websocket.*;
 import java.io.IOException;
 import java.net.URI;

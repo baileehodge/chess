@@ -1,22 +1,16 @@
 package dataAccessTests;
 
 import chess.ChessGame;
-import dataAccess.DataAccessException;
-import dataAccess.SQLAuthDAO;
-import dataAccess.SQLGameDAO;
-import dataAccess.SQLUserDAO;
 import model.AuthData;
 import model.GameData;
 import model.UserData;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import service.*;
-import service.requests.JoinRecord;
 
 import dataAccess.*;
 
 import static org.junit.jupiter.api.Assertions.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class SQLUserDAOTest {
     public SQLGameDAO gameDAO = new SQLGameDAO();
@@ -30,11 +24,11 @@ class SQLUserDAOTest {
 
     public ClearService clearService = new ClearService(userDAO,authDAO,gameDAO);
 
-    SQLUserDAOTest() throws DataAccessException {
+    SQLUserDAOTest() {
     }
 
     @BeforeEach
-    public void clearAll() throws ServiceException, DataAccessException {
+    public void clearAll() throws DataAccessException {
         clearService.clearAll();
     }
 
@@ -51,7 +45,7 @@ class SQLUserDAOTest {
 
 // createAuth()
     @Test
-    void createAuthPass() throws DataAccessException {
+    void createAuthPass() {
         AuthData authData = new AuthData("user", "1234");
         assertDoesNotThrow(() -> {
             authDAO.createAuth(authData);
@@ -128,7 +122,7 @@ class SQLUserDAOTest {
     }
 // createUser()
     @Test
-    void createUserPass() throws DataAccessException {
+    void createUserPass() {
         UserData userData = new UserData("user","pass","email@email");
         assertDoesNotThrow(() -> {
             userDAO.createUser(userData);

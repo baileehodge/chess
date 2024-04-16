@@ -1,12 +1,9 @@
 package ui;
 
 import WebSocketMessages.ResponseException;
-import WebSocketMessages.serverMessages.ServerMessage;
 import chess.ChessGame;
 import model.GameData;
-import websocket.NotificationHandler;
 
-import javax.management.Notification;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Scanner;
@@ -14,13 +11,10 @@ import java.util.Scanner;
 import static ui.EscapeSequences.*;
 
 public class Repl {
-    private final PreloginClient preloginClient;
-    private final PostloginClient postloginClient;
-    private final GameplayClient gameplayClient;
     private static State state = State.SIGNEDOUT;
     private static String authToken = "";
     private static ChessGame.TeamColor role;
-    private static Collection<GameData> gameList = new ArrayList<>();
+    private static final Collection<GameData> gameList = new ArrayList<>();
 
 
 
@@ -47,10 +41,10 @@ public class Repl {
     }
 
 
-    public Repl(String serverUrl) throws ResponseException {
-        preloginClient = new PreloginClient(serverUrl);
-        postloginClient = new PostloginClient(serverUrl);
-        gameplayClient = new GameplayClient(serverUrl);
+    public Repl(String serverUrl) {
+        PreloginClient preloginClient = new PreloginClient(serverUrl);
+        PostloginClient postloginClient = new PostloginClient(serverUrl);
+        GameplayClient gameplayClient = new GameplayClient(serverUrl);
     }
 
     public void run() {

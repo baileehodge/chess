@@ -40,9 +40,8 @@ public class UserGameCommand {
     public boolean equals(Object o) {
         if (this == o)
             return true;
-        if (!(o instanceof UserGameCommand))
+        if (!(o instanceof UserGameCommand that))
             return false;
-        UserGameCommand that = (UserGameCommand) o;
         return getCommandType() == that.getCommandType() && Objects.equals(getAuthString(), that.getAuthString());
     }
 

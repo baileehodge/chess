@@ -2,9 +2,7 @@ package server.websocket;
 
 import WebSocketMessages.serverMessages.LoadGameMessage;
 import WebSocketMessages.serverMessages.NotificationMessage;
-import WebSocketMessages.serverMessages.ServerMessage;
 import WebSocketMessages.userCommands.*;
-import chess.ChessBoard;
 import chess.ChessGame;
 import chess.ChessMove;
 import chess.InvalidMoveException;
@@ -23,7 +21,6 @@ import java.io.PrintStream;
 import java.nio.charset.StandardCharsets;
 
 import static service.AuthService.getAuth;
-import static service.GameService.verifyGame;
 import static service.GameService.*;
 
 
@@ -94,9 +91,9 @@ public class WebSocketHandler {
 
         // notify
         String playerName = getAuth(command.getAuthString()).getUsername();
-        connections.gossip(playerName, new NotificationMessage(playerName + " made the following move: " + move.toString() +"\n"));
+        connections.gossip(playerName, new NotificationMessage(playerName + " made the following move: " + move +"\n"));
 
-        NotificationMessage notificationMessage = new NotificationMessage("You made the following move: " + move.toString() +"\n");
+        NotificationMessage notificationMessage = new NotificationMessage("You made the following move: " + move +"\n");
         session.getRemote().sendString(new Gson().toJson(notificationMessage));
     }
 

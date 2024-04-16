@@ -5,7 +5,6 @@ import model.*;
 
 import java.io.*;
 import java.net.*;
-import java.util.Collection;
 
 public class ServerFacade {
 

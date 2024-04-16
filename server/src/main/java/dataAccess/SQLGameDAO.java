@@ -100,7 +100,7 @@ public class SQLGameDAO implements GameDAO{
         return returnExecute(statement, gameID);
     }
 
-    public GameData updateGame(GameData game) throws DataAccessException {
+    public void updateGame(GameData game) throws DataAccessException {
         if (game.getGameID() < 0) {
             throw new DataAccessException("negative gameID");
         }
@@ -109,7 +109,6 @@ public class SQLGameDAO implements GameDAO{
 
         var statement = "UPDATE games SET id=?, gameName=?, whiteUsername=?, blackUsername=?, gameObject=? WHERE id=?";
         voidExecute(statement, game.getGameID(), game.getGameName(), game.getWhiteUsername(), game.getBlackUsername(),gameString,game.getGameID());
-        return game;
     }
 
     public String getWhiteUsername(int gameID) throws DataAccessException {

@@ -11,7 +11,7 @@ public class AuthService {
     private static AuthDAO dataAccess = null;
 
     public AuthService(AuthDAO dataAccess) {
-        this.dataAccess = dataAccess;
+        AuthService.dataAccess = dataAccess;
     }
 
     public AuthData createAuth(String username) throws DataAccessException {

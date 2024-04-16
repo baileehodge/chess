@@ -1,8 +1,6 @@
 package dataAccess;
 import model.AuthData;
 
-import java.util.HashMap;
-
 public interface AuthDAO {
 
     void clearAuths() throws DataAccessException;

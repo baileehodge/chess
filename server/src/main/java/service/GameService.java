@@ -18,7 +18,7 @@ public class GameService {
 
     public GameService(GameDAO gameAccess, AuthDAO authAccess) {
         
-        this.gameAccess = gameAccess;
+        GameService.gameAccess = gameAccess;
         this.authAccess = authAccess;
     }
 

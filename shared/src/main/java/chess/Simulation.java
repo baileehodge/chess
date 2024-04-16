@@ -65,7 +65,7 @@ public class Simulation {
     }
 
     private static boolean simulateMove(ChessBoard board, ChessPosition enemyPosition, ChessPosition kingPosition) {
-        Collection<ChessMove> moves = new ArrayList<>();
+        Collection<ChessMove> moves;
 
         // look at all the moves it can make
         moves = PieceMovesCalc.pieceMoves(board, enemyPosition);

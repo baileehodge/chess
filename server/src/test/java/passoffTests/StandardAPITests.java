@@ -79,7 +79,7 @@ public class StandardAPITests {
     @Test
     @Order(1)
     @DisplayName("Static Files")
-    public void staticFiles() throws Exception {
+    public void staticFiles() {
         String htmlFromServer = serverFacade.file("/").replaceAll("\r", "");
         Assertions.assertEquals(HttpURLConnection.HTTP_OK, serverFacade.getStatusCode(),
                 "Server response code was not 200 OK");
