@@ -14,3 +14,5 @@ public interface NotificationHandler {
     void loadGame(LoadGameMessage notification);
     void error(ErrorMessage notification);
 }
+
+

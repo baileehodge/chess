@@ -4,6 +4,8 @@ import chess.ChessMove;
 
 import java.util.Objects;
 
+import static WebSocketMessages.userCommands.UserGameCommand.CommandType.LEAVE;
+
 /**
  * Represents a command a user can send the server over a websocket
  *
@@ -15,9 +17,10 @@ public class LeaveCommand extends UserGameCommand{
 
 
     public LeaveCommand(String authToken, int gameID) {
-        super(authToken);
+        super(authToken, LEAVE);
         this.authToken = authToken;
         this.gameID = gameID;
+        this.commandType = LEAVE;
     }
 
 

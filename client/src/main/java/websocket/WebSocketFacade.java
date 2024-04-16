@@ -1,7 +1,9 @@
 package websocket;
 
 import WebSocketMessages.ResponseException;
+import WebSocketMessages.serverMessages.ErrorMessage;
 import WebSocketMessages.serverMessages.LoadGameMessage;
+import WebSocketMessages.serverMessages.NotificationMessage;
 import WebSocketMessages.serverMessages.ServerMessage;
 import WebSocketMessages.userCommands.*;
 import chess.*;
@@ -34,24 +36,23 @@ public class WebSocketFacade extends Endpoint {
 
                     switch(newMessage.getServerMessageType()) {
                         case NOTIFICATION: {
-                            Notification messageOut = new Gson().fromJson(message, Notification.class);
-                            System.out.println(messageOut.getMessage());
+                            NotificationMessage messageOut = new Gson().fromJson(message, NotificationMessage.class);
 
-                            // katie suggestion: move that ^^ to notification handler and add this vv
-                            //notificationHandler.notify(messageOut);
+                            notificationHandler.notify(messageOut);
 
-                            // etc. for other cases
 
                         }
                         case ERROR: {
-                            Error messageOut = new Gson().fromJson(message, Error.class);
-                            System.out.println(messageOut.getMessage());
+                            ErrorMessage messageOut = new Gson().fromJson(message, ErrorMessage.class);
+                            notificationHandler.error(messageOut);
                         }
                         case LOAD_GAME: {
-                            LoadGameMessage gameMessage = new Gson().fromJson(message, LoadGameMessage.class);
-                            ChessBoard gameBoard = gameMessage.getGame().getBoard();
-                            ChessGame.TeamColor color = gameMessage.getColor();
+                            LoadGameMessage messageOut = new Gson().fromJson(message, LoadGameMessage.class);
+                            ChessBoard gameBoard = messageOut.getGame().getBoard();
+                            ChessGame.TeamColor color = messageOut.getColor();
                             drawBoard(gameBoard, color);
+
+                            notificationHandler.loadGame(messageOut);
                         }
                     }
                 }

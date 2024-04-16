@@ -194,16 +194,18 @@ public class GameplayClient implements NotificationHandler{
 
     @Override
     public void notify(NotificationMessage notification) {
+        System.out.println(notification.getMessage());
 
     }
 
     @Override
     public void loadGame(LoadGameMessage notification) {
+        System.out.println(notification.getServerMessageText());
 
     }
 
     @Override
     public void error(ErrorMessage notification) {
-
+        System.out.println(notification.getErrorMessage());
     }
 }

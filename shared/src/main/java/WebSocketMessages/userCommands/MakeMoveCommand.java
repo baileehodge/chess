@@ -15,7 +15,7 @@ import static WebSocketMessages.userCommands.UserGameCommand.CommandType.MAKE_MO
 public class MakeMoveCommand extends UserGameCommand{
 
     public MakeMoveCommand(String authToken, int gameID, ChessMove move) {
-        super(authToken);
+        super(authToken, MAKE_MOVE);
         this.authToken = authToken;
         this.commandType = MAKE_MOVE;
         this.gameID = gameID;

@@ -13,7 +13,7 @@ import java.util.Scanner;
 
 import static ui.EscapeSequences.*;
 
-public class Repl implements NotificationHandler {
+public class Repl {
     private final PreloginClient preloginClient;
     private final PostloginClient postloginClient;
     private final GameplayClient gameplayClient;
@@ -26,12 +26,7 @@ public class Repl implements NotificationHandler {
 
 
 
-    @Override
-    public void notify(ServerMessage notification) {
-        System.out.println(SET_TEXT_COLOR_RED + notification.getServerMessageText());
-        printPrompt();
 
-    }
 
 
     public enum State {

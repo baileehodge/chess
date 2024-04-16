@@ -6,13 +6,13 @@ import static WebSocketMessages.serverMessages.ServerMessage.ServerMessageType.*
 
 public class LoadGameMessage extends ServerMessage{
     ChessGame game;
-    ChessGame.TeamColor teamColor;
+    ChessGame.TeamColor playerColor;
 
-    public LoadGameMessage(ChessGame game, ChessGame.TeamColor color) {
+    public LoadGameMessage(ChessGame game, ChessGame.TeamColor playerColor) {
         super(LOAD_GAME);
         serverMessageType = LOAD_GAME;
         this.game = game;
-        teamColor = color;
+        this.playerColor = playerColor;
     }
 
     public LoadGameMessage(ChessGame game) {
@@ -20,11 +20,11 @@ public class LoadGameMessage extends ServerMessage{
     }
 
     public ChessGame.TeamColor getColor() {
-        return teamColor;
+        return playerColor;
     }
 
     public void setColor(ChessGame.TeamColor currentUser) {
-        this.teamColor = currentUser;
+        this.playerColor = currentUser;
     }
 
     public ChessGame getGame() {

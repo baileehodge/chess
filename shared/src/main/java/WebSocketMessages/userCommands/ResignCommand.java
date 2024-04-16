@@ -15,7 +15,7 @@ import static WebSocketMessages.userCommands.UserGameCommand.CommandType.RESIGN;
 public class ResignCommand extends UserGameCommand {
 
     public ResignCommand(String authToken, int gameID) {
-        super(authToken);
+        super(authToken, RESIGN);
         this.authToken = authToken;
         this.commandType = RESIGN;
         this.gameID = gameID;

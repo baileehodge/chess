@@ -59,7 +59,7 @@ public class WebSocketHandler {
         // if (!gameVerification(session, gameID, command.getAuthString())) return;
 
         connections.add(playerName, session, gameID);
-        connections.gossip(playerName, new NotificationMessage(playerName + " just joined the game."));
+        connections.gossip(playerName, new NotificationMessage(playerName + " just joined the game as the " + color + " team."));
 
         LoadGameMessage loadGameMessage = new LoadGameMessage(game, color);
         session.getRemote().sendString(new Gson().toJson(loadGameMessage));

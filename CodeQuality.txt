@@ -1,8 +1,8 @@
 Results
 Naming:
 	[MethodName]:
-		[ERROR] /shared/src/main/java/WebSocketMessages/ResponseException.java:11:16: Method name 'StatusCode' must match pattern '^[a-z][a-zA-Z0-9]*$' (lowerCamelCase). [MethodName]
-		[ERROR] /client/src/main/java/ui/UIException.java:12:16: Method name 'StatusCode' must match pattern '^[a-z][a-zA-Z0-9]*$' (lowerCamelCase). [MethodName]
+		X [ERROR] /shared/src/main/java/WebSocketMessages/ResponseException.java:11:16: Method name 'StatusCode' must match pattern '^[a-z][a-zA-Z0-9]*$' (lowerCamelCase). [MethodName]
+		X [ERROR] /client/src/main/java/ui/UIException.java:12:16: Method name 'StatusCode' must match pattern '^[a-z][a-zA-Z0-9]*$' (lowerCamelCase). [MethodName]
 	[ClassTypeParameterName]:
 		[ERROR] /shared/src/main/java/chess/PieceMovesCalc.java:7:29: Class type name 'board' must match pattern '^[A-Z]$' (A single letter, like T). [ClassTypeParameterName]
 		[ERROR] /shared/src/main/java/chess/PieceMovesCalc.java:7:36: Class type name 'position' must match pattern '^[A-Z]$' (A single letter, like T). [ClassTypeParameterName]

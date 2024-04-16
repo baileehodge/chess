@@ -15,23 +15,23 @@ import static WebSocketMessages.userCommands.UserGameCommand.CommandType.JOIN_PL
  */
 public class JoinPlayerCommand extends UserGameCommand{
 
-    public JoinPlayerCommand(String authToken, int gameID, ChessGame.TeamColor color) {
-        super(authToken);
+    public JoinPlayerCommand(String authToken, int gameID, ChessGame.TeamColor playerColor) {
+        super(authToken, JOIN_PLAYER);
         this.authToken = authToken;
         this.commandType = JOIN_PLAYER;
         this.gameID = gameID;
-        this.color = color;
+        this.playerColor = playerColor;
     }
 
 
     private final int gameID;
-    private final ChessGame.TeamColor color;
+    private final ChessGame.TeamColor playerColor;
 
 
     public String getAuthString() {return authToken;}
     public CommandType getCommandType() {return this.commandType;}
     public int getGameID() {return this.gameID;}
-    public ChessGame.TeamColor getColor() {return color;}
+    public ChessGame.TeamColor getColor() {return playerColor;}
 
     public void setCommandType(CommandType commandType) {
         this.commandType = commandType;
