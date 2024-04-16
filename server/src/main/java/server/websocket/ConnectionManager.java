@@ -18,6 +18,7 @@ public class ConnectionManager {
         connections.put(visitorName, connection);
 
         // should I make gameID an Integer before I add it to the hash map?
+        // tried it and intelliJ said it was redundant
         games.put(connection, gameID);
     }
 

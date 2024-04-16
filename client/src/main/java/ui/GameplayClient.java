@@ -1,6 +1,10 @@
 package ui;
 
 import WebSocketMessages.ResponseException;
+import WebSocketMessages.serverMessages.ErrorMessage;
+import WebSocketMessages.serverMessages.LoadGameMessage;
+import WebSocketMessages.serverMessages.NotificationMessage;
+import WebSocketMessages.serverMessages.ServerMessage;
 import chess.*;
 import model.GameData;
 import websocket.NotificationHandler;
@@ -13,7 +17,7 @@ import static ui.DrawBoard.drawBoard;
 import static ui.Repl.getRole;
 import static ui.Repl.getToken;
 
-public class GameplayClient {
+public class GameplayClient implements NotificationHandler{
 
     static ServerFacade serverFacade;
     static int gameID;
@@ -83,7 +87,7 @@ public class GameplayClient {
             }
         }
         if (board == null){
-            throw new UIException(500, "you're not real");
+            throw new UIException(500, "The game no longer exists");
         }
 
 
@@ -127,6 +131,8 @@ public class GameplayClient {
             case "d" -> 4;
             case "e" -> 5;
             case "f" -> 6;
+            case "g" -> 7;
+            case "h" -> 8;
             default -> 0;
         };
     }
@@ -138,6 +144,8 @@ public class GameplayClient {
             case 4 -> "d";
             case 5 -> "e";
             case 6 -> "f";
+            case 7 -> "g";
+            case 8 -> "h";
             default -> "q";
         };
     }
@@ -181,5 +189,21 @@ public class GameplayClient {
         board.resetBoard();
         drawBoard(board, null);
         return "\n";
+    }
+
+
+    @Override
+    public void notify(NotificationMessage notification) {
+
+    }
+
+    @Override
+    public void loadGame(LoadGameMessage notification) {
+
+    }
+
+    @Override
+    public void error(ErrorMessage notification) {
+
     }
 }

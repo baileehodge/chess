@@ -36,13 +36,18 @@ public class WebSocketFacade extends Endpoint {
                         case NOTIFICATION: {
                             Notification messageOut = new Gson().fromJson(message, Notification.class);
                             System.out.println(messageOut.getMessage());
+
+                            // katie suggestion: move that ^^ to notification handler and add this vv
+                            //notificationHandler.notify(messageOut);
+
+                            // etc. for other cases
+
                         }
                         case ERROR: {
                             Error messageOut = new Gson().fromJson(message, Error.class);
                             System.out.println(messageOut.getMessage());
                         }
                         case LOAD_GAME: {
-                            // does it work if I print the ChessBoard from here?
                             LoadGameMessage gameMessage = new Gson().fromJson(message, LoadGameMessage.class);
                             ChessBoard gameBoard = gameMessage.getGame().getBoard();
                             ChessGame.TeamColor color = gameMessage.getColor();

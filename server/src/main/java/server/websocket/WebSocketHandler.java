@@ -10,6 +10,8 @@ import chess.ChessMove;
 import chess.InvalidMoveException;
 import com.google.gson.Gson;
 import dataAccess.DataAccessException;
+import dataAccess.GameDAO;
+import model.GameData;
 import org.eclipse.jetty.websocket.api.Session;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketError;
 import org.eclipse.jetty.websocket.api.annotations.OnWebSocketMessage;
@@ -30,6 +32,7 @@ public class WebSocketHandler {
     //
 
     ConnectionManager connections = new ConnectionManager();
+    private static GameDAO gameAccess;
     @OnWebSocketMessage
     public void onMessage(Session session, String message) throws Exception {
         UserGameCommand command = new Gson().fromJson(message, UserGameCommand.class);
@@ -95,11 +98,18 @@ public class WebSocketHandler {
     }
 
     void makeMove(MakeMoveCommand command, Session session) throws DataAccessException, InvalidMoveException, ServiceException, IOException {
-
         ChessGame game = getGame(command.getGameID());
         ChessMove move = command.getMove();
+
+        // move
         game.makeMove(move);
 
+        // update db
+        GameData gameData = gameAccess.getGame(command.getGameID());
+        gameData.setGame(game);
+        gameAccess.updateGame(gameData);
+
+        // notify
         String playerName = getAuth(command.getAuthString()).getUsername();
         connections.gossip(playerName, new NotificationMessage(playerName + " made the following move: " + move.toString() +"\n"));
 
