@@ -14,8 +14,8 @@ import static chess.Simulation.kingSafe;
  * signature of the existing methods.
  */
 public class ChessGame {
-    static ChessBoard board;
-    static TeamColor turn;
+    ChessBoard board;
+    TeamColor turn;
 
     public ChessGame() {
         board = new ChessBoard();

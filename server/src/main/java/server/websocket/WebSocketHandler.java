@@ -52,7 +52,14 @@ public class WebSocketHandler {
         ChessGame game = getGame(gameID);
         ChessGame.TeamColor color = command.getColor();
 
-        // verify game?
+        // verify
+
+        // conditions:
+        // wrong team
+        // empty team
+        // bad game ID
+        // bad auth token
+
 
         connections.add(playerName, session, gameID);
         connections.gossip(playerName, new NotificationMessage(playerName + " just joined the game as the " + color + " team."));
@@ -66,7 +73,11 @@ public class WebSocketHandler {
         int gameID = command.getGameID();
         ChessGame game = getGame(gameID);
 
-        // verify game?
+        // verify
+
+        // conditions:
+        // bad game ID
+        // bad auth token
 
         connections.add(playerName, session, gameID);
         connections.gossip(playerName, new NotificationMessage(playerName + " just joined the game as an observer."));
@@ -80,6 +91,16 @@ public class WebSocketHandler {
     void makeMove(MakeMoveCommand command, Session session) throws DataAccessException, InvalidMoveException, ServiceException, IOException {
         ChessGame game = getGame(command.getGameID());
         ChessMove move = command.getMove();
+
+        // verify
+
+        // conditions:
+        // invalid move
+        // wrong turn
+        // move for opponent
+        // move by observer
+        // game over
+        // after resign
 
         // move
         game.makeMove(move);
@@ -110,6 +131,12 @@ public class WebSocketHandler {
 
     void resign(ResignCommand command, Session session) throws ServiceException, IOException, DataAccessException {
         String playerName = getAuth(command.getAuthString()).getUsername();
+
+        // verify
+
+        // conditions:
+        // observer resign
+        // double resign
 
         LeaveCommand leave = new LeaveCommand(command.getAuthString(), command.getGameID());
         JoinObserverCommand join = new JoinObserverCommand(command.getAuthString(), command.getGameID());

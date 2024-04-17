@@ -13,8 +13,11 @@ import static WebSocketMessages.userCommands.UserGameCommand.CommandType.JOIN_PL
  * methods.
  */
 public class JoinPlayerCommand extends UserGameCommand{
+    private final Integer gameID;
+    private final ChessGame.TeamColor playerColor;
 
-    public JoinPlayerCommand(String authToken, int gameID, ChessGame.TeamColor playerColor) {
+
+    public JoinPlayerCommand(String authToken, Integer gameID, ChessGame.TeamColor playerColor) {
         super(authToken, JOIN_PLAYER);
         this.authToken = authToken;
         this.commandType = JOIN_PLAYER;
@@ -23,17 +26,13 @@ public class JoinPlayerCommand extends UserGameCommand{
     }
 
 
-    private final int gameID;
-    private final ChessGame.TeamColor playerColor;
-
-
     public String getAuthString() {
         return super.getAuthString();
     }
     public CommandType getCommandType() {
         return super.getCommandType();
     }
-    public int getGameID() {return this.gameID;}
+    public Integer getGameID() {return this.gameID;}
     public ChessGame.TeamColor getColor() {return playerColor;}
 
 

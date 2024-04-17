@@ -1,7 +1,9 @@
 package server.websocket;
 
 import WebSocketMessages.serverMessages.ServerMessage;
+import com.google.gson.Gson;
 import org.eclipse.jetty.websocket.api.Session;
+import service.GameService;
 
 import java.io.IOException;
 import java.util.ArrayList;
@@ -31,6 +33,7 @@ public class ConnectionManager {
         }
 
     }
+    // NOTE: Check the specs for variable naming
 
     // It's called gossip because it notifies all the users except for one lol
     public void gossip(String excludeVisitorName, ServerMessage notification) throws IOException {
@@ -38,7 +41,7 @@ public class ConnectionManager {
         for (var c : connections.values()) {
             if (c.session.isOpen()) {
                 if (!c.visitorName.equals(excludeVisitorName)) {
-                    c.send(notification.toString());
+                    c.send(new Gson().toJson(notification));
                 }
             } else {
                 removeList.add(c);

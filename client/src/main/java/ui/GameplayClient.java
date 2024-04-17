@@ -178,7 +178,7 @@ public class GameplayClient implements NotificationHandler{
 
     @Override
     public void loadGame(LoadGameMessage notification) {
-        System.out.println(notification.getServerMessageText());
+        System.out.println("LoadGameMessage received");
 
     }
 

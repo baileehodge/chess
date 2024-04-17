@@ -11,10 +11,10 @@ import static WebSocketMessages.userCommands.UserGameCommand.CommandType.LEAVE;
  * methods.
  */
 public class LeaveCommand extends UserGameCommand{
-    private final int gameID;
+    private final Integer gameID;
 
 
-    public LeaveCommand(String authToken, int gameID) {
+    public LeaveCommand(String authToken, Integer gameID) {
         super(authToken, LEAVE);
         this.authToken = authToken;
         this.gameID = gameID;
@@ -31,7 +31,7 @@ public class LeaveCommand extends UserGameCommand{
     public CommandType getCommandType() {
         return super.getCommandType();
     }
-    public int getGameID() {return this.gameID;}
+    public Integer getGameID() {return this.gameID;}
 
 
     @Override

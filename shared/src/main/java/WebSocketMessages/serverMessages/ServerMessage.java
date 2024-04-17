@@ -11,8 +11,6 @@ import java.util.Objects;
 public class ServerMessage {
     ServerMessageType serverMessageType;
 
-    String serverMessageText = "no message to display";
-
 
     public enum ServerMessageType {
         LOAD_GAME,
@@ -22,13 +20,6 @@ public class ServerMessage {
 
     public ServerMessage(ServerMessageType type) {
         this.serverMessageType = type;
-    }
-
-    public void setServerMessageText(String message) {
-        serverMessageText = message;
-    }
-    public String getServerMessageText() {
-        return serverMessageText;
     }
 
     public ServerMessageType getServerMessageType() {

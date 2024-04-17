@@ -7,37 +7,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="cleanup: unused methods and commented code">
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/DrawBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/DrawBoard.java" afterDir="false" />
+    <list default="true" id="e2127a23-f6c5-4361-9314-19f7fd19bf87" name="Changes" comment="code cleanup as suggested by the IDE. Still passes PersistenceTests">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CodeQuality.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CodeQuality.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/GameplayClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/Repl.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/Repl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/ServerFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/ui/UIException.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/ui/UIException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/main/java/websocket/NotificationHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/websocket/NotificationHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/client/src/main/java/websocket/WebSocketFacade.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/main/java/websocket/WebSocketFacade.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/client/src/test/java/clientTests/ServerFacadeTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/test/java/clientTests/ServerFacadeTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/AuthDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/GameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/GameDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryAuthDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryAuthDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryGameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryGameDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/MemoryUserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLAuthDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLAuthDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLGameDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLGameDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLUserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/SQLUserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/dataAccess/UserDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/dataAccess/UserDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/server/Server.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/Server.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/websocket/ConnectionManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/websocket/ConnectionManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/service/AuthService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/service/AuthService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/main/java/service/GameService.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/main/java/service/GameService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/test/java/dataAccessTests/SQLDAOTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/dataAccessTests/SQLDAOTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/test/java/passoffTests/PersistenceTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/passoffTests/PersistenceTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/test/java/passoffTests/StandardAPITests.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/passoffTests/StandardAPITests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/test/java/passoffTests/TestFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/passoffTests/TestFactory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/server/src/test/java/server/ServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/server/src/test/java/server/ServerTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/serverMessages/ErrorMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/serverMessages/ErrorMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/serverMessages/NotificationMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/serverMessages/NotificationMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/serverMessages/ServerMessage.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/serverMessages/ServerMessage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/JoinObserverCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/JoinObserverCommand.java" afterDir="false" />
@@ -45,11 +22,7 @@
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/LeaveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/LeaveCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/MakeMoveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/MakeMoveCommand.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/ResignCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/ResignCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/UserGameCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/WebSocketMessages/userCommands/UserGameCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessBoard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/Simulation.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/Simulation.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/main/java/model/AuthData.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/model/AuthData.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/shared/src/test/java/passoffTests/TestFactory.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/test/java/passoffTests/TestFactory.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/shared/src/main/java/chess/ChessGame.java" beforeDir="false" afterPath="$PROJECT_DIR$/shared/src/main/java/chess/ChessGame.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -105,9 +78,9 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "Application.DrawBoard.executor": "Run",
     "Application.DrawTheBoard.executor": "Run",
-    "Application.Main (1).executor": "Debug",
-    "Application.Main 2.executor": "Run",
-    "Application.Main.executor": "Run",
+    "Application.Main (1).executor": "Run",
+    "Application.Main 2.executor": "Debug",
+    "Application.Main.executor": "Debug",
     "Application.TicTacToe.executor": "Run",
     "Application.ui.examplecode.TicTacToe.executor": "Debug",
     "Downloaded.Files.Path.Enabled": "false",
@@ -236,8 +209,8 @@
     "JUnit.WebSocketTests.executor": "Run",
     "JUnit.WebSocketTests.joinObserverGood.executor": "Run",
     "JUnit.WebSocketTests.joinPlayerBadGameID.executor": "Run",
-    "JUnit.WebSocketTests.joinPlayerGood.executor": "Debug",
-    "JUnit.WebSocketTests.joinPlayerSteal.executor": "Run",
+    "JUnit.WebSocketTests.joinPlayerGood.executor": "Run",
+    "JUnit.WebSocketTests.joinPlayerSteal.executor": "Debug",
     "JUnit.WebSocketTests.leaveGame.executor": "Run",
     "JUnit.chessPieceTests in shared.executor": "Run",
     "JUnit.java in shared.executor": "Run",
@@ -298,8 +271,8 @@
       <recent name="passoffTests.serverTests" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.PersistenceTests">
-    <configuration name="Main 2" type="Application" factoryName="Application" singleton="false" temporary="true">
+  <component name="RunManager" selected="Application.Main 2">
+    <configuration name="Main 2" type="Application" factoryName="Application" singleton="false">
       <option name="MAIN_CLASS_NAME" value="Main" />
       <module name="client" />
       <method v="2">
@@ -328,16 +301,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SQLUserDAOTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WebSocketTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="dataAccessTests.*" />
+          <option name="PATTERN" value="passoffTests.serverTests.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="dataAccessTests" />
-      <option name="MAIN_CLASS_NAME" value="dataAccessTests.SQLUserDAOTest" />
+      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.WebSocketTests" />
       <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -359,29 +332,43 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="WebSocketTests.joinPlayerSteal" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="passoffTests.serverTests.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="passoffTests.serverTests" />
+      <option name="MAIN_CLASS_NAME" value="passoffTests.serverTests.WebSocketTests" />
+      <option name="METHOD_NAME" value="joinPlayerSteal" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
-      <item itemvalue="Application.Main" />
       <item itemvalue="Application.Main 2" />
-      <item itemvalue="JUnit.SQLUserDAOTest" />
+      <item itemvalue="Application.Main" />
+      <item itemvalue="JUnit.WebSocketTests.joinPlayerSteal" />
+      <item itemvalue="JUnit.WebSocketTests" />
       <item itemvalue="JUnit.PersistenceTests" />
       <item itemvalue="JUnit.WebSocketTests.joinPlayerGood" />
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.PersistenceTests" />
-        <item itemvalue="JUnit.SQLUserDAOTest" />
-        <item itemvalue="JUnit.WebSocketTests.joinPlayerGood" />
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Main 2" />
+        <item itemvalue="JUnit.WebSocketTests.joinPlayerGood" />
+        <item itemvalue="JUnit.WebSocketTests" />
+        <item itemvalue="JUnit.WebSocketTests.joinPlayerSteal" />
+        <item itemvalue="JUnit.PersistenceTests" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="jdk-21.0.1-corretto-21.0.1-4caba194b151-0837d75e" />
-        <option value="jdk-21.0.1-corretto-21.0.1-f644763e9732-eed86825" />
-        <option value="jdk-21.0.1-openjdk-21.0.1-f644763e9732-f98dd351" />
         <option value="jdk-21.0.2-corretto-21.0.2-4caba194b151-51586f01" />
       </set>
     </attachedChunks>
@@ -457,15 +444,9 @@
       <workItem from="1712927916625" duration="19871000" />
       <workItem from="1713020272960" duration="19408000" />
       <workItem from="1713129103565" duration="12889000" />
-      <workItem from="1713189929181" duration="44360000" />
-    </task>
-    <task id="LOCAL-00069" summary="Lots of things are working now. Listgames is not. Waiting to test other game-related functions because of the need for listgames">
-      <option name="closed" value="true" />
-      <created>1710793727118</created>
-      <option name="number" value="00069" />
-      <option name="presentableId" value="LOCAL-00069" />
-      <option name="project" value="LOCAL" />
-      <updated>1710793727118</updated>
+      <workItem from="1713189929181" duration="45032000" />
+      <workItem from="1713284244092" duration="1705000" />
+      <workItem from="1713287192127" duration="12891000" />
     </task>
     <task id="LOCAL-00070" summary="the tests run...?">
       <option name="closed" value="true" />
@@ -851,7 +832,15 @@
       <option name="project" value="LOCAL" />
       <updated>1713243909644</updated>
     </task>
-    <option name="localTasksCounter" value="118" />
+    <task id="LOCAL-00118" summary="code cleanup as suggested by the IDE. Still passes PersistenceTests">
+      <option name="closed" value="true" />
+      <created>1713249621489</created>
+      <option name="number" value="00118" />
+      <option name="presentableId" value="LOCAL-00118" />
+      <option name="project" value="LOCAL" />
+      <updated>1713249621489</updated>
+    </task>
+    <option name="localTasksCounter" value="119" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -870,7 +859,6 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
-    <MESSAGE value="Alexa, play &quot;Hello (Swedish Cover)&quot;." />
     <MESSAGE value="Alexa, play &quot;Where Love Is&quot; by MoTab." />
     <MESSAGE value="AHHHHHHHHHHHHHHH" />
     <MESSAGE value="Starting over on Phase 6.&#10;- deprecated phase 6 files&#10;- reconfigured DrawBoard to take a TeamColor and print accordingly&#10;- Alexa play &quot;Breaking Free&quot; from High School Musical" />
@@ -895,7 +883,8 @@
     <MESSAGE value="saving before I make the suggested changes to WebSocketFacade.java" />
     <MESSAGE value="Websocket is still having issues and I do not understand what they are or how to fix them." />
     <MESSAGE value="cleanup: unused methods and commented code" />
-    <option name="LAST_COMMIT_MESSAGE" value="cleanup: unused methods and commented code" />
+    <MESSAGE value="code cleanup as suggested by the IDE. Still passes PersistenceTests" />
+    <option name="LAST_COMMIT_MESSAGE" value="code cleanup as suggested by the IDE. Still passes PersistenceTests" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -909,39 +898,19 @@
           <option name="timeStamp" value="28" />
         </breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/test/java/passoffTests/serverTests/WebSocketTests.java</url>
-          <line>82</line>
-          <option name="timeStamp" value="39" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/test/java/passoffTests/serverTests/WebSocketTests.java</url>
-          <line>90</line>
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/test/java/passoffTests/serverTests/WebSocketTests.java</url>
-          <line>94</line>
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
           <url>file://$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java</url>
-          <line>89</line>
+          <line>110</line>
           <option name="timeStamp" value="44" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java</url>
-          <line>36</line>
-          <option name="timeStamp" value="45" />
+          <url>file://$PROJECT_DIR$/server/src/main/java/service/GameService.java</url>
+          <line>44</line>
+          <option name="timeStamp" value="55" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java</url>
-          <line>49</line>
-          <option name="timeStamp" value="46" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/server/src/main/java/server/websocket/WebSocketHandler.java</url>
-          <line>60</line>
-          <option name="timeStamp" value="51" />
+          <url>file://$PROJECT_DIR$/server/src/main/java/dataAccess/SQLGameDAO.java</url>
+          <line>86</line>
+          <option name="timeStamp" value="57" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="java-method">
           <url>file://$PROJECT_DIR$/client/src/main/java/websocket/WebSocketFacade.java</url>
@@ -950,16 +919,7 @@
             <option name="EMULATED" value="true" />
             <option name="WATCH_EXIT" value="false" />
           </properties>
-          <option name="timeStamp" value="47" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/client/src/main/java/ui/PostloginClient.java</url>
-          <line>25</line>
-          <properties class="ui.PostloginClient" method="eval">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="50" />
+          <option name="timeStamp" value="64" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
