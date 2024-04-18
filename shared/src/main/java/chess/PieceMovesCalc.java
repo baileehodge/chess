@@ -4,7 +4,7 @@ import chess.calc.*;
 
 import java.util.Collection;
 
-public class PieceMovesCalc<board, position> {
+public class PieceMovesCalc<B, P> {
 
     public static Collection<ChessMove> pieceMoves(ChessBoard board, ChessPosition myPosition) {
 

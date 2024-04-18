@@ -4,12 +4,7 @@ import java.util.Objects;
 
 import static WebSocketMessages.userCommands.UserGameCommand.CommandType.RESIGN;
 
-/**
- * Represents a command a user can send the server over a websocket
- *
- * Note: You can add to this class, but you should not alter the existing
- * methods.
- */
+
 public class ResignCommand extends UserGameCommand {
 
     public ResignCommand(String authToken, Integer gameID) {

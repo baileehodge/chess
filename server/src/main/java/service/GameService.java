@@ -29,17 +29,7 @@ public class GameService {
         return gameAccess.listGames();
     }
 
-    public static boolean verifyGame(int gameID) throws DataAccessException {
 
-        Collection<GameData> listOfGames = gameAccess.listGames();
-
-        for (GameData game : listOfGames) {
-            if (game.getGameID() == gameID) {
-                return true;
-            }
-        }
-        return false;
-    }
 
     public static ChessGame getGame(int gameID) throws DataAccessException {
         return gameAccess.getGame(gameID).getGame();

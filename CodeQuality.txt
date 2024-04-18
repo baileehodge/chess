@@ -1,10 +1,7 @@
 Naming:
 	[ClassTypeParameterName]:
-		[ERROR] /shared/src/main/java/chess/PieceMovesCalc.java:7:29: Class type name 'board' must match pattern '^[A-Z]$' (A single letter, like T). [ClassTypeParameterName]
-		[ERROR] /shared/src/main/java/chess/PieceMovesCalc.java:7:36: Class type name 'position' must match pattern '^[A-Z]$' (A single letter, like T). [ClassTypeParameterName]
 Code Decomposition:
 	[DuplicateLines]:
-		[ERROR] repo/shared/src/main/java/WebSocketMessages/userCommands/LeaveCommand.java:26: Duplicated 25 lines from repo/shared/src/main/java/WebSocketMessages/userCommands/ResignCommand.java:23 [DuplicateLines]
 		[ERROR] repo/shared/src/main/java/chess/calc/QueenMovesCalc.java:12: Duplicated 22 lines from repo/shared/src/main/java/chess/calc/RookMovesCalc.java:12 [DuplicateLines]
 		[ERROR] repo/shared/src/main/java/chess/calc/QueenMovesCalc.java:80: Duplicated 54 lines from repo/shared/src/main/java/chess/calc/RookMovesCalc.java:34 [DuplicateLines]
 		[ERROR] repo/shared/src/main/java/chess/calc/PawnMovesCalc.java:117: Duplicated 15 lines from repo/shared/src/main/java/chess/calc/PawnMovesCalc.java:91 [DuplicateLines]
@@ -33,10 +30,6 @@ Code Decomposition:
 		[ERROR] /server/src/main/java/server/Server.java:140:117: Duplicated code from /server/src/main/java/server/HTTPServer.java:123 [DuplicateBlock]
 Code Readability:
 	[UnusedMethodReporter]:
-		[ERROR] /shared/src/main/java/WebSocketMessages/ResponseException.java:11: Unused method statusCode [UnusedMethodReporter]
-		[ERROR] /server/src/main/java/service/GameService.java:32: Unused method verifyGame [UnusedMethodReporter]
-		[ERROR] /shared/src/main/java/WebSocketMessages/serverMessages/ServerMessage.java:27: Unused method setServerMessageText [UnusedMethodReporter]
-		[ERROR] /shared/src/main/java/model/AuthData.java:22: Unused method setUsername [UnusedMethodReporter]
 Warnings:
 	[WARN] /shared/src/main/java/WebSocketMessages/userCommands/ResignCommand.java:34:5: Method duplicated from /shared/src/main/java/WebSocketMessages/userCommands/MakeMoveCommand.java:38 [DuplicateMethod]
 	[WARN] /shared/src/main/java/WebSocketMessages/userCommands/LeaveCommand.java:37:5: Method duplicated from /shared/src/main/java/WebSocketMessages/userCommands/MakeMoveCommand.java:38 [DuplicateMethod]

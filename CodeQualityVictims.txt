@@ -49,3 +49,17 @@ GameplayClient.java
 //            ws = new WebSocketFacade(serverURL, notificationHandler);
 //            ws.movePiece(getToken(),getGameID(),start,end,null);
 //        }
+
+
+GameService.java
+    public static boolean verifyGame(int gameID) throws DataAccessException {
+
+        Collection<GameData> listOfGames = gameAccess.listGames();
+
+        for (GameData game : listOfGames) {
+            if (game.getGameID() == gameID) {
+                return true;
+            }
+        }
+        return false;
+    }
